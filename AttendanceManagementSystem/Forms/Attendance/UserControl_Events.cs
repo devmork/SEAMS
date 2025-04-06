@@ -17,5 +17,11 @@ namespace AttendanceManagementSystem.Forms.Events
 		{
             InitializeComponent();
 		}
-	}
+
+        private void btn_AddEvent_Click(object sender, EventArgs e)
+        {
+            AddAttendance_Form addAttendance_Form = new AddAttendance_Form();
+            addAttendance_Form.ShowDialog();
+        }
+    }
 }
