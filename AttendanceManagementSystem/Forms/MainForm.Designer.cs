@@ -41,7 +41,7 @@
             this.btn_QRScanner = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.panel_Body = new DevExpress.XtraEditors.PanelControl();
-            this.userControl_Events1 = new AttendanceManagementSystem.Forms.Events.UserControl_Events();
+            this.userControl_Attendance1 = new AttendanceManagementSystem.Forms.Attendance.UserControl_Attendance();
             ((System.ComponentModel.ISupportInitialize)(this.accordion_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Body)).BeginInit();
             this.panel_Body.SuspendLayout();
@@ -100,8 +100,8 @@
             this.btn_Events.ImageOptions.SvgImageSize = new System.Drawing.Size(22, 22);
             this.btn_Events.Name = "btn_Events";
             this.btn_Events.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btn_Events.Text = "Events";
-            this.btn_Events.Click += new System.EventHandler(this.btn_Events_Click);
+            this.btn_Events.Text = "Attendance";
+            this.btn_Events.Click += new System.EventHandler(this.btn_Events_Click_1);
             // 
             // accordionControlSeparator3
             // 
@@ -113,7 +113,7 @@
             this.btn_Attendance.ImageOptions.SvgImageSize = new System.Drawing.Size(22, 22);
             this.btn_Attendance.Name = "btn_Attendance";
             this.btn_Attendance.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btn_Attendance.Text = "Attendance";
+            this.btn_Attendance.Text = "Reports";
             // 
             // accordionControlSeparator4
             // 
@@ -145,7 +145,7 @@
             // 
             // panel_Body
             // 
-            this.panel_Body.Controls.Add(this.userControl_Events1);
+            this.panel_Body.Controls.Add(this.userControl_Attendance1);
             this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Body.Location = new System.Drawing.Point(48, 0);
             this.panel_Body.Margin = new System.Windows.Forms.Padding(4);
@@ -153,14 +153,13 @@
             this.panel_Body.Size = new System.Drawing.Size(1238, 734);
             this.panel_Body.TabIndex = 6;
             // 
-            // userControl_Events1
+            // userControl_Attendance1
             // 
-            this.userControl_Events1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_Events1.Location = new System.Drawing.Point(2, 2);
-            this.userControl_Events1.Margin = new System.Windows.Forms.Padding(4);
-            this.userControl_Events1.Name = "userControl_Events1";
-            this.userControl_Events1.Size = new System.Drawing.Size(1234, 730);
-            this.userControl_Events1.TabIndex = 0;
+            this.userControl_Attendance1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Attendance1.Location = new System.Drawing.Point(2, 2);
+            this.userControl_Attendance1.Name = "userControl_Attendance1";
+            this.userControl_Attendance1.Size = new System.Drawing.Size(1234, 730);
+            this.userControl_Attendance1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -194,6 +193,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_QRScanner;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
         private DevExpress.XtraEditors.PanelControl panel_Body;
-        private Events.UserControl_Events userControl_Events1;
+        private Attendance.UserControl_Attendance userControl_Attendance1;
     }
 }
