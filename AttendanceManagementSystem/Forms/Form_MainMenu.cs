@@ -19,13 +19,13 @@ namespace AttendanceManagementSystem.Forms
             InitializeComponent();
         }
 
-        private void btn_Dashboard_Click(object sender, EventArgs e)
-        {
-            panel_Body.Controls.Clear();
-            UserControl_Dashboard userControl = new UserControl_Dashboard();
-            userControl.Dock = DockStyle.Fill;
-            panel_Body.Controls.Add(userControl);
-        }
+        //private void btn_Dashboard_Click(object sender, EventArgs e)
+        //{
+        //    panel_Body.Controls.Clear();
+        //    UserControl_Dashboard userControl = new UserControl_Dashboard();
+        //    userControl.Dock = DockStyle.Fill;
+        //    panel_Body.Controls.Add(userControl);
+        //}
 
         private void btn_Events_Click(object sender, EventArgs e)
         {
