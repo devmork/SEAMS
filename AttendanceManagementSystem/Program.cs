@@ -16,7 +16,7 @@ namespace AttendanceManagementSystem {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_MainMenu());
+            Application.Run(new MainForm());
         }
     }
 }

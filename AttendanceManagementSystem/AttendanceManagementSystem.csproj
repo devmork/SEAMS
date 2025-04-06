@@ -101,12 +101,6 @@
     <Compile Include="Forms\Form_EditEvent.Designer.cs">
       <DependentUpon>Form_EditEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_MainMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form_MainMenu.Designer.cs">
-      <DependentUpon>Form_MainMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,9 +126,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_EditEvent.resx">
       <DependentUpon>Form_EditEvent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_MainMenu.resx">
-      <DependentUpon>Form_MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

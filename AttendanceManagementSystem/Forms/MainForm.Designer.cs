@@ -86,6 +86,7 @@
             this.btn_Dashboard.Name = "btn_Dashboard";
             this.btn_Dashboard.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_Dashboard.Text = "Dashboard";
+            this.btn_Dashboard.Click += new System.EventHandler(this.btn_Dashboard_Click);
             // 
             // accordionControlSeparator1
             // 
@@ -98,6 +99,7 @@
             this.btn_Events.Name = "btn_Events";
             this.btn_Events.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_Events.Text = "Events";
+            this.btn_Events.Click += new System.EventHandler(this.btn_Events_Click);
             // 
             // accordionControlSeparator3
             // 
@@ -158,7 +160,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DMC SSG Attendance Management System - Main Menu";
+            this.Text = "DMC SSG Attendance Management System";
             ((System.ComponentModel.ISupportInitialize)(this.accordion_Menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Body)).EndInit();
             this.ResumeLayout(false);
