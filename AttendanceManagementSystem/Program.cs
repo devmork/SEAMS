@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using DevExpress.UserSkins;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
+using AttendanceManagementSystem.Forms;
 
 namespace AttendanceManagementSystem {
     static class Program {
@@ -15,7 +16,7 @@ namespace AttendanceManagementSystem {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form_MainMenu());
         }
     }
 }
