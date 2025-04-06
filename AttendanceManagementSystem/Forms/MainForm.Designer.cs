@@ -41,8 +41,10 @@
             this.btn_QRScanner = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.panel_Body = new DevExpress.XtraEditors.PanelControl();
+            this.userControl_Events1 = new AttendanceManagementSystem.Forms.Events.UserControl_Events();
             ((System.ComponentModel.ISupportInitialize)(this.accordion_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Body)).BeginInit();
+            this.panel_Body.SuspendLayout();
             this.SuspendLayout();
             // 
             // accordion_Menu
@@ -143,12 +145,22 @@
             // 
             // panel_Body
             // 
+            this.panel_Body.Controls.Add(this.userControl_Events1);
             this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Body.Location = new System.Drawing.Point(48, 0);
             this.panel_Body.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Body.Name = "panel_Body";
             this.panel_Body.Size = new System.Drawing.Size(1238, 734);
             this.panel_Body.TabIndex = 6;
+            // 
+            // userControl_Events1
+            // 
+            this.userControl_Events1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Events1.Location = new System.Drawing.Point(2, 2);
+            this.userControl_Events1.Margin = new System.Windows.Forms.Padding(4);
+            this.userControl_Events1.Name = "userControl_Events1";
+            this.userControl_Events1.Size = new System.Drawing.Size(1234, 730);
+            this.userControl_Events1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -163,6 +175,7 @@
             this.Text = "DMC SSG Attendance Management System";
             ((System.ComponentModel.ISupportInitialize)(this.accordion_Menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Body)).EndInit();
+            this.panel_Body.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -181,5 +194,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_QRScanner;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
         private DevExpress.XtraEditors.PanelControl panel_Body;
+        private Events.UserControl_Events userControl_Events1;
     }
 }

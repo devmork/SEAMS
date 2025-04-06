@@ -71,35 +71,23 @@
     <Compile Include="Forms\Dashboard\UserControl_Dashboard.Designer.cs">
       <DependentUpon>UserControl_Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Events\AddEvent_Form.cs">
+    <Compile Include="Forms\Attendance\AddAttendance_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Events\AddEvent_Form.Designer.cs">
-      <DependentUpon>AddEvent_Form.cs</DependentUpon>
+    <Compile Include="Forms\Attendance\AddAttendance_Form.Designer.cs">
+      <DependentUpon>AddAttendance_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Events\EditEvent_Form.cs">
+    <Compile Include="Forms\Attendance\EditAttendance_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Events\EditEvent_Form.Designer.cs">
-      <DependentUpon>EditEvent_Form.cs</DependentUpon>
+    <Compile Include="Forms\Attendance\EditAttendance_Form.Designer.cs">
+      <DependentUpon>EditAttendance_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Events\UserControl_Events.cs">
+    <Compile Include="Forms\Attendance\UserControl_Events.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Events\UserControl_Events.Designer.cs">
+    <Compile Include="Forms\Attendance\UserControl_Events.Designer.cs">
       <DependentUpon>UserControl_Events.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Form_AddEvent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\Form_AddEvent.Designer.cs">
-      <DependentUpon>Form_AddEvent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Form_EditEvent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\Form_EditEvent.Designer.cs">
-      <DependentUpon>Form_EditEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -112,20 +100,14 @@
     <EmbeddedResource Include="Forms\Dashboard\UserControl_Dashboard.resx">
       <DependentUpon>UserControl_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Events\AddEvent_Form.resx">
-      <DependentUpon>AddEvent_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Attendance\AddAttendance_Form.resx">
+      <DependentUpon>AddAttendance_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Events\EditEvent_Form.resx">
-      <DependentUpon>EditEvent_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Attendance\EditAttendance_Form.resx">
+      <DependentUpon>EditAttendance_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Events\UserControl_Events.resx">
+    <EmbeddedResource Include="Forms\Attendance\UserControl_Events.resx">
       <DependentUpon>UserControl_Events.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_AddEvent.resx">
-      <DependentUpon>Form_AddEvent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_EditEvent.resx">
-      <DependentUpon>Form_EditEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -152,8 +134,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\Attendance\" />
     <Folder Include="Forms\QRScanner\" />
+    <Folder Include="Forms\Reports\" />
     <Folder Include="Forms\Students\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
