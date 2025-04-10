@@ -103,6 +103,12 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Reports\Reports_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\Reports_UserControl.Designer.cs">
+      <DependentUpon>Reports_UserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Students\Student_UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\Reports_UserControl.resx">
+      <DependentUpon>Reports_UserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Students\Student_UserControl.resx">
       <DependentUpon>Student_UserControl.cs</DependentUpon>
@@ -152,7 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\QRScanner\" />
-    <Folder Include="Forms\Reports\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
