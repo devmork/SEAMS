@@ -103,6 +103,12 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QRScanner\QRScanner_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\QRScanner\QRScanner_UserControl.Designer.cs">
+      <DependentUpon>QRScanner_UserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reports\Reports_UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QRScanner\QRScanner_UserControl.resx">
+      <DependentUpon>QRScanner_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\Reports_UserControl.resx">
       <DependentUpon>Reports_UserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,9 +168,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\QRScanner\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
