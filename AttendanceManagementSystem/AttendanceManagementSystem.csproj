@@ -115,6 +115,12 @@
     <Compile Include="Forms\Reports\Reports_UserControl.Designer.cs">
       <DependentUpon>Reports_UserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Students\StudentAttendanceRecord_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Students\StudentAttendanceRecord_Form.Designer.cs">
+      <DependentUpon>StudentAttendanceRecord_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Students\Students_UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\Reports_UserControl.resx">
       <DependentUpon>Reports_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Students\StudentAttendanceRecord_Form.resx">
+      <DependentUpon>StudentAttendanceRecord_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Students\Students_UserControl.resx">
       <DependentUpon>Students_UserControl.cs</DependentUpon>
