@@ -73,6 +73,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Attendance\Attendance_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Attendance\Attendance_UserControl.Designer.cs">
+      <DependentUpon>Attendance_UserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Attendance\UserControl_Attendance.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Attendance\Attendance_UserControl.resx">
+      <DependentUpon>Attendance_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Attendance\UserControl_Attendance.resx">
       <DependentUpon>UserControl_Attendance.cs</DependentUpon>
     </EmbeddedResource>
