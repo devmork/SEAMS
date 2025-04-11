@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace AttendanceManagementSystem.Forms.Dashboard
 {
-	public partial class UserControl_Dashboard: DevExpress.XtraEditors.XtraUserControl
+	public partial class Dashboard_UserControl: DevExpress.XtraEditors.XtraUserControl
 	{
-        public UserControl_Dashboard()
+        public Dashboard_UserControl()
 		{
             InitializeComponent();
 		}
