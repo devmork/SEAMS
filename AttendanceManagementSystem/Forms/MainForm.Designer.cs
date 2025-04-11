@@ -85,7 +85,6 @@
             this.btn_Dashboard.Name = "btn_Dashboard";
             this.btn_Dashboard.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_Dashboard.Text = "Dashboard";
-            this.btn_Dashboard.Click += new System.EventHandler(this.btn_Dashboard_Click);
             // 
             // accordionControlSeparator1
             // 
@@ -98,7 +97,6 @@
             this.btn_Attendance.Name = "btn_Attendance";
             this.btn_Attendance.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_Attendance.Text = "Attendance";
-            this.btn_Attendance.Click += new System.EventHandler(this.btn_Events_Click_1);
             // 
             // accordionControlSeparator3
             // 
