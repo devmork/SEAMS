@@ -79,12 +79,6 @@
     <Compile Include="Forms\Attendance\Attendance_UserControl.Designer.cs">
       <DependentUpon>Attendance_UserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Attendance\UserControl_Attendance.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\Attendance\UserControl_Attendance.Designer.cs">
-      <DependentUpon>UserControl_Attendance.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Dashboard\Dashboard_UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,9 +125,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Attendance\Attendance_UserControl.resx">
       <DependentUpon>Attendance_UserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Attendance\UserControl_Attendance.resx">
-      <DependentUpon>UserControl_Attendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard\Dashboard_UserControl.resx">
       <DependentUpon>Dashboard_UserControl.cs</DependentUpon>
