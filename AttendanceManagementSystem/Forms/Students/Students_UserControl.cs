@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace AttendanceManagementSystem.Forms.Students
 {
-	public partial class Student_UserControl: DevExpress.XtraEditors.XtraUserControl
+	public partial class Students_UserControl: DevExpress.XtraEditors.XtraUserControl
 	{
-        public Student_UserControl()
+        public Students_UserControl()
 		{
             InitializeComponent();
 		}

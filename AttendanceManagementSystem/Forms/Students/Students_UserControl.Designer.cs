@@ -1,6 +1,6 @@
 ﻿namespace AttendanceManagementSystem.Forms.Students
 {
-    partial class Student_UserControl
+    partial class Students_UserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Student_UserControl));
             this.lc_Students = new DevExpress.XtraLayout.LayoutControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.panel_PageHeading = new DevExpress.XtraEditors.PanelControl();
@@ -52,8 +51,8 @@
             // 
             // lc_Students
             // 
-            this.lc_Students.Controls.Add(this.gc_Students);
             this.lc_Students.Controls.Add(this.panel_PageHeading);
+            this.lc_Students.Controls.Add(this.gc_Students);
             this.lc_Students.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lc_Students.Location = new System.Drawing.Point(0, 0);
             this.lc_Students.Name = "lc_Students";
@@ -80,7 +79,7 @@
             this.panel_PageHeading.Controls.Add(this.label_PageDescription);
             this.panel_PageHeading.Location = new System.Drawing.Point(16, 16);
             this.panel_PageHeading.Name = "panel_PageHeading";
-            this.panel_PageHeading.Size = new System.Drawing.Size(1006, 100);
+            this.panel_PageHeading.Size = new System.Drawing.Size(1006, 98);
             this.panel_PageHeading.TabIndex = 7;
             // 
             // label_PageTitle
@@ -110,13 +109,12 @@
             this.btn_AddStudent.Appearance.Options.UseTextOptions = true;
             this.btn_AddStudent.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btn_AddStudent.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btn_AddStudent.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_AddEvent.ImageOptions.SvgImage")));
             this.btn_AddStudent.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
             this.btn_AddStudent.Location = new System.Drawing.Point(759, 25);
             this.btn_AddStudent.Margin = new System.Windows.Forms.Padding(0);
             this.btn_AddStudent.Name = "btn_AddStudent";
             this.btn_AddStudent.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_AddStudent.Size = new System.Drawing.Size(235, 50);
+            this.btn_AddStudent.Size = new System.Drawing.Size(235, 48);
             this.btn_AddStudent.TabIndex = 2;
             this.btn_AddStudent.Text = "Add Student";
             // 
@@ -140,17 +138,17 @@
             this.lci_PageHeading.CustomizationFormText = "layoutControlItem1";
             this.lci_PageHeading.Location = new System.Drawing.Point(0, 0);
             this.lci_PageHeading.Name = "lci_PageHeading";
-            this.lci_PageHeading.Size = new System.Drawing.Size(1012, 106);
+            this.lci_PageHeading.Size = new System.Drawing.Size(1012, 104);
             this.lci_PageHeading.Text = "layoutControlItem1";
             this.lci_PageHeading.TextSize = new System.Drawing.Size(0, 0);
             this.lci_PageHeading.TextVisible = false;
             // 
             // gc_Students
             // 
-            this.gc_Students.Location = new System.Drawing.Point(16, 122);
+            this.gc_Students.Location = new System.Drawing.Point(16, 120);
             this.gc_Students.MainView = this.gv_Students;
             this.gc_Students.Name = "gc_Students";
-            this.gc_Students.Size = new System.Drawing.Size(1006, 630);
+            this.gc_Students.Size = new System.Drawing.Size(1006, 632);
             this.gc_Students.TabIndex = 8;
             this.gc_Students.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Students});
@@ -163,18 +161,21 @@
             // lci_GridControlStudents
             // 
             this.lci_GridControlStudents.Control = this.gc_Students;
-            this.lci_GridControlStudents.Location = new System.Drawing.Point(0, 106);
+            this.lci_GridControlStudents.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lci_GridControlStudents.CustomizationFormText = "lci_GridControlStudents";
+            this.lci_GridControlStudents.Location = new System.Drawing.Point(0, 104);
             this.lci_GridControlStudents.Name = "lci_GridControlStudents";
-            this.lci_GridControlStudents.Size = new System.Drawing.Size(1012, 636);
+            this.lci_GridControlStudents.Size = new System.Drawing.Size(1012, 638);
+            this.lci_GridControlStudents.Text = "lci_GridControlStudents";
             this.lci_GridControlStudents.TextSize = new System.Drawing.Size(0, 0);
             this.lci_GridControlStudents.TextVisible = false;
             // 
-            // Student_UserControl
+            // Students_UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lc_Students);
-            this.Name = "Student_UserControl";
+            this.Name = "Students_UserControl";
             this.Size = new System.Drawing.Size(1038, 768);
             ((System.ComponentModel.ISupportInitialize)(this.lc_Students)).EndInit();
             this.lc_Students.ResumeLayout(false);
@@ -193,11 +194,11 @@
         #endregion
 
         private DevExpress.XtraLayout.LayoutControl lc_Students;
+        private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraEditors.PanelControl panel_PageHeading;
         private DevExpress.XtraEditors.LabelControl label_PageTitle;
         private DevExpress.XtraEditors.SimpleButton btn_AddStudent;
         private DevExpress.XtraEditors.LabelControl label_PageDescription;
-        private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem lci_PageHeading;
         private DevExpress.XtraGrid.GridControl gc_Students;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_Students;
