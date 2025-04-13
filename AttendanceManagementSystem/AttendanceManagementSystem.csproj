@@ -127,6 +127,7 @@
     <Compile Include="Forms\Students\Students_UserControl.Designer.cs">
       <DependentUpon>Students_UserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Base\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Attendance\Attendance_UserControl.resx">
