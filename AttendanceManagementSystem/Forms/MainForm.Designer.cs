@@ -72,9 +72,9 @@
             this.btn_QRScanner,
             this.accordionControlSeparator2});
             this.accordion_Menu.Location = new System.Drawing.Point(0, 0);
-            this.accordion_Menu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.accordion_Menu.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.accordion_Menu.Name = "accordion_Menu";
-            this.accordion_Menu.Size = new System.Drawing.Size(250, 734);
+            this.accordion_Menu.Size = new System.Drawing.Size(286, 966);
             this.accordion_Menu.TabIndex = 5;
             this.accordion_Menu.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -85,6 +85,7 @@
             this.btn_Dashboard.Name = "btn_Dashboard";
             this.btn_Dashboard.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_Dashboard.Text = "Dashboard";
+            this.btn_Dashboard.Click += new System.EventHandler(this.btn_Dashboard_Click);
             // 
             // accordionControlSeparator1
             // 
@@ -92,11 +93,12 @@
             // 
             // btn_Attendance
             // 
-            this.btn_Attendance.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Events.ImageOptions.SvgImage")));
+            this.btn_Attendance.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Attendance.ImageOptions.SvgImage")));
             this.btn_Attendance.ImageOptions.SvgImageSize = new System.Drawing.Size(22, 22);
             this.btn_Attendance.Name = "btn_Attendance";
             this.btn_Attendance.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_Attendance.Text = "Attendance";
+            this.btn_Attendance.Click += new System.EventHandler(this.btn_Attendance_Click);
             // 
             // accordionControlSeparator3
             // 
@@ -104,11 +106,12 @@
             // 
             // btn_Reports
             // 
-            this.btn_Reports.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Attendance.ImageOptions.SvgImage")));
+            this.btn_Reports.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Reports.ImageOptions.SvgImage")));
             this.btn_Reports.ImageOptions.SvgImageSize = new System.Drawing.Size(22, 22);
             this.btn_Reports.Name = "btn_Reports";
             this.btn_Reports.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_Reports.Text = "Reports";
+            this.btn_Reports.Click += new System.EventHandler(this.btn_Reports_Click);
             // 
             // accordionControlSeparator4
             // 
@@ -121,6 +124,7 @@
             this.btn_Students.Name = "btn_Students";
             this.btn_Students.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_Students.Text = "Students";
+            this.btn_Students.Click += new System.EventHandler(this.btn_Students_Click);
             // 
             // accordionControlSeparator5
             // 
@@ -133,6 +137,7 @@
             this.btn_QRScanner.Name = "btn_QRScanner";
             this.btn_QRScanner.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_QRScanner.Text = "QR Scanner";
+            this.btn_QRScanner.Click += new System.EventHandler(this.btn_QRScanner_Click);
             // 
             // accordionControlSeparator2
             // 
@@ -141,20 +146,20 @@
             // panel_Body
             // 
             this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Body.Location = new System.Drawing.Point(250, 0);
-            this.panel_Body.Margin = new System.Windows.Forms.Padding(4);
+            this.panel_Body.Location = new System.Drawing.Point(286, 0);
+            this.panel_Body.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.panel_Body.Name = "panel_Body";
-            this.panel_Body.Size = new System.Drawing.Size(1036, 734);
+            this.panel_Body.Size = new System.Drawing.Size(1184, 966);
             this.panel_Body.TabIndex = 6;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1286, 734);
+            this.ClientSize = new System.Drawing.Size(1470, 966);
             this.Controls.Add(this.panel_Body);
             this.Controls.Add(this.accordion_Menu);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DMC SSG Attendance Management System";
