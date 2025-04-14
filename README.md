@@ -1,1 +1,1 @@
-# AttendanceManagementSystem
+# SSG Attendance Management System
