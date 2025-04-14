@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using AttendanceManagementSystem.Forms.Events;
 using AttendanceManagementSystem.Forms.Attendance;
+using AttendanceManagementSystem.Forms.Dashboard;
+using AttendanceManagementSystem.Forms.Reports;
+using AttendanceManagementSystem.Forms.Students;
+using AttendanceManagementSystem.Forms.QRScanner;
 
 namespace AttendanceManagementSystem.Forms
 {
@@ -19,5 +23,45 @@ namespace AttendanceManagementSystem.Forms
 		{
             InitializeComponent();
 		}
+
+        private void btn_Dashboard_Click(object sender, EventArgs e)
+        {
+            Dashboard_UserControl dashboard_UserControl = new Dashboard_UserControl();
+            dashboard_UserControl.Dock = DockStyle.Fill;
+            panel_Body.Controls.Clear();
+            panel_Body.Controls.Add(dashboard_UserControl);
+        }
+
+        private void btn_Attendance_Click(object sender, EventArgs e)
+        {
+            Attendance_UserControl attendance_UserControl = new Attendance_UserControl();
+            attendance_UserControl.Dock = DockStyle.Fill;
+            panel_Body.Controls.Clear();
+            panel_Body.Controls.Add(attendance_UserControl);
+        }
+
+        private void btn_Reports_Click(object sender, EventArgs e)
+        {
+            Reports_UserControl reports_UserControl = new Reports_UserControl();
+            reports_UserControl.Dock = DockStyle.Fill;
+            panel_Body.Controls.Clear();
+            panel_Body.Controls.Add(reports_UserControl);
+        }
+
+        private void btn_Students_Click(object sender, EventArgs e)
+        {
+            Students_UserControl students_UserControl = new Students_UserControl();
+            students_UserControl.Dock = DockStyle.Fill;
+            panel_Body.Controls.Clear();
+            panel_Body.Controls.Add(students_UserControl);
+        }
+
+        private void btn_QRScanner_Click(object sender, EventArgs e)
+        {
+            QRScanner_UserControl qrScanner_UserControl = new QRScanner_UserControl();
+            qrScanner_UserControl.Dock = DockStyle.Fill;
+            panel_Body.Controls.Clear();
+            panel_Body.Controls.Add(qrScanner_UserControl);
+        }
     }
 }
