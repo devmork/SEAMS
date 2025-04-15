@@ -28,266 +28,267 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lc_AddStudent_Form = new DevExpress.XtraLayout.LayoutControl();
+            this.lc_AddStudent = new DevExpress.XtraLayout.LayoutControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.groupControl_StudentData = new DevExpress.XtraEditors.GroupControl();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.panelBody_Right = new DevExpress.XtraEditors.PanelControl();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txt_LastName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_MiddleName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.panel_SaveStudentData = new DevExpress.XtraEditors.PanelControl();
+            this.lci_SaveStudentData = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gc_StudentData = new DevExpress.XtraEditors.GroupControl();
+            this.lci_StudentData = new DevExpress.XtraLayout.LayoutControlItem();
             this.txt_FirstName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_MiddleName = new DevExpress.XtraEditors.TextEdit();
+            this.txt_LastName = new DevExpress.XtraEditors.TextEdit();
             this.txt_SchoolStudentId = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txt_EmailAddress = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.spinEdit_YearLevel = new DevExpress.XtraEditors.SpinEdit();
             this.cbe_Course = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.pictureEdit_StudentQRCode = new DevExpress.XtraEditors.PictureEdit();
-            this.btn_Browse = new DevExpress.XtraEditors.SimpleButton();
+            this.se_YearLevel = new DevExpress.XtraEditors.SpinEdit();
+            this.label_FirstName = new DevExpress.XtraEditors.LabelControl();
+            this.label_MiddleName = new DevExpress.XtraEditors.LabelControl();
+            this.label_LastName = new DevExpress.XtraEditors.LabelControl();
+            this.label_SchoolStudentId = new DevExpress.XtraEditors.LabelControl();
+            this.label_Course = new DevExpress.XtraEditors.LabelControl();
+            this.label_YearLevel = new DevExpress.XtraEditors.LabelControl();
+            this.label_EmailAddress = new DevExpress.XtraEditors.LabelControl();
+            this.pe_QRCode = new DevExpress.XtraEditors.PictureEdit();
+            this.btn_Generate = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Save = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Cancel = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.lc_AddStudent_Form)).BeginInit();
-            this.lc_AddStudent_Form.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lc_AddStudent)).BeginInit();
+            this.lc_AddStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl_StudentData)).BeginInit();
-            this.groupControl_StudentData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelBody_Right)).BeginInit();
-            this.panelBody_Right.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_LastName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_MiddleName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_SaveStudentData)).BeginInit();
+            this.panel_SaveStudentData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_SaveStudentData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_StudentData)).BeginInit();
+            this.gc_StudentData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_StudentData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_FirstName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MiddleName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_LastName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SchoolStudentId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_EmailAddress.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit_YearLevel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_Course.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit_StudentQRCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.se_YearLevel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pe_QRCode.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // lc_AddStudent_Form
+            // lc_AddStudent
             // 
-            this.lc_AddStudent_Form.Controls.Add(this.panelBody_Right);
-            this.lc_AddStudent_Form.Controls.Add(this.groupControl_StudentData);
-            this.lc_AddStudent_Form.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lc_AddStudent_Form.Location = new System.Drawing.Point(0, 0);
-            this.lc_AddStudent_Form.Name = "lc_AddStudent_Form";
-            this.lc_AddStudent_Form.Root = this.Root;
-            this.lc_AddStudent_Form.Size = new System.Drawing.Size(778, 529);
-            this.lc_AddStudent_Form.TabIndex = 0;
-            this.lc_AddStudent_Form.Text = "layoutControl1";
+            this.lc_AddStudent.Controls.Add(this.gc_StudentData);
+            this.lc_AddStudent.Controls.Add(this.panel_SaveStudentData);
+            this.lc_AddStudent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lc_AddStudent.Location = new System.Drawing.Point(0, 0);
+            this.lc_AddStudent.Name = "lc_AddStudent";
+            this.lc_AddStudent.Root = this.Root;
+            this.lc_AddStudent.Size = new System.Drawing.Size(663, 457);
+            this.lc_AddStudent.TabIndex = 0;
+            this.lc_AddStudent.Text = "layoutControl1";
             // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2});
+            this.lci_SaveStudentData,
+            this.lci_StudentData});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(778, 529);
+            this.Root.Size = new System.Drawing.Size(663, 457);
             this.Root.TextVisible = false;
             // 
-            // groupControl_StudentData
+            // panel_SaveStudentData
             // 
-            this.groupControl_StudentData.Controls.Add(this.cbe_Course);
-            this.groupControl_StudentData.Controls.Add(this.spinEdit_YearLevel);
-            this.groupControl_StudentData.Controls.Add(this.labelControl7);
-            this.groupControl_StudentData.Controls.Add(this.labelControl6);
-            this.groupControl_StudentData.Controls.Add(this.labelControl5);
-            this.groupControl_StudentData.Controls.Add(this.txt_EmailAddress);
-            this.groupControl_StudentData.Controls.Add(this.labelControl4);
-            this.groupControl_StudentData.Controls.Add(this.txt_SchoolStudentId);
-            this.groupControl_StudentData.Controls.Add(this.labelControl3);
-            this.groupControl_StudentData.Controls.Add(this.txt_FirstName);
-            this.groupControl_StudentData.Controls.Add(this.labelControl2);
-            this.groupControl_StudentData.Controls.Add(this.txt_MiddleName);
-            this.groupControl_StudentData.Controls.Add(this.labelControl1);
-            this.groupControl_StudentData.Controls.Add(this.txt_LastName);
-            this.groupControl_StudentData.Location = new System.Drawing.Point(16, 16);
-            this.groupControl_StudentData.Name = "groupControl_StudentData";
-            this.groupControl_StudentData.Size = new System.Drawing.Size(427, 497);
-            this.groupControl_StudentData.TabIndex = 4;
+            this.panel_SaveStudentData.Controls.Add(this.btn_Cancel);
+            this.panel_SaveStudentData.Controls.Add(this.btn_Save);
+            this.panel_SaveStudentData.Controls.Add(this.btn_Generate);
+            this.panel_SaveStudentData.Controls.Add(this.pe_QRCode);
+            this.panel_SaveStudentData.Location = new System.Drawing.Point(361, 16);
+            this.panel_SaveStudentData.Name = "panel_SaveStudentData";
+            this.panel_SaveStudentData.Size = new System.Drawing.Size(286, 425);
+            this.panel_SaveStudentData.TabIndex = 5;
             // 
-            // layoutControlItem1
+            // lci_SaveStudentData
             // 
-            this.layoutControlItem1.Control = this.groupControl_StudentData;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(433, 503);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
+            this.lci_SaveStudentData.Control = this.panel_SaveStudentData;
+            this.lci_SaveStudentData.Location = new System.Drawing.Point(345, 0);
+            this.lci_SaveStudentData.Name = "lci_SaveStudentData";
+            this.lci_SaveStudentData.Size = new System.Drawing.Size(292, 431);
+            this.lci_SaveStudentData.TextSize = new System.Drawing.Size(0, 0);
+            this.lci_SaveStudentData.TextVisible = false;
             // 
-            // panelBody_Right
+            // gc_StudentData
             // 
-            this.panelBody_Right.Controls.Add(this.btn_Cancel);
-            this.panelBody_Right.Controls.Add(this.btn_Save);
-            this.panelBody_Right.Controls.Add(this.btn_Browse);
-            this.panelBody_Right.Controls.Add(this.pictureEdit_StudentQRCode);
-            this.panelBody_Right.Location = new System.Drawing.Point(449, 16);
-            this.panelBody_Right.Name = "panelBody_Right";
-            this.panelBody_Right.Size = new System.Drawing.Size(313, 497);
-            this.panelBody_Right.TabIndex = 5;
+            this.gc_StudentData.Controls.Add(this.label_EmailAddress);
+            this.gc_StudentData.Controls.Add(this.label_YearLevel);
+            this.gc_StudentData.Controls.Add(this.label_Course);
+            this.gc_StudentData.Controls.Add(this.label_SchoolStudentId);
+            this.gc_StudentData.Controls.Add(this.label_LastName);
+            this.gc_StudentData.Controls.Add(this.label_MiddleName);
+            this.gc_StudentData.Controls.Add(this.label_FirstName);
+            this.gc_StudentData.Controls.Add(this.se_YearLevel);
+            this.gc_StudentData.Controls.Add(this.cbe_Course);
+            this.gc_StudentData.Controls.Add(this.txt_EmailAddress);
+            this.gc_StudentData.Controls.Add(this.txt_SchoolStudentId);
+            this.gc_StudentData.Controls.Add(this.txt_LastName);
+            this.gc_StudentData.Controls.Add(this.txt_MiddleName);
+            this.gc_StudentData.Controls.Add(this.txt_FirstName);
+            this.gc_StudentData.Location = new System.Drawing.Point(16, 16);
+            this.gc_StudentData.Name = "gc_StudentData";
+            this.gc_StudentData.Size = new System.Drawing.Size(339, 425);
+            this.gc_StudentData.TabIndex = 6;
+            this.gc_StudentData.Text = "Student Data";
             // 
-            // layoutControlItem2
+            // lci_StudentData
             // 
-            this.layoutControlItem2.Control = this.panelBody_Right;
-            this.layoutControlItem2.Location = new System.Drawing.Point(433, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(319, 503);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
-            // 
-            // txt_LastName
-            // 
-            this.txt_LastName.Location = new System.Drawing.Point(24, 78);
-            this.txt_LastName.Name = "txt_LastName";
-            this.txt_LastName.Size = new System.Drawing.Size(340, 34);
-            this.txt_LastName.TabIndex = 0;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(24, 59);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(58, 19);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Last Name";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(24, 117);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(72, 19);
-            this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Middle Name";
-            // 
-            // txt_MiddleName
-            // 
-            this.txt_MiddleName.Location = new System.Drawing.Point(24, 136);
-            this.txt_MiddleName.Name = "txt_MiddleName";
-            this.txt_MiddleName.Size = new System.Drawing.Size(340, 34);
-            this.txt_MiddleName.TabIndex = 2;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(24, 173);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(59, 19);
-            this.labelControl3.TabIndex = 5;
-            this.labelControl3.Text = "First Name";
+            this.lci_StudentData.Control = this.gc_StudentData;
+            this.lci_StudentData.Location = new System.Drawing.Point(0, 0);
+            this.lci_StudentData.Name = "lci_StudentData";
+            this.lci_StudentData.Size = new System.Drawing.Size(345, 431);
+            this.lci_StudentData.TextSize = new System.Drawing.Size(0, 0);
+            this.lci_StudentData.TextVisible = false;
             // 
             // txt_FirstName
             // 
-            this.txt_FirstName.Location = new System.Drawing.Point(24, 192);
+            this.txt_FirstName.Location = new System.Drawing.Point(15, 63);
             this.txt_FirstName.Name = "txt_FirstName";
-            this.txt_FirstName.Size = new System.Drawing.Size(340, 34);
-            this.txt_FirstName.TabIndex = 4;
+            this.txt_FirstName.Size = new System.Drawing.Size(302, 34);
+            this.txt_FirstName.TabIndex = 0;
             // 
-            // labelControl4
+            // txt_MiddleName
             // 
-            this.labelControl4.Location = new System.Drawing.Point(24, 229);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(50, 19);
-            this.labelControl4.TabIndex = 7;
-            this.labelControl4.Text = "School Id";
+            this.txt_MiddleName.Location = new System.Drawing.Point(16, 130);
+            this.txt_MiddleName.Name = "txt_MiddleName";
+            this.txt_MiddleName.Size = new System.Drawing.Size(301, 34);
+            this.txt_MiddleName.TabIndex = 1;
+            // 
+            // txt_LastName
+            // 
+            this.txt_LastName.Location = new System.Drawing.Point(16, 198);
+            this.txt_LastName.Name = "txt_LastName";
+            this.txt_LastName.Size = new System.Drawing.Size(301, 34);
+            this.txt_LastName.TabIndex = 2;
             // 
             // txt_SchoolStudentId
             // 
-            this.txt_SchoolStudentId.Location = new System.Drawing.Point(24, 248);
+            this.txt_SchoolStudentId.Location = new System.Drawing.Point(16, 258);
             this.txt_SchoolStudentId.Name = "txt_SchoolStudentId";
-            this.txt_SchoolStudentId.Size = new System.Drawing.Size(340, 34);
-            this.txt_SchoolStudentId.TabIndex = 6;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(24, 288);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(77, 19);
-            this.labelControl5.TabIndex = 9;
-            this.labelControl5.Text = "Email Address";
+            this.txt_SchoolStudentId.Size = new System.Drawing.Size(301, 34);
+            this.txt_SchoolStudentId.TabIndex = 3;
             // 
             // txt_EmailAddress
             // 
-            this.txt_EmailAddress.Location = new System.Drawing.Point(24, 307);
+            this.txt_EmailAddress.Location = new System.Drawing.Point(15, 375);
             this.txt_EmailAddress.Name = "txt_EmailAddress";
-            this.txt_EmailAddress.Size = new System.Drawing.Size(340, 34);
-            this.txt_EmailAddress.TabIndex = 8;
+            this.txt_EmailAddress.Size = new System.Drawing.Size(302, 34);
+            this.txt_EmailAddress.TabIndex = 4;
             // 
-            // labelControl6
+            // cbe_Course
             // 
-            this.labelControl6.Location = new System.Drawing.Point(24, 354);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(35, 19);
-            this.labelControl6.TabIndex = 11;
-            this.labelControl6.Text = "Couse";
+            this.cbe_Course.Location = new System.Drawing.Point(16, 317);
+            this.cbe_Course.Name = "cbe_Course";
+            this.cbe_Course.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_Course.Size = new System.Drawing.Size(140, 34);
+            this.cbe_Course.TabIndex = 6;
             // 
-            // labelControl7
+            // se_YearLevel
             // 
-            this.labelControl7.Location = new System.Drawing.Point(24, 416);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(56, 19);
-            this.labelControl7.TabIndex = 13;
-            this.labelControl7.Text = "Year Level";
-            // 
-            // spinEdit_YearLevel
-            // 
-            this.spinEdit_YearLevel.EditValue = new decimal(new int[] {
+            this.se_YearLevel.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.spinEdit_YearLevel.Location = new System.Drawing.Point(24, 442);
-            this.spinEdit_YearLevel.Name = "spinEdit_YearLevel";
-            this.spinEdit_YearLevel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.se_YearLevel.Location = new System.Drawing.Point(162, 317);
+            this.se_YearLevel.Name = "se_YearLevel";
+            this.se_YearLevel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit_YearLevel.Size = new System.Drawing.Size(340, 34);
-            this.spinEdit_YearLevel.TabIndex = 14;
+            this.se_YearLevel.Size = new System.Drawing.Size(155, 34);
+            this.se_YearLevel.TabIndex = 7;
             // 
-            // cbe_Course
+            // label_FirstName
             // 
-            this.cbe_Course.Location = new System.Drawing.Point(24, 380);
-            this.cbe_Course.Name = "cbe_Course";
-            this.cbe_Course.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbe_Course.Size = new System.Drawing.Size(340, 34);
-            this.cbe_Course.TabIndex = 15;
+            this.label_FirstName.Location = new System.Drawing.Point(15, 38);
+            this.label_FirstName.Name = "label_FirstName";
+            this.label_FirstName.Size = new System.Drawing.Size(59, 19);
+            this.label_FirstName.TabIndex = 8;
+            this.label_FirstName.Text = "First Name";
             // 
-            // pictureEdit_StudentQRCode
+            // label_MiddleName
             // 
-            this.pictureEdit_StudentQRCode.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureEdit_StudentQRCode.Location = new System.Drawing.Point(2, 2);
-            this.pictureEdit_StudentQRCode.Name = "pictureEdit_StudentQRCode";
-            this.pictureEdit_StudentQRCode.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit_StudentQRCode.Size = new System.Drawing.Size(309, 246);
-            this.pictureEdit_StudentQRCode.TabIndex = 0;
+            this.label_MiddleName.Location = new System.Drawing.Point(16, 105);
+            this.label_MiddleName.Name = "label_MiddleName";
+            this.label_MiddleName.Size = new System.Drawing.Size(72, 19);
+            this.label_MiddleName.TabIndex = 9;
+            this.label_MiddleName.Text = "Middle Name";
             // 
-            // btn_Browse
+            // label_LastName
             // 
-            this.btn_Browse.Location = new System.Drawing.Point(4, 258);
-            this.btn_Browse.Name = "btn_Browse";
-            this.btn_Browse.Size = new System.Drawing.Size(302, 39);
-            this.btn_Browse.TabIndex = 1;
-            this.btn_Browse.Text = "BROWSE";
+            this.label_LastName.Location = new System.Drawing.Point(15, 173);
+            this.label_LastName.Name = "label_LastName";
+            this.label_LastName.Size = new System.Drawing.Size(58, 19);
+            this.label_LastName.TabIndex = 10;
+            this.label_LastName.Text = "Last Name";
+            // 
+            // label_SchoolStudentId
+            // 
+            this.label_SchoolStudentId.Location = new System.Drawing.Point(16, 238);
+            this.label_SchoolStudentId.Name = "label_SchoolStudentId";
+            this.label_SchoolStudentId.Size = new System.Drawing.Size(51, 19);
+            this.label_SchoolStudentId.TabIndex = 11;
+            this.label_SchoolStudentId.Text = "School ID";
+            // 
+            // label_Course
+            // 
+            this.label_Course.Location = new System.Drawing.Point(15, 298);
+            this.label_Course.Name = "label_Course";
+            this.label_Course.Size = new System.Drawing.Size(39, 19);
+            this.label_Course.TabIndex = 12;
+            this.label_Course.Text = "Course";
+            // 
+            // label_YearLevel
+            // 
+            this.label_YearLevel.Location = new System.Drawing.Point(162, 298);
+            this.label_YearLevel.Name = "label_YearLevel";
+            this.label_YearLevel.Size = new System.Drawing.Size(56, 19);
+            this.label_YearLevel.TabIndex = 13;
+            this.label_YearLevel.Text = "Year Level";
+            // 
+            // label_EmailAddress
+            // 
+            this.label_EmailAddress.Location = new System.Drawing.Point(16, 351);
+            this.label_EmailAddress.Name = "label_EmailAddress";
+            this.label_EmailAddress.Size = new System.Drawing.Size(77, 19);
+            this.label_EmailAddress.TabIndex = 14;
+            this.label_EmailAddress.Text = "Email Address";
+            // 
+            // pe_QRCode
+            // 
+            this.pe_QRCode.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pe_QRCode.Location = new System.Drawing.Point(2, 2);
+            this.pe_QRCode.Name = "pe_QRCode";
+            this.pe_QRCode.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pe_QRCode.Size = new System.Drawing.Size(282, 230);
+            this.pe_QRCode.TabIndex = 0;
+            // 
+            // btn_Generate
+            // 
+            this.btn_Generate.Location = new System.Drawing.Point(5, 238);
+            this.btn_Generate.Name = "btn_Generate";
+            this.btn_Generate.Size = new System.Drawing.Size(276, 34);
+            this.btn_Generate.TabIndex = 1;
+            this.btn_Generate.Text = "GENERATE";
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(7, 387);
+            this.btn_Save.Location = new System.Drawing.Point(5, 336);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(302, 39);
+            this.btn_Save.Size = new System.Drawing.Size(276, 34);
             this.btn_Save.TabIndex = 2;
             this.btn_Save.Text = "SAVE";
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(7, 437);
+            this.btn_Cancel.Location = new System.Drawing.Point(5, 375);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(302, 39);
+            this.btn_Cancel.Size = new System.Drawing.Size(276, 34);
             this.btn_Cancel.TabIndex = 3;
             this.btn_Cancel.Text = "CANCEL";
             // 
@@ -295,57 +296,57 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 529);
-            this.Controls.Add(this.lc_AddStudent_Form);
+            this.ClientSize = new System.Drawing.Size(663, 457);
+            this.Controls.Add(this.lc_AddStudent);
             this.Name = "AddStudent_Form";
-            this.Text = "Student Registration Form";
-            ((System.ComponentModel.ISupportInitialize)(this.lc_AddStudent_Form)).EndInit();
-            this.lc_AddStudent_Form.ResumeLayout(false);
+            this.Text = "AddStudent_Form";
+            ((System.ComponentModel.ISupportInitialize)(this.lc_AddStudent)).EndInit();
+            this.lc_AddStudent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl_StudentData)).EndInit();
-            this.groupControl_StudentData.ResumeLayout(false);
-            this.groupControl_StudentData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelBody_Right)).EndInit();
-            this.panelBody_Right.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_LastName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_MiddleName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_SaveStudentData)).EndInit();
+            this.panel_SaveStudentData.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lci_SaveStudentData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_StudentData)).EndInit();
+            this.gc_StudentData.ResumeLayout(false);
+            this.gc_StudentData.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_StudentData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_FirstName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MiddleName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_LastName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SchoolStudentId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_EmailAddress.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit_YearLevel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_Course.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit_StudentQRCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.se_YearLevel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pe_QRCode.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraLayout.LayoutControl lc_AddStudent_Form;
+        private DevExpress.XtraLayout.LayoutControl lc_AddStudent;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraEditors.PanelControl panelBody_Right;
-        private DevExpress.XtraEditors.GroupControl groupControl_StudentData;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.SpinEdit spinEdit_YearLevel;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txt_EmailAddress;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit txt_SchoolStudentId;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit txt_FirstName;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txt_MiddleName;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.PanelControl panel_SaveStudentData;
+        private DevExpress.XtraLayout.LayoutControlItem lci_SaveStudentData;
+        private DevExpress.XtraEditors.GroupControl gc_StudentData;
+        private DevExpress.XtraLayout.LayoutControlItem lci_StudentData;
         private DevExpress.XtraEditors.TextEdit txt_LastName;
+        private DevExpress.XtraEditors.TextEdit txt_MiddleName;
+        private DevExpress.XtraEditors.TextEdit txt_FirstName;
+        private DevExpress.XtraEditors.LabelControl label_EmailAddress;
+        private DevExpress.XtraEditors.LabelControl label_YearLevel;
+        private DevExpress.XtraEditors.LabelControl label_Course;
+        private DevExpress.XtraEditors.LabelControl label_SchoolStudentId;
+        private DevExpress.XtraEditors.LabelControl label_LastName;
+        private DevExpress.XtraEditors.LabelControl label_MiddleName;
+        private DevExpress.XtraEditors.LabelControl label_FirstName;
+        private DevExpress.XtraEditors.SpinEdit se_YearLevel;
         private DevExpress.XtraEditors.ComboBoxEdit cbe_Course;
+        private DevExpress.XtraEditors.TextEdit txt_EmailAddress;
+        private DevExpress.XtraEditors.TextEdit txt_SchoolStudentId;
+        private DevExpress.XtraEditors.PictureEdit pe_QRCode;
         private DevExpress.XtraEditors.SimpleButton btn_Cancel;
         private DevExpress.XtraEditors.SimpleButton btn_Save;
-        private DevExpress.XtraEditors.SimpleButton btn_Browse;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit_StudentQRCode;
+        private DevExpress.XtraEditors.SimpleButton btn_Generate;
     }
 }
