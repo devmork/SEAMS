@@ -115,11 +115,11 @@
     <Compile Include="Forms\Reports\Reports_UserControl.Designer.cs">
       <DependentUpon>Reports_UserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Students\StudentAttendanceRecord_Form.cs">
+    <Compile Include="Forms\Students\AddStudent_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Students\StudentAttendanceRecord_Form.Designer.cs">
-      <DependentUpon>StudentAttendanceRecord_Form.cs</DependentUpon>
+    <Compile Include="Forms\Students\AddStudent_Form.Designer.cs">
+      <DependentUpon>AddStudent_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Students\Students_UserControl.cs">
       <SubType>UserControl</SubType>
@@ -151,8 +151,8 @@
     <EmbeddedResource Include="Forms\Reports\Reports_UserControl.resx">
       <DependentUpon>Reports_UserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Students\StudentAttendanceRecord_Form.resx">
-      <DependentUpon>StudentAttendanceRecord_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Students\AddStudent_Form.resx">
+      <DependentUpon>AddStudent_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Students\Students_UserControl.resx">
       <DependentUpon>Students_UserControl.cs</DependentUpon>
@@ -178,7 +178,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
