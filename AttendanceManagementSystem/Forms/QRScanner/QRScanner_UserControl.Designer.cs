@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.lc_QRScanner = new DevExpress.XtraLayout.LayoutControl();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.tabControl_QRScanner = new DevExpress.XtraTab.XtraTabControl();
+            this.tabPage_QRScanner = new DevExpress.XtraTab.XtraTabPage();
+            this.tabPage_ManualEntry = new DevExpress.XtraTab.XtraTabPage();
             this.panel_PageHeading = new DevExpress.XtraEditors.PanelControl();
             this.label_PageTitle = new DevExpress.XtraEditors.LabelControl();
             this.label_PageDescription = new DevExpress.XtraEditors.LabelControl();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lci_PageHeading = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tabControl_QRScanner = new DevExpress.XtraTab.XtraTabControl();
             this.lci_TabControl = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tabPage_QRScanner = new DevExpress.XtraTab.XtraTabPage();
-            this.tabPage_ManualEntry = new DevExpress.XtraTab.XtraTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.lc_QRScanner)).BeginInit();
             this.lc_QRScanner.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).BeginInit();
-            this.panel_PageHeading.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl_QRScanner)).BeginInit();
             this.tabControl_QRScanner.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).BeginInit();
+            this.panel_PageHeading.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_TabControl)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,16 +61,34 @@
             this.lc_QRScanner.TabIndex = 0;
             this.lc_QRScanner.Text = "layoutControl1";
             // 
-            // Root
+            // tabControl_QRScanner
             // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.lci_PageHeading,
-            this.lci_TabControl});
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1038, 768);
-            this.Root.TextVisible = false;
+            this.tabControl_QRScanner.Appearance.Options.UseTextOptions = true;
+            this.tabControl_QRScanner.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.tabControl_QRScanner.AppearancePage.Header.Options.UseTextOptions = true;
+            this.tabControl_QRScanner.AppearancePage.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.tabControl_QRScanner.Location = new System.Drawing.Point(16, 152);
+            this.tabControl_QRScanner.MultiLine = DevExpress.Utils.DefaultBoolean.True;
+            this.tabControl_QRScanner.Name = "tabControl_QRScanner";
+            this.tabControl_QRScanner.SelectedTabPage = this.tabPage_QRScanner;
+            this.tabControl_QRScanner.Size = new System.Drawing.Size(1006, 600);
+            this.tabControl_QRScanner.TabIndex = 8;
+            this.tabControl_QRScanner.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabPage_QRScanner,
+            this.tabPage_ManualEntry});
+            // 
+            // tabPage_QRScanner
+            // 
+            this.tabPage_QRScanner.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.tabPage_QRScanner.Name = "tabPage_QRScanner";
+            this.tabPage_QRScanner.Size = new System.Drawing.Size(1004, 569);
+            this.tabPage_QRScanner.Text = "QR Scanner";
+            // 
+            // tabPage_ManualEntry
+            // 
+            this.tabPage_ManualEntry.Name = "tabPage_ManualEntry";
+            this.tabPage_ManualEntry.Size = new System.Drawing.Size(1004, 569);
+            this.tabPage_ManualEntry.Text = "Manual Entry";
             // 
             // panel_PageHeading
             // 
@@ -108,6 +126,17 @@
             this.label_PageDescription.TabIndex = 1;
             this.label_PageDescription.Text = "Record attendance by scanning student QR codes.";
             // 
+            // Root
+            // 
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.lci_PageHeading,
+            this.lci_TabControl});
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(1038, 768);
+            this.Root.TextVisible = false;
+            // 
             // lci_PageHeading
             // 
             this.lci_PageHeading.Control = this.panel_PageHeading;
@@ -120,20 +149,6 @@
             this.lci_PageHeading.TextSize = new System.Drawing.Size(0, 0);
             this.lci_PageHeading.TextVisible = false;
             // 
-            // tabControl_QRScanner
-            // 
-            this.tabControl_QRScanner.Appearance.Options.UseTextOptions = true;
-            this.tabControl_QRScanner.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tabControl_QRScanner.Location = new System.Drawing.Point(16, 152);
-            this.tabControl_QRScanner.MultiLine = DevExpress.Utils.DefaultBoolean.True;
-            this.tabControl_QRScanner.Name = "tabControl_QRScanner";
-            this.tabControl_QRScanner.SelectedTabPage = this.tabPage_QRScanner;
-            this.tabControl_QRScanner.Size = new System.Drawing.Size(1006, 600);
-            this.tabControl_QRScanner.TabIndex = 8;
-            this.tabControl_QRScanner.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.tabPage_QRScanner,
-            this.tabPage_ManualEntry});
-            // 
             // lci_TabControl
             // 
             this.lci_TabControl.Control = this.tabControl_QRScanner;
@@ -142,19 +157,6 @@
             this.lci_TabControl.Size = new System.Drawing.Size(1012, 606);
             this.lci_TabControl.TextSize = new System.Drawing.Size(0, 0);
             this.lci_TabControl.TextVisible = false;
-            // 
-            // tabPage_QRScanner
-            // 
-            this.tabPage_QRScanner.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tabPage_QRScanner.Name = "tabPage_QRScanner";
-            this.tabPage_QRScanner.Size = new System.Drawing.Size(1004, 569);
-            this.tabPage_QRScanner.Text = "QR Scanner";
-            // 
-            // tabPage_ManualEntry
-            // 
-            this.tabPage_ManualEntry.Name = "tabPage_ManualEntry";
-            this.tabPage_ManualEntry.Size = new System.Drawing.Size(1004, 569);
-            this.tabPage_ManualEntry.Text = "Manual Entry";
             // 
             // QRScanner_UserControl
             // 
@@ -165,13 +167,13 @@
             this.Size = new System.Drawing.Size(1038, 768);
             ((System.ComponentModel.ISupportInitialize)(this.lc_QRScanner)).EndInit();
             this.lc_QRScanner.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl_QRScanner)).EndInit();
+            this.tabControl_QRScanner.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).EndInit();
             this.panel_PageHeading.ResumeLayout(false);
             this.panel_PageHeading.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabControl_QRScanner)).EndInit();
-            this.tabControl_QRScanner.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lci_TabControl)).EndInit();
             this.ResumeLayout(false);
 
