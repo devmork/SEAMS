@@ -6,6 +6,7 @@ using DevExpress.UserSkins;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using AttendanceManagementSystem.Forms;
+using AttendanceManagementSystem.Forms.Students;
 
 namespace AttendanceManagementSystem {
     static class Program {
