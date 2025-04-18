@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace AttendanceManagementSystem.Models.Base
 {
-    public class Student
+    public class Person
     {
+        public int PersonId { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
-        public int SchoolStudentId { get; set; }
-        public int YearLevel { get; set; }
-        public string Course { get; set; }
-        public byte[] QRCode { get; set; }
 
+        public Person(string firstName, string middleName, string lastName)
+        {
+            FirstName = firstName;
+            MiddleName = middleName;
+            LastName = lastName;
+        }
     }
 }
