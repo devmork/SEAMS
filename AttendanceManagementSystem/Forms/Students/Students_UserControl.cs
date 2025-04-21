@@ -34,7 +34,7 @@ namespace AttendanceManagementSystem.Forms.Students
                 {
                     while (reader.Read())
                     {
-                        // Assuming the Student constructor requires specific parameters, update the instantiation accordingly.  
+                        // DILI PAKO KABALO UNSAON PAGSHOW SA QRCODE IMAGE SA TABLE, AKONG DB PUD DILI NA MUSHOW UG DATA PERO MAKA ADD RA  
                         list.Add(new Student
                         (
                             reader["FirstName"].ToString(),
@@ -44,10 +44,9 @@ namespace AttendanceManagementSystem.Forms.Students
                             reader.GetInt32(reader.GetOrdinal("YearLevel")),
                             reader["Course"].ToString(),
                             reader["Email"].ToString()
+                            //QRImage = reader["QRImage"] as byte[]
                         )
-                        {
-                            
-                        });
+                        );
                     }
                 }
             }
