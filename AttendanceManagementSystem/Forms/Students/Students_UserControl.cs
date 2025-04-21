@@ -14,12 +14,13 @@ using DevExpress.XtraGrid;
 
 namespace AttendanceManagementSystem.Forms.Students
 {
-	public partial class Students_UserControl: DevExpress.XtraEditors.XtraUserControl
-	{
+    public partial class Students_UserControl : DevExpress.XtraEditors.XtraUserControl
+    {
         public Students_UserControl()
-		{
+        {
             InitializeComponent();
-		}
+        }
+
         public BindingList<Student> GetStudentsFromDatabase()
         {
             var list = new BindingList<Student>();
@@ -27,22 +28,25 @@ namespace AttendanceManagementSystem.Forms.Students
             using (var conn = new SQLiteConnection("Data Source=SEAMS_DB.db;Version=3;"))
             {
                 conn.Open();
-                string query = "SELECT FullName, MiddleName, LastName, SchoolID, Course, YearLevel, Email, QRImage FROM Students";
+                string query = "SELECT FirstName, MiddleName, LastName, SchoolID, Course, YearLevel, Email, QRImage FROM Students";
                 using (var cmd = new SQLiteCommand(query, conn))
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
+                        // Assuming the Student constructor requires specific parameters, update the instantiation accordingly.  
                         list.Add(new Student
+                        (
+                            reader["FirstName"].ToString(),
+                            reader["MiddleName"].ToString(),
+                            reader["LastName"].ToString(),
+                            reader["SchoolID"].ToString(),
+                            reader.GetInt32(reader.GetOrdinal("YearLevel")),
+                            reader["Course"].ToString(),
+                            reader["Email"].ToString()
+                        )
                         {
-                            FullName = reader["FullName"].ToString(),
-                            MiddleName = reader["MiddleName"].ToString(),
-                            LastName = reader["LastName"].ToString(),
-                            SchoolID = reader["SchoolID"].ToString(),
-                            Course = reader["Course"].ToString(),
-                            YearLevel = reader.GetInt32(reader.GetOrdinal("YearLevel")),
-                            Email = reader["Email"].ToString(),
-                            QRImage = reader["QRImage"] as byte[]
+                            
                         });
                     }
                 }
@@ -55,7 +59,7 @@ namespace AttendanceManagementSystem.Forms.Students
 
         private void LoadStudents()
         {
-            students = GetStudentsFromDatabase();
+            var students = GetStudentsFromDatabase();
             gc_Students.DataSource = students;
         }
 

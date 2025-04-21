@@ -38,6 +38,14 @@
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lci_PageHeading = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_GridControlStudents = new DevExpress.XtraLayout.LayoutControlItem();
+            this.FirstName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MiddleName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LastName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SchoolID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Course = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.YearLevel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Email = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.QRImage = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Students)).BeginInit();
             this.lc_Students.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).BeginInit();
@@ -138,6 +146,15 @@
             // 
             // gv_Students
             // 
+            this.gv_Students.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.FirstName,
+            this.MiddleName,
+            this.LastName,
+            this.SchoolID,
+            this.Course,
+            this.YearLevel,
+            this.Email,
+            this.QRImage});
             this.gv_Students.DetailHeight = 461;
             this.gv_Students.GridControl = this.gc_Students;
             this.gv_Students.Name = "gv_Students";
@@ -177,6 +194,86 @@
             this.lci_GridControlStudents.TextSize = new System.Drawing.Size(0, 0);
             this.lci_GridControlStudents.TextVisible = false;
             // 
+            // FirstName
+            // 
+            this.FirstName.Caption = "First Name";
+            this.FirstName.FieldName = "FirstName";
+            this.FirstName.MinWidth = 25;
+            this.FirstName.Name = "FirstName";
+            this.FirstName.Visible = true;
+            this.FirstName.VisibleIndex = 0;
+            this.FirstName.Width = 86;
+            // 
+            // MiddleName
+            // 
+            this.MiddleName.Caption = "Middle Name";
+            this.MiddleName.FieldName = "MiddleName";
+            this.MiddleName.MinWidth = 25;
+            this.MiddleName.Name = "MiddleName";
+            this.MiddleName.Visible = true;
+            this.MiddleName.VisibleIndex = 1;
+            this.MiddleName.Width = 86;
+            // 
+            // LastName
+            // 
+            this.LastName.Caption = "Last Name";
+            this.LastName.FieldName = "LastName";
+            this.LastName.MinWidth = 25;
+            this.LastName.Name = "LastName";
+            this.LastName.Visible = true;
+            this.LastName.VisibleIndex = 2;
+            this.LastName.Width = 86;
+            // 
+            // SchoolID
+            // 
+            this.SchoolID.Caption = "School ID";
+            this.SchoolID.FieldName = "SchoolID";
+            this.SchoolID.MinWidth = 25;
+            this.SchoolID.Name = "SchoolID";
+            this.SchoolID.Visible = true;
+            this.SchoolID.VisibleIndex = 3;
+            this.SchoolID.Width = 86;
+            // 
+            // Course
+            // 
+            this.Course.Caption = "Course";
+            this.Course.FieldName = "Course";
+            this.Course.MinWidth = 25;
+            this.Course.Name = "Course";
+            this.Course.Visible = true;
+            this.Course.VisibleIndex = 4;
+            this.Course.Width = 86;
+            // 
+            // YearLevel
+            // 
+            this.YearLevel.Caption = "Year Level";
+            this.YearLevel.FieldName = "YearLevel";
+            this.YearLevel.MinWidth = 25;
+            this.YearLevel.Name = "YearLevel";
+            this.YearLevel.Visible = true;
+            this.YearLevel.VisibleIndex = 5;
+            this.YearLevel.Width = 86;
+            // 
+            // Email
+            // 
+            this.Email.Caption = "Email";
+            this.Email.FieldName = "Email";
+            this.Email.MinWidth = 25;
+            this.Email.Name = "Email";
+            this.Email.Visible = true;
+            this.Email.VisibleIndex = 6;
+            this.Email.Width = 86;
+            // 
+            // QRImage
+            // 
+            this.QRImage.Caption = "QR Code";
+            this.QRImage.FieldName = "QRImage";
+            this.QRImage.MinWidth = 25;
+            this.QRImage.Name = "QRImage";
+            this.QRImage.Visible = true;
+            this.QRImage.VisibleIndex = 7;
+            this.QRImage.Width = 86;
+            // 
             // Students_UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
@@ -211,5 +308,13 @@
         private DevExpress.XtraGrid.GridControl gc_Students;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_Students;
         private DevExpress.XtraLayout.LayoutControlItem lci_GridControlStudents;
+        private DevExpress.XtraGrid.Columns.GridColumn FirstName;
+        private DevExpress.XtraGrid.Columns.GridColumn MiddleName;
+        private DevExpress.XtraGrid.Columns.GridColumn LastName;
+        private DevExpress.XtraGrid.Columns.GridColumn SchoolID;
+        private DevExpress.XtraGrid.Columns.GridColumn Course;
+        private DevExpress.XtraGrid.Columns.GridColumn YearLevel;
+        private DevExpress.XtraGrid.Columns.GridColumn Email;
+        private DevExpress.XtraGrid.Columns.GridColumn QRImage;
     }
 }

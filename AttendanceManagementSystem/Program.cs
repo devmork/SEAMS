@@ -8,16 +8,19 @@ using DevExpress.LookAndFeel;
 using AttendanceManagementSystem.Forms;
 using AttendanceManagementSystem.Forms.Students;
 
-namespace AttendanceManagementSystem {
-    static class Program {
+namespace AttendanceManagementSystem
+{
+    static class Program
+    {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main() {
+        static void Main()
+        {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddStudent_Form());
+            Application.Run(new MainForm());
         }
     }
 }
