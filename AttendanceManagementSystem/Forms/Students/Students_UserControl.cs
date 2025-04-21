@@ -17,5 +17,11 @@ namespace AttendanceManagementSystem.Forms.Students
 		{
             InitializeComponent();
 		}
-	}
+
+        private void btn_AddStudent_Click(object sender, EventArgs e)
+        {
+            AddStudent_Form addStudent_Form = new AddStudent_Form();
+            addStudent_Form.ShowDialog();
+        }
+    }
 }

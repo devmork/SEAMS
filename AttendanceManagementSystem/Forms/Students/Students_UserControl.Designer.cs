@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.lc_Students = new DevExpress.XtraLayout.LayoutControl();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.panel_PageHeading = new DevExpress.XtraEditors.PanelControl();
             this.label_PageTitle = new DevExpress.XtraEditors.LabelControl();
             this.btn_AddStudent = new DevExpress.XtraEditors.SimpleButton();
             this.label_PageDescription = new DevExpress.XtraEditors.LabelControl();
-            this.lci_PageHeading = new DevExpress.XtraLayout.LayoutControlItem();
             this.gc_Students = new DevExpress.XtraGrid.GridControl();
             this.gv_Students = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.lci_PageHeading = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_GridControlStudents = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Students)).BeginInit();
             this.lc_Students.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).BeginInit();
             this.panel_PageHeading.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Students)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Students)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_GridControlStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,17 +60,6 @@
             this.lc_Students.Size = new System.Drawing.Size(1038, 768);
             this.lc_Students.TabIndex = 0;
             this.lc_Students.Text = "layoutControl1";
-            // 
-            // Root
-            // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.lci_PageHeading,
-            this.lci_GridControlStudents});
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1038, 768);
-            this.Root.TextVisible = false;
             // 
             // panel_PageHeading
             // 
@@ -117,6 +106,7 @@
             this.btn_AddStudent.Size = new System.Drawing.Size(235, 48);
             this.btn_AddStudent.TabIndex = 2;
             this.btn_AddStudent.Text = "Add Student";
+            this.btn_AddStudent.Click += new System.EventHandler(this.btn_AddStudent_Click);
             // 
             // label_PageDescription
             // 
@@ -130,18 +120,6 @@
             this.label_PageDescription.Size = new System.Drawing.Size(311, 28);
             this.label_PageDescription.TabIndex = 1;
             this.label_PageDescription.Text = "View and manage student information.";
-            // 
-            // lci_PageHeading
-            // 
-            this.lci_PageHeading.Control = this.panel_PageHeading;
-            this.lci_PageHeading.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lci_PageHeading.CustomizationFormText = "layoutControlItem1";
-            this.lci_PageHeading.Location = new System.Drawing.Point(0, 0);
-            this.lci_PageHeading.Name = "lci_PageHeading";
-            this.lci_PageHeading.Size = new System.Drawing.Size(1012, 104);
-            this.lci_PageHeading.Text = "layoutControlItem1";
-            this.lci_PageHeading.TextSize = new System.Drawing.Size(0, 0);
-            this.lci_PageHeading.TextVisible = false;
             // 
             // gc_Students
             // 
@@ -158,6 +136,29 @@
             this.gv_Students.GridControl = this.gc_Students;
             this.gv_Students.Name = "gv_Students";
             // 
+            // Root
+            // 
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.lci_PageHeading,
+            this.lci_GridControlStudents});
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(1038, 768);
+            this.Root.TextVisible = false;
+            // 
+            // lci_PageHeading
+            // 
+            this.lci_PageHeading.Control = this.panel_PageHeading;
+            this.lci_PageHeading.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lci_PageHeading.CustomizationFormText = "layoutControlItem1";
+            this.lci_PageHeading.Location = new System.Drawing.Point(0, 0);
+            this.lci_PageHeading.Name = "lci_PageHeading";
+            this.lci_PageHeading.Size = new System.Drawing.Size(1012, 104);
+            this.lci_PageHeading.Text = "layoutControlItem1";
+            this.lci_PageHeading.TextSize = new System.Drawing.Size(0, 0);
+            this.lci_PageHeading.TextVisible = false;
+            // 
             // lci_GridControlStudents
             // 
             this.lci_GridControlStudents.Control = this.gc_Students;
@@ -166,7 +167,6 @@
             this.lci_GridControlStudents.Location = new System.Drawing.Point(0, 104);
             this.lci_GridControlStudents.Name = "lci_GridControlStudents";
             this.lci_GridControlStudents.Size = new System.Drawing.Size(1012, 638);
-            this.lci_GridControlStudents.Text = "lci_GridControlStudents";
             this.lci_GridControlStudents.TextSize = new System.Drawing.Size(0, 0);
             this.lci_GridControlStudents.TextVisible = false;
             // 
@@ -179,13 +179,13 @@
             this.Size = new System.Drawing.Size(1038, 768);
             ((System.ComponentModel.ISupportInitialize)(this.lc_Students)).EndInit();
             this.lc_Students.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).EndInit();
             this.panel_PageHeading.ResumeLayout(false);
             this.panel_PageHeading.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Students)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Students)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_GridControlStudents)).EndInit();
             this.ResumeLayout(false);
 
