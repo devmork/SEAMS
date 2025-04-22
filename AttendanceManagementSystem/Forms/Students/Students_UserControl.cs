@@ -20,15 +20,14 @@ namespace AttendanceManagementSystem.Forms.Students
         {
             InitializeComponent();
         }
-
         public BindingList<Student> GetStudentsFromDatabase()
         {
             var list = new BindingList<Student>();
 
-            using (var conn = new SQLiteConnection("Data Source=SEAMS_DB.db;Version=3;"))
+            using (var conn = new SQLiteConnection(@"Data Source=Data\SEAMS.db;Version=3;"))
             {
                 conn.Open();
-                string query = "SELECT FirstName, MiddleName, LastName, SchoolID, Course, YearLevel, Email, QRImage FROM Students";
+                string query = "SELECT FirstName, MiddleName, LastName, SchoolStudentId, Course, YearLevel, Email, QRCode FROM Student";
                 using (var cmd = new SQLiteCommand(query, conn))
                 using (var reader = cmd.ExecuteReader())
                 {

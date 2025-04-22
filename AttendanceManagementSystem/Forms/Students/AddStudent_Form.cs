@@ -26,7 +26,9 @@ namespace AttendanceManagementSystem.Forms.Students
         }
 
         private Student student;
-        private string connectionString = @"Data Source=Data\SEAMS_DB.db;Version=3;";
+        //private string connectionString = @"Data Source=.\Data\SEAMS.db;Version=3;";
+        private string connectionString = @"Data Source=.\Data\SEAMS.db;Version=3;Journal Mode=WAL;";
+
         private void btn_Generate_Click(object sender, EventArgs e)
         {
             try
@@ -63,7 +65,7 @@ namespace AttendanceManagementSystem.Forms.Students
                 XtraMessageBox.Show("Please generate a QR code before saving.");
                 return;
             }
-
+            
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
@@ -71,19 +73,20 @@ namespace AttendanceManagementSystem.Forms.Students
                              (FirstName, MiddleName, LastName, SchoolStudentId, Course, YearLevel, Email, QRCode)
                              VALUES (@FirstName, @MiddleName, @LastName, @SchoolStudentId, @Course, @YearLevel, @Email, @QRCode)";
 
-                using (SQLiteCommand cmd = new SQLiteCommand(sql, connection))
-                {
-                    cmd.Parameters.AddWithValue("@FirstName", student.FirstName);
-                    cmd.Parameters.AddWithValue("@MiddleName", student.MiddleName);
-                    cmd.Parameters.AddWithValue("@LastName", student.LastName);
-                    cmd.Parameters.AddWithValue("@SchoolStudentId", student.SchoolStudentId);
-                    cmd.Parameters.AddWithValue("@Course", student.Course);
-                    cmd.Parameters.AddWithValue("@YearLevel", student.YearLevel);
-                    cmd.Parameters.AddWithValue("@Email", student.Email);
-                    cmd.Parameters.AddWithValue("@QRCode", student.QRCode.QRCodeValue);
-                    cmd.ExecuteNonQuery();
-                }
+                SQLiteCommand cmd = new SQLiteCommand(sql, connection);
+
+                cmd.Parameters.AddWithValue("@FirstName", student.FirstName);
+                cmd.Parameters.AddWithValue("@MiddleName", student.MiddleName);
+                cmd.Parameters.AddWithValue("@LastName", student.LastName);
+                cmd.Parameters.AddWithValue("@SchoolStudentId", student.SchoolStudentId);
+                cmd.Parameters.AddWithValue("@Course", student.Course);
+                cmd.Parameters.AddWithValue("@YearLevel", student.YearLevel);
+                cmd.Parameters.AddWithValue("@Email", student.Email);
+                cmd.Parameters.AddWithValue("@QRCode", student.QRCode.QRCodeValue);
+                cmd.ExecuteNonQuery();
+                
             }
+
             XtraMessageBox.Show("Student data saved successfully!");
 
         }
