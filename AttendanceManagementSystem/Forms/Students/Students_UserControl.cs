@@ -45,7 +45,7 @@ namespace AttendanceManagementSystem.Forms.Students
                             reader["Email"].ToString()
                         )
                         {
-                            
+
                         });
                     }
                 }
@@ -60,7 +60,7 @@ namespace AttendanceManagementSystem.Forms.Students
         {
             var students = GetStudentsFromDatabase();
             gc_Students.DataSource = students;
-        }
+        //}
 
         private void btn_AddStudent_Click(object sender, EventArgs e)
         {
@@ -70,7 +70,7 @@ namespace AttendanceManagementSystem.Forms.Students
 
         private void gc_Students_Load(object sender, EventArgs e)
         {
-            LoadStudents();
+            //LoadStudents();
         }
     }
 }
