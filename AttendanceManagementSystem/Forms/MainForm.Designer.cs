@@ -100,7 +100,7 @@
             // 
             // btn_AllEvents
             // 
-            this.btn_AllEvents.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Attendance.ImageOptions.SvgImage")));
+            this.btn_AllEvents.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_AllEvents.ImageOptions.SvgImage")));
             this.btn_AllEvents.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
             this.btn_AllEvents.Name = "btn_AllEvents";
             this.btn_AllEvents.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -108,7 +108,7 @@
             // 
             // btn_AllStudents
             // 
-            this.btn_AllStudents.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Students.ImageOptions.SvgImage")));
+            this.btn_AllStudents.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_AllStudents.ImageOptions.SvgImage")));
             this.btn_AllStudents.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
             this.btn_AllStudents.Name = "btn_AllStudents";
             this.btn_AllStudents.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -130,7 +130,7 @@
             // 
             // btn_Attendance
             // 
-            this.btn_Attendance.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Reports.ImageOptions.SvgImage")));
+            this.btn_Attendance.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Attendance.ImageOptions.SvgImage")));
             this.btn_Attendance.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
             this.btn_Attendance.Name = "btn_Attendance";
             this.btn_Attendance.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;

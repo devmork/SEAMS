@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace AttendanceManagementSystem.Forms.Events
 {
-	public partial class AddAttendance_Form: DevExpress.XtraEditors.XtraForm
+	public partial class AddEvent_Form: DevExpress.XtraEditors.XtraForm
 	{
-        public AddAttendance_Form()
+        public AddEvent_Form()
 		{
             InitializeComponent();
 		}
