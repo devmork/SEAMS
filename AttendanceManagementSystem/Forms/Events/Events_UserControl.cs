@@ -11,11 +11,11 @@ using DevExpress.XtraEditors;
 
 namespace AttendanceManagementSystem.Forms.Attendance
 {
-	public partial class Attendance_UserControl: DevExpress.XtraEditors.XtraUserControl
+	public partial class Events_UserControl: DevExpress.XtraEditors.XtraUserControl
 	{
-        public Attendance_UserControl()
+        public Events_UserControl()
 		{
             InitializeComponent();
 		}
-	}
+    }
 }
