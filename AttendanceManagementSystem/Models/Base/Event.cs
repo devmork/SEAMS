@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AttendanceManagementSystem.Models.Base
 {
-    public class Event
+    public abstract class Event
     {
         public Guid EventId { get; set; }
         public string Title { get; set; }
