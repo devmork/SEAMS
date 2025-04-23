@@ -35,9 +35,6 @@
             this.label_PageDescription = new DevExpress.XtraEditors.LabelControl();
             this.gc_Students = new DevExpress.XtraGrid.GridControl();
             this.gv_Students = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.lci_PageHeading = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lci_GridControlStudents = new DevExpress.XtraLayout.LayoutControlItem();
             this.FirstName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MiddleName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LastName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,6 +43,9 @@
             this.YearLevel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Email = new DevExpress.XtraGrid.Columns.GridColumn();
             this.QRImage = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.lci_PageHeading = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lci_GridControlStudents = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Students)).BeginInit();
             this.lc_Students.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).BeginInit();
@@ -63,10 +63,9 @@
             this.lc_Students.Controls.Add(this.gc_Students);
             this.lc_Students.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lc_Students.Location = new System.Drawing.Point(0, 0);
-            this.lc_Students.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lc_Students.Name = "lc_Students";
             this.lc_Students.Root = this.Root;
-            this.lc_Students.Size = new System.Drawing.Size(1186, 1011);
+            this.lc_Students.Size = new System.Drawing.Size(1038, 768);
             this.lc_Students.TabIndex = 0;
             this.lc_Students.Text = "layoutControl1";
             // 
@@ -75,10 +74,9 @@
             this.panel_PageHeading.Controls.Add(this.label_PageTitle);
             this.panel_PageHeading.Controls.Add(this.btn_AddStudent);
             this.panel_PageHeading.Controls.Add(this.label_PageDescription);
-            this.panel_PageHeading.Location = new System.Drawing.Point(18, 21);
-            this.panel_PageHeading.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel_PageHeading.Location = new System.Drawing.Point(14, 12);
             this.panel_PageHeading.Name = "panel_PageHeading";
-            this.panel_PageHeading.Size = new System.Drawing.Size(1150, 129);
+            this.panel_PageHeading.Size = new System.Drawing.Size(1010, 101);
             this.panel_PageHeading.TabIndex = 7;
             // 
             // label_PageTitle
@@ -88,12 +86,12 @@
             this.label_PageTitle.Appearance.Font = new System.Drawing.Font("Poppins", 17.71F, System.Drawing.FontStyle.Bold);
             this.label_PageTitle.Appearance.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.label_PageTitle.Appearance.Options.UseFont = true;
-            this.label_PageTitle.Location = new System.Drawing.Point(35, 22);
-            this.label_PageTitle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label_PageTitle.Location = new System.Drawing.Point(31, 17);
+            this.label_PageTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label_PageTitle.Name = "label_PageTitle";
-            this.label_PageTitle.Size = new System.Drawing.Size(138, 53);
+            this.label_PageTitle.Size = new System.Drawing.Size(147, 42);
             this.label_PageTitle.TabIndex = 0;
-            this.label_PageTitle.Text = "Students";
+            this.label_PageTitle.Text = "All Students";
             // 
             // btn_AddStudent
             // 
@@ -109,11 +107,11 @@
             this.btn_AddStudent.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btn_AddStudent.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btn_AddStudent.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            this.btn_AddStudent.Location = new System.Drawing.Point(867, 33);
+            this.btn_AddStudent.Location = new System.Drawing.Point(762, 25);
             this.btn_AddStudent.Margin = new System.Windows.Forms.Padding(0);
             this.btn_AddStudent.Name = "btn_AddStudent";
-            this.btn_AddStudent.Padding = new System.Windows.Forms.Padding(23, 0, 23, 0);
-            this.btn_AddStudent.Size = new System.Drawing.Size(269, 63);
+            this.btn_AddStudent.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.btn_AddStudent.Size = new System.Drawing.Size(235, 50);
             this.btn_AddStudent.TabIndex = 2;
             this.btn_AddStudent.Text = "Add Student";
             this.btn_AddStudent.Click += new System.EventHandler(this.btn_AddStudent_Click);
@@ -124,21 +122,19 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label_PageDescription.Appearance.Font = new System.Drawing.Font("Poppins", 12F);
             this.label_PageDescription.Appearance.Options.UseFont = true;
-            this.label_PageDescription.Location = new System.Drawing.Point(35, 70);
-            this.label_PageDescription.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label_PageDescription.Location = new System.Drawing.Point(31, 53);
+            this.label_PageDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.label_PageDescription.Name = "label_PageDescription";
-            this.label_PageDescription.Size = new System.Drawing.Size(387, 36);
+            this.label_PageDescription.Size = new System.Drawing.Size(319, 28);
             this.label_PageDescription.TabIndex = 1;
-            this.label_PageDescription.Text = "View and manage student information.";
+            this.label_PageDescription.Text = "View and manage students information.";
             // 
             // gc_Students
             // 
-            this.gc_Students.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.gc_Students.Location = new System.Drawing.Point(18, 158);
+            this.gc_Students.Location = new System.Drawing.Point(14, 117);
             this.gc_Students.MainView = this.gv_Students;
-            this.gc_Students.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gc_Students.Name = "gc_Students";
-            this.gc_Students.Size = new System.Drawing.Size(1150, 832);
+            this.gc_Students.Size = new System.Drawing.Size(1010, 639);
             this.gc_Students.TabIndex = 8;
             this.gc_Students.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Students});
@@ -155,10 +151,80 @@
             this.YearLevel,
             this.Email,
             this.QRImage});
-            this.gv_Students.DetailHeight = 461;
             this.gv_Students.GridControl = this.gc_Students;
             this.gv_Students.Name = "gv_Students";
-            this.gv_Students.OptionsEditForm.PopupEditFormWidth = 914;
+            // 
+            // FirstName
+            // 
+            this.FirstName.Caption = "First Name";
+            this.FirstName.FieldName = "FirstName";
+            this.FirstName.MinWidth = 22;
+            this.FirstName.Name = "FirstName";
+            this.FirstName.Visible = true;
+            this.FirstName.VisibleIndex = 0;
+            // 
+            // MiddleName
+            // 
+            this.MiddleName.Caption = "Middle Name";
+            this.MiddleName.FieldName = "MiddleName";
+            this.MiddleName.MinWidth = 22;
+            this.MiddleName.Name = "MiddleName";
+            this.MiddleName.Visible = true;
+            this.MiddleName.VisibleIndex = 1;
+            // 
+            // LastName
+            // 
+            this.LastName.Caption = "Last Name";
+            this.LastName.FieldName = "LastName";
+            this.LastName.MinWidth = 22;
+            this.LastName.Name = "LastName";
+            this.LastName.Visible = true;
+            this.LastName.VisibleIndex = 2;
+            // 
+            // SchoolID
+            // 
+            this.SchoolID.Caption = "School ID";
+            this.SchoolID.FieldName = "SchoolID";
+            this.SchoolID.MinWidth = 22;
+            this.SchoolID.Name = "SchoolID";
+            this.SchoolID.Visible = true;
+            this.SchoolID.VisibleIndex = 3;
+            // 
+            // Course
+            // 
+            this.Course.Caption = "Course";
+            this.Course.FieldName = "Course";
+            this.Course.MinWidth = 22;
+            this.Course.Name = "Course";
+            this.Course.Visible = true;
+            this.Course.VisibleIndex = 4;
+            // 
+            // YearLevel
+            // 
+            this.YearLevel.Caption = "Year Level";
+            this.YearLevel.FieldName = "YearLevel";
+            this.YearLevel.MinWidth = 22;
+            this.YearLevel.Name = "YearLevel";
+            this.YearLevel.Visible = true;
+            this.YearLevel.VisibleIndex = 5;
+            // 
+            // Email
+            // 
+            this.Email.Caption = "Email";
+            this.Email.FieldName = "Email";
+            this.Email.MinWidth = 22;
+            this.Email.Name = "Email";
+            this.Email.Visible = true;
+            this.Email.VisibleIndex = 6;
+            // 
+            // QRImage
+            // 
+            this.QRImage.Caption = "QR Code";
+            this.QRImage.FieldName = "QRImage";
+            this.QRImage.MinWidth = 22;
+            this.QRImage.Name = "QRImage";
+            this.QRImage.Visible = true;
+            this.QRImage.VisibleIndex = 7;
             // 
             // Root
             // 
@@ -168,7 +234,7 @@
             this.lci_PageHeading,
             this.lci_GridControlStudents});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1186, 1011);
+            this.Root.Size = new System.Drawing.Size(1038, 768);
             this.Root.TextVisible = false;
             // 
             // lci_PageHeading
@@ -178,7 +244,7 @@
             this.lci_PageHeading.CustomizationFormText = "layoutControlItem1";
             this.lci_PageHeading.Location = new System.Drawing.Point(0, 0);
             this.lci_PageHeading.Name = "lci_PageHeading";
-            this.lci_PageHeading.Size = new System.Drawing.Size(1156, 137);
+            this.lci_PageHeading.Size = new System.Drawing.Size(1016, 105);
             this.lci_PageHeading.Text = "layoutControlItem1";
             this.lci_PageHeading.TextSize = new System.Drawing.Size(0, 0);
             this.lci_PageHeading.TextVisible = false;
@@ -188,100 +254,19 @@
             this.lci_GridControlStudents.Control = this.gc_Students;
             this.lci_GridControlStudents.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lci_GridControlStudents.CustomizationFormText = "lci_GridControlStudents";
-            this.lci_GridControlStudents.Location = new System.Drawing.Point(0, 137);
+            this.lci_GridControlStudents.Location = new System.Drawing.Point(0, 105);
             this.lci_GridControlStudents.Name = "lci_GridControlStudents";
-            this.lci_GridControlStudents.Size = new System.Drawing.Size(1156, 840);
+            this.lci_GridControlStudents.Size = new System.Drawing.Size(1016, 643);
             this.lci_GridControlStudents.TextSize = new System.Drawing.Size(0, 0);
             this.lci_GridControlStudents.TextVisible = false;
             // 
-            // FirstName
-            // 
-            this.FirstName.Caption = "First Name";
-            this.FirstName.FieldName = "FirstName";
-            this.FirstName.MinWidth = 25;
-            this.FirstName.Name = "FirstName";
-            this.FirstName.Visible = true;
-            this.FirstName.VisibleIndex = 0;
-            this.FirstName.Width = 86;
-            // 
-            // MiddleName
-            // 
-            this.MiddleName.Caption = "Middle Name";
-            this.MiddleName.FieldName = "MiddleName";
-            this.MiddleName.MinWidth = 25;
-            this.MiddleName.Name = "MiddleName";
-            this.MiddleName.Visible = true;
-            this.MiddleName.VisibleIndex = 1;
-            this.MiddleName.Width = 86;
-            // 
-            // LastName
-            // 
-            this.LastName.Caption = "Last Name";
-            this.LastName.FieldName = "LastName";
-            this.LastName.MinWidth = 25;
-            this.LastName.Name = "LastName";
-            this.LastName.Visible = true;
-            this.LastName.VisibleIndex = 2;
-            this.LastName.Width = 86;
-            // 
-            // SchoolID
-            // 
-            this.SchoolID.Caption = "School ID";
-            this.SchoolID.FieldName = "SchoolID";
-            this.SchoolID.MinWidth = 25;
-            this.SchoolID.Name = "SchoolID";
-            this.SchoolID.Visible = true;
-            this.SchoolID.VisibleIndex = 3;
-            this.SchoolID.Width = 86;
-            // 
-            // Course
-            // 
-            this.Course.Caption = "Course";
-            this.Course.FieldName = "Course";
-            this.Course.MinWidth = 25;
-            this.Course.Name = "Course";
-            this.Course.Visible = true;
-            this.Course.VisibleIndex = 4;
-            this.Course.Width = 86;
-            // 
-            // YearLevel
-            // 
-            this.YearLevel.Caption = "Year Level";
-            this.YearLevel.FieldName = "YearLevel";
-            this.YearLevel.MinWidth = 25;
-            this.YearLevel.Name = "YearLevel";
-            this.YearLevel.Visible = true;
-            this.YearLevel.VisibleIndex = 5;
-            this.YearLevel.Width = 86;
-            // 
-            // Email
-            // 
-            this.Email.Caption = "Email";
-            this.Email.FieldName = "Email";
-            this.Email.MinWidth = 25;
-            this.Email.Name = "Email";
-            this.Email.Visible = true;
-            this.Email.VisibleIndex = 6;
-            this.Email.Width = 86;
-            // 
-            // QRImage
-            // 
-            this.QRImage.Caption = "QR Code";
-            this.QRImage.FieldName = "QRImage";
-            this.QRImage.MinWidth = 25;
-            this.QRImage.Name = "QRImage";
-            this.QRImage.Visible = true;
-            this.QRImage.VisibleIndex = 7;
-            this.QRImage.Width = 86;
-            // 
             // Students_UserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lc_Students);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Students_UserControl";
-            this.Size = new System.Drawing.Size(1186, 1011);
+            this.Size = new System.Drawing.Size(1038, 768);
             ((System.ComponentModel.ISupportInitialize)(this.lc_Students)).EndInit();
             this.lc_Students.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).EndInit();

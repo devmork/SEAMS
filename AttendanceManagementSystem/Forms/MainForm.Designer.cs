@@ -33,11 +33,10 @@
             this.btn_Dashboard = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btn_Attendance = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btn_Students = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btn_AllEvents = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btn_AllStudents = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btn_Reports = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btn_StudentReports = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btn_Attendance = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.btn_QRScanner = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.panel_Body = new DevExpress.XtraEditors.PanelControl();
@@ -75,6 +74,8 @@
             // 
             // btn_Dashboard
             // 
+            this.btn_Dashboard.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F);
+            this.btn_Dashboard.Appearance.Default.Options.UseFont = true;
             this.btn_Dashboard.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Dashboard.ImageOptions.SvgImage")));
             this.btn_Dashboard.ImageOptions.SvgImageSize = new System.Drawing.Size(22, 22);
             this.btn_Dashboard.Name = "btn_Dashboard";
@@ -92,36 +93,33 @@
             this.accordionControlElement1.Appearance.Default.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.accordionControlElement1.Appearance.Default.Options.UseFont = true;
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.btn_Attendance,
-            this.btn_Students});
-            this.accordionControlElement1.Expanded = true;
+            this.btn_AllEvents,
+            this.btn_AllStudents});
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Manage";
             // 
-            // btn_Attendance
+            // btn_AllEvents
             // 
-            this.btn_Attendance.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Attendance.ImageOptions.SvgImage")));
-            this.btn_Attendance.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
-            this.btn_Attendance.Name = "btn_Attendance";
-            this.btn_Attendance.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btn_Attendance.Text = "All Attendance";
+            this.btn_AllEvents.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Attendance.ImageOptions.SvgImage")));
+            this.btn_AllEvents.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
+            this.btn_AllEvents.Name = "btn_AllEvents";
+            this.btn_AllEvents.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btn_AllEvents.Text = "All Attendance";
             // 
-            // btn_Students
+            // btn_AllStudents
             // 
-            this.btn_Students.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Students.ImageOptions.SvgImage")));
-            this.btn_Students.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
-            this.btn_Students.Name = "btn_Students";
-            this.btn_Students.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btn_Students.Text = "All Students";
+            this.btn_AllStudents.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Students.ImageOptions.SvgImage")));
+            this.btn_AllStudents.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
+            this.btn_AllStudents.Name = "btn_AllStudents";
+            this.btn_AllStudents.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btn_AllStudents.Text = "All Students";
             // 
             // accordionControlElement2
             // 
             this.accordionControlElement2.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
             this.accordionControlElement2.Appearance.Default.Options.UseFont = true;
             this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.btn_Reports,
-            this.btn_StudentReports});
-            this.accordionControlElement2.Expanded = true;
+            this.btn_Attendance});
             this.accordionControlElement2.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),
@@ -130,21 +128,13 @@
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Text = "Reports";
             // 
-            // btn_Reports
+            // btn_Attendance
             // 
-            this.btn_Reports.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Reports.ImageOptions.SvgImage")));
-            this.btn_Reports.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
-            this.btn_Reports.Name = "btn_Reports";
-            this.btn_Reports.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btn_Reports.Text = "Attendance";
-            // 
-            // btn_StudentReports
-            // 
-            this.btn_StudentReports.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_StudentReports.ImageOptions.SvgImage")));
-            this.btn_StudentReports.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
-            this.btn_StudentReports.Name = "btn_StudentReports";
-            this.btn_StudentReports.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btn_StudentReports.Text = "Students";
+            this.btn_Attendance.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Reports.ImageOptions.SvgImage")));
+            this.btn_Attendance.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
+            this.btn_Attendance.Name = "btn_Attendance";
+            this.btn_Attendance.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btn_Attendance.Text = "Attendance";
             // 
             // accordionControlSeparator5
             // 
@@ -152,6 +142,8 @@
             // 
             // btn_QRScanner
             // 
+            this.btn_QRScanner.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F);
+            this.btn_QRScanner.Appearance.Default.Options.UseFont = true;
             this.btn_QRScanner.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_QRScanner.ImageOptions.SvgImage")));
             this.btn_QRScanner.ImageOptions.SvgImageSize = new System.Drawing.Size(22, 22);
             this.btn_QRScanner.Name = "btn_QRScanner";
@@ -190,14 +182,13 @@
         private DevExpress.XtraBars.Navigation.AccordionControl accordion_Menu;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_Dashboard;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_AllEvents;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_Attendance;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_Reports;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_Students;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_AllStudents;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator5;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_QRScanner;
         private DevExpress.XtraEditors.PanelControl panel_Body;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_StudentReports;
     }
 }
