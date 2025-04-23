@@ -61,7 +61,7 @@ namespace AttendanceManagementSystem.Forms.Students
         {
             var students = GetStudentsFromDatabase();
             gc_Students.DataSource = students;
-        //}
+        }
 
         private void btn_AddStudent_Click(object sender, EventArgs e)
         {

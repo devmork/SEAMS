@@ -202,6 +202,7 @@
     <Compile Include="Forms\Students\Students_UserControl.Designer.cs">
       <DependentUpon>Students_UserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Base\Event.cs" />
     <Compile Include="Models\Base\Person.cs" />
     <Compile Include="Models\Derived\Student.cs" />
     <Compile Include="Models\Utility\QRCode.cs" />
