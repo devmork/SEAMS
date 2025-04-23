@@ -32,29 +32,29 @@ namespace AttendanceManagementSystem.Forms
             panel_Body.Controls.Add(dashboard_UserControl);
         }
 
-        private void btn_Attendance_Click(object sender, EventArgs e)
-        {
-            Attendance_UserControl attendance_UserControl = new Attendance_UserControl();
-            attendance_UserControl.Dock = DockStyle.Fill;
-            panel_Body.Controls.Clear();
-            panel_Body.Controls.Add(attendance_UserControl);
-        }
+        //private void btn_Attendance_Click(object sender, EventArgs e)
+        //{
+        //    Attendance_UserControl attendance_UserControl = new Attendance_UserControl();
+        //    attendance_UserControl.Dock = DockStyle.Fill;
+        //    panel_Body.Controls.Clear();
+        //    panel_Body.Controls.Add(attendance_UserControl);
+        //}
 
-        private void btn_Reports_Click(object sender, EventArgs e)
-        {
-            Reports_UserControl reports_UserControl = new Reports_UserControl();
-            reports_UserControl.Dock = DockStyle.Fill;
-            panel_Body.Controls.Clear();
-            panel_Body.Controls.Add(reports_UserControl);
-        }
+        //private void btn_Reports_Click(object sender, EventArgs e)
+        //{
+        //    Reports_UserControl reports_UserControl = new Reports_UserControl();
+        //    reports_UserControl.Dock = DockStyle.Fill;
+        //    panel_Body.Controls.Clear();
+        //    panel_Body.Controls.Add(reports_UserControl);
+        //}
 
-        private void btn_Students_Click(object sender, EventArgs e)
-        {
-            Students_UserControl students_UserControl = new Students_UserControl();
-            students_UserControl.Dock = DockStyle.Fill;
-            panel_Body.Controls.Clear();
-            panel_Body.Controls.Add(students_UserControl);
-        }
+        //private void btn_Students_Click(object sender, EventArgs e)
+        //{
+        //    Students_UserControl students_UserControl = new Students_UserControl();
+        //    students_UserControl.Dock = DockStyle.Fill;
+        //    panel_Body.Controls.Clear();
+        //    panel_Body.Controls.Add(students_UserControl);
+        //}
 
         private void btn_QRScanner_Click(object sender, EventArgs e)
         {
