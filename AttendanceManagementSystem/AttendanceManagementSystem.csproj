@@ -148,6 +148,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Attendance Report\AttendanceRecords.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Attendance Report\AttendanceRecords.Designer.cs">
+      <DependentUpon>AttendanceRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Attendance Report\StudentAttendanceRecord_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Attendance Report\StudentAttendanceRecord_Form.Designer.cs">
+      <DependentUpon>StudentAttendanceRecord_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Events\Events_UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -184,12 +196,6 @@
     <Compile Include="Forms\QRScanner\QRScanner_UserControl.Designer.cs">
       <DependentUpon>QRScanner_UserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Reports\Reports_UserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\Reports\Reports_UserControl.Designer.cs">
-      <DependentUpon>Reports_UserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Students\AddStudent_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,12 @@
     <Compile Include="Models\Utility\QRCode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Attendance Report\AttendanceRecords.resx">
+      <DependentUpon>AttendanceRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Attendance Report\StudentAttendanceRecord_Form.resx">
+      <DependentUpon>StudentAttendanceRecord_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Events\Events_UserControl.resx">
       <DependentUpon>Events_UserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,9 +243,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRScanner\QRScanner_UserControl.resx">
       <DependentUpon>QRScanner_UserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Reports\Reports_UserControl.resx">
-      <DependentUpon>Reports_UserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Students\AddStudent_Form.resx">
       <DependentUpon>AddStudent_Form.cs</DependentUpon>
