@@ -16,5 +16,7 @@ namespace AttendanceManagementSystem.Models.Base
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public bool IsActive { get; set; }
+
+        public abstract TimeSpan GetDuration(); //Abstract method to get the duration of the event
     }
 }
