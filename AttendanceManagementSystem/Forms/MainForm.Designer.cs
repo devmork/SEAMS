@@ -33,14 +33,14 @@
             this.btn_Dashboard = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.btn_Events = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btn_Students = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btn_AttendanceRecord = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.btn_QRScanner = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.panel_Body = new DevExpress.XtraEditors.PanelControl();
             this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.btn_Students = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.btn_AttendanceRecord = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator4 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.btn_QRScanner = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.panel_Body = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.accordion_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Body)).BeginInit();
             this.SuspendLayout();
@@ -72,9 +72,9 @@
             this.btn_QRScanner,
             this.accordionControlSeparator5});
             this.accordion_Menu.Location = new System.Drawing.Point(0, 0);
-            this.accordion_Menu.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.accordion_Menu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.accordion_Menu.Name = "accordion_Menu";
-            this.accordion_Menu.Size = new System.Drawing.Size(309, 966);
+            this.accordion_Menu.Size = new System.Drawing.Size(270, 734);
             this.accordion_Menu.TabIndex = 5;
             this.accordion_Menu.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -97,38 +97,46 @@
             // 
             this.btn_Events.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Events.Appearance.Default.Options.UseFont = true;
-            this.btn_Events.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_AllEvents.ImageOptions.SvgImage")));
+            this.btn_Events.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Events.ImageOptions.SvgImage")));
             this.btn_Events.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
             this.btn_Events.Name = "btn_Events";
             this.btn_Events.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_Events.Text = "Events";
             this.btn_Events.Click += new System.EventHandler(this.btn_Events_Click_1);
             // 
+            // accordionControlSeparator2
+            // 
+            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
+            // 
             // btn_Students
             // 
             this.btn_Students.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Students.Appearance.Default.Options.UseFont = true;
-            this.btn_Students.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_AllStudents.ImageOptions.SvgImage")));
+            this.btn_Students.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Students.ImageOptions.SvgImage")));
             this.btn_Students.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
             this.btn_Students.Name = "btn_Students";
             this.btn_Students.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_Students.Text = "Students";
             this.btn_Students.Click += new System.EventHandler(this.btn_Students_Click_1);
             // 
+            // accordionControlSeparator3
+            // 
+            this.accordionControlSeparator3.Name = "accordionControlSeparator3";
+            // 
             // btn_AttendanceRecord
             // 
             this.btn_AttendanceRecord.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AttendanceRecord.Appearance.Default.Options.UseFont = true;
-            this.btn_AttendanceRecord.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Attendance.ImageOptions.SvgImage")));
+            this.btn_AttendanceRecord.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_AttendanceRecord.ImageOptions.SvgImage")));
             this.btn_AttendanceRecord.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
             this.btn_AttendanceRecord.Name = "btn_AttendanceRecord";
             this.btn_AttendanceRecord.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_AttendanceRecord.Text = "Attendance Records";
             this.btn_AttendanceRecord.Click += new System.EventHandler(this.btn_AttendanceRecord_Click_1);
             // 
-            // accordionControlSeparator5
+            // accordionControlSeparator4
             // 
-            this.accordionControlSeparator5.Name = "accordionControlSeparator5";
+            this.accordionControlSeparator4.Name = "accordionControlSeparator4";
             // 
             // btn_QRScanner
             // 
@@ -141,35 +149,27 @@
             this.btn_QRScanner.Text = "QR Scanner";
             this.btn_QRScanner.Click += new System.EventHandler(this.btn_QRScanner_Click);
             // 
+            // accordionControlSeparator5
+            // 
+            this.accordionControlSeparator5.Name = "accordionControlSeparator5";
+            // 
             // panel_Body
             // 
             this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Body.Location = new System.Drawing.Point(309, 0);
-            this.panel_Body.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel_Body.Location = new System.Drawing.Point(270, 0);
+            this.panel_Body.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel_Body.Name = "panel_Body";
-            this.panel_Body.Size = new System.Drawing.Size(1161, 966);
+            this.panel_Body.Size = new System.Drawing.Size(1016, 734);
             this.panel_Body.TabIndex = 6;
-            // 
-            // accordionControlSeparator2
-            // 
-            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
-            // 
-            // accordionControlSeparator3
-            // 
-            this.accordionControlSeparator3.Name = "accordionControlSeparator3";
-            // 
-            // accordionControlSeparator4
-            // 
-            this.accordionControlSeparator4.Name = "accordionControlSeparator4";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1470, 966);
+            this.ClientSize = new System.Drawing.Size(1286, 734);
             this.Controls.Add(this.panel_Body);
             this.Controls.Add(this.accordion_Menu);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DMC SSG Attendance Management System";

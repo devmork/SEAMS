@@ -217,9 +217,10 @@
     <Compile Include="Models\Base\Event.cs" />
     <Compile Include="Models\Base\Person.cs" />
     <Compile Include="Models\Derived\Student.cs" />
-    <Compile Include="Models\Utility\QRCode.cs" />
+    <Compile Include="Models\Base\QRCode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\QRCodeService.cs" />
     <EmbeddedResource Include="Forms\Attendance Record\AttendanceRecords.resx">
       <DependentUpon>AttendanceRecords.cs</DependentUpon>
     </EmbeddedResource>

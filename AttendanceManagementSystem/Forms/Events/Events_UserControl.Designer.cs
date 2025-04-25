@@ -42,6 +42,7 @@
             this.gc_EventStartTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gc_EventEndTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gc_EventLocation = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lci_PageHeading = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_PanelBody = new DevExpress.XtraLayout.LayoutControlItem();
@@ -51,6 +52,7 @@
             this.panel_PageHeading.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Event)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cv_Event)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PanelBody)).BeginInit();
@@ -133,6 +135,8 @@
             this.gc_Event.Location = new System.Drawing.Point(16, 125);
             this.gc_Event.MainView = this.cv_Event;
             this.gc_Event.Name = "gc_Event";
+            this.gc_Event.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemButtonEdit1});
             this.gc_Event.Size = new System.Drawing.Size(1006, 627);
             this.gc_Event.TabIndex = 8;
             this.gc_Event.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -150,7 +154,7 @@
             this.cv_Event.GridControl = this.gc_Event;
             this.cv_Event.Name = "cv_Event";
             this.cv_Event.OptionsBehavior.FieldAutoHeight = true;
-            this.cv_Event.OptionsView.ShowLines = false;
+            this.cv_Event.PaintStyleName = "Flat";
             // 
             // gc_EventTitle
             // 
@@ -193,6 +197,13 @@
             this.gc_EventLocation.Name = "gc_EventLocation";
             this.gc_EventLocation.Visible = true;
             this.gc_EventLocation.VisibleIndex = 4;
+            // 
+            // repositoryItemButtonEdit1
+            // 
+            this.repositoryItemButtonEdit1.AutoHeight = false;
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // Root
             // 
@@ -243,6 +254,7 @@
             this.panel_PageHeading.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Event)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cv_Event)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PanelBody)).EndInit();
@@ -268,5 +280,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gc_EventEndTime;
         private DevExpress.XtraGrid.Columns.GridColumn gc_EventLocation;
         private DevExpress.XtraLayout.LayoutControlItem lci_PanelBody;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
     }
 }
