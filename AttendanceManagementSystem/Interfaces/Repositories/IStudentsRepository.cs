@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AttendanceManagementSystem.Services
+namespace AttendanceManagementSystem.Interfaces.Repositories
 {
-    class QRCodeService
+    public interface IStudentsRepository
     {
-
     }
 }

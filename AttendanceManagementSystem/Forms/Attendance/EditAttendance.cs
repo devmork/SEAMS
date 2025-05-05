@@ -11,14 +11,14 @@ using DevExpress.XtraEditors;
 
 namespace AttendanceManagementSystem.Forms.Events
 {
-	public partial class AddEvent_Form: DevExpress.XtraEditors.XtraForm
+	public partial class EditAttendance: DevExpress.XtraEditors.XtraForm
 	{
-        public AddEvent_Form()
+        public EditAttendance()
 		{
             InitializeComponent();
 		}
 
-        private void gc_AttendanceDetails_Paint(object sender, PaintEventArgs e)
+        private void label_Instruction_Click(object sender, EventArgs e)
         {
 
         }
