@@ -7,6 +7,7 @@ using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using AttendanceManagementSystem.Forms;
 using AttendanceManagementSystem.Forms.Students;
+using AttendanceManagementSystem.Forms.Events;
 
 namespace AttendanceManagementSystem
 {
@@ -20,7 +21,7 @@ namespace AttendanceManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new AddAttendance_Form());
         }
     }
 }

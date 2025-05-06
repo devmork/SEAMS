@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AttendanceManagementSystem.Models.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,9 @@ namespace AttendanceManagementSystem.Interfaces.Repositories
 {
     public interface IAttendanceRepository
     {
+        void AddAttendance(Attendance attendance);
+        void UpdateAttendance();
+        void DeleteAttendance();
+
     }
 }
