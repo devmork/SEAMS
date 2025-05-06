@@ -20,11 +20,11 @@ namespace AttendanceManagementSystem.Forms.Students
             _studentsRepository = new StudentRepository();
             _qrCodeRepository = new QRCodeRepository();
         }
-        private void btn_Generate_Click_1(object sender, EventArgs e)
+        private void btn_Generate_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txt_FirstName.Text) ||
-        string.IsNullOrWhiteSpace(txt_LastName.Text) ||
-        string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text))
+                string.IsNullOrWhiteSpace(txt_LastName.Text) ||
+                string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text))
             {
                 XtraMessageBox.Show("Please fill in all required fields (First Name, Last Name, School ID).");
                 return;
