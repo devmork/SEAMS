@@ -26,7 +26,6 @@ namespace AttendanceManagementSystem.Forms.Events
             AddAttendance_Form addAttendance_Form = new AddAttendance_Form();
             addAttendance_Form.ShowDialog();
         }
-
         private void Attendance_UserControl_Load(object sender, EventArgs e)
         {
             var attendance = _attendanceRepository.GetAllAttendance();

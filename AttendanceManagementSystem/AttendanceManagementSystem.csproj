@@ -223,6 +223,7 @@
     <Compile Include="Models\Base\Attendance.cs" />
     <Compile Include="Models\Base\Person.cs" />
     <Compile Include="Models\Derived\Student.cs" />
+    <Compile Include="Models\Utilities\QRCodeHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Attendance Record\AttendanceRecords.resx">

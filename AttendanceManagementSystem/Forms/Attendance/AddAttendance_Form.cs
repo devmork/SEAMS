@@ -48,7 +48,7 @@ namespace AttendanceManagementSystem.Forms.Events
             _attendanceRepository.AddAttendance(attendance);
 
             // Show success message and close
-            MessageBox.Show("Attendance created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            XtraMessageBox.Show("Attendance created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
         private void btn_Cancel_Click(object sender, EventArgs e)

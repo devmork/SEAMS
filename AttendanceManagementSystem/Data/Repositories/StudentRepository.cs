@@ -33,13 +33,13 @@ namespace AttendanceManagementSystem.Data.Repositories
                              VALUES (@FirstName, @MiddleName, @LastName, @SchoolStudentId, @Course, @YearLevel, @Email, @QRCode)";
 
                 var parameters = new DynamicParameters();
-                parameters.Add("@FirstName", student.FirstName);
-                parameters.Add("@MiddleName", student.MiddleName);
-                parameters.Add("@LastName", student.LastName);
-                parameters.Add("@SchoolStudentId", student.SchoolStudentId);
-                parameters.Add("@Course", student.Course);
+                parameters.Add(student.FirstName);
+                parameters.Add(student.MiddleName);
+                parameters.Add(student.LastName);
+                parameters.Add(student.SchoolStudentId);
+                parameters.Add(student.Course);
                 parameters.Add("@YearLevel", student.YearLevel);
-                parameters.Add("@Email", student.Email);
+                parameters.Add(student.Email);
                 parameters.Add("@QRCode", student.QRCodeImage); // Fails if QRCode is null
                 connection.Execute(sql, parameters);
             }
