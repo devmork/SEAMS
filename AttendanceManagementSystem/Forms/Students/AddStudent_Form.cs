@@ -57,7 +57,7 @@ namespace AttendanceManagementSystem.Forms.Students
                 XtraMessageBox.Show($"Error generating QR code: {ex.Message}");
             }
         }
-        private void btn_Save_Click_1(object sender, EventArgs e)
+        private void btn_Save_Click(object sender, EventArgs e)
         {
             if (student == null)
             {
@@ -73,6 +73,11 @@ namespace AttendanceManagementSystem.Forms.Students
             {
                 XtraMessageBox.Show($"Error saving student: {ex.Message}");
             }
+        }
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
