@@ -29,74 +29,56 @@
         private void InitializeComponent()
         {
             this.lc_QRScanner = new DevExpress.XtraLayout.LayoutControl();
-            this.tabControl_QRScanner = new DevExpress.XtraTab.XtraTabControl();
-            this.tabPage_QRScanner = new DevExpress.XtraTab.XtraTabPage();
-            this.tabPage_ManualEntry = new DevExpress.XtraTab.XtraTabPage();
             this.panel_PageHeading = new DevExpress.XtraEditors.PanelControl();
             this.label_PageTitle = new DevExpress.XtraEditors.LabelControl();
             this.label_PageDescription = new DevExpress.XtraEditors.LabelControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lci_PageHeading = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lci_TabControl = new DevExpress.XtraLayout.LayoutControlItem();
+            this.panel_QRCamera = new DevExpress.XtraEditors.PanelControl();
+            this.lci_PanelQRCamera = new DevExpress.XtraLayout.LayoutControlItem();
+            this.panel_Actions = new DevExpress.XtraEditors.PanelControl();
+            this.lci_PanelActions = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cbe_ChooseAttendance = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.panel_QRCodeInfo = new DevExpress.XtraEditors.PanelControl();
+            this.btn_StartScan = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_StopScan = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.lc_QRScanner)).BeginInit();
             this.lc_QRScanner.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabControl_QRScanner)).BeginInit();
-            this.tabControl_QRScanner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).BeginInit();
             this.panel_PageHeading.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lci_TabControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_QRCamera)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_PanelQRCamera)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_Actions)).BeginInit();
+            this.panel_Actions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_PanelActions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_ChooseAttendance.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_QRCodeInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // lc_QRScanner
             // 
-            this.lc_QRScanner.Controls.Add(this.tabControl_QRScanner);
+            this.lc_QRScanner.Controls.Add(this.panel_Actions);
+            this.lc_QRScanner.Controls.Add(this.panel_QRCamera);
             this.lc_QRScanner.Controls.Add(this.panel_PageHeading);
             this.lc_QRScanner.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lc_QRScanner.Location = new System.Drawing.Point(0, 0);
+            this.lc_QRScanner.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lc_QRScanner.Name = "lc_QRScanner";
             this.lc_QRScanner.Root = this.Root;
-            this.lc_QRScanner.Size = new System.Drawing.Size(1038, 768);
+            this.lc_QRScanner.Size = new System.Drawing.Size(1186, 1011);
             this.lc_QRScanner.TabIndex = 0;
             this.lc_QRScanner.Text = "layoutControl1";
-            // 
-            // tabControl_QRScanner
-            // 
-            this.tabControl_QRScanner.Appearance.Options.UseTextOptions = true;
-            this.tabControl_QRScanner.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tabControl_QRScanner.AppearancePage.Header.Options.UseTextOptions = true;
-            this.tabControl_QRScanner.AppearancePage.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tabControl_QRScanner.Location = new System.Drawing.Point(16, 152);
-            this.tabControl_QRScanner.MultiLine = DevExpress.Utils.DefaultBoolean.True;
-            this.tabControl_QRScanner.Name = "tabControl_QRScanner";
-            this.tabControl_QRScanner.SelectedTabPage = this.tabPage_QRScanner;
-            this.tabControl_QRScanner.Size = new System.Drawing.Size(1006, 600);
-            this.tabControl_QRScanner.TabIndex = 8;
-            this.tabControl_QRScanner.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.tabPage_QRScanner,
-            this.tabPage_ManualEntry});
-            // 
-            // tabPage_QRScanner
-            // 
-            this.tabPage_QRScanner.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tabPage_QRScanner.Name = "tabPage_QRScanner";
-            this.tabPage_QRScanner.Size = new System.Drawing.Size(1004, 569);
-            this.tabPage_QRScanner.Text = "QR Scanner";
-            // 
-            // tabPage_ManualEntry
-            // 
-            this.tabPage_ManualEntry.Name = "tabPage_ManualEntry";
-            this.tabPage_ManualEntry.Size = new System.Drawing.Size(1004, 569);
-            this.tabPage_ManualEntry.Text = "Manual Entry";
             // 
             // panel_PageHeading
             // 
             this.panel_PageHeading.Controls.Add(this.label_PageTitle);
             this.panel_PageHeading.Controls.Add(this.label_PageDescription);
-            this.panel_PageHeading.Location = new System.Drawing.Point(16, 16);
+            this.panel_PageHeading.Location = new System.Drawing.Point(18, 21);
+            this.panel_PageHeading.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel_PageHeading.Name = "panel_PageHeading";
-            this.panel_PageHeading.Size = new System.Drawing.Size(1006, 130);
+            this.panel_PageHeading.Size = new System.Drawing.Size(1150, 151);
             this.panel_PageHeading.TabIndex = 7;
             // 
             // label_PageTitle
@@ -106,10 +88,10 @@
             this.label_PageTitle.Appearance.Font = new System.Drawing.Font("Poppins", 17.71F, System.Drawing.FontStyle.Bold);
             this.label_PageTitle.Appearance.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.label_PageTitle.Appearance.Options.UseFont = true;
-            this.label_PageTitle.Location = new System.Drawing.Point(31, 17);
-            this.label_PageTitle.Margin = new System.Windows.Forms.Padding(4);
+            this.label_PageTitle.Location = new System.Drawing.Point(35, 22);
+            this.label_PageTitle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.label_PageTitle.Name = "label_PageTitle";
-            this.label_PageTitle.Size = new System.Drawing.Size(142, 42);
+            this.label_PageTitle.Size = new System.Drawing.Size(177, 53);
             this.label_PageTitle.TabIndex = 0;
             this.label_PageTitle.Text = "QR Scanner";
             // 
@@ -119,10 +101,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label_PageDescription.Appearance.Font = new System.Drawing.Font("Poppins", 12F);
             this.label_PageDescription.Appearance.Options.UseFont = true;
-            this.label_PageDescription.Location = new System.Drawing.Point(31, 53);
-            this.label_PageDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.label_PageDescription.Location = new System.Drawing.Point(35, 70);
+            this.label_PageDescription.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.label_PageDescription.Name = "label_PageDescription";
-            this.label_PageDescription.Size = new System.Drawing.Size(404, 28);
+            this.label_PageDescription.Size = new System.Drawing.Size(497, 36);
             this.label_PageDescription.TabIndex = 1;
             this.label_PageDescription.Text = "Record attendance by scanning student QR codes.";
             // 
@@ -132,9 +114,10 @@
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.lci_PageHeading,
-            this.lci_TabControl});
+            this.lci_PanelQRCamera,
+            this.lci_PanelActions});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1038, 768);
+            this.Root.Size = new System.Drawing.Size(1186, 1011);
             this.Root.TextVisible = false;
             // 
             // lci_PageHeading
@@ -144,37 +127,106 @@
             this.lci_PageHeading.CustomizationFormText = "layoutControlItem1";
             this.lci_PageHeading.Location = new System.Drawing.Point(0, 0);
             this.lci_PageHeading.Name = "lci_PageHeading";
-            this.lci_PageHeading.Size = new System.Drawing.Size(1012, 136);
+            this.lci_PageHeading.Size = new System.Drawing.Size(1156, 159);
             this.lci_PageHeading.Text = "layoutControlItem1";
             this.lci_PageHeading.TextSize = new System.Drawing.Size(0, 0);
             this.lci_PageHeading.TextVisible = false;
             // 
-            // lci_TabControl
+            // panel_QRCamera
             // 
-            this.lci_TabControl.Control = this.tabControl_QRScanner;
-            this.lci_TabControl.Location = new System.Drawing.Point(0, 136);
-            this.lci_TabControl.Name = "lci_TabControl";
-            this.lci_TabControl.Size = new System.Drawing.Size(1012, 606);
-            this.lci_TabControl.TextSize = new System.Drawing.Size(0, 0);
-            this.lci_TabControl.TextVisible = false;
+            this.panel_QRCamera.Location = new System.Drawing.Point(18, 180);
+            this.panel_QRCamera.Name = "panel_QRCamera";
+            this.panel_QRCamera.Size = new System.Drawing.Size(638, 810);
+            this.panel_QRCamera.TabIndex = 8;
+            // 
+            // lci_PanelQRCamera
+            // 
+            this.lci_PanelQRCamera.Control = this.panel_QRCamera;
+            this.lci_PanelQRCamera.Location = new System.Drawing.Point(0, 159);
+            this.lci_PanelQRCamera.Name = "lci_PanelQRCamera";
+            this.lci_PanelQRCamera.Size = new System.Drawing.Size(644, 818);
+            this.lci_PanelQRCamera.TextSize = new System.Drawing.Size(0, 0);
+            this.lci_PanelQRCamera.TextVisible = false;
+            // 
+            // panel_Actions
+            // 
+            this.panel_Actions.Controls.Add(this.btn_StopScan);
+            this.panel_Actions.Controls.Add(this.btn_StartScan);
+            this.panel_Actions.Controls.Add(this.panel_QRCodeInfo);
+            this.panel_Actions.Controls.Add(this.cbe_ChooseAttendance);
+            this.panel_Actions.Location = new System.Drawing.Point(662, 180);
+            this.panel_Actions.Name = "panel_Actions";
+            this.panel_Actions.Size = new System.Drawing.Size(506, 810);
+            this.panel_Actions.TabIndex = 0;
+            // 
+            // lci_PanelActions
+            // 
+            this.lci_PanelActions.Control = this.panel_Actions;
+            this.lci_PanelActions.Location = new System.Drawing.Point(644, 159);
+            this.lci_PanelActions.Name = "lci_PanelActions";
+            this.lci_PanelActions.Size = new System.Drawing.Size(512, 818);
+            this.lci_PanelActions.TextSize = new System.Drawing.Size(0, 0);
+            this.lci_PanelActions.TextVisible = false;
+            // 
+            // cbe_ChooseAttendance
+            // 
+            this.cbe_ChooseAttendance.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbe_ChooseAttendance.EditValue = "Choose Attendance";
+            this.cbe_ChooseAttendance.Location = new System.Drawing.Point(2, 2);
+            this.cbe_ChooseAttendance.Name = "cbe_ChooseAttendance";
+            this.cbe_ChooseAttendance.Properties.Appearance.Options.UseTextOptions = true;
+            this.cbe_ChooseAttendance.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cbe_ChooseAttendance.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_ChooseAttendance.Size = new System.Drawing.Size(502, 44);
+            this.cbe_ChooseAttendance.TabIndex = 0;
+            // 
+            // panel_QRCodeInfo
+            // 
+            this.panel_QRCodeInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_QRCodeInfo.Location = new System.Drawing.Point(2, 46);
+            this.panel_QRCodeInfo.Name = "panel_QRCodeInfo";
+            this.panel_QRCodeInfo.Size = new System.Drawing.Size(502, 698);
+            this.panel_QRCodeInfo.TabIndex = 1;
+            // 
+            // btn_StartScan
+            // 
+            this.btn_StartScan.Location = new System.Drawing.Point(5, 750);
+            this.btn_StartScan.Name = "btn_StartScan";
+            this.btn_StartScan.Size = new System.Drawing.Size(253, 55);
+            this.btn_StartScan.TabIndex = 2;
+            this.btn_StartScan.Text = "Start Scan";
+            // 
+            // btn_StopScan
+            // 
+            this.btn_StopScan.Location = new System.Drawing.Point(264, 750);
+            this.btn_StopScan.Name = "btn_StopScan";
+            this.btn_StopScan.Size = new System.Drawing.Size(242, 55);
+            this.btn_StopScan.TabIndex = 3;
+            this.btn_StopScan.Text = "Stop Scan";
             // 
             // QRScanner_UserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lc_QRScanner);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "QRScanner_UserControl";
-            this.Size = new System.Drawing.Size(1038, 768);
+            this.Size = new System.Drawing.Size(1186, 1011);
             ((System.ComponentModel.ISupportInitialize)(this.lc_QRScanner)).EndInit();
             this.lc_QRScanner.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tabControl_QRScanner)).EndInit();
-            this.tabControl_QRScanner.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).EndInit();
             this.panel_PageHeading.ResumeLayout(false);
             this.panel_PageHeading.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lci_TabControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_QRCamera)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_PanelQRCamera)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_Actions)).EndInit();
+            this.panel_Actions.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lci_PanelActions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_ChooseAttendance.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_QRCodeInfo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,9 +239,13 @@
         private DevExpress.XtraEditors.LabelControl label_PageTitle;
         private DevExpress.XtraEditors.LabelControl label_PageDescription;
         private DevExpress.XtraLayout.LayoutControlItem lci_PageHeading;
-        private DevExpress.XtraTab.XtraTabControl tabControl_QRScanner;
-        private DevExpress.XtraTab.XtraTabPage tabPage_QRScanner;
-        private DevExpress.XtraTab.XtraTabPage tabPage_ManualEntry;
-        private DevExpress.XtraLayout.LayoutControlItem lci_TabControl;
+        private DevExpress.XtraEditors.PanelControl panel_Actions;
+        private DevExpress.XtraEditors.SimpleButton btn_StopScan;
+        private DevExpress.XtraEditors.SimpleButton btn_StartScan;
+        private DevExpress.XtraEditors.PanelControl panel_QRCodeInfo;
+        private DevExpress.XtraEditors.ComboBoxEdit cbe_ChooseAttendance;
+        private DevExpress.XtraEditors.PanelControl panel_QRCamera;
+        private DevExpress.XtraLayout.LayoutControlItem lci_PanelQRCamera;
+        private DevExpress.XtraLayout.LayoutControlItem lci_PanelActions;
     }
 }

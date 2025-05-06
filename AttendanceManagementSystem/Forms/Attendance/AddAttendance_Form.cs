@@ -34,7 +34,17 @@ namespace AttendanceManagementSystem.Forms.Events
             DateTime startTime = te_StartTime.Time;
             DateTime endTime = te_EndTime.Time;
 
-            var attendance = new Attendance(attendanceName, attendanceLocation, timeOfDay, logType, date, startTime, endTime);
+            var attendance = new Attendance
+            {
+                AttendanceId = Guid.NewGuid(),
+                AttendanceName = attendanceName,
+                AttendanceLocation = attendanceLocation,
+                TimeOfDay = timeOfDay,
+                LogType = logType,
+                Date = date,
+                StartTime = startTime,
+                EndTime = endTime
+            };
             _attendanceRepository.AddAttendance(attendance);
 
             // Show success message and close

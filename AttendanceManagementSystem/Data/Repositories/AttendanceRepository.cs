@@ -33,6 +33,15 @@ namespace AttendanceManagementSystem.Data.Repositories
                 connection.Execute(sql, parameters); 
             }
         }
+        public List<Attendance> GetAllAttendance()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            {
+                connection.Open();
+                string sql = "SELECT AttendanceName, AttendanceLocation, TimeOfDay, LogType, Date, StartTime, EndTime FROM Attendance";
+                return connection.Query<Attendance>(sql).ToList();
+            }
+        }
         public void DeleteAttendance()
         {
             throw new NotImplementedException();
