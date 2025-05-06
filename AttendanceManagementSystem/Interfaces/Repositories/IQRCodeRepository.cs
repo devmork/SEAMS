@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AttendanceManagementSystem.Models.Base;
 
 namespace AttendanceManagementSystem.Interfaces.Repositories
 {
-    public interface IStudentsRepository
+    public interface IQRCodeRepository
     {
-        List<Student> GetStudent();
-        void AddStudent(Student student);
+        void GenerateQRCode(string schoolStudentId);
     }
 }

@@ -149,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Repositories\AttendanceRepository.cs" />
+    <Compile Include="Data\Repositories\QRCodeRepository.cs" />
     <Compile Include="Data\Repositories\StudentRepository.cs" />
     <Compile Include="Forms\Attendance Record\AttendanceRecords.cs">
       <SubType>UserControl</SubType>
@@ -217,12 +218,12 @@
       <DependentUpon>Students_UserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Repositories\IAttendanceRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IQRCodeRepository.cs" />
     <Compile Include="Interfaces\Repositories\IStudentsRepository.cs" />
     <Compile Include="Models\Base\Attendance.cs" />
     <Compile Include="Models\Base\Event.cs" />
     <Compile Include="Models\Base\Person.cs" />
     <Compile Include="Models\Derived\Student.cs" />
-    <Compile Include="Models\Base\QRCode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Attendance Record\AttendanceRecords.resx">

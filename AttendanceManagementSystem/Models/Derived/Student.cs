@@ -1,9 +1,10 @@
-﻿using AttendanceManagementSystem.Models.Utility;
+﻿using AttendanceManagementSystem.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZXing.QrCode.Internal;
 
 namespace AttendanceManagementSystem.Models.Base
 {
@@ -13,8 +14,7 @@ namespace AttendanceManagementSystem.Models.Base
         public int YearLevel { get; set; }
         public string Course { get; set; }
         public string Email { get; set; }
-        public QRCode QRCode { get; set; }
-
+        public string QRCodeValue { get; set; }
         public Student(string firstName, string middleName, string lastName, string schoolStudentId, int yearLevel, string course, string email) 
             : base(firstName, middleName, lastName)
         {
@@ -22,7 +22,7 @@ namespace AttendanceManagementSystem.Models.Base
             YearLevel = yearLevel;
             Course = course;
             Email = email;
-            QRCode = new QRCode(schoolStudentId);
+            QRCodeValue = schoolStudentId;
         }
     }
 }
