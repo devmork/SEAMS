@@ -36,6 +36,7 @@
             this.label_PageDescription = new DevExpress.XtraEditors.LabelControl();
             this.gc_Attendance = new DevExpress.XtraGrid.GridControl();
             this.gv_Attendance = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grdclm_AttendanceName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_AttendanceLocation = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_TimeOfDay = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_LogType = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,7 +50,6 @@
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lci_PageHeading = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_PanelBody = new DevExpress.XtraLayout.LayoutControlItem();
-            this.grdclm_AttendanceName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Attendance)).BeginInit();
             this.lc_Attendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).BeginInit();
@@ -165,9 +165,18 @@
             this.gv_Attendance.Name = "gv_Attendance";
             this.gv_Attendance.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
             // 
+            // grdclm_AttendanceName
+            // 
+            this.grdclm_AttendanceName.Caption = "Name";
+            this.grdclm_AttendanceName.FieldName = "AttendanceName";
+            this.grdclm_AttendanceName.Name = "grdclm_AttendanceName";
+            this.grdclm_AttendanceName.Visible = true;
+            this.grdclm_AttendanceName.VisibleIndex = 0;
+            // 
             // grdclm_AttendanceLocation
             // 
             this.grdclm_AttendanceLocation.Caption = "Location";
+            this.grdclm_AttendanceLocation.FieldName = "AttendanceLocation";
             this.grdclm_AttendanceLocation.Name = "grdclm_AttendanceLocation";
             this.grdclm_AttendanceLocation.Visible = true;
             this.grdclm_AttendanceLocation.VisibleIndex = 1;
@@ -176,6 +185,7 @@
             // grdclm_TimeOfDay
             // 
             this.grdclm_TimeOfDay.Caption = "Time of Day";
+            this.grdclm_TimeOfDay.FieldName = "TimeOfDay";
             this.grdclm_TimeOfDay.Name = "grdclm_TimeOfDay";
             this.grdclm_TimeOfDay.Visible = true;
             this.grdclm_TimeOfDay.VisibleIndex = 2;
@@ -184,6 +194,7 @@
             // grdclm_LogType
             // 
             this.grdclm_LogType.Caption = "Log Type";
+            this.grdclm_LogType.FieldName = "LogType";
             this.grdclm_LogType.Name = "grdclm_LogType";
             this.grdclm_LogType.Visible = true;
             this.grdclm_LogType.VisibleIndex = 3;
@@ -192,6 +203,7 @@
             // grdclm_AttendanceDate
             // 
             this.grdclm_AttendanceDate.Caption = "Date";
+            this.grdclm_AttendanceDate.FieldName = "AttendanceDate";
             this.grdclm_AttendanceDate.Name = "grdclm_AttendanceDate";
             this.grdclm_AttendanceDate.Visible = true;
             this.grdclm_AttendanceDate.VisibleIndex = 4;
@@ -200,6 +212,7 @@
             // grdclm_EventStartTime
             // 
             this.grdclm_EventStartTime.Caption = "Start Time";
+            this.grdclm_EventStartTime.FieldName = "StartTime";
             this.grdclm_EventStartTime.Name = "grdclm_EventStartTime";
             this.grdclm_EventStartTime.Visible = true;
             this.grdclm_EventStartTime.VisibleIndex = 5;
@@ -208,6 +221,7 @@
             // grdclm_EventEndTime
             // 
             this.grdclm_EventEndTime.Caption = "End Time";
+            this.grdclm_EventEndTime.FieldName = "EndTime";
             this.grdclm_EventEndTime.Name = "grdclm_EventEndTime";
             this.grdclm_EventEndTime.Visible = true;
             this.grdclm_EventEndTime.VisibleIndex = 6;
@@ -280,13 +294,6 @@
             this.lci_PanelBody.TextSize = new System.Drawing.Size(0, 0);
             this.lci_PanelBody.TextVisible = false;
             // 
-            // grdclm_AttendanceName
-            // 
-            this.grdclm_AttendanceName.Caption = "Name";
-            this.grdclm_AttendanceName.Name = "grdclm_AttendanceName";
-            this.grdclm_AttendanceName.Visible = true;
-            this.grdclm_AttendanceName.VisibleIndex = 0;
-            // 
             // Attendance_UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
@@ -294,6 +301,7 @@
             this.Controls.Add(this.lc_Attendance);
             this.Name = "Attendance_UserControl";
             this.Size = new System.Drawing.Size(1038, 768);
+            this.Load += new System.EventHandler(this.Attendance_UserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lc_Attendance)).EndInit();
             this.lc_Attendance.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).EndInit();

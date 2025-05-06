@@ -10,8 +10,8 @@ namespace AttendanceManagementSystem.Interfaces.Repositories
     public interface IAttendanceRepository
     {
         void AddAttendance(Attendance attendance);
+        List<Attendance> GetAllAttendance();
         void UpdateAttendance();
         void DeleteAttendance();
-
     }
 }
