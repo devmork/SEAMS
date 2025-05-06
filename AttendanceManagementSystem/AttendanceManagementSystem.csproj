@@ -221,7 +221,6 @@
     <Compile Include="Interfaces\Repositories\IQRCodeRepository.cs" />
     <Compile Include="Interfaces\Repositories\IStudentsRepository.cs" />
     <Compile Include="Models\Base\Attendance.cs" />
-    <Compile Include="Models\Base\Event.cs" />
     <Compile Include="Models\Base\Person.cs" />
     <Compile Include="Models\Derived\Student.cs" />
     <Compile Include="Program.cs" />
@@ -270,8 +269,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="App.config" />
-    <Content Include="Database\SEAMS.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="SEAMS.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

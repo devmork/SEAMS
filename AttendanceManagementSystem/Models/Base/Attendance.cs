@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AttendanceManagementSystem.Models.Base
 {
-    public class Attendance : Event
+    public class Attendance
     {
         public Guid AttendanceId { get; set; }
         public string AttendanceName { get; set; }
@@ -17,9 +17,9 @@ namespace AttendanceManagementSystem.Models.Base
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
 
-        public Attendance(string eventName, string eventLocation, string attendanceLocation, string timeOfDay, string logType, DateTime date, DateTime startTime, DateTime endTime) 
-            : base(eventName, eventLocation)
+        public Attendance(string attendanceName, string attendanceLocation, string timeOfDay, string logType, DateTime date, DateTime startTime, DateTime endTime) 
         {
+            AttendanceName = attendanceName;
             AttendanceLocation = attendanceLocation;
             TimeOfDay = timeOfDay;
             LogType = logType;
