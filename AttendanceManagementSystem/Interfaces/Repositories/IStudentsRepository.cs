@@ -9,7 +9,7 @@ namespace AttendanceManagementSystem.Interfaces.Repositories
 {
     public interface IStudentsRepository
     {
-        List<Student> GetStudent();
+        List<Student> GetAllStudent();
         void AddStudent(Student student);
     }
 }
