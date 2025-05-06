@@ -22,6 +22,5 @@ namespace AttendanceManagementSystem.Forms.Events
             AddAttendance_Form addAttendance_Form = new AddAttendance_Form();
             addAttendance_Form.ShowDialog();
         }
-
     }
 }

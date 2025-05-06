@@ -17,7 +17,6 @@ namespace AttendanceManagementSystem.Forms.Events
 		{
             InitializeComponent();
 		}
-
         private void label_Instruction_Click(object sender, EventArgs e)
         {
 

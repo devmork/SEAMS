@@ -19,8 +19,8 @@ namespace AttendanceManagementSystem.Data.Repositories
             {
                 connection.Open();
                 string sql = @"INSERT INTO Attendance
-                                 (AttendanceName, AttendanceLocation, TimeOfDay, LogType, Date, StartTime, EndTime)
-                                 VALUES (@AttendanceName, @AttendanceLocation, @TimeOfDay, @LogType, @Date, @StartTime, @EndTime)";
+                             (AttendanceName, AttendanceLocation, TimeOfDay, LogType, Date, StartTime, EndTime)
+                             VALUES (@AttendanceName, @AttendanceLocation, @TimeOfDay, @LogType, @Date, @StartTime, @EndTime)";
 
                 var parameters = new DynamicParameters();
                 parameters.Add("AttendanceName", attendance.AttendanceName);
@@ -33,12 +33,10 @@ namespace AttendanceManagementSystem.Data.Repositories
                 connection.Execute(sql, parameters); 
             }
         }
-
         public void DeleteAttendance()
         {
             throw new NotImplementedException();
         }
-
         public void UpdateAttendance()
         {
             throw new NotImplementedException();

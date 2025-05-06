@@ -20,55 +20,11 @@ namespace AttendanceManagementSystem.Forms.Students
         {
             InitializeComponent();
         }
-        public BindingList<Student> GetStudentsFromDatabase()
-        {
-            var list = new BindingList<Student>();
-
-            using (var conn = new SQLiteConnection(@"Data Source=Data\SEAMS.db;Version=3;"))
-            {
-                conn.Open();
-                string query = "SELECT FirstName, MiddleName, LastName, SchoolStudentId, Course, YearLevel, Email, QRCode FROM Student";
-                using (var cmd = new SQLiteCommand(query, conn))
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        // DILI PAKO KABALO UNSAON PAGSHOW SA QRCODE IMAGE SA TABLE, AKONG DB PUD DILI NA MUSHOW UG DATA PERO MAKA ADD RA  
-                        list.Add(new Student
-                        (
-                            reader["FirstName"].ToString(),
-                            reader["MiddleName"].ToString(),
-                            reader["LastName"].ToString(),
-                            reader["SchoolID"].ToString(),
-                            reader.GetInt32(reader.GetOrdinal("YearLevel")),
-                            reader["Course"].ToString(),
-                            reader["Email"].ToString()
-                            //QRImage = reader["QRImage"] as byte[]
-                        )
-                        {
-
-                        });
-                    }
-                }
-            }
-
-            return list;
-        }
-
-        private BindingList<Student> students;
-
-        private void LoadStudents()
-        {
-            var students = GetStudentsFromDatabase();
-            gc_Students.DataSource = students;
-        }
-
         private void btn_AddStudent_Click(object sender, EventArgs e)
         {
             AddStudent_Form addStudent_Form = new AddStudent_Form();
             addStudent_Form.ShowDialog();
         }
-
         private void gc_Students_Load(object sender, EventArgs e)
         {
             //LoadStudents();

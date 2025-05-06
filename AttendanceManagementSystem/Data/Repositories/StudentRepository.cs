@@ -13,10 +13,10 @@ namespace AttendanceManagementSystem.Data.Repositories
 {
     public class StudentRepository : IStudentsRepository
     {
-        private string connectionString = @"Data Source=Database/SEAMS.db;Version=3;Mode=ReadWrite;";
-        public List<Student> GetStudent()
+        private string _connectionStrng = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
+        public List<Student> GetAllStudent()
         {
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
                 string sql = "SELECT * FROM Student;";
@@ -27,23 +27,22 @@ namespace AttendanceManagementSystem.Data.Repositories
         }
         public void AddStudent(Student student)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (var connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
-                string sql = @"INSERT INTO Student 
-                                (FirstName, MiddleName, LastName, SchoolStudentId, Course, YearLevel, Email, QRCode)
-                                VALUES (@Firstname, @MiddleName, @LastName, @SchoolStudentId, @Course, @Yearlevel, @Email, @QRCodeValue)";
-
-                var parameters = new DynamicParameters();
-                parameters.Add("@FirstName", student.FirstName);
-                parameters.Add("@MiddleName", student.MiddleName);
-                parameters.Add("@LastName", student.LastName);
-                parameters.Add("@SchoolStudentId", student.SchoolStudentId);
-                parameters.Add("@Course", student.Course);
-                parameters.Add("@YearLevel", student.YearLevel);
-                parameters.Add("@Email", student.Email);
-                parameters.Add("@QRCodeValue", student.QRCodeValue);
-                connection.Execute(sql, parameters);
+                var command = new SQLiteCommand(
+                    "INSERT INTO Student (FirstName, MiddleName, LastName, SchoolStudentId, Course, YearLevel, Email, QRCode) " +
+                    "VALUES (@FirstName, @MiddleName, @LastName, @SchoolStudentId, @Course, @YearLevel, @Email, @QRCode)",
+                    connection);
+                command.Parameters.AddWithValue("@FirstName", student.FirstName);
+                command.Parameters.AddWithValue("@MiddleName", student.MiddleName);
+                command.Parameters.AddWithValue("@LastName", student.LastName);
+                command.Parameters.AddWithValue("@SchoolStudentId", student.SchoolStudentId);
+                command.Parameters.AddWithValue("@Course", student.Course);
+                command.Parameters.AddWithValue("@YearLevel", student.YearLevel);
+                command.Parameters.AddWithValue("@Email", student.Email);
+                command.Parameters.AddWithValue("@QRCode", student.QRCodeImage); // Fails if QRCode is null
+                command.ExecuteNonQuery();
             }
         }
 

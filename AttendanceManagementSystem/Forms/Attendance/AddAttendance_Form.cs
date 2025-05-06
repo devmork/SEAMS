@@ -18,7 +18,6 @@ namespace AttendanceManagementSystem.Forms.Events
 {
 	public partial class AddAttendance_Form: DevExpress.XtraEditors.XtraForm
 	{
-        
         private readonly IAttendanceRepository _attendanceRepository;
         public AddAttendance_Form()
 		{

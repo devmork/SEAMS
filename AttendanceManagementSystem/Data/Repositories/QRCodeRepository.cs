@@ -9,7 +9,6 @@ namespace AttendanceManagementSystem.Data.Repositories
     public class QRCodeRepository : IQRCodeRepository
     {
         public Bitmap GeneratedQRCode { get; set; }
-
         public void GenerateQRCode(string schoolStudentId)
         {
             if (string.IsNullOrEmpty(schoolStudentId))
