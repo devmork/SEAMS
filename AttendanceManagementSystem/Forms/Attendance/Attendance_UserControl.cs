@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Data.Repositories;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace AttendanceManagementSystem.Forms.Events
 {
@@ -20,6 +22,8 @@ namespace AttendanceManagementSystem.Forms.Events
 		{
             InitializeComponent();
             _attendanceRepository = new AttendanceRepository();
+            gc_Attendance.RepositoryItems.Add(repositoryItem_ActionsButton);
+            gc_Attendance.Refresh();
         }
         private void btn_AddAttendance_Click(object sender, EventArgs e)
         {
