@@ -21,7 +21,7 @@ namespace AttendanceManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddAttendance_Form());
+            Application.Run(new AddStudent_Form());
         }
     }
 }
