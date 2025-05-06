@@ -9,11 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using AttendanceManagementSystem.Forms.Events;
-using AttendanceManagementSystem.Forms.Attendance;
 using AttendanceManagementSystem.Forms.Dashboard;
-using AttendanceManagementSystem.Forms.Reports;
 using AttendanceManagementSystem.Forms.Students;
 using AttendanceManagementSystem.Forms.QRScanner;
+using AttendanceManagementSystem.Forms.Attendance_Report;
 
 namespace AttendanceManagementSystem.Forms
 {
@@ -31,7 +30,6 @@ namespace AttendanceManagementSystem.Forms
             panel_Body.Controls.Clear();
             panel_Body.Controls.Add(dashboard_UserControl);
         }
-
         private void btn_Attendance_Click(object sender, EventArgs e)
         {
             Attendance_UserControl attendance_UserControl = new Attendance_UserControl();
@@ -39,15 +37,6 @@ namespace AttendanceManagementSystem.Forms
             panel_Body.Controls.Clear();
             panel_Body.Controls.Add(attendance_UserControl);
         }
-
-        private void btn_Reports_Click(object sender, EventArgs e)
-        {
-            Reports_UserControl reports_UserControl = new Reports_UserControl();
-            reports_UserControl.Dock = DockStyle.Fill;
-            panel_Body.Controls.Clear();
-            panel_Body.Controls.Add(reports_UserControl);
-        }
-
         private void btn_Students_Click(object sender, EventArgs e)
         {
             Students_UserControl students_UserControl = new Students_UserControl();
@@ -55,7 +44,13 @@ namespace AttendanceManagementSystem.Forms
             panel_Body.Controls.Clear();
             panel_Body.Controls.Add(students_UserControl);
         }
-
+        private void btn_AttendanceRecord_Click_1(object sender, EventArgs e)
+        {
+            AttendanceRecords attedanceRecords = new AttendanceRecords();
+            attedanceRecords.Dock = DockStyle.Fill;
+            panel_Body.Controls.Clear();
+            panel_Body.Controls.Add(attedanceRecords);
+        }
         private void btn_QRScanner_Click(object sender, EventArgs e)
         {
             QRScanner_UserControl qrScanner_UserControl = new QRScanner_UserControl();

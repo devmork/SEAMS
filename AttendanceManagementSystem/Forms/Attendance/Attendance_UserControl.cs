@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace AttendanceManagementSystem.Forms.Attendance
+namespace AttendanceManagementSystem.Forms.Events
 {
 	public partial class Attendance_UserControl: DevExpress.XtraEditors.XtraUserControl
 	{
@@ -17,5 +17,11 @@ namespace AttendanceManagementSystem.Forms.Attendance
 		{
             InitializeComponent();
 		}
-	}
+        private void btn_AddAttendance_Click(object sender, EventArgs e)
+        {
+            AddAttendance_Form addAttendance_Form = new AddAttendance_Form();
+            addAttendance_Form.ShowDialog();
+        }
+
+    }
 }

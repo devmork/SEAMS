@@ -6,15 +6,27 @@ using System.Threading.Tasks;
 
 namespace AttendanceManagementSystem.Models.Base
 {
-    public class Attendance
+    public class Attendance : Event
     {
         public Guid AttendanceId { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Location { get; set; }
-        public DateTime DateCreated { get; set; }
+        public string AttendanceName { get; set; }
+        public string AttendanceLocation { get; set; }
+        public string TimeOfDay { get; set; }
+        public string LogType { get; set; }
+        public DateTime Date { get; set; }
         public DateTime StartTime { get; set; }
-        public DateTime EndTime{ get; set; }
-        public bool IsActive { get; set; }
+        public DateTime EndTime { get; set; }
+
+        public Attendance(string eventName, string eventLocation, string attendanceLocation, string timeOfDay, string logType, DateTime date, DateTime startTime, DateTime endTime) 
+            : base(eventName, eventLocation)
+        {
+            AttendanceLocation = attendanceLocation;
+            TimeOfDay = timeOfDay;
+            LogType = logType;
+            Date = date;
+            StartTime = startTime;
+            EndTime = endTime;
+        }
+
     }
 }

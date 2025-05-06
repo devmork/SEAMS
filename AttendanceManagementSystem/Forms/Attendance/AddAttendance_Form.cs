@@ -8,6 +8,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using AttendanceManagementSystem.Models.Base;
+using System.Data.SQLite;
+using Dapper;
 
 namespace AttendanceManagementSystem.Forms.Events
 {
@@ -17,10 +20,13 @@ namespace AttendanceManagementSystem.Forms.Events
 		{
             InitializeComponent();
 		}
-
-        private void gc_AttendanceDetails_Paint(object sender, PaintEventArgs e)
+        private void btn_CreateEvent_Click(object sender, EventArgs e)
         {
-
+            
+        }
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

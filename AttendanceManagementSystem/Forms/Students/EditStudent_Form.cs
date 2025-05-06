@@ -9,18 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace AttendanceManagementSystem.Forms.Events
+namespace AttendanceManagementSystem.Forms.Students
 {
-	public partial class EditAttendance_Form: DevExpress.XtraEditors.XtraForm
+	public partial class EditStudent_Form: DevExpress.XtraEditors.XtraForm
 	{
-        public EditAttendance_Form()
+        public EditStudent_Form()
 		{
             InitializeComponent();
 		}
-
-        private void label_Instruction_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
+	}
 }
