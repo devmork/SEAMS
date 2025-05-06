@@ -23,26 +23,25 @@ namespace AttendanceManagementSystem.Data.Repositories
                 var students = connection.Query<Student>(sql).ToList();
                 return students;
             }
-
         }
         public void AddStudent(Student student)
         {
             using (var connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
-                var command = new SQLiteCommand(
-                    "INSERT INTO Student (FirstName, MiddleName, LastName, SchoolStudentId, Course, YearLevel, Email, QRCode) " +
-                    "VALUES (@FirstName, @MiddleName, @LastName, @SchoolStudentId, @Course, @YearLevel, @Email, @QRCode)",
-                    connection);
-                command.Parameters.AddWithValue("@FirstName", student.FirstName);
-                command.Parameters.AddWithValue("@MiddleName", student.MiddleName);
-                command.Parameters.AddWithValue("@LastName", student.LastName);
-                command.Parameters.AddWithValue("@SchoolStudentId", student.SchoolStudentId);
-                command.Parameters.AddWithValue("@Course", student.Course);
-                command.Parameters.AddWithValue("@YearLevel", student.YearLevel);
-                command.Parameters.AddWithValue("@Email", student.Email);
-                command.Parameters.AddWithValue("@QRCode", student.QRCodeImage); // Fails if QRCode is null
-                command.ExecuteNonQuery();
+                string sql = @"INSERT INTO Student (FirstName, MiddleName, LastName, SchoolStudentId, Course, YearLevel, Email, QRCode)
+                             VALUES (@FirstName, @MiddleName, @LastName, @SchoolStudentId, @Course, @YearLevel, @Email, @QRCode)";
+
+                var parameters = new DynamicParameters();
+                parameters.Add("@FirstName", student.FirstName);
+                parameters.Add("@MiddleName", student.MiddleName);
+                parameters.Add("@LastName", student.LastName);
+                parameters.Add("@SchoolStudentId", student.SchoolStudentId);
+                parameters.Add("@Course", student.Course);
+                parameters.Add("@YearLevel", student.YearLevel);
+                parameters.Add("@Email", student.Email);
+                parameters.Add("@QRCode", student.QRCodeImage); // Fails if QRCode is null
+                connection.Execute(sql, parameters);
             }
         }
 
