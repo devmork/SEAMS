@@ -30,8 +30,6 @@
         {
             this.lc_AddEventForm = new DevExpress.XtraLayout.LayoutControl();
             this.gc_EventDetails = new DevExpress.XtraEditors.GroupControl();
-            this.cbe_TimeOfDay = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.label_AttendanceLocation = new DevExpress.XtraEditors.LabelControl();
             this.txt_AttendanceLocation = new DevExpress.XtraEditors.TextEdit();
             this.cbe_LogType = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -53,7 +51,6 @@
             this.lc_AddEventForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_EventDetails)).BeginInit();
             this.gc_EventDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_TimeOfDay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_AttendanceLocation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_LogType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_EndTime.Properties)).BeginInit();
@@ -72,7 +69,7 @@
             this.lc_AddEventForm.Location = new System.Drawing.Point(0, 0);
             this.lc_AddEventForm.Name = "lc_AddEventForm";
             this.lc_AddEventForm.Root = this.Root;
-            this.lc_AddEventForm.Size = new System.Drawing.Size(558, 520);
+            this.lc_AddEventForm.Size = new System.Drawing.Size(558, 450);
             this.lc_AddEventForm.TabIndex = 0;
             this.lc_AddEventForm.Text = "layoutControl1";
             // 
@@ -81,8 +78,6 @@
             this.gc_EventDetails.AppearanceCaption.Font = new System.Drawing.Font("Poppins", 12.8F, System.Drawing.FontStyle.Bold);
             this.gc_EventDetails.AppearanceCaption.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.gc_EventDetails.AppearanceCaption.Options.UseFont = true;
-            this.gc_EventDetails.Controls.Add(this.cbe_TimeOfDay);
-            this.gc_EventDetails.Controls.Add(this.labelControl3);
             this.gc_EventDetails.Controls.Add(this.label_AttendanceLocation);
             this.gc_EventDetails.Controls.Add(this.txt_AttendanceLocation);
             this.gc_EventDetails.Controls.Add(this.cbe_LogType);
@@ -101,32 +96,9 @@
             this.gc_EventDetails.Location = new System.Drawing.Point(13, 13);
             this.gc_EventDetails.Margin = new System.Windows.Forms.Padding(0);
             this.gc_EventDetails.Name = "gc_EventDetails";
-            this.gc_EventDetails.Size = new System.Drawing.Size(532, 494);
+            this.gc_EventDetails.Size = new System.Drawing.Size(532, 424);
             this.gc_EventDetails.TabIndex = 4;
             this.gc_EventDetails.Text = "Create New Attendance";
-            // 
-            // cbe_TimeOfDay
-            // 
-            this.cbe_TimeOfDay.Location = new System.Drawing.Point(20, 250);
-            this.cbe_TimeOfDay.Name = "cbe_TimeOfDay";
-            this.cbe_TimeOfDay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbe_TimeOfDay.Properties.Items.AddRange(new object[] {
-            "Morning",
-            "Afternoon",
-            "Evening"});
-            this.cbe_TimeOfDay.Size = new System.Drawing.Size(489, 34);
-            this.cbe_TimeOfDay.TabIndex = 11;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 10.54F);
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(20, 219);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(67, 25);
-            this.labelControl3.TabIndex = 10;
-            this.labelControl3.Text = "Day Time";
             // 
             // label_AttendanceLocation
             // 
@@ -134,9 +106,9 @@
             this.label_AttendanceLocation.Appearance.Options.UseFont = true;
             this.label_AttendanceLocation.Location = new System.Drawing.Point(20, 143);
             this.label_AttendanceLocation.Name = "label_AttendanceLocation";
-            this.label_AttendanceLocation.Size = new System.Drawing.Size(149, 25);
+            this.label_AttendanceLocation.Size = new System.Drawing.Size(61, 25);
             this.label_AttendanceLocation.TabIndex = 9;
-            this.label_AttendanceLocation.Text = "Attendance Location";
+            this.label_AttendanceLocation.Text = "Location";
             // 
             // txt_AttendanceLocation
             // 
@@ -148,7 +120,7 @@
             // 
             // cbe_LogType
             // 
-            this.cbe_LogType.Location = new System.Drawing.Point(269, 321);
+            this.cbe_LogType.Location = new System.Drawing.Point(269, 251);
             this.cbe_LogType.Name = "cbe_LogType";
             this.cbe_LogType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -162,7 +134,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 10.54F);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(269, 290);
+            this.labelControl1.Location = new System.Drawing.Point(269, 220);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(62, 25);
             this.labelControl1.TabIndex = 6;
@@ -174,7 +146,7 @@
             this.btn_CreateAttendance.Appearance.Font = new System.Drawing.Font("Poppins", 9.25F);
             this.btn_CreateAttendance.Appearance.Options.UseBackColor = true;
             this.btn_CreateAttendance.Appearance.Options.UseFont = true;
-            this.btn_CreateAttendance.Location = new System.Drawing.Point(324, 444);
+            this.btn_CreateAttendance.Location = new System.Drawing.Point(324, 374);
             this.btn_CreateAttendance.Name = "btn_CreateAttendance";
             this.btn_CreateAttendance.Size = new System.Drawing.Size(185, 41);
             this.btn_CreateAttendance.TabIndex = 5;
@@ -185,7 +157,7 @@
             // 
             this.btn_Cancel.Appearance.Font = new System.Drawing.Font("Poppins", 9.25F);
             this.btn_Cancel.Appearance.Options.UseFont = true;
-            this.btn_Cancel.Location = new System.Drawing.Point(191, 444);
+            this.btn_Cancel.Location = new System.Drawing.Point(191, 374);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(127, 41);
             this.btn_Cancel.TabIndex = 5;
@@ -195,32 +167,35 @@
             // te_EndTime
             // 
             this.te_EndTime.EditValue = new System.DateTime(2025, 4, 6, 0, 0, 0, 0);
-            this.te_EndTime.Location = new System.Drawing.Point(269, 392);
+            this.te_EndTime.Location = new System.Drawing.Point(269, 322);
             this.te_EndTime.Name = "te_EndTime";
             this.te_EndTime.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.te_EndTime.Properties.MaskSettings.Set("mask", "t");
             this.te_EndTime.Size = new System.Drawing.Size(243, 34);
             this.te_EndTime.TabIndex = 4;
             // 
             // te_StartTime
             // 
             this.te_StartTime.EditValue = new System.DateTime(2025, 4, 6, 0, 0, 0, 0);
-            this.te_StartTime.Location = new System.Drawing.Point(20, 392);
+            this.te_StartTime.Location = new System.Drawing.Point(20, 322);
             this.te_StartTime.Name = "te_StartTime";
             this.te_StartTime.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.te_StartTime.Properties.MaskSettings.Set("mask", "t");
             this.te_StartTime.Size = new System.Drawing.Size(240, 34);
             this.te_StartTime.TabIndex = 4;
             // 
             // de_Date
             // 
             this.de_Date.EditValue = null;
-            this.de_Date.Location = new System.Drawing.Point(20, 321);
+            this.de_Date.Location = new System.Drawing.Point(20, 251);
             this.de_Date.Name = "de_Date";
             this.de_Date.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.de_Date.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.de_Date.Properties.MaskSettings.Set("mask", "D");
             this.de_Date.Size = new System.Drawing.Size(240, 34);
             this.de_Date.TabIndex = 3;
             // 
@@ -228,7 +203,7 @@
             // 
             this.label_EventEndTime.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 10.54F);
             this.label_EventEndTime.Appearance.Options.UseFont = true;
-            this.label_EventEndTime.Location = new System.Drawing.Point(269, 361);
+            this.label_EventEndTime.Location = new System.Drawing.Point(269, 291);
             this.label_EventEndTime.Name = "label_EventEndTime";
             this.label_EventEndTime.Size = new System.Drawing.Size(64, 25);
             this.label_EventEndTime.TabIndex = 2;
@@ -238,7 +213,7 @@
             // 
             this.label_EventStartTime.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 10.54F);
             this.label_EventStartTime.Appearance.Options.UseFont = true;
-            this.label_EventStartTime.Location = new System.Drawing.Point(20, 361);
+            this.label_EventStartTime.Location = new System.Drawing.Point(20, 291);
             this.label_EventStartTime.Name = "label_EventStartTime";
             this.label_EventStartTime.Size = new System.Drawing.Size(74, 25);
             this.label_EventStartTime.TabIndex = 2;
@@ -248,7 +223,7 @@
             // 
             this.label_EventDate.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 10.54F);
             this.label_EventDate.Appearance.Options.UseFont = true;
-            this.label_EventDate.Location = new System.Drawing.Point(20, 290);
+            this.label_EventDate.Location = new System.Drawing.Point(20, 220);
             this.label_EventDate.Name = "label_EventDate";
             this.label_EventDate.Size = new System.Drawing.Size(34, 25);
             this.label_EventDate.TabIndex = 2;
@@ -260,9 +235,9 @@
             this.label_AttendanceName.Appearance.Options.UseFont = true;
             this.label_AttendanceName.Location = new System.Drawing.Point(20, 70);
             this.label_AttendanceName.Name = "label_AttendanceName";
-            this.label_AttendanceName.Size = new System.Drawing.Size(131, 25);
+            this.label_AttendanceName.Size = new System.Drawing.Size(43, 25);
             this.label_AttendanceName.TabIndex = 2;
-            this.label_AttendanceName.Text = "Attendance Name";
+            this.label_AttendanceName.Text = "Name";
             // 
             // txt_AttendanceName
             // 
@@ -289,7 +264,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.lci_EventDetails});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(558, 520);
+            this.Root.Size = new System.Drawing.Size(558, 450);
             this.Root.TextVisible = false;
             // 
             // lci_EventDetails
@@ -298,7 +273,7 @@
             this.lci_EventDetails.Location = new System.Drawing.Point(0, 0);
             this.lci_EventDetails.Name = "lci_EventDetails";
             this.lci_EventDetails.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.lci_EventDetails.Size = new System.Drawing.Size(532, 494);
+            this.lci_EventDetails.Size = new System.Drawing.Size(532, 424);
             this.lci_EventDetails.TextSize = new System.Drawing.Size(0, 0);
             this.lci_EventDetails.TextVisible = false;
             // 
@@ -306,7 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 520);
+            this.ClientSize = new System.Drawing.Size(558, 450);
             this.Controls.Add(this.lc_AddEventForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddAttendance_Form";
@@ -316,7 +291,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gc_EventDetails)).EndInit();
             this.gc_EventDetails.ResumeLayout(false);
             this.gc_EventDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_TimeOfDay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_AttendanceLocation.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_LogType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_EndTime.Properties)).EndInit();
@@ -351,7 +325,5 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl label_AttendanceLocation;
         private DevExpress.XtraEditors.TextEdit txt_AttendanceLocation;
-        private DevExpress.XtraEditors.ComboBoxEdit cbe_TimeOfDay;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
     }
 }

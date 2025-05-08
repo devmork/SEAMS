@@ -28,7 +28,6 @@ namespace AttendanceManagementSystem.Forms.Events
         {
             string attendanceName = txt_AttendanceName.Text;
             string attendanceLocation = txt_AttendanceLocation.Text;
-            string timeOfDay = cbe_TimeOfDay.Text;
             string logType = cbe_LogType.Text;
             DateTime date = de_Date.DateTime;
             DateTime startTime = te_StartTime.Time;
@@ -39,7 +38,6 @@ namespace AttendanceManagementSystem.Forms.Events
                 AttendanceId = Guid.NewGuid(),
                 AttendanceName = attendanceName,
                 AttendanceLocation = attendanceLocation,
-                TimeOfDay = timeOfDay,
                 LogType = logType,
                 Date = date,
                 StartTime = startTime,
