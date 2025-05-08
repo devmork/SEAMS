@@ -11,7 +11,6 @@ namespace AttendanceManagementSystem.Models.Base
         public Guid AttendanceId { get; set; }
         public string AttendanceName { get; set; }
         public string AttendanceLocation { get; set; }
-        public string TimeOfDay { get; set; }
         public string LogType { get; set; }
         public DateTime Date { get; set; }
         public DateTime StartTime { get; set; }

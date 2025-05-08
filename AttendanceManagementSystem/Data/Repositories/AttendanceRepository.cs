@@ -4,28 +4,26 @@ using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AttendanceManagementSystem.Data.Repositories
 {
     public class AttendanceRepository : IAttendanceRepository
     {
-        private string _connectionStrng ="Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
+        private string _connectionStrng = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
         public void AddAttendance(Attendance attendance)
         {
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
                 string sql = @"INSERT INTO Attendance
-                             (AttendanceName, AttendanceLocation, TimeOfDay, LogType, Date, StartTime, EndTime)
-                             VALUES (@AttendanceName, @AttendanceLocation, @TimeOfDay, @LogType, @Date, @StartTime, @EndTime)";
+                             (AttendanceName, AttendanceLocation, LogType, Date, StartTime, EndTime)
+                             VALUES (@AttendanceName, @AttendanceLocation, @LogType, @Date, @StartTime, @EndTime)";
 
                 var parameters = new DynamicParameters();
                 parameters.Add("AttendanceName", attendance.AttendanceName);
                 parameters.Add("AttendanceLocation", attendance.AttendanceLocation);
-                parameters.Add("TimeOfDay", attendance.TimeOfDay);
                 parameters.Add("LogType", attendance.LogType);
                 parameters.Add("Date", attendance.Date);
                 parameters.Add("StartTime", attendance.StartTime);
@@ -38,7 +36,7 @@ namespace AttendanceManagementSystem.Data.Repositories
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
-                string sql = "SELECT AttendanceName, AttendanceLocation, TimeOfDay, LogType, Date, StartTime, EndTime FROM Attendance";
+                string sql = "SELECT AttendanceName, AttendanceLocation, LogType, Date, StartTime, EndTime FROM Attendance";
                 return connection.Query<Attendance>(sql).ToList();
             }
         }
@@ -48,6 +46,7 @@ namespace AttendanceManagementSystem.Data.Repositories
         }
         public void UpdateAttendance()
         {
+
             throw new NotImplementedException();
         }
     }

@@ -181,11 +181,11 @@
     <Compile Include="Forms\Attendance\AddAttendance_Form.Designer.cs">
       <DependentUpon>AddAttendance_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Attendance\EditAttendance.cs">
+    <Compile Include="Forms\Attendance\EditAttendance_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Attendance\EditAttendance.Designer.cs">
-      <DependentUpon>EditAttendance.cs</DependentUpon>
+    <Compile Include="Forms\Attendance\EditAttendance_Form.Designer.cs">
+      <DependentUpon>EditAttendance_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -241,8 +241,8 @@
     <EmbeddedResource Include="Forms\Attendance\AddAttendance_Form.resx">
       <DependentUpon>AddAttendance_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Attendance\EditAttendance.resx">
-      <DependentUpon>EditAttendance.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Attendance\EditAttendance_Form.resx">
+      <DependentUpon>EditAttendance_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

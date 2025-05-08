@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Models.Base;
 using Dapper;
-using static DevExpress.XtraEditors.Mask.MaskSettings;
 
 namespace AttendanceManagementSystem.Data.Repositories
 {

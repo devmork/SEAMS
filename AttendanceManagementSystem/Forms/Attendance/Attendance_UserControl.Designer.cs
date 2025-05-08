@@ -48,13 +48,12 @@
             this.gv_Attendance = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grdclm_AttendanceName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_AttendanceLocation = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.grdclm_TimeOfDay = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_LogType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_AttendanceDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_StartTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_EndTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.grdclm_Actions = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItem_ActionsButton = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.grdclm_Action = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItem_ActionButton = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lci_PageHeading = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_PanelBody = new DevExpress.XtraLayout.LayoutControlItem();
@@ -64,7 +63,7 @@
             this.panel_PageHeading.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Attendance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Attendance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItem_ActionsButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItem_ActionButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PanelBody)).BeginInit();
@@ -149,25 +148,33 @@
             this.gc_Attendance.MainView = this.gv_Attendance;
             this.gc_Attendance.Name = "gc_Attendance";
             this.gc_Attendance.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItem_ActionsButton});
+            this.repositoryItem_ActionButton});
             this.gc_Attendance.Size = new System.Drawing.Size(1006, 630);
             this.gc_Attendance.TabIndex = 8;
             this.gc_Attendance.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Attendance});
+            this.gc_Attendance.Click += new System.EventHandler(this.gc_Attendance_Click);
             // 
             // gv_Attendance
             // 
+            this.gv_Attendance.Appearance.HeaderPanel.Font = new System.Drawing.Font("Poppins SemiBold", 9.23F);
+            this.gv_Attendance.Appearance.HeaderPanel.Options.UseFont = true;
             this.gv_Attendance.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.grdclm_AttendanceName,
             this.grdclm_AttendanceLocation,
-            this.grdclm_TimeOfDay,
             this.grdclm_LogType,
             this.grdclm_AttendanceDate,
             this.grdclm_StartTime,
             this.grdclm_EndTime,
-            this.grdclm_Actions});
+            this.grdclm_Action});
             this.gv_Attendance.GridControl = this.gc_Attendance;
             this.gv_Attendance.Name = "gv_Attendance";
+            this.gv_Attendance.OptionsCustomization.AllowColumnMoving = false;
+            this.gv_Attendance.OptionsCustomization.AllowColumnResizing = false;
+            this.gv_Attendance.OptionsCustomization.AllowFilter = false;
+            this.gv_Attendance.OptionsCustomization.AllowGroup = false;
+            this.gv_Attendance.OptionsCustomization.AllowSort = false;
+            this.gv_Attendance.OptionsMenu.EnableColumnMenu = false;
             this.gv_Attendance.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
             // 
             // grdclm_AttendanceName
@@ -175,84 +182,102 @@
             this.grdclm_AttendanceName.Caption = "Name";
             this.grdclm_AttendanceName.FieldName = "AttendanceName";
             this.grdclm_AttendanceName.Name = "grdclm_AttendanceName";
+            this.grdclm_AttendanceName.OptionsColumn.AllowEdit = false;
+            this.grdclm_AttendanceName.OptionsColumn.ReadOnly = true;
             this.grdclm_AttendanceName.Visible = true;
             this.grdclm_AttendanceName.VisibleIndex = 0;
-            this.grdclm_AttendanceName.Width = 92;
+            this.grdclm_AttendanceName.Width = 124;
             // 
             // grdclm_AttendanceLocation
             // 
             this.grdclm_AttendanceLocation.Caption = "Location";
             this.grdclm_AttendanceLocation.FieldName = "AttendanceLocation";
             this.grdclm_AttendanceLocation.Name = "grdclm_AttendanceLocation";
+            this.grdclm_AttendanceLocation.OptionsColumn.AllowEdit = false;
+            this.grdclm_AttendanceLocation.OptionsColumn.ReadOnly = true;
             this.grdclm_AttendanceLocation.Visible = true;
             this.grdclm_AttendanceLocation.VisibleIndex = 1;
-            this.grdclm_AttendanceLocation.Width = 161;
-            // 
-            // grdclm_TimeOfDay
-            // 
-            this.grdclm_TimeOfDay.Caption = "Time of Day";
-            this.grdclm_TimeOfDay.FieldName = "TimeOfDay";
-            this.grdclm_TimeOfDay.Name = "grdclm_TimeOfDay";
-            this.grdclm_TimeOfDay.Visible = true;
-            this.grdclm_TimeOfDay.VisibleIndex = 2;
-            this.grdclm_TimeOfDay.Width = 106;
+            this.grdclm_AttendanceLocation.Width = 218;
             // 
             // grdclm_LogType
             // 
             this.grdclm_LogType.Caption = "Log Type";
             this.grdclm_LogType.FieldName = "LogType";
             this.grdclm_LogType.Name = "grdclm_LogType";
+            this.grdclm_LogType.OptionsColumn.AllowEdit = false;
+            this.grdclm_LogType.OptionsColumn.ReadOnly = true;
             this.grdclm_LogType.Visible = true;
-            this.grdclm_LogType.VisibleIndex = 3;
-            this.grdclm_LogType.Width = 107;
+            this.grdclm_LogType.VisibleIndex = 2;
+            this.grdclm_LogType.Width = 145;
             // 
             // grdclm_AttendanceDate
             // 
             this.grdclm_AttendanceDate.Caption = "Date";
             this.grdclm_AttendanceDate.FieldName = "Date";
             this.grdclm_AttendanceDate.Name = "grdclm_AttendanceDate";
+            this.grdclm_AttendanceDate.OptionsColumn.AllowEdit = false;
+            this.grdclm_AttendanceDate.OptionsColumn.ReadOnly = true;
             this.grdclm_AttendanceDate.Visible = true;
-            this.grdclm_AttendanceDate.VisibleIndex = 4;
-            this.grdclm_AttendanceDate.Width = 97;
+            this.grdclm_AttendanceDate.VisibleIndex = 3;
+            this.grdclm_AttendanceDate.Width = 119;
             // 
             // grdclm_StartTime
             // 
             this.grdclm_StartTime.Caption = "Start Time";
             this.grdclm_StartTime.FieldName = "StartTime";
             this.grdclm_StartTime.Name = "grdclm_StartTime";
+            this.grdclm_StartTime.OptionsColumn.AllowEdit = false;
+            this.grdclm_StartTime.OptionsColumn.ReadOnly = true;
             this.grdclm_StartTime.Visible = true;
-            this.grdclm_StartTime.VisibleIndex = 5;
-            this.grdclm_StartTime.Width = 106;
+            this.grdclm_StartTime.VisibleIndex = 4;
+            this.grdclm_StartTime.Width = 121;
             // 
             // grdclm_EndTime
             // 
             this.grdclm_EndTime.Caption = "End Time";
             this.grdclm_EndTime.FieldName = "EndTime";
             this.grdclm_EndTime.Name = "grdclm_EndTime";
+            this.grdclm_EndTime.OptionsColumn.AllowEdit = false;
+            this.grdclm_EndTime.OptionsColumn.ReadOnly = true;
             this.grdclm_EndTime.Visible = true;
-            this.grdclm_EndTime.VisibleIndex = 6;
-            this.grdclm_EndTime.Width = 97;
+            this.grdclm_EndTime.VisibleIndex = 5;
+            this.grdclm_EndTime.Width = 181;
             // 
-            // grdclm_Actions
+            // grdclm_Action
             // 
-            this.grdclm_Actions.Caption = "Actions";
-            this.grdclm_Actions.ColumnEdit = this.repositoryItem_ActionsButton;
-            this.grdclm_Actions.Name = "grdclm_Actions";
-            this.grdclm_Actions.Visible = true;
-            this.grdclm_Actions.VisibleIndex = 7;
-            this.grdclm_Actions.Width = 208;
+            this.grdclm_Action.AppearanceCell.Options.UseTextOptions = true;
+            this.grdclm_Action.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grdclm_Action.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.grdclm_Action.AppearanceHeader.Options.UseTextOptions = true;
+            this.grdclm_Action.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grdclm_Action.Caption = "Action";
+            this.grdclm_Action.ColumnEdit = this.repositoryItem_ActionButton;
+            this.grdclm_Action.Name = "grdclm_Action";
+            this.grdclm_Action.OptionsColumn.ReadOnly = true;
+            this.grdclm_Action.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.grdclm_Action.Visible = true;
+            this.grdclm_Action.VisibleIndex = 6;
+            this.grdclm_Action.Width = 66;
             // 
-            // repositoryItem_ActionsButton
+            // repositoryItem_ActionButton
             // 
-            this.repositoryItem_ActionsButton.AutoHeight = false;
-            editorButtonImageOptions1.ImageUri.Uri = "icon%20builder/actions_edit";
+            this.repositoryItem_ActionButton.Appearance.Options.UseTextOptions = true;
+            this.repositoryItem_ActionButton.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
-            editorButtonImageOptions2.ImageUri.Uri = "icon%20builder/actions_trash";
+            editorButtonImageOptions1.SvgImageSize = new System.Drawing.Size(16, 16);
+            serializableAppearanceObject1.Options.UseTextOptions = true;
+            serializableAppearanceObject1.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
-            this.repositoryItem_ActionsButton.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "Edit", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", "\"Edit\"", null, DevExpress.Utils.ToolTipAnchor.Default),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "Delete", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", "\"Delete\"", null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItem_ActionsButton.Name = "repositoryItem_ActionsButton";
+            editorButtonImageOptions2.SvgImageSize = new System.Drawing.Size(16, 16);
+            serializableAppearanceObject5.Options.UseTextOptions = true;
+            serializableAppearanceObject5.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.repositoryItem_ActionButton.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItem_ActionButton.Name = "repositoryItem_ActionButton";
+            this.repositoryItem_ActionButton.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItem_ActionButton.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItem_EditButton_ButtonClick);
+            this.repositoryItem_ActionButton.Click += new System.EventHandler(this.repositoryItem_EditButton_Click);
             // 
             // Root
             // 
@@ -304,7 +329,7 @@
             this.panel_PageHeading.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Attendance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Attendance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItem_ActionsButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItem_ActionButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PanelBody)).EndInit();
@@ -329,9 +354,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn grdclm_EndTime;
         private DevExpress.XtraGrid.Columns.GridColumn grdclm_LogType;
         private DevExpress.XtraGrid.Columns.GridColumn grdclm_AttendanceLocation;
-        private DevExpress.XtraGrid.Columns.GridColumn grdclm_TimeOfDay;
         private DevExpress.XtraGrid.Columns.GridColumn grdclm_AttendanceName;
-        private DevExpress.XtraGrid.Columns.GridColumn grdclm_Actions;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItem_ActionsButton;
+        private DevExpress.XtraGrid.Columns.GridColumn grdclm_Action;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItem_ActionButton;
     }
 }
