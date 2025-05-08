@@ -6,6 +6,7 @@ using Dapper;
 using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Data.Repositories;
 using System.IO;
+using AttendanceManagementSystem.Models.Utilities;
 
 namespace AttendanceManagementSystem.Forms.Students
 {
@@ -20,11 +21,11 @@ namespace AttendanceManagementSystem.Forms.Students
             _studentsRepository = new StudentRepository();
             _qrCodeRepository = new QRCodeRepository();
         }
-        private void btn_Generate_Click_1(object sender, EventArgs e)
+        private void btn_Generate_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txt_FirstName.Text) ||
-        string.IsNullOrWhiteSpace(txt_LastName.Text) ||
-        string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text))
+                string.IsNullOrWhiteSpace(txt_LastName.Text) ||
+                string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text))
             {
                 XtraMessageBox.Show("Please fill in all required fields (First Name, Last Name, School ID).");
                 return;
@@ -41,23 +42,18 @@ namespace AttendanceManagementSystem.Forms.Students
                     course: cbe_Course.Text,
                     email: txt_EmailAddress.Text
                 );
-                // Generate QR code
+                // Generate QR code  
                 _qrCodeRepository.GenerateQRCode(student.SchoolStudentId);
-                pe_QRCode.Image = ((QRCodeRepository)_qrCodeRepository).GeneratedQRCode;
+                pe_QRCode.Image = QRCodeHelper.GetQRCodeImage(_qrCodeRepository);
+                student.QRCodeImage = QRCodeHelper.GetQRCodeByteArray(_qrCodeRepository);
 
-                // Convert QR code to byte array and assign to student.QRCode
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    ((QRCodeRepository)_qrCodeRepository).GeneratedQRCode.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                    student.QRCodeImage = ms.ToArray(); // Assign the binary image data to QRCodeImage
-                }
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show($"Error generating QR code: {ex.Message}");
             }
         }
-        private void btn_Save_Click_1(object sender, EventArgs e)
+        private void btn_Save_Click(object sender, EventArgs e)
         {
             if (student == null)
             {
@@ -73,6 +69,10 @@ namespace AttendanceManagementSystem.Forms.Students
             {
                 XtraMessageBox.Show($"Error saving student: {ex.Message}");
             }
+        }
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

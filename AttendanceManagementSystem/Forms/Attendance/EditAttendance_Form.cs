@@ -11,15 +11,16 @@ using DevExpress.XtraEditors;
 
 namespace AttendanceManagementSystem.Forms.Events
 {
-	public partial class EditAttendance: DevExpress.XtraEditors.XtraForm
+	public partial class EditAttendance_Form: DevExpress.XtraEditors.XtraForm
 	{
-        public EditAttendance()
+        public EditAttendance_Form()
 		{
             InitializeComponent();
 		}
-        private void label_Instruction_Click(object sender, EventArgs e)
-        {
 
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

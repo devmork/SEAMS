@@ -24,5 +24,6 @@ namespace AttendanceManagementSystem.Models.Base
             Email = email;
             QRCodeImage = null;        // Will be set when QR code is generated
         }
+
     }
 }

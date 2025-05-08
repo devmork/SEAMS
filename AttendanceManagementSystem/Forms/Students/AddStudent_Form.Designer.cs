@@ -49,13 +49,13 @@
             this.panel_QRCode = new DevExpress.XtraEditors.PanelControl();
             this.pe_QRCode = new DevExpress.XtraEditors.PictureEdit();
             this.panel_Actions = new DevExpress.XtraEditors.PanelControl();
+            this.btn_Generate = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Cancel = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Save = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lci_StudentData = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_SaveStudentData = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_Actions = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btn_Generate = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.lc_AddStudent)).BeginInit();
             this.lc_AddStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_StudentData)).BeginInit();
@@ -349,6 +349,20 @@
             this.panel_Actions.Size = new System.Drawing.Size(333, 301);
             this.panel_Actions.TabIndex = 2;
             // 
+            // btn_Generate
+            // 
+            this.btn_Generate.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
+            this.btn_Generate.Appearance.Font = new System.Drawing.Font("Poppins", 9.25F);
+            this.btn_Generate.Appearance.Options.UseBackColor = true;
+            this.btn_Generate.Appearance.Options.UseFont = true;
+            this.btn_Generate.Location = new System.Drawing.Point(7, 7);
+            this.btn_Generate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Generate.Name = "btn_Generate";
+            this.btn_Generate.Size = new System.Drawing.Size(321, 54);
+            this.btn_Generate.TabIndex = 6;
+            this.btn_Generate.Text = "Generate QR Code";
+            this.btn_Generate.Click += new System.EventHandler(this.btn_Generate_Click);
+            // 
             // btn_Cancel
             // 
             this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -359,6 +373,7 @@
             this.btn_Cancel.Size = new System.Drawing.Size(321, 45);
             this.btn_Cancel.TabIndex = 5;
             this.btn_Cancel.Text = "CANCEL";
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // btn_Save
             // 
@@ -370,7 +385,7 @@
             this.btn_Save.Size = new System.Drawing.Size(321, 45);
             this.btn_Save.TabIndex = 4;
             this.btn_Save.Text = "SAVE";
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click_1);
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // Root
             // 
@@ -416,28 +431,16 @@
             this.lci_Actions.TextSize = new System.Drawing.Size(0, 0);
             this.lci_Actions.TextVisible = false;
             // 
-            // btn_Generate
-            // 
-            this.btn_Generate.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
-            this.btn_Generate.Appearance.Font = new System.Drawing.Font("Poppins", 9.25F);
-            this.btn_Generate.Appearance.Options.UseBackColor = true;
-            this.btn_Generate.Appearance.Options.UseFont = true;
-            this.btn_Generate.Location = new System.Drawing.Point(7, 6);
-            this.btn_Generate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_Generate.Name = "btn_Generate";
-            this.btn_Generate.Size = new System.Drawing.Size(321, 54);
-            this.btn_Generate.TabIndex = 6;
-            this.btn_Generate.Text = "Generate QR Code";
-            this.btn_Generate.Click += new System.EventHandler(this.btn_Generate_Click_1);
-            // 
             // AddStudent_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 632);
             this.Controls.Add(this.lc_AddStudent);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddStudent_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddStudent_Form";
             ((System.ComponentModel.ISupportInitialize)(this.lc_AddStudent)).EndInit();
             this.lc_AddStudent.ResumeLayout(false);

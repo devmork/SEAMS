@@ -28,17 +28,25 @@ namespace AttendanceManagementSystem.Forms.Events
         {
             string attendanceName = txt_AttendanceName.Text;
             string attendanceLocation = txt_AttendanceLocation.Text;
-            string timeOfDay = cbe_TimeOfDay.Text;
             string logType = cbe_LogType.Text;
             DateTime date = de_Date.DateTime;
             DateTime startTime = te_StartTime.Time;
             DateTime endTime = te_EndTime.Time;
 
-            var attendance = new Attendance(attendanceName, attendanceLocation, timeOfDay, logType, date, startTime, endTime);
+            var attendance = new Attendance
+            {
+                AttendanceId = Guid.NewGuid(),
+                AttendanceName = attendanceName,
+                AttendanceLocation = attendanceLocation,
+                LogType = logType,
+                Date = date,
+                StartTime = startTime,
+                EndTime = endTime
+            };
             _attendanceRepository.AddAttendance(attendance);
 
             // Show success message and close
-            MessageBox.Show("Attendance created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            XtraMessageBox.Show("Attendance created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
         private void btn_Cancel_Click(object sender, EventArgs e)

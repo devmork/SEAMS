@@ -22,7 +22,6 @@ namespace AttendanceManagementSystem.Forms
 		{
             InitializeComponent();
 		}
-
         private void btn_Dashboard_Click(object sender, EventArgs e)
         {
             Dashboard_UserControl dashboard_UserControl = new Dashboard_UserControl();
