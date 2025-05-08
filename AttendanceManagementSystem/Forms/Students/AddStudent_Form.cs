@@ -6,20 +6,19 @@ using Dapper;
 using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Data.Repositories;
 using System.IO;
-using AttendanceManagementSystem.Models.Utilities;
 
 namespace AttendanceManagementSystem.Forms.Students
 {
     public partial class AddStudent_Form : DevExpress.XtraEditors.XtraForm
     {
         private readonly IStudentsRepository _studentsRepository;
-        private readonly IQRCodeRepository _qrCodeRepository;
+        private readonly IQRCodeService _qrCodeService;
         private Student student;
         public AddStudent_Form()
         {
             InitializeComponent();
             _studentsRepository = new StudentRepository();
-            _qrCodeRepository = new QRCodeRepository();
+            _qrCodeService = new QRCodeRepository();
         }
         private void btn_Generate_Click(object sender, EventArgs e)
         {
@@ -43,9 +42,9 @@ namespace AttendanceManagementSystem.Forms.Students
                     email: txt_EmailAddress.Text
                 );
                 // Generate QR code  
-                _qrCodeRepository.GenerateQRCode(student.SchoolStudentId);
-                pe_QRCode.Image = QRCodeHelper.GetQRCodeImage(_qrCodeRepository);
-                student.QRCodeImage = QRCodeHelper.GetQRCodeByteArray(_qrCodeRepository);
+                _qrCodeService.GenerateQRCode(student.SchoolStudentId);
+                pe_QRCode.Image = _qrCodeService.GetQRCodeImage();
+                student.QRCodeImage = _qrCodeService.GetQRCodeByteArray();
 
             }
             catch (Exception ex)
