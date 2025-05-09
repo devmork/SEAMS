@@ -9,7 +9,6 @@ namespace AttendanceManagementSystem.Models.Base
     public class Person
     {
         public int PersonId { get; set; }
-        public string FullName { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
@@ -19,9 +18,16 @@ namespace AttendanceManagementSystem.Models.Base
             MiddleName = middleName;
             LastName = lastName;
         }
-        public string GetFullName()
+        public string FullName
         {
-            return $"{FirstName} {MiddleName} {LastName}";
+            get
+            {
+                return $"{FirstName} {MiddleName} {LastName}";
+            }
+        }
+        public Person()
+        {
+            // Parameterless constructor
         }
     }
 }

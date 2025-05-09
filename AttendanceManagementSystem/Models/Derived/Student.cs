@@ -14,7 +14,7 @@ namespace AttendanceManagementSystem.Models.Base
         public int YearLevel { get; set; }
         public string Course { get; set; }
         public string Email { get; set; }
-        public byte[] QRCodeImage { get; set; }
+        public byte[] QRCode { get; set; }
         public Student(string firstName, string middleName, string lastName, string schoolStudentId, int yearLevel, string course, string email) 
             : base(firstName, middleName, lastName)
         {
@@ -22,8 +22,11 @@ namespace AttendanceManagementSystem.Models.Base
             YearLevel = yearLevel;
             Course = course;
             Email = email;
-            QRCodeImage = null;        // Will be set when QR code is generated
+            QRCode = null;// Will be set when QR code is generated
         }
-
+        public Student() : base()
+        {
+            // Parameterless constructor chaining to base
+        }
     }
 }

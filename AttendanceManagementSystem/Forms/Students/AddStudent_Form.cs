@@ -44,7 +44,7 @@ namespace AttendanceManagementSystem.Forms.Students
                 // Generate QR code  
                 _qrCodeService.GenerateQRCode(student.SchoolStudentId);
                 pe_QRCode.Image = _qrCodeService.GetQRCodeImage();
-                student.QRCodeImage = _qrCodeService.GetQRCodeByteArray();
+                student.QRCode = _qrCodeService.GetQRCodeByteArray();
 
             }
             catch (Exception ex)
