@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Students_UserControl));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lc_Students = new DevExpress.XtraLayout.LayoutControl();
             this.panel_YearLevelFilter = new DevExpress.XtraEditors.PanelControl();
             this.cbe_YearLevel = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -102,7 +102,7 @@
             // panel_YearLevelFilter
             // 
             this.panel_YearLevelFilter.Controls.Add(this.cbe_YearLevel);
-            this.panel_YearLevelFilter.Location = new System.Drawing.Point(873, 114);
+            this.panel_YearLevelFilter.Location = new System.Drawing.Point(873, 127);
             this.panel_YearLevelFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_YearLevelFilter.Name = "panel_YearLevelFilter";
             this.panel_YearLevelFilter.Size = new System.Drawing.Size(149, 38);
@@ -127,7 +127,7 @@
             // panel_CourseFilter
             // 
             this.panel_CourseFilter.Controls.Add(this.cbe_Course);
-            this.panel_CourseFilter.Location = new System.Drawing.Point(720, 114);
+            this.panel_CourseFilter.Location = new System.Drawing.Point(720, 127);
             this.panel_CourseFilter.Name = "panel_CourseFilter";
             this.panel_CourseFilter.Size = new System.Drawing.Size(147, 38);
             this.panel_CourseFilter.TabIndex = 10;
@@ -156,7 +156,7 @@
             // panel_SearchBar
             // 
             this.panel_SearchBar.Controls.Add(this.search_Panel);
-            this.panel_SearchBar.Location = new System.Drawing.Point(16, 114);
+            this.panel_SearchBar.Location = new System.Drawing.Point(16, 127);
             this.panel_SearchBar.Name = "panel_SearchBar";
             this.panel_SearchBar.Size = new System.Drawing.Size(698, 38);
             this.panel_SearchBar.TabIndex = 9;
@@ -179,7 +179,7 @@
             this.panel_PageHeading.Controls.Add(this.label_PageDescription);
             this.panel_PageHeading.Location = new System.Drawing.Point(16, 16);
             this.panel_PageHeading.Name = "panel_PageHeading";
-            this.panel_PageHeading.Size = new System.Drawing.Size(1006, 92);
+            this.panel_PageHeading.Size = new System.Drawing.Size(1006, 105);
             this.panel_PageHeading.TabIndex = 7;
             // 
             // label_PageTitle
@@ -209,12 +209,13 @@
             this.btn_AddStudent.Appearance.Options.UseTextOptions = true;
             this.btn_AddStudent.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.btn_AddStudent.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btn_AddStudent.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_AddStudent.ImageOptions.SvgImage")));
             this.btn_AddStudent.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
             this.btn_AddStudent.Location = new System.Drawing.Point(757, 25);
             this.btn_AddStudent.Margin = new System.Windows.Forms.Padding(0);
             this.btn_AddStudent.Name = "btn_AddStudent";
             this.btn_AddStudent.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_AddStudent.Size = new System.Drawing.Size(235, 40);
+            this.btn_AddStudent.Size = new System.Drawing.Size(235, 53);
             this.btn_AddStudent.TabIndex = 2;
             this.btn_AddStudent.Text = "Add Student";
             this.btn_AddStudent.Click += new System.EventHandler(this.btn_AddStudent_Click);
@@ -234,12 +235,12 @@
             // 
             // gc_Students
             // 
-            this.gc_Students.Location = new System.Drawing.Point(16, 158);
+            this.gc_Students.Location = new System.Drawing.Point(16, 171);
             this.gc_Students.MainView = this.gv_Students;
             this.gc_Students.Name = "gc_Students";
             this.gc_Students.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItem_ActionButton});
-            this.gc_Students.Size = new System.Drawing.Size(1006, 594);
+            this.gc_Students.Size = new System.Drawing.Size(1006, 581);
             this.gc_Students.TabIndex = 8;
             this.gc_Students.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Students});
@@ -326,13 +327,13 @@
             // repositoryItem_ActionButton
             // 
             this.repositoryItem_ActionButton.AutoHeight = false;
-            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
-            editorButtonImageOptions1.SvgImageSize = new System.Drawing.Size(16, 16);
-            serializableAppearanceObject1.Options.UseTextOptions = true;
-            serializableAppearanceObject1.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            serializableAppearanceObject1.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
+            editorButtonImageOptions2.SvgImageSize = new System.Drawing.Size(16, 16);
+            serializableAppearanceObject5.Options.UseTextOptions = true;
+            serializableAppearanceObject5.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            serializableAppearanceObject5.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.repositoryItem_ActionButton.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItem_ActionButton.Name = "repositoryItem_ActionButton";
             this.repositoryItem_ActionButton.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItem_ActionButton.Click += new System.EventHandler(this.repositoryItem_ActionButton_Click);
@@ -358,7 +359,7 @@
             this.lci_PageHeading.CustomizationFormText = "layoutControlItem1";
             this.lci_PageHeading.Location = new System.Drawing.Point(0, 0);
             this.lci_PageHeading.Name = "lci_PageHeading";
-            this.lci_PageHeading.Size = new System.Drawing.Size(1012, 98);
+            this.lci_PageHeading.Size = new System.Drawing.Size(1012, 111);
             this.lci_PageHeading.Text = "layoutControlItem1";
             this.lci_PageHeading.TextSize = new System.Drawing.Size(0, 0);
             this.lci_PageHeading.TextVisible = false;
@@ -368,16 +369,16 @@
             this.lci_GridControlStudents.Control = this.gc_Students;
             this.lci_GridControlStudents.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lci_GridControlStudents.CustomizationFormText = "lci_GridControlStudents";
-            this.lci_GridControlStudents.Location = new System.Drawing.Point(0, 142);
+            this.lci_GridControlStudents.Location = new System.Drawing.Point(0, 155);
             this.lci_GridControlStudents.Name = "lci_GridControlStudents";
-            this.lci_GridControlStudents.Size = new System.Drawing.Size(1012, 600);
+            this.lci_GridControlStudents.Size = new System.Drawing.Size(1012, 587);
             this.lci_GridControlStudents.TextSize = new System.Drawing.Size(0, 0);
             this.lci_GridControlStudents.TextVisible = false;
             // 
             // lci_SearchPanel
             // 
             this.lci_SearchPanel.Control = this.panel_SearchBar;
-            this.lci_SearchPanel.Location = new System.Drawing.Point(0, 98);
+            this.lci_SearchPanel.Location = new System.Drawing.Point(0, 111);
             this.lci_SearchPanel.Name = "lci_SearchPanel";
             this.lci_SearchPanel.Size = new System.Drawing.Size(704, 44);
             this.lci_SearchPanel.TextSize = new System.Drawing.Size(0, 0);
@@ -386,7 +387,7 @@
             // lci_FilterPanel
             // 
             this.lci_FilterPanel.Control = this.panel_CourseFilter;
-            this.lci_FilterPanel.Location = new System.Drawing.Point(704, 98);
+            this.lci_FilterPanel.Location = new System.Drawing.Point(704, 111);
             this.lci_FilterPanel.Name = "lci_FilterPanel";
             this.lci_FilterPanel.Size = new System.Drawing.Size(153, 44);
             this.lci_FilterPanel.TextSize = new System.Drawing.Size(0, 0);
@@ -395,7 +396,7 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.panel_YearLevelFilter;
-            this.layoutControlItem1.Location = new System.Drawing.Point(857, 98);
+            this.layoutControlItem1.Location = new System.Drawing.Point(857, 111);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(155, 44);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
