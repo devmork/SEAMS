@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Data.Repositories;
+using AttendanceManagementSystem.Forms.Attendance_Report;
 
 namespace AttendanceManagementSystem.Forms.Attendance_Record
 {
@@ -25,6 +26,12 @@ namespace AttendanceManagementSystem.Forms.Attendance_Record
         private void gridControl_Reports_Load(object sender, EventArgs e)
         {
             gc_AttendanceRecords.DataSource = _studentsRepository.GetAllStudent();
+        }
+
+        private void repositoryItemButton_Action_Click(object sender, EventArgs e)
+        {
+            StudentAttendanceRecord_Form studentAttendanceRecord_Form = new StudentAttendanceRecord_Form();
+            studentAttendanceRecord_Form.ShowDialog();
         }
     }
 }

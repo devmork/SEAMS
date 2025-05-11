@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttendanceRecords_UserControl));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lc_AttendanceRecords = new DevExpress.XtraLayout.LayoutControl();
             this.panel_PageHeading = new DevExpress.XtraEditors.PanelControl();
             this.btn_Report = new DevExpress.XtraEditors.SimpleButton();
@@ -51,6 +51,7 @@
             this.grdclm_SchoolStudentId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_Name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_Action = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButton_Action = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panel_QRCode = new DevExpress.XtraEditors.PanelControl();
             this.pe_QRCode = new DevExpress.XtraEditors.PictureEdit();
             this.panel_StudentInfo = new DevExpress.XtraEditors.PanelControl();
@@ -67,7 +68,6 @@
             this.lci_YearLevel = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_QRCode = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_StudentInfo = new DevExpress.XtraLayout.LayoutControlItem();
-            this.repositoryItemButton_Action = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_AttendanceRecords)).BeginInit();
             this.lc_AttendanceRecords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).BeginInit();
@@ -85,6 +85,7 @@
             this.panel_PageBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_AttendanceRecords)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_AttendanceRecords)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButton_Action)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_QRCode)).BeginInit();
             this.panel_QRCode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pe_QRCode.Properties)).BeginInit();
@@ -98,7 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_YearLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_QRCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_StudentInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButton_Action)).BeginInit();
             this.SuspendLayout();
             // 
             // lc_AttendanceRecords
@@ -315,6 +315,18 @@
             this.grdclm_Action.Visible = true;
             this.grdclm_Action.VisibleIndex = 2;
             // 
+            // repositoryItemButton_Action
+            // 
+            this.repositoryItemButton_Action.AutoHeight = false;
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
+            editorButtonImageOptions1.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.repositoryItemButton_Action.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButton_Action.Name = "repositoryItemButton_Action";
+            this.repositoryItemButton_Action.ReadOnly = true;
+            this.repositoryItemButton_Action.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButton_Action.Click += new System.EventHandler(this.repositoryItemButton_Action_Click);
+            // 
             // panel_QRCode
             // 
             this.panel_QRCode.Controls.Add(this.pe_QRCode);
@@ -495,17 +507,6 @@
             this.lci_StudentInfo.TextSize = new System.Drawing.Size(0, 0);
             this.lci_StudentInfo.TextVisible = false;
             // 
-            // repositoryItemButton_Action
-            // 
-            this.repositoryItemButton_Action.AutoHeight = false;
-            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
-            editorButtonImageOptions2.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.repositoryItemButton_Action.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItemButton_Action.Name = "repositoryItemButton_Action";
-            this.repositoryItemButton_Action.ReadOnly = true;
-            this.repositoryItemButton_Action.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
             // AttendanceRecords_UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
@@ -531,6 +532,7 @@
             this.panel_PageBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_AttendanceRecords)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_AttendanceRecords)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButton_Action)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_QRCode)).EndInit();
             this.panel_QRCode.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pe_QRCode.Properties)).EndInit();
@@ -545,7 +547,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_YearLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_QRCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_StudentInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButton_Action)).EndInit();
             this.ResumeLayout(false);
 
         }
