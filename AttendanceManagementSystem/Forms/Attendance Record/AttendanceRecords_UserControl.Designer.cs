@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttendanceRecords_UserControl));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lc_AttendanceRecords = new DevExpress.XtraLayout.LayoutControl();
             this.panel_PageHeading = new DevExpress.XtraEditors.PanelControl();
             this.btn_Report = new DevExpress.XtraEditors.SimpleButton();
@@ -40,11 +46,11 @@
             this.panel_YearLevelFilter = new DevExpress.XtraEditors.PanelControl();
             this.cbe_YearLevel = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panel_PageBody = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl_Reports = new DevExpress.XtraGrid.GridControl();
-            this.gridView_Reports = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn_SchoolStudentId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_Name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_View = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gc_AttendanceRecords = new DevExpress.XtraGrid.GridControl();
+            this.gv_AttendanceRecords = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grdclm_SchoolStudentId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdclm_Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdclm_Action = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel_QRCode = new DevExpress.XtraEditors.PanelControl();
             this.pe_QRCode = new DevExpress.XtraEditors.PictureEdit();
             this.panel_StudentInfo = new DevExpress.XtraEditors.PanelControl();
@@ -57,10 +63,11 @@
             this.lci_PageHeading = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_SearchBar = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_PageBody = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lci_FilterSection = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lci_CourseFilter = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_YearLevel = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_QRCode = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_StudentInfo = new DevExpress.XtraLayout.LayoutControlItem();
+            this.repositoryItemButton_Action = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_AttendanceRecords)).BeginInit();
             this.lc_AttendanceRecords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).BeginInit();
@@ -76,8 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbe_YearLevel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageBody)).BeginInit();
             this.panel_PageBody.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl_Reports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView_Reports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_AttendanceRecords)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_AttendanceRecords)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_QRCode)).BeginInit();
             this.panel_QRCode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pe_QRCode.Properties)).BeginInit();
@@ -87,10 +94,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_SearchBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageBody)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lci_FilterSection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_CourseFilter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_YearLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_QRCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_StudentInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButton_Action)).BeginInit();
             this.SuspendLayout();
             // 
             // lc_AttendanceRecords
@@ -244,59 +252,68 @@
             // 
             // panel_PageBody
             // 
-            this.panel_PageBody.Controls.Add(this.gridControl_Reports);
+            this.panel_PageBody.Controls.Add(this.gc_AttendanceRecords);
             this.panel_PageBody.Location = new System.Drawing.Point(16, 161);
             this.panel_PageBody.Name = "panel_PageBody";
             this.panel_PageBody.Size = new System.Drawing.Size(646, 592);
             this.panel_PageBody.TabIndex = 7;
             // 
-            // gridControl_Reports
+            // gc_AttendanceRecords
             // 
-            this.gridControl_Reports.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl_Reports.Location = new System.Drawing.Point(2, 2);
-            this.gridControl_Reports.MainView = this.gridView_Reports;
-            this.gridControl_Reports.Name = "gridControl_Reports";
-            this.gridControl_Reports.Size = new System.Drawing.Size(642, 588);
-            this.gridControl_Reports.TabIndex = 0;
-            this.gridControl_Reports.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView_Reports});
+            this.gc_AttendanceRecords.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_AttendanceRecords.Location = new System.Drawing.Point(2, 2);
+            this.gc_AttendanceRecords.MainView = this.gv_AttendanceRecords;
+            this.gc_AttendanceRecords.Name = "gc_AttendanceRecords";
+            this.gc_AttendanceRecords.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemButton_Action});
+            this.gc_AttendanceRecords.Size = new System.Drawing.Size(642, 588);
+            this.gc_AttendanceRecords.TabIndex = 0;
+            this.gc_AttendanceRecords.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gv_AttendanceRecords});
+            this.gc_AttendanceRecords.Load += new System.EventHandler(this.gridControl_Reports_Load);
             // 
-            // gridView_Reports
+            // gv_AttendanceRecords
             // 
-            this.gridView_Reports.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn_SchoolStudentId,
-            this.gridColumn_Name,
-            this.gridColumn_View});
-            this.gridView_Reports.GridControl = this.gridControl_Reports;
-            this.gridView_Reports.Name = "gridView_Reports";
-            this.gridView_Reports.OptionsView.ShowGroupPanel = false;
+            this.gv_AttendanceRecords.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.grdclm_SchoolStudentId,
+            this.grdclm_Name,
+            this.grdclm_Action});
+            this.gv_AttendanceRecords.GridControl = this.gc_AttendanceRecords;
+            this.gv_AttendanceRecords.Name = "gv_AttendanceRecords";
+            this.gv_AttendanceRecords.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn_SchoolStudentId
+            // grdclm_SchoolStudentId
             // 
-            this.gridColumn_SchoolStudentId.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_SchoolStudentId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_SchoolStudentId.Caption = "ID #";
-            this.gridColumn_SchoolStudentId.Name = "gridColumn_SchoolStudentId";
-            this.gridColumn_SchoolStudentId.Visible = true;
-            this.gridColumn_SchoolStudentId.VisibleIndex = 0;
+            this.grdclm_SchoolStudentId.AppearanceHeader.Options.UseTextOptions = true;
+            this.grdclm_SchoolStudentId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grdclm_SchoolStudentId.Caption = "ID #";
+            this.grdclm_SchoolStudentId.FieldName = "SchoolStudentId";
+            this.grdclm_SchoolStudentId.Name = "grdclm_SchoolStudentId";
+            this.grdclm_SchoolStudentId.OptionsColumn.AllowEdit = false;
+            this.grdclm_SchoolStudentId.Visible = true;
+            this.grdclm_SchoolStudentId.VisibleIndex = 0;
             // 
-            // gridColumn_Name
+            // grdclm_Name
             // 
-            this.gridColumn_Name.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_Name.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_Name.Caption = "Name";
-            this.gridColumn_Name.Name = "gridColumn_Name";
-            this.gridColumn_Name.Visible = true;
-            this.gridColumn_Name.VisibleIndex = 1;
+            this.grdclm_Name.AppearanceHeader.Options.UseTextOptions = true;
+            this.grdclm_Name.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grdclm_Name.Caption = "Name";
+            this.grdclm_Name.FieldName = "FullName";
+            this.grdclm_Name.Name = "grdclm_Name";
+            this.grdclm_Name.OptionsColumn.AllowEdit = false;
+            this.grdclm_Name.Visible = true;
+            this.grdclm_Name.VisibleIndex = 1;
             // 
-            // gridColumn_View
+            // grdclm_Action
             // 
-            this.gridColumn_View.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn_View.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_View.Caption = "View";
-            this.gridColumn_View.Name = "gridColumn_View";
-            this.gridColumn_View.Visible = true;
-            this.gridColumn_View.VisibleIndex = 2;
+            this.grdclm_Action.AppearanceHeader.Options.UseTextOptions = true;
+            this.grdclm_Action.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grdclm_Action.Caption = "Action";
+            this.grdclm_Action.ColumnEdit = this.repositoryItemButton_Action;
+            this.grdclm_Action.Name = "grdclm_Action";
+            this.grdclm_Action.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.grdclm_Action.Visible = true;
+            this.grdclm_Action.VisibleIndex = 2;
             // 
             // panel_QRCode
             // 
@@ -385,7 +402,7 @@
             this.lci_PageHeading,
             this.lci_SearchBar,
             this.lci_PageBody,
-            this.lci_FilterSection,
+            this.lci_CourseFilter,
             this.lci_YearLevel,
             this.lci_QRCode,
             this.lci_StudentInfo});
@@ -430,17 +447,17 @@
             this.lci_PageBody.TextSize = new System.Drawing.Size(0, 0);
             this.lci_PageBody.TextVisible = false;
             // 
-            // lci_FilterSection
+            // lci_CourseFilter
             // 
-            this.lci_FilterSection.Control = this.panel_CourseFilter;
-            this.lci_FilterSection.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lci_FilterSection.CustomizationFormText = "lci_FilterSection";
-            this.lci_FilterSection.Location = new System.Drawing.Point(652, 104);
-            this.lci_FilterSection.Name = "lci_FilterSection";
-            this.lci_FilterSection.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 2, 2);
-            this.lci_FilterSection.Size = new System.Drawing.Size(207, 42);
-            this.lci_FilterSection.TextSize = new System.Drawing.Size(0, 0);
-            this.lci_FilterSection.TextVisible = false;
+            this.lci_CourseFilter.Control = this.panel_CourseFilter;
+            this.lci_CourseFilter.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lci_CourseFilter.CustomizationFormText = "lci_FilterSection";
+            this.lci_CourseFilter.Location = new System.Drawing.Point(652, 104);
+            this.lci_CourseFilter.Name = "lci_CourseFilter";
+            this.lci_CourseFilter.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 2, 2);
+            this.lci_CourseFilter.Size = new System.Drawing.Size(207, 42);
+            this.lci_CourseFilter.TextSize = new System.Drawing.Size(0, 0);
+            this.lci_CourseFilter.TextVisible = false;
             // 
             // lci_YearLevel
             // 
@@ -478,6 +495,17 @@
             this.lci_StudentInfo.TextSize = new System.Drawing.Size(0, 0);
             this.lci_StudentInfo.TextVisible = false;
             // 
+            // repositoryItemButton_Action
+            // 
+            this.repositoryItemButton_Action.AutoHeight = false;
+            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
+            editorButtonImageOptions2.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.repositoryItemButton_Action.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButton_Action.Name = "repositoryItemButton_Action";
+            this.repositoryItemButton_Action.ReadOnly = true;
+            this.repositoryItemButton_Action.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
             // AttendanceRecords_UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
@@ -501,8 +529,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbe_YearLevel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageBody)).EndInit();
             this.panel_PageBody.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl_Reports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView_Reports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_AttendanceRecords)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_AttendanceRecords)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_QRCode)).EndInit();
             this.panel_QRCode.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pe_QRCode.Properties)).EndInit();
@@ -513,10 +541,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_SearchBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageBody)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lci_FilterSection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_CourseFilter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_YearLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_QRCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_StudentInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButton_Action)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -534,15 +563,15 @@
         private DevExpress.XtraEditors.SearchControl searchControl;
         private DevExpress.XtraLayout.LayoutControlItem lci_SearchBar;
         private DevExpress.XtraEditors.PanelControl panel_CourseFilter;
-        private DevExpress.XtraLayout.LayoutControlItem lci_FilterSection;
+        private DevExpress.XtraLayout.LayoutControlItem lci_CourseFilter;
         private DevExpress.XtraEditors.PanelControl panel_YearLevelFilter;
         private DevExpress.XtraLayout.LayoutControlItem lci_YearLevel;
         private DevExpress.XtraEditors.PanelControl panel_PageBody;
-        private DevExpress.XtraGrid.GridControl gridControl_Reports;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView_Reports;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_SchoolStudentId;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_Name;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_View;
+        private DevExpress.XtraGrid.GridControl gc_AttendanceRecords;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv_AttendanceRecords;
+        private DevExpress.XtraGrid.Columns.GridColumn grdclm_SchoolStudentId;
+        private DevExpress.XtraGrid.Columns.GridColumn grdclm_Name;
+        private DevExpress.XtraGrid.Columns.GridColumn grdclm_Action;
         private DevExpress.XtraLayout.LayoutControlItem lci_PageBody;
         private DevExpress.XtraEditors.PanelControl panel_QRCode;
         private DevExpress.XtraLayout.LayoutControlItem lci_QRCode;
@@ -556,5 +585,6 @@
         private DevExpress.XtraEditors.PictureEdit pe_QRCode;
         private DevExpress.XtraEditors.ComboBoxEdit cbe_Course;
         private DevExpress.XtraEditors.ComboBoxEdit cbe_YearLevel;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButton_Action;
     }
 }

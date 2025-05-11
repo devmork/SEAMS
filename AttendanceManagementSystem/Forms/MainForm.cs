@@ -13,6 +13,7 @@ using AttendanceManagementSystem.Forms.Dashboard;
 using AttendanceManagementSystem.Forms.Students;
 using AttendanceManagementSystem.Forms.QRScanner;
 using AttendanceManagementSystem.Forms.Attendance_Report;
+using AttendanceManagementSystem.Forms.Attendance_Record;
 
 namespace AttendanceManagementSystem.Forms
 {
@@ -45,10 +46,10 @@ namespace AttendanceManagementSystem.Forms
         }
         private void btn_AttendanceRecord_Click(object sender, EventArgs e)
         {
-            Attendance_UserControl attendance_UserControl = new Attendance_UserControl();
-            attendance_UserControl.Dock = DockStyle.Fill;
+            AttendanceRecords_UserControl attendanceRecords_UserControl = new AttendanceRecords_UserControl();
+            attendanceRecords_UserControl.Dock = DockStyle.Fill;
             panel_Body.Controls.Clear();
-            panel_Body.Controls.Add(attendance_UserControl);
+            panel_Body.Controls.Add(attendanceRecords_UserControl);
         }
         private void btn_QRScanner_Click(object sender, EventArgs e)
         {
