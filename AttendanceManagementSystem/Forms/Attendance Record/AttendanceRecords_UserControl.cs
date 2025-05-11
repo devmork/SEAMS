@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace AttendanceManagementSystem.Forms.Attendance_Report
+namespace AttendanceManagementSystem.Forms.Attendance_Record
 {
-	public partial class AttendanceRecords: DevExpress.XtraEditors.XtraUserControl
+	public partial class AttendanceRecords_UserControl: DevExpress.XtraEditors.XtraUserControl
 	{
-        public AttendanceRecords()
+        public AttendanceRecords_UserControl()
 		{
             InitializeComponent();
 		}

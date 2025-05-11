@@ -43,12 +43,12 @@ namespace AttendanceManagementSystem.Forms
             panel_Body.Controls.Clear();
             panel_Body.Controls.Add(students_UserControl);
         }
-        private void btn_AttendanceRecord_Click_1(object sender, EventArgs e)
+        private void btn_AttendanceRecord_Click(object sender, EventArgs e)
         {
-            AttendanceRecords attedanceRecords = new AttendanceRecords();
-            attedanceRecords.Dock = DockStyle.Fill;
+            Attendance_UserControl attendance_UserControl = new Attendance_UserControl();
+            attendance_UserControl.Dock = DockStyle.Fill;
             panel_Body.Controls.Clear();
-            panel_Body.Controls.Add(attedanceRecords);
+            panel_Body.Controls.Add(attendance_UserControl);
         }
         private void btn_QRScanner_Click(object sender, EventArgs e)
         {
