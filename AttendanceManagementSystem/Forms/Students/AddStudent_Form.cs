@@ -18,7 +18,7 @@ namespace AttendanceManagementSystem.Forms.Students
         {
             InitializeComponent();
             _studentsRepository = new StudentRepository();
-            _qrCodeService = new QRCodeRepository();
+            _qrCodeService = new QRCodeService();
         }
         private void btn_Generate_Click(object sender, EventArgs e)
         {

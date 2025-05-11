@@ -55,6 +55,7 @@
             this.lci_StudentData = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_SaveStudentData = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_Actions = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btn_Generate = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.lc_EditStudent)).BeginInit();
             this.lc_EditStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Actions)).BeginInit();
@@ -102,6 +103,7 @@
             // 
             // panel_Actions
             // 
+            this.panel_Actions.Controls.Add(this.btn_Generate);
             this.panel_Actions.Controls.Add(this.btn_Cancel);
             this.panel_Actions.Controls.Add(this.btn_SaveChanges);
             this.panel_Actions.Location = new System.Drawing.Point(472, 243);
@@ -401,6 +403,19 @@
             this.lci_Actions.TextSize = new System.Drawing.Size(0, 0);
             this.lci_Actions.TextVisible = false;
             // 
+            // btn_Generate
+            // 
+            this.btn_Generate.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
+            this.btn_Generate.Appearance.Font = new System.Drawing.Font("Poppins", 9.25F);
+            this.btn_Generate.Appearance.Options.UseBackColor = true;
+            this.btn_Generate.Appearance.Options.UseFont = true;
+            this.btn_Generate.Location = new System.Drawing.Point(4, 5);
+            this.btn_Generate.Name = "btn_Generate";
+            this.btn_Generate.Size = new System.Drawing.Size(281, 41);
+            this.btn_Generate.TabIndex = 7;
+            this.btn_Generate.Text = "Generate QR Code";
+            this.btn_Generate.Click += new System.EventHandler(this.btn_Generate_Click);
+            // 
             // EditStudent_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
@@ -474,5 +489,6 @@
         private DevExpress.XtraLayout.LayoutControlItem lci_Actions;
         private DevExpress.XtraEditors.SimpleButton btn_Cancel;
         private DevExpress.XtraEditors.SimpleButton btn_SaveChanges;
+        private DevExpress.XtraEditors.SimpleButton btn_Generate;
     }
 }
