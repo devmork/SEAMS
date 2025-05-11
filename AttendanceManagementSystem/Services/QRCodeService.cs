@@ -7,7 +7,7 @@ using System.IO;
 
 namespace AttendanceManagementSystem.Data.Repositories
 {
-    public class QRCodeRepository : IQRCodeService
+    public class QRCodeService : IQRCodeService
     {
         public Bitmap GeneratedQRCode { get; private set; }
         public void GenerateQRCode(string schoolStudentId)

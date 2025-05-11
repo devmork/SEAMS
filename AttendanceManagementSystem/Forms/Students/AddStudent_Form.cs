@@ -18,7 +18,7 @@ namespace AttendanceManagementSystem.Forms.Students
         {
             InitializeComponent();
             _studentsRepository = new StudentRepository();
-            _qrCodeService = new QRCodeRepository();
+            _qrCodeService = new QRCodeService();
         }
         private void btn_Generate_Click(object sender, EventArgs e)
         {
@@ -44,7 +44,7 @@ namespace AttendanceManagementSystem.Forms.Students
                 // Generate QR code  
                 _qrCodeService.GenerateQRCode(student.SchoolStudentId);
                 pe_QRCode.Image = _qrCodeService.GetQRCodeImage();
-                student.QRCodeImage = _qrCodeService.GetQRCodeByteArray();
+                student.QRCode = _qrCodeService.GetQRCodeByteArray();
 
             }
             catch (Exception ex)
