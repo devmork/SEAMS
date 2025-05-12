@@ -15,11 +15,11 @@ using DevExpress.XtraGrid.Views.Grid;
 
 namespace AttendanceManagementSystem.Forms.Events
 {
-	public partial class Attendance_UserControl: DevExpress.XtraEditors.XtraUserControl
-	{
+    public partial class Attendance_UserControl : DevExpress.XtraEditors.XtraUserControl
+    {
         private readonly IAttendanceRepository _attendanceRepository;
         public Attendance_UserControl()
-		{
+        {
             InitializeComponent();
             _attendanceRepository = new AttendanceRepository();
         }
@@ -33,21 +33,19 @@ namespace AttendanceManagementSystem.Forms.Events
             AddAttendance_Form addAttendance_Form = new AddAttendance_Form();
             addAttendance_Form.ShowDialog();
         }
-        private void repositoryItem_EditButton_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void repositoryItem_ActionButton_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            EditAttendance_Form editAttendance_Form = new EditAttendance_Form();
-            editAttendance_Form.ShowDialog();
-        }
-        private void repositoryItem_EditButton_Click(object sender, EventArgs e)
-        {
-            EditAttendance_Form editAttendance_Form = new EditAttendance_Form();
-            editAttendance_Form.ShowDialog();
+            int buttonIndex = e.Button.Index;
 
-        }
-
-        private void gc_Attendance_Click(object sender, EventArgs e)
-        {
-
+            if (buttonIndex == 0)
+            {
+                EditAttendance_Form editAttendance_Form = new EditAttendance_Form();
+                editAttendance_Form.ShowDialog();
+            }
+            else if (buttonIndex == 1)
+            {
+                XtraMessageBox.Show("Are you sure you want to delete this attendance?", "Delete Attendance", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            }
         }
     }
 }

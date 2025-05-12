@@ -132,7 +132,7 @@
             this.btn_AttendanceRecord.Name = "btn_AttendanceRecord";
             this.btn_AttendanceRecord.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_AttendanceRecord.Text = "Attendance Records";
-            this.btn_AttendanceRecord.Click += new System.EventHandler(this.btn_AttendanceRecord_Click_1);
+            this.btn_AttendanceRecord.Click += new System.EventHandler(this.btn_AttendanceRecord_Click);
             // 
             // accordionControlSeparator4
             // 

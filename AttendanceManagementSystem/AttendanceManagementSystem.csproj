@@ -149,14 +149,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Repositories\AttendanceRepository.cs" />
-    <Compile Include="Data\Repositories\QRCodeRepository.cs" />
-    <Compile Include="Data\Repositories\StudentRepository.cs" />
-    <Compile Include="Forms\Attendance Record\AttendanceRecords.cs">
+    <Compile Include="Forms\Attendance Record\AttendanceRecords_UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Attendance Record\AttendanceRecords.Designer.cs">
-      <DependentUpon>AttendanceRecords.cs</DependentUpon>
+    <Compile Include="Forms\Attendance Record\AttendanceRecords_UserControl.Designer.cs">
+      <DependentUpon>AttendanceRecords_UserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\QRCodeService.cs" />
+    <Compile Include="Data\Repositories\StudentRepository.cs" />
     <Compile Include="Forms\Attendance Record\StudentAttendanceRecord_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,16 +218,15 @@
       <DependentUpon>Students_UserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Repositories\IAttendanceRepository.cs" />
-    <Compile Include="Interfaces\Repositories\IQRCodeRepository.cs" />
+    <Compile Include="Interfaces\Services\IQRCodeService.cs" />
     <Compile Include="Interfaces\Repositories\IStudentsRepository.cs" />
     <Compile Include="Models\Base\Attendance.cs" />
     <Compile Include="Models\Base\Person.cs" />
     <Compile Include="Models\Derived\Student.cs" />
-    <Compile Include="Models\Utilities\QRCodeHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Attendance Record\AttendanceRecords.resx">
-      <DependentUpon>AttendanceRecords.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Attendance Record\AttendanceRecords_UserControl.resx">
+      <DependentUpon>AttendanceRecords_UserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Attendance Record\StudentAttendanceRecord_Form.resx">
       <DependentUpon>StudentAttendanceRecord_Form.cs</DependentUpon>

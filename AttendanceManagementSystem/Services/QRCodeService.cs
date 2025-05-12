@@ -3,12 +3,13 @@ using System.Drawing;
 using ZXing;
 using ZXing.Common;
 using AttendanceManagementSystem.Interfaces.Repositories;
+using System.IO;
 
 namespace AttendanceManagementSystem.Data.Repositories
 {
-    public class QRCodeRepository : IQRCodeRepository
+    public class QRCodeService : IQRCodeService
     {
-        public Bitmap GeneratedQRCode { get; set; }
+        public Bitmap GeneratedQRCode { get; private set; }
         public void GenerateQRCode(string schoolStudentId)
         {
             if (string.IsNullOrEmpty(schoolStudentId))
@@ -25,6 +26,23 @@ namespace AttendanceManagementSystem.Data.Repositories
                 }
             };
             GeneratedQRCode = writer.Write(schoolStudentId);
+        }
+        public Image GetQRCodeImage()
+        {
+            if (GeneratedQRCode == null)
+                throw new InvalidOperationException("QR code has not been generated. Call GenerateQRCode first.");
+            return GeneratedQRCode;
+        }
+        public byte[] GetQRCodeByteArray()
+        {
+            if (GeneratedQRCode == null)
+                throw new InvalidOperationException("QR code has not been generated. Call GenerateQRCode first.");
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                GeneratedQRCode.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
         }
     }
 }

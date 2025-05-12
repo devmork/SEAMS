@@ -25,9 +25,9 @@ namespace AttendanceManagementSystem.Data.Repositories
                 parameters.Add("AttendanceName", attendance.AttendanceName);
                 parameters.Add("AttendanceLocation", attendance.AttendanceLocation);
                 parameters.Add("LogType", attendance.LogType);
-                parameters.Add("Date", attendance.Date);
-                parameters.Add("StartTime", attendance.StartTime);
-                parameters.Add("EndTime", attendance.EndTime);
+                parameters.Add("Date", attendance.Date.ToString("yyyy-MM-dd"));
+                parameters.Add("StartTime", $"{attendance.StartTime.Hour:D2}:{attendance.StartTime.Minute:D2}");
+                parameters.Add("EndTime", $"{attendance.EndTime.Hour:D2}:{attendance.EndTime.Minute:D2}");
                 connection.Execute(sql, parameters); 
             }
         }

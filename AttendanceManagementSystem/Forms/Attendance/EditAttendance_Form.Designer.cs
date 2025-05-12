@@ -172,6 +172,7 @@
             this.de_AttendanceDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.de_AttendanceDate.Properties.MaskSettings.Set("mask", "D");
+            this.de_AttendanceDate.Properties.UseMaskAsDisplayFormat = true;
             this.de_AttendanceDate.Size = new System.Drawing.Size(240, 34);
             this.de_AttendanceDate.TabIndex = 16;
             // 
