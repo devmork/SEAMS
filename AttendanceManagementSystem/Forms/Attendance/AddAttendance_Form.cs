@@ -33,6 +33,12 @@ namespace AttendanceManagementSystem.Forms.Events
             DateTime startTime = te_StartTime.Time;
             DateTime endTime = te_EndTime.Time;
 
+            if (startTime >= endTime)
+            {
+                XtraMessageBox.Show("Start time must be before end time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             var attendance = new Attendance
             {
                 AttendanceId = Guid.NewGuid(),
@@ -44,6 +50,7 @@ namespace AttendanceManagementSystem.Forms.Events
                 EndTime = endTime
             };
             _attendanceRepository.AddAttendance(attendance);
+            
 
             // Show success message and close
             XtraMessageBox.Show("Attendance created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
