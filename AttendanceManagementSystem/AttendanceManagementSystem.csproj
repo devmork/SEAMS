@@ -149,12 +149,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Repositories\AttendanceRepository.cs" />
+    <Compile Include="Data\Repositories\UserRepository.cs" />
     <Compile Include="Forms\Attendance Record\AttendanceRecords_UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Attendance Record\AttendanceRecords_UserControl.Designer.cs">
       <DependentUpon>AttendanceRecords_UserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Auth\backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Auth\backup.Designer.cs">
+      <DependentUpon>backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Auth\LogIn_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Auth\LogIn_Form.Designer.cs">
+      <DependentUpon>LogIn_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Auth\SignUp_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Auth\SignUp_Form.Designer.cs">
+      <DependentUpon>SignUp_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Repositories\IUserRepository.cs" />
+    <Compile Include="Models\Derived\User.cs" />
     <Compile Include="Services\QRCodeService.cs" />
     <Compile Include="Data\Repositories\StudentRepository.cs" />
     <Compile Include="Forms\Attendance Record\StudentAttendanceRecord_Form.cs">
@@ -234,6 +255,15 @@
     <EmbeddedResource Include="Forms\Attendance\Attendance_UserControl.resx">
       <DependentUpon>Attendance_UserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Auth\backup.resx">
+      <DependentUpon>backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Auth\LogIn_Form.resx">
+      <DependentUpon>LogIn_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Auth\SignUp_Form.resx">
+      <DependentUpon>SignUp_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard\Dashboard_UserControl.resx">
       <DependentUpon>Dashboard_UserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +299,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="App.config" />
+    <Content Include="Resources\Icons\lock.png" />
+    <Content Include="Resources\Icons\mail.png" />
+    <Content Include="Resources\Icons\person.png" />
+    <Content Include="Resources\Images\display.png" />
     <Content Include="SEAMS.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

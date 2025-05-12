@@ -8,6 +8,7 @@ using DevExpress.LookAndFeel;
 using AttendanceManagementSystem.Forms;
 using AttendanceManagementSystem.Forms.Students;
 using AttendanceManagementSystem.Forms.Events;
+using AttendanceManagementSystem.Forms.Auth;
 
 namespace AttendanceManagementSystem
 {
@@ -21,7 +22,7 @@ namespace AttendanceManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new LogIn_Form());
         }
     }
 }
