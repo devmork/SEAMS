@@ -40,9 +40,12 @@
             this.accordionControlSeparator4 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.btn_QRScanner = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.btn_LogOut = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.panel_Body = new DevExpress.XtraEditors.PanelControl();
+            this.dashboard_UserControl1 = new AttendanceManagementSystem.Forms.Dashboard.Dashboard_UserControl();
             ((System.ComponentModel.ISupportInitialize)(this.accordion_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Body)).BeginInit();
+            this.panel_Body.SuspendLayout();
             this.SuspendLayout();
             // 
             // accordion_Menu
@@ -70,10 +73,13 @@
             this.btn_AttendanceRecord,
             this.accordionControlSeparator4,
             this.btn_QRScanner,
-            this.accordionControlSeparator5});
+            this.accordionControlSeparator5,
+            this.btn_LogOut});
             this.accordion_Menu.Location = new System.Drawing.Point(0, 0);
             this.accordion_Menu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.accordion_Menu.Name = "accordion_Menu";
+            this.accordion_Menu.OptionsFooter.ActiveGroupDisplayMode = DevExpress.XtraBars.Navigation.ActiveGroupDisplayMode.GroupHeaderAndContent;
+            this.accordion_Menu.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.AutoCollapse;
             this.accordion_Menu.Size = new System.Drawing.Size(270, 734);
             this.accordion_Menu.TabIndex = 5;
             this.accordion_Menu.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
@@ -153,14 +159,35 @@
             // 
             this.accordionControlSeparator5.Name = "accordionControlSeparator5";
             // 
+            // btn_LogOut
+            // 
+            this.btn_LogOut.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F);
+            this.btn_LogOut.Appearance.Default.Options.UseFont = true;
+            this.btn_LogOut.ControlFooterAlignment = DevExpress.XtraBars.Navigation.AccordionItemFooterAlignment.Far;
+            this.btn_LogOut.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_LogOut.ImageOptions.SvgImage")));
+            this.btn_LogOut.ImageOptions.SvgImageSize = new System.Drawing.Size(22, 22);
+            this.btn_LogOut.Name = "btn_LogOut";
+            this.btn_LogOut.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btn_LogOut.Text = "Log out";
+            this.btn_LogOut.Click += new System.EventHandler(this.btn_LogOut_Click);
+            // 
             // panel_Body
             // 
+            this.panel_Body.Controls.Add(this.dashboard_UserControl1);
             this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Body.Location = new System.Drawing.Point(270, 0);
             this.panel_Body.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Body.Name = "panel_Body";
             this.panel_Body.Size = new System.Drawing.Size(1016, 734);
             this.panel_Body.TabIndex = 6;
+            // 
+            // dashboard_UserControl1
+            // 
+            this.dashboard_UserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboard_UserControl1.Location = new System.Drawing.Point(2, 2);
+            this.dashboard_UserControl1.Name = "dashboard_UserControl1";
+            this.dashboard_UserControl1.Size = new System.Drawing.Size(1012, 730);
+            this.dashboard_UserControl1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -173,8 +200,11 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DMC SSG Attendance Management System";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accordion_Menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Body)).EndInit();
+            this.panel_Body.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -193,5 +223,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator3;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator4;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_LogOut;
+        private Dashboard.Dashboard_UserControl dashboard_UserControl1;
     }
 }

@@ -13,6 +13,7 @@ using System.Data.SQLite;
 using Dapper;
 using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Data.Repositories;
+using DevExpress.XtraEditors.Filtering.Templates;
 
 namespace AttendanceManagementSystem.Forms.Events
 {
@@ -29,9 +30,9 @@ namespace AttendanceManagementSystem.Forms.Events
             string attendanceName = txt_AttendanceName.Text;
             string attendanceLocation = txt_AttendanceLocation.Text;
             string logType = cbe_LogType.Text;
-            DateTime date = de_Date.DateTime;
-            DateTime startTime = te_StartTime.Time;
-            DateTime endTime = te_EndTime.Time;
+            DateTime date = de_Date.DateTime.Date;
+            TimeSpan startTime = te_StartTime.Time.TimeOfDay;
+            TimeSpan endTime = te_EndTime.Time.TimeOfDay;
 
             if (startTime >= endTime)
             {
