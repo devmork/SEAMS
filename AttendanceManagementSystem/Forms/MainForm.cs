@@ -15,6 +15,7 @@ using AttendanceManagementSystem.Forms.QRScanner;
 using AttendanceManagementSystem.Forms.Attendance_Report;
 using AttendanceManagementSystem.Forms.Attendance_Record;
 using AttendanceManagementSystem.Forms.Auth;
+using DevExpress.XtraBars.Navigation;
 
 namespace AttendanceManagementSystem.Forms
 {
@@ -65,6 +66,12 @@ namespace AttendanceManagementSystem.Forms
             this.Hide();
             LogIn_Form logIn_Form = new LogIn_Form();
             logIn_Form.ShowDialog();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }
