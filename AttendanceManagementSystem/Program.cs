@@ -22,7 +22,7 @@ namespace AttendanceManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogIn_Form());
+            Application.Run(new MainForm());
         }
     }
 }
