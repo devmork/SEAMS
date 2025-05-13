@@ -49,6 +49,7 @@ namespace AttendanceManagementSystem.Forms.Auth
                 }
                 else
                 {
+                    ClearFilds();
                     XtraMessageBox.Show("Invalid email or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -56,6 +57,12 @@ namespace AttendanceManagementSystem.Forms.Auth
             {
                 XtraMessageBox.Show($"Error during login: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ClearFilds()
+        {
+            txt_Email.Text = string.Empty;
+            txt_Password.Text = string.Empty;
         }
     }
 }

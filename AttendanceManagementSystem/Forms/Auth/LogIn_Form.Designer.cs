@@ -56,7 +56,7 @@
             this.pe_ImageDisplay.Location = new System.Drawing.Point(0, 0);
             this.pe_ImageDisplay.Name = "pe_ImageDisplay";
             this.pe_ImageDisplay.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pe_ImageDisplay.Size = new System.Drawing.Size(516, 700);
+            this.pe_ImageDisplay.Size = new System.Drawing.Size(518, 700);
             this.pe_ImageDisplay.TabIndex = 3;
             // 
             // panel_UserData
@@ -163,6 +163,7 @@
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Properties.AutoHeight = false;
             this.txt_Password.Properties.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.txt_Password.Properties.PasswordChar = '•';
             this.txt_Password.Size = new System.Drawing.Size(380, 46);
             this.txt_Password.TabIndex = 13;
             // 

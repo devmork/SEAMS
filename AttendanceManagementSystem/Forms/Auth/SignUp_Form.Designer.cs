@@ -60,7 +60,7 @@
             this.pe_ImageDisplay.Location = new System.Drawing.Point(0, 0);
             this.pe_ImageDisplay.Name = "pe_ImageDisplay";
             this.pe_ImageDisplay.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pe_ImageDisplay.Size = new System.Drawing.Size(516, 734);
+            this.pe_ImageDisplay.Size = new System.Drawing.Size(518, 734);
             this.pe_ImageDisplay.TabIndex = 4;
             // 
             // panel_UserData
@@ -142,6 +142,7 @@
             this.btn_CreateAccount.Size = new System.Drawing.Size(380, 54);
             this.btn_CreateAccount.TabIndex = 29;
             this.btn_CreateAccount.Text = "Create Account";
+            this.btn_CreateAccount.Click += new System.EventHandler(this.btn_CreateAccount_Click);
             // 
             // label_LogInNow
             // 
@@ -153,6 +154,7 @@
             this.label_LogInNow.Size = new System.Drawing.Size(82, 22);
             this.label_LogInNow.TabIndex = 28;
             this.label_LogInNow.Text = "LOG IN NOW";
+            this.label_LogInNow.Click += new System.EventHandler(this.label_LogInNow_Click);
             // 
             // label_Instruction
             // 
@@ -182,6 +184,7 @@
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Properties.AutoHeight = false;
             this.txt_Password.Properties.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.txt_Password.Properties.PasswordChar = '•';
             this.txt_Password.Size = new System.Drawing.Size(380, 46);
             this.txt_Password.TabIndex = 24;
             // 

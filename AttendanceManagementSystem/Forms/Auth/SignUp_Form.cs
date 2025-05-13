@@ -62,14 +62,12 @@ namespace AttendanceManagementSystem.Forms.Auth
                 XtraMessageBox.Show($"Error during sign up: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void ClearFilds()
         {
             txt_UserName.Text = string.Empty;
             txt_Email.Text = string.Empty;
             txt_Password.Text = string.Empty;
         }
-
         private void label_LogInNow_Click(object sender, EventArgs e)
         {
             this.Hide(); // Hide the current form
