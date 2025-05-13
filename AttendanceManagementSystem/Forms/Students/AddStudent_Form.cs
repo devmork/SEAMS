@@ -62,6 +62,7 @@ namespace AttendanceManagementSystem.Forms.Students
             try
             {
                 _studentsRepository.AddStudent(student);
+                ClearFields();
                 XtraMessageBox.Show("Student saved successfully.");
             }
             catch (Exception ex)
@@ -72,6 +73,17 @@ namespace AttendanceManagementSystem.Forms.Students
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void ClearFields()
+        {
+            txt_FirstName.Text = string.Empty;
+            txt_MiddleName.Text = string.Empty;
+            txt_LastName.Text = string.Empty;
+            txt_SchoolStudentId.Text = string.Empty;
+            se_YearLevel.Value = 1;
+            cbe_Course.SelectedIndex = -1;
+            txt_EmailAddress.Text = string.Empty;
+            pe_QRCode.Image = null;
         }
     }
 }
