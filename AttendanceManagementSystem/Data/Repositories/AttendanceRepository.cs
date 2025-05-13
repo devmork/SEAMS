@@ -26,8 +26,8 @@ namespace AttendanceManagementSystem.Data.Repositories
                 parameters.Add("AttendanceLocation", attendance.AttendanceLocation);
                 parameters.Add("LogType", attendance.LogType);
                 parameters.Add("Date", attendance.Date.ToString("yyyy-MM-dd"));
-                parameters.Add("StartTime", $"{attendance.StartTime.Hour:D2}:{attendance.StartTime.Minute:D2}");
-                parameters.Add("EndTime", $"{attendance.EndTime.Hour:D2}:{attendance.EndTime.Minute:D2}");
+                parameters.Add("StartTime", $"{attendance.StartTime.Hours:D2} : {attendance.StartTime.Minutes:D2}");
+                parameters.Add("EndTime", $"{attendance.EndTime.Hours:D2} : {attendance.EndTime.Minutes:D2}");
                 connection.Execute(sql, parameters); 
             }
         }
@@ -42,6 +42,13 @@ namespace AttendanceManagementSystem.Data.Repositories
         }
         public void DeleteAttendance()
         {
+            //using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            //{
+            //    connection.Open();
+            //    string sql = "DELETE FROM Attendance WHERE Id = @Id";
+                
+            //}
+
             throw new NotImplementedException();
         }
         public void UpdateAttendance()
