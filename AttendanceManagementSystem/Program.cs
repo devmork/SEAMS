@@ -8,6 +8,7 @@ using DevExpress.LookAndFeel;
 using AttendanceManagementSystem.Forms;
 using AttendanceManagementSystem.Forms.Students;
 using AttendanceManagementSystem.Forms.Events;
+using AttendanceManagementSystem.Forms.Auth;
 
 namespace AttendanceManagementSystem
 {
