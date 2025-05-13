@@ -24,15 +24,20 @@ namespace AttendanceManagementSystem.Forms.Events
 		{
             InitializeComponent();
             _attendanceRepository = new AttendanceRepository();
+            // Disable past dates in the DateEdit control
+            de_Date.Properties.MinValue = DateTime.Today;
+
+            // Set Start Time to the current time
+            te_StartTime.EditValue = DateTime.Now;
         }
         private void btn_CreateAttendance_Click(object sender, EventArgs e)
         {
             string attendanceName = txt_AttendanceName.Text;
             string attendanceLocation = txt_AttendanceLocation.Text;
             string logType = cbe_LogType.Text;
-            DateTime date = de_Date.DateTime.Date;
-            TimeSpan startTime = te_StartTime.Time.TimeOfDay;
-            TimeSpan endTime = te_EndTime.Time.TimeOfDay;
+            DateTime date = de_Date.DateTime.Date; // Selected date without time
+            DateTime startTime = date + te_StartTime.Time.TimeOfDay; // Combine date with start time
+            DateTime endTime = date + te_EndTime.Time.TimeOfDay; // Combine date with end time
 
             if (startTime >= endTime)
             {
@@ -42,7 +47,7 @@ namespace AttendanceManagementSystem.Forms.Events
 
             var attendance = new Attendance
             {
-                AttendanceId = Guid.NewGuid(),
+                AttendanceId = 0,
                 AttendanceName = attendanceName,
                 AttendanceLocation = attendanceLocation,
                 LogType = logType,

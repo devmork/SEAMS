@@ -4,6 +4,7 @@ using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 
@@ -18,17 +19,17 @@ namespace AttendanceManagementSystem.Data.Repositories
             {
                 connection.Open();
                 string sql = @"INSERT INTO Attendance
-                             (AttendanceName, AttendanceLocation, LogType, Date, StartTime, EndTime)
-                             VALUES (@AttendanceName, @AttendanceLocation, @LogType, @Date, @StartTime, @EndTime)";
+                     (AttendanceName, AttendanceLocation, LogType, Date, StartTime, EndTime)
+                     VALUES (@AttendanceName, @AttendanceLocation, @LogType, @Date, @StartTime, @EndTime)";
 
                 var parameters = new DynamicParameters();
                 parameters.Add("AttendanceName", attendance.AttendanceName);
                 parameters.Add("AttendanceLocation", attendance.AttendanceLocation);
                 parameters.Add("LogType", attendance.LogType);
                 parameters.Add("Date", attendance.Date.ToString("yyyy-MM-dd"));
-                parameters.Add("StartTime", $"{attendance.StartTime.Hours:D2} : {attendance.StartTime.Minutes:D2}");
-                parameters.Add("EndTime", $"{attendance.EndTime.Hours:D2} : {attendance.EndTime.Minutes:D2}");
-                connection.Execute(sql, parameters); 
+                parameters.Add("StartTime", attendance.StartTime.ToString("hh:mm tt"));
+                parameters.Add("EndTime", attendance.EndTime.ToString("hh:mm tt"));
+                connection.Execute(sql, parameters);
             }
         }
         public List<Attendance> GetAllAttendance()
@@ -46,15 +47,38 @@ namespace AttendanceManagementSystem.Data.Repositories
             //{
             //    connection.Open();
             //    string sql = "DELETE FROM Attendance WHERE Id = @Id";
-                
+
             //}
 
             throw new NotImplementedException();
         }
-        public void UpdateAttendance()
-        {
 
-            throw new NotImplementedException();
+        public void UpdateAttendance(Attendance attendance)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            {
+                connection.Open();
+                string sql = @"UPDATE Attendance 
+                       SET AttendanceName = @AttendanceName, 
+                           AttendanceLocation = @AttendanceLocation, 
+                           LogType = @LogType, 
+                           Date = @Date, 
+                           StartTime = @StartTime, 
+                           EndTime = @EndTime 
+                       WHERE AttendanceId = @AttendanceId";
+
+                var parameters = new DynamicParameters();
+                parameters.Add("AttendanceName", attendance.AttendanceName);
+                parameters.Add("AttendanceLocation", attendance.AttendanceLocation);
+                parameters.Add("LogType", attendance.LogType);
+                parameters.Add("Date", attendance.Date.ToString("yyyy-MM-dd"));
+                parameters.Add("StartTime", attendance.StartTime.ToString("hh:mm tt"));
+                parameters.Add("EndTime", attendance.EndTime.ToString("hh:mm tt"));
+                parameters.Add("AttendanceId", attendance.AttendanceId);
+
+                connection.Execute(sql, parameters);
+            }
         }
     }
 }
+

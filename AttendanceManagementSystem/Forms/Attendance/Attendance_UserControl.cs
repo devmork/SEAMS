@@ -12,6 +12,7 @@ using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Data.Repositories;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using AttendanceManagementSystem.Models.Base;
 
 namespace AttendanceManagementSystem.Forms.Events
 {
@@ -27,6 +28,12 @@ namespace AttendanceManagementSystem.Forms.Events
         {
             var attendance = _attendanceRepository.GetAllAttendance();
             gc_Attendance.DataSource = attendance;
+
+            GridView gridView = gc_Attendance.MainView as GridView;
+            gridView.Columns["StartTime"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            gridView.Columns["StartTime"].DisplayFormat.FormatString = "hh:mm tt";
+            gridView.Columns["EndTime"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            gridView.Columns["EndTime"].DisplayFormat.FormatString = "hh:mm tt";
         }
         private void btn_AddAttendance_Click(object sender, EventArgs e)
         {
@@ -39,7 +46,7 @@ namespace AttendanceManagementSystem.Forms.Events
 
             if (buttonIndex == 0)
             {
-                EditAttendance_Form editAttendance_Form = new EditAttendance_Form();
+                EditAttendance_Form editAttendance_Form = new EditAttendance_Form();;
                 editAttendance_Form.ShowDialog();
             }
             else if (buttonIndex == 1)
