@@ -12,6 +12,6 @@ namespace AttendanceManagementSystem.Interfaces.Repositories
         void AddAttendance(Attendance attendance);
         List<Attendance> GetAllAttendance();
         void UpdateAttendance(Attendance attendance);
-        void DeleteAttendance();
+        void DeleteAttendance(int attendanceId);
     }
 }

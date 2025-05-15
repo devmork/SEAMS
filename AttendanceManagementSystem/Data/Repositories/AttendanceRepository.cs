@@ -13,6 +13,7 @@ namespace AttendanceManagementSystem.Data.Repositories
     public class AttendanceRepository : IAttendanceRepository
     {
         private string _connectionStrng = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
+
         public void AddAttendance(Attendance attendance)
         {
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
@@ -50,16 +51,16 @@ namespace AttendanceManagementSystem.Data.Repositories
                 return connection.Query<Attendance>(sql).ToList();
             }
         }
-        public void DeleteAttendance()
+        public void DeleteAttendance(int attendanceId)
         {
-            //using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
-            //{
-            //    connection.Open();
-            //    string sql = "DELETE FROM Attendance WHERE Id = @Id";
-
-            //}
-
-            throw new NotImplementedException();
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            {
+                connection.Open();
+                string sql = "DELETE FROM Attendance WHERE AttendanceId = @AttendanceId";
+                var parameters = new DynamicParameters();
+                parameters.Add("AttendanceId", attendanceId);  // 'attendanceId' matches the parameter name
+                connection.Execute(sql, parameters);
+            }
         }
 
         public void UpdateAttendance(Attendance attendance)

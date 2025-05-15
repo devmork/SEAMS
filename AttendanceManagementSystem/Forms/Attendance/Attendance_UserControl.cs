@@ -57,33 +57,46 @@ namespace AttendanceManagementSystem.Forms.Events
         private void repositoryItem_ActionButton_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             int buttonIndex = e.Button.Index;
+            GridView gridView = gc_Attendance.MainView as GridView;
+            if (gridView == null) return;
+
+            int rowHandle = gridView.FocusedRowHandle;
+            if (rowHandle < 0) return;
+
+            // Declare 'attendance' here so it's accessible in all branches
+            Attendance attendance = gridView.GetRow(rowHandle) as Attendance;
+            if (attendance == null) return;
 
             if (buttonIndex == 0)
             {
-                // Get the GridView from the GridControl
-                GridView gridView = gc_Attendance.MainView as GridView;
-                if (gridView != null)
-                {
-                    // Get the handle of the focused row (where the button was clicked)
-                    int rowHandle = gridView.FocusedRowHandle;
-                    if (rowHandle >= 0) // Ensure the row handle is valid
-                    {
-                        // Retrieve the Attendance object from the row
-                        Attendance attendance = gridView.GetRow(rowHandle) as Attendance;
-                        if (attendance != null) // Verify the object is an Attendance instance
-                        {
-                            // Instantiate the form with the Attendance object and show it
-                            EditAttendance_Form editAttendance_Form = new EditAttendance_Form(attendance);
-                            editAttendance_Form.ShowDialog();
-                            gridView.RefreshRow(rowHandle); //Girefresh and edited row
-                        }
-                    }
-                }
+                // Edit functionality
+                EditAttendance_Form editAttendance_Form = new EditAttendance_Form(attendance);
+                editAttendance_Form.ShowDialog();
+                gridView.RefreshRow(rowHandle);
             }
             else if (buttonIndex == 1)
             {
-                XtraMessageBox.Show("Are you sure you want to delete this attendance?", "Delete Attendance", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (XtraMessageBox.Show("Are you sure you want to delete this attendance?", "Delete Attendance", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        _attendanceRepository.DeleteAttendance(attendance.AttendanceId);
+                        LoadAttendanceData();
+                        XtraMessageBox.Show("Attendance deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        XtraMessageBox.Show($"An error occurred while deleting: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
+        }
+
+        private void LoadAttendanceData()
+        {
+            var attendanceList = _attendanceRepository.GetAllAttendance();
+            gc_Attendance.DataSource = attendanceList;
         }
     }
 }
