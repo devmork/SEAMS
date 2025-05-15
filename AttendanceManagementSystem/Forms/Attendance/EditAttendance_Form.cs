@@ -48,18 +48,6 @@ namespace AttendanceManagementSystem.Forms.Events
             DateTime startTime = date + te_StartTime.Time.TimeOfDay;
             DateTime endTime = date + te_EndTime.Time.TimeOfDay;
 
-            if (string.IsNullOrWhiteSpace(attendanceName) || string.IsNullOrWhiteSpace(attendanceLocation) || string.IsNullOrWhiteSpace(logType))
-            {
-                XtraMessageBox.Show("All fields must be filled.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (startTime >= endTime)
-            {
-                XtraMessageBox.Show("Start time must be before end time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             attendance.AttendanceName = attendanceName;
             attendance.AttendanceLocation = attendanceLocation;
             attendance.LogType = logType;
@@ -67,10 +55,58 @@ namespace AttendanceManagementSystem.Forms.Events
             attendance.StartTime = startTime;
             attendance.EndTime = endTime;
 
-            _attendanceRepository.UpdateAttendance(attendance);
+            try
+            {
+                _attendanceRepository.UpdateAttendance(attendance);
+                XtraMessageBox.Show("Attendance updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            XtraMessageBox.Show("Attendance updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            //if (string.IsNullOrWhiteSpace(attendanceName) || string.IsNullOrWhiteSpace(attendanceLocation) || string.IsNullOrWhiteSpace(logType))
+            //{
+            //    XtraMessageBox.Show("All fields must be filled.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+
+            //if (startTime >= endTime)
+            //{
+            //    XtraMessageBox.Show("Start time must be before end time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+
+            //attendance.AttendanceName = attendanceName;
+            //attendance.AttendanceLocation = attendanceLocation;
+            //attendance.LogType = logType;
+            //attendance.Date = date;
+            //attendance.StartTime = startTime;
+            //attendance.EndTime = endTime;
+
+            //_attendanceRepository.UpdateAttendance(attendance);
+
+            //XtraMessageBox.Show("Attendance updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //this.Close();
+
+            //try
+            //{
+            //    attendance.AttendanceName = txt_AttendanceName.Text;
+            //    attendance.AttendanceLocation = txt_AttedanceLocation.Text;
+            //    attendance.LogType = cbe_LogType.Text;
+            //    attendance.Date = de_AttendanceDate.DateTime.Date;
+            //    attendance.StartTime = attendance.Date + te_StartTime.Time.TimeOfDay;
+            //    attendance.EndTime = attendance.Date + te_EndTime.Time.TimeOfDay;
+
+            //    _attendanceRepository.UpdateAttendance(attendance);
+            //    XtraMessageBox.Show("Attendance updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    this.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    XtraMessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)

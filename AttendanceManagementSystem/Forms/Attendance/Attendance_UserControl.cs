@@ -40,14 +40,45 @@ namespace AttendanceManagementSystem.Forms.Events
             AddAttendance_Form addAttendance_Form = new AddAttendance_Form();
             addAttendance_Form.ShowDialog();
         }
+        //private void repositoryItem_ActionButton_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        //{
+        //    int buttonIndex = e.Button.Index;
+
+        //    if (buttonIndex == 0)
+        //    {
+        //        EditAttendance_Form editAttendance_Form = new EditAttendance_Form();;
+        //        editAttendance_Form.ShowDialog();
+        //    }
+        //    else if (buttonIndex == 1)
+        //    {
+        //        XtraMessageBox.Show("Are you sure you want to delete this attendance?", "Delete Attendance", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+        //    }
+        //}
         private void repositoryItem_ActionButton_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             int buttonIndex = e.Button.Index;
 
             if (buttonIndex == 0)
             {
-                EditAttendance_Form editAttendance_Form = new EditAttendance_Form();;
-                editAttendance_Form.ShowDialog();
+                // Get the GridView from the GridControl
+                GridView gridView = gc_Attendance.MainView as GridView;
+                if (gridView != null)
+                {
+                    // Get the handle of the focused row (where the button was clicked)
+                    int rowHandle = gridView.FocusedRowHandle;
+                    if (rowHandle >= 0) // Ensure the row handle is valid
+                    {
+                        // Retrieve the Attendance object from the row
+                        Attendance attendance = gridView.GetRow(rowHandle) as Attendance;
+                        if (attendance != null) // Verify the object is an Attendance instance
+                        {
+                            // Instantiate the form with the Attendance object and show it
+                            EditAttendance_Form editAttendance_Form = new EditAttendance_Form(attendance);
+                            editAttendance_Form.ShowDialog();
+                            gridView.RefreshRow(rowHandle); //Girefresh and edited row
+                        }
+                    }
+                }
             }
             else if (buttonIndex == 1)
             {
