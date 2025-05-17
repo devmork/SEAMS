@@ -44,7 +44,6 @@ namespace AttendanceManagementSystem.Data.Repositories
                 connection.Execute(sql, parameters);
             }
         }
-
         public void UpdateStudent(Student student)
         {
             using (var connection = new SQLiteConnection(_connectionStrng))

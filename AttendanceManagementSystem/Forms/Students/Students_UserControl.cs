@@ -48,6 +48,7 @@ namespace AttendanceManagementSystem.Forms.Students
         }
         private void gc_Students_Load(object sender, EventArgs e)
         {
+            gc_Students.DataSource = null;
             gc_Students.DataSource = _studentsRepository.GetAllStudent();
         }
     }
