@@ -8,25 +8,35 @@ using ZXing.QrCode.Internal;
 
 namespace AttendanceManagementSystem.Models.Base
 {
-    public class Student : Person
+    public class Student
     {
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
         public string SchoolStudentId { get; set; }
         public int YearLevel { get; set; }
         public string Course { get; set; }
         public string Email { get; set; }
         public byte[] QRCode { get; set; }
-        public Student(string firstName, string middleName, string lastName, string schoolStudentId, int yearLevel, string course, string email) 
-            : base(firstName, middleName, lastName)
+        public Student(string firstName, string middleName, string lastName, string schoolStudentId, int yearLevel, string course, string email)
         {
+            FirstName = firstName;
+            MiddleName = middleName;
+            LastName = lastName;
             SchoolStudentId = schoolStudentId;
             YearLevel = yearLevel;
             Course = course;
             Email = email;
-            QRCode = null;// Will be set when QR code is generated
         }
-        public Student() : base()
+        public string FullName
         {
-            // Parameterless constructor chaining to base
+            get
+            {
+                return $"{FirstName} {MiddleName} {LastName}";
+            }
         }
+        public Student() { }
+        
     }
 }
