@@ -13,22 +13,29 @@ using System.Data.SQLite;
 using DevExpress.XtraGrid;
 using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Data.Repositories;
+using ZXing.QrCode.Internal;
+using System.IO;
 
 namespace AttendanceManagementSystem.Forms.Students
 {
     public partial class Students_UserControl : DevExpress.XtraEditors.XtraUserControl
     {
         private readonly IStudentsRepository _studentsRepository;
-
         public Students_UserControl()
         {
             InitializeComponent();
             _studentsRepository = new StudentRepository();
+            LoadData();
         }
         private void btn_AddStudent_Click(object sender, EventArgs e)
         {
-            AddStudent_Form addStudent_Form = new AddStudent_Form();
-            addStudent_Form.ShowDialog();
+            using (var addStudentForm = new AddStudent_Form())
+            {
+                if (addStudentForm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData();
+                }
+            }
         }
         private void repositoryItem_ActionButton_Click(object sender, EventArgs e)
         {
@@ -41,15 +48,10 @@ namespace AttendanceManagementSystem.Forms.Students
                 EditStudent_Form editStudent_Form = new EditStudent_Form(selectedStudent);
                 editStudent_Form.ShowDialog();
             }
-            else
-            {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Please select a student to edit.");
-            }
         }
-        private void gc_Students_Load(object sender, EventArgs e)
+        public void LoadData()
         {
-            gc_Students.DataSource = null;
             gc_Students.DataSource = _studentsRepository.GetAllStudent();
-        }
+        }    
     }
 }

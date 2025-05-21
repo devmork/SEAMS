@@ -47,6 +47,7 @@
             this.label_PageDescription = new DevExpress.XtraEditors.LabelControl();
             this.gc_Students = new DevExpress.XtraGrid.GridControl();
             this.gv_Students = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grdclm_Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_StudentId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_Name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_Course = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -244,11 +245,11 @@
             this.gc_Students.TabIndex = 8;
             this.gc_Students.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Students});
-            this.gc_Students.Load += new System.EventHandler(this.gc_Students_Load);
             // 
             // gv_Students
             // 
             this.gv_Students.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.grdclm_Id,
             this.grdclm_StudentId,
             this.grdclm_Name,
             this.grdclm_Course,
@@ -258,6 +259,12 @@
             this.gv_Students.GridControl = this.gc_Students;
             this.gv_Students.Name = "gv_Students";
             this.gv_Students.OptionsView.ShowGroupPanel = false;
+            // 
+            // grdclm_Id
+            // 
+            this.grdclm_Id.Caption = "Id";
+            this.grdclm_Id.FieldName = "Id";
+            this.grdclm_Id.Name = "grdclm_Id";
             // 
             // grdclm_StudentId
             // 
@@ -464,5 +471,6 @@
         private DevExpress.XtraEditors.PanelControl panel_YearLevelFilter;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItem_ActionButton;
+        private DevExpress.XtraGrid.Columns.GridColumn grdclm_Id;
     }
 }
