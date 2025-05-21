@@ -132,6 +132,7 @@
             this.btn_CloseForm.Properties.SvgImageSize = new System.Drawing.Size(14, 14);
             this.btn_CloseForm.Size = new System.Drawing.Size(22, 18);
             this.btn_CloseForm.TabIndex = 20;
+            this.btn_CloseForm.Click += new System.EventHandler(this.btn_CloseForm_Click);
             // 
             // gc_StudentData
             // 

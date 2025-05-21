@@ -76,7 +76,11 @@ namespace AttendanceManagementSystem.Forms.Students
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
-        }    
+        }
+        private void btn_CloseForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void ClearFields()
         {
             txt_FirstName.Text = string.Empty;
@@ -87,6 +91,6 @@ namespace AttendanceManagementSystem.Forms.Students
             cbe_Course.SelectedIndex = -1;
             txt_EmailAddress.Text = string.Empty;
             pe_QRCode.Image = null;
-        }
+        }  
     }
 }
