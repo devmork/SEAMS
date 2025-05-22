@@ -76,7 +76,6 @@ namespace AttendanceManagementSystem.Forms.Students
                 _student.FirstName = txt_FirstName.Text;
                 _student.MiddleName = txt_MiddleName.Text;
                 _student.LastName = txt_MiddleName.Text;
-                _student.SchoolStudentId = txt_SchoolStudentId.Text;
                 _student.YearLevel = (int)se_YearLevel.Value;
                 _student.Course = cbe_Course.Text;
                 _student.Email = txt_EmailAddress.Text;
