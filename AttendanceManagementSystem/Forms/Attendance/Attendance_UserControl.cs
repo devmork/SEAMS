@@ -34,26 +34,26 @@ namespace AttendanceManagementSystem.Forms.Events
             gridView.Columns["StartTime"].DisplayFormat.FormatString = "hh:mm tt";
             gridView.Columns["EndTime"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             gridView.Columns["EndTime"].DisplayFormat.FormatString = "hh:mm tt";
+            // Ensure Status column is visible and displayed as text
+            gridView.Columns["Status"].ColumnEdit = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit(); //gichange ang editor type into text para dili na sya magcheckbox
+            gridView.CustomColumnDisplayText += GridView_CustomColumnDisplayText; //gahandle sa converting sa boolean status which is Active ug Inactive
         }
+
+        private void GridView_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.FieldName == "Status")
+            {
+                bool status = (bool)e.Value;
+                e.DisplayText = status ? "ACTIVE" : "INACTIVE";
+            }
+        }
+
         private void btn_AddAttendance_Click(object sender, EventArgs e)
         {
             AddAttendance_Form addAttendance_Form = new AddAttendance_Form();
             addAttendance_Form.ShowDialog();
         }
-        //private void repositoryItem_ActionButton_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        //{
-        //    int buttonIndex = e.Button.Index;
-
-        //    if (buttonIndex == 0)
-        //    {
-        //        EditAttendance_Form editAttendance_Form = new EditAttendance_Form();;
-        //        editAttendance_Form.ShowDialog();
-        //    }
-        //    else if (buttonIndex == 1)
-        //    {
-        //        XtraMessageBox.Show("Are you sure you want to delete this attendance?", "Delete Attendance", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-        //    }
-        //}
+        
         private void repositoryItem_ActionButton_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             int buttonIndex = e.Button.Index;
@@ -96,6 +96,15 @@ namespace AttendanceManagementSystem.Forms.Events
         private void LoadAttendanceData()
         {
             var attendanceList = _attendanceRepository.GetAllAttendance();
+            foreach (var att in attendanceList)
+            {
+                bool shouldBeActive = (DateTime.Now >= att.StartTime && DateTime.Now <= att.EndTime);
+                if (att.Status != shouldBeActive)
+                {
+                    att.Status = shouldBeActive;
+                    _attendanceRepository.UpdateAttendance(att);
+                }
+            }
             gc_Attendance.DataSource = attendanceList;
         }
     }

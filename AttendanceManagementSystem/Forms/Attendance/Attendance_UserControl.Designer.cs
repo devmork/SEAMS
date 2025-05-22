@@ -46,6 +46,7 @@
             this.label_PageDescription = new DevExpress.XtraEditors.LabelControl();
             this.gc_Attendance = new DevExpress.XtraGrid.GridControl();
             this.gv_Attendance = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grdclm_Status = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_AttendanceName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_AttendanceLocation = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_LogType = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -165,6 +166,7 @@
             this.grdclm_AttendanceDate,
             this.grdclm_StartTime,
             this.grdclm_EndTime,
+            this.grdclm_Status,
             this.grdclm_Action});
             this.gv_Attendance.GridControl = this.gc_Attendance;
             this.gv_Attendance.Name = "gv_Attendance";
@@ -175,6 +177,14 @@
             this.gv_Attendance.OptionsCustomization.AllowSort = false;
             this.gv_Attendance.OptionsMenu.EnableColumnMenu = false;
             this.gv_Attendance.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
+            // 
+            // grdclm_Status
+            // 
+            this.grdclm_Status.Caption = "Status";
+            this.grdclm_Status.FieldName = "Status";
+            this.grdclm_Status.Name = "grdclm_Status";
+            this.grdclm_Status.Visible = true;
+            this.grdclm_Status.VisibleIndex = 6;
             // 
             // grdclm_AttendanceName
             // 
@@ -255,7 +265,7 @@
             this.grdclm_Action.OptionsColumn.ReadOnly = true;
             this.grdclm_Action.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.grdclm_Action.Visible = true;
-            this.grdclm_Action.VisibleIndex = 6;
+            this.grdclm_Action.VisibleIndex = 7;
             this.grdclm_Action.Width = 66;
             // 
             // repositoryItem_ActionButton
@@ -355,5 +365,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn grdclm_AttendanceName;
         private DevExpress.XtraGrid.Columns.GridColumn grdclm_Action;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItem_ActionButton;
+        private DevExpress.XtraGrid.Columns.GridColumn grdclm_Status;
     }
 }

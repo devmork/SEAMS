@@ -20,8 +20,8 @@ namespace AttendanceManagementSystem.Data.Repositories
             {
                 connection.Open();
                 string sql = @"INSERT INTO Attendance
-                     (AttendanceName, AttendanceLocation, LogType, Date, StartTime, EndTime)
-                     VALUES (@AttendanceName, @AttendanceLocation, @LogType, @Date, @StartTime, @EndTime)";
+                     (AttendanceName, AttendanceLocation, LogType, Date, StartTime, EndTime, Status)
+                     VALUES (@AttendanceName, @AttendanceLocation, @LogType, @Date, @StartTime, @EndTime, @Status)";
 
                 var parameters = new DynamicParameters();
                 parameters.Add("AttendanceName", attendance.AttendanceName);
@@ -30,18 +30,10 @@ namespace AttendanceManagementSystem.Data.Repositories
                 parameters.Add("Date", attendance.Date.ToString("yyyy-MM-dd"));
                 parameters.Add("StartTime", attendance.StartTime.ToString("hh:mm tt"));
                 parameters.Add("EndTime", attendance.EndTime.ToString("hh:mm tt"));
+                parameters.Add("Status", attendance.Status ? 1 : 0);
                 connection.Execute(sql, parameters);
             }
         }
-        //public List<Attendance> GetAllAttendance()
-        //{
-        //    using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
-        //    {
-        //        connection.Open();
-        //        string sql = "SELECT AttendanceName, AttendanceLocation, LogType, Date, StartTime, EndTime FROM Attendance";
-        //        return connection.Query<Attendance>(sql).ToList();
-        //    }
-        //}
         public List<Attendance> GetAllAttendance()
         {
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
@@ -65,30 +57,6 @@ namespace AttendanceManagementSystem.Data.Repositories
 
         public void UpdateAttendance(Attendance attendance)
         {
-            //using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
-            //{
-            //    connection.Open();
-            //    string sql = @"UPDATE Attendance 
-            //           SET AttendanceName = @AttendanceName, 
-            //               AttendanceLocation = @AttendanceLocation, 
-            //               LogType = @LogType, 
-            //               Date = @Date, 
-            //               StartTime = @StartTime, 
-            //               EndTime = @EndTime 
-            //           WHERE AttendanceId = @AttendanceId";
-
-            //    var parameters = new DynamicParameters();
-            //    parameters.Add("AttendanceName", attendance.AttendanceName);
-            //    parameters.Add("AttendanceLocation", attendance.AttendanceLocation);
-            //    parameters.Add("LogType", attendance.LogType);
-            //    parameters.Add("Date", attendance.Date.ToString("yyyy-MM-dd"));
-            //    parameters.Add("StartTime", attendance.StartTime.ToString("hh:mm tt"));
-            //    parameters.Add("EndTime", attendance.EndTime.ToString("hh:mm tt"));
-            //    parameters.Add("AttendanceId", attendance.AttendanceId);
-
-            //    connection.Execute(sql, parameters);
-            //}
-
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
@@ -98,7 +66,8 @@ namespace AttendanceManagementSystem.Data.Repositories
                            LogType = @LogType, 
                            Date = @Date, 
                            StartTime = @StartTime, 
-                           EndTime = @EndTime 
+                           EndTime = @EndTime,
+                           Status = @Status
                        WHERE AttendanceId = @AttendanceId";
 
                 var parameters = new DynamicParameters();
@@ -108,6 +77,7 @@ namespace AttendanceManagementSystem.Data.Repositories
                 parameters.Add("Date", attendance.Date.ToString("yyyy-MM-dd"));
                 parameters.Add("StartTime", attendance.StartTime.ToString("hh:mm tt"));
                 parameters.Add("EndTime", attendance.EndTime.ToString("hh:mm tt"));
+                parameters.Add("Status", attendance.Status ? 1 : 0); // Add Status parameter
                 parameters.Add("AttendanceId", attendance.AttendanceId);
 
                 int rowsAffected = connection.Execute(sql, parameters);
@@ -116,19 +86,6 @@ namespace AttendanceManagementSystem.Data.Repositories
                     throw new Exception($"No attendance record found with AttendanceId: {attendance.AttendanceId}");
                 }
             }
-
-            //using (var connection = new SQLiteConnection(_connectionStrng))
-            //{
-            //    connection.Open();
-            //    string query = "UPDATE Attendance SET AttendanceName = @AttendanceName, AttendanceLocation =
-            //                    @AttendanceLocation, LogType = @LogType, Date = @Date, StartTime = @StartTime,
-            //                    EndTime = @EndTime WHERE AttendanceId = @AttendanceId";
-            //    int rowsAffected = connection.Execute(query, attendance);
-            //    if (rowsAffected == 0)
-            //    {
-            //        throw new Exception($"Update failed for AttendanceId: {attendance.AttendanceId}");
-            //    }
-            //}
         }
     }
 }

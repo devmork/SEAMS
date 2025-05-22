@@ -24,8 +24,6 @@ namespace AttendanceManagementSystem.Forms.Events
 		{
             InitializeComponent();
             _attendanceRepository = new AttendanceRepository();
-            // Disable past dates in the DateEdit control
-            de_Date.Properties.MinValue = DateTime.Today;
 
             // Set Start Time to the current time
             te_StartTime.EditValue = DateTime.Now;
@@ -44,6 +42,12 @@ namespace AttendanceManagementSystem.Forms.Events
                 XtraMessageBox.Show("Start time must be before end time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+           
+            if (string.IsNullOrWhiteSpace(attendanceName) || string.IsNullOrWhiteSpace(attendanceLocation) || string.IsNullOrWhiteSpace(logType))
+            {
+                XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             var attendance = new Attendance
             {
@@ -53,7 +57,8 @@ namespace AttendanceManagementSystem.Forms.Events
                 LogType = logType,
                 Date = date,
                 StartTime = startTime,
-                EndTime = endTime
+                EndTime = endTime,
+                Status = (DateTime.Now >= startTime && DateTime.Now <= endTime)
             };
             _attendanceRepository.AddAttendance(attendance);
             

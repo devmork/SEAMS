@@ -114,6 +114,9 @@
             this.cbe_LogType.Name = "cbe_LogType";
             this.cbe_LogType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_LogType.Properties.Items.AddRange(new object[] {
+            "Sign In",
+            "Sign Out"});
             this.cbe_LogType.Size = new System.Drawing.Size(243, 34);
             this.cbe_LogType.TabIndex = 21;
             // 
