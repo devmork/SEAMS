@@ -15,13 +15,14 @@ namespace AttendanceManagementSystem.Forms.Dashboard
 {
 	public partial class Dashboard_UserControl: DevExpress.XtraEditors.XtraUserControl
 	{
-        private AttendanceRepository _attendanceRepository;
-        private StudentRepository _studentRepository;
+        private IAttendanceRepository _attendanceRepository;
+        private IStudentsRepository _studentRepository;
         public Dashboard_UserControl()
 		{
             InitializeComponent();
-		}
-
+            _attendanceRepository = new AttendanceRepository();
+            _studentRepository = new StudentRepository();
+        }
         private void Dashboard_UserControl_Load(object sender, EventArgs e)
         {
             txt_TotalAttendance.Text = _attendanceRepository.GetTotalAttendance().ToString();
