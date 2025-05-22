@@ -24,9 +24,8 @@ namespace AttendanceManagementSystem.Forms.Events
 		{
             InitializeComponent();
             _attendanceRepository = new AttendanceRepository();
-
-            // Set Start Time to the current time
             te_StartTime.EditValue = DateTime.Now;
+            te_EndTime.EditValue = DateTime.Now;
         }
         private void btn_CreateAttendance_Click(object sender, EventArgs e)
         {
@@ -61,9 +60,6 @@ namespace AttendanceManagementSystem.Forms.Events
                 Status = (DateTime.Now >= startTime && DateTime.Now <= endTime)
             };
             _attendanceRepository.AddAttendance(attendance);
-            
-
-            // Show success message and close
             XtraMessageBox.Show("Attendance created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
