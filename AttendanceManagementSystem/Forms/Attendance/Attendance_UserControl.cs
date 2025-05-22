@@ -23,12 +23,10 @@ namespace AttendanceManagementSystem.Forms.Events
         {
             InitializeComponent();
             _attendanceRepository = new AttendanceRepository();
+            LoadData();
         }
         private void Attendance_UserControl_Load(object sender, EventArgs e)
         {
-            var attendance = _attendanceRepository.GetAllAttendance();
-            gc_Attendance.DataSource = attendance;
-
             GridView gridView = gc_Attendance.MainView as GridView;
             gridView.Columns["StartTime"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             gridView.Columns["StartTime"].DisplayFormat.FormatString = "hh:mm tt";

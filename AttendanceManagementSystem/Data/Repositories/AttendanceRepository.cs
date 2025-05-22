@@ -41,9 +41,10 @@ namespace AttendanceManagementSystem.Data.Repositories
             {
                 connection.Open();
                 string sql = 
-                    "SELECT AttendanceId, AttendanceName, AttendanceLocation, LogType, Date, StartTime, EndTime " +
-                    "FROM Attendance";
-                return connection.Query<Attendance>(sql).ToList();
+                    @"SELECT AttendanceId, AttendanceName, AttendanceLocation, LogType, Date, StartTime, EndTime
+                    FROM Attendance";
+                var attendance = connection.Query<Attendance>(sql).ToList();
+                return attendance;
             }
         }
         public void DeleteAttendance(int attendanceId)
@@ -74,6 +75,7 @@ namespace AttendanceManagementSystem.Data.Repositories
                        WHERE AttendanceId = @AttendanceId";
 
                 var parameters = new DynamicParameters();
+                parameters.Add("AttendanceId", attendance.AttendanceId);
                 parameters.Add("AttendanceName", attendance.AttendanceName);
                 parameters.Add("AttendanceLocation", attendance.AttendanceLocation);
                 parameters.Add("LogType", attendance.LogType);
@@ -82,6 +84,7 @@ namespace AttendanceManagementSystem.Data.Repositories
                 parameters.Add("EndTime", attendance.EndTime.ToString("hh:mm tt"));
                 parameters.Add("Status", attendance.Status ? 1 : 0); // Add Status parameter
                 parameters.Add("AttendanceId", attendance.AttendanceId);
+                connection.Execute(sql, parameters);
             }
         }
     }

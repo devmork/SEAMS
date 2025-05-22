@@ -37,7 +37,6 @@ namespace AttendanceManagementSystem.Forms.Events
             te_StartTime.Time = _attendance.StartTime;
             te_EndTime.Time = _attendance.EndTime;
         }
-
         private void btn_SaveChanges_Click(object sender, EventArgs e)
         {
             string attendanceName = txt_AttendanceName.Text;
@@ -60,16 +59,10 @@ namespace AttendanceManagementSystem.Forms.Events
                 XtraMessageBox.Show("Start time must be before end time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            try
-            {
-                _attendanceRepository.UpdateAttendance(_attendance);
-                XtraMessageBox.Show("Attendance updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            _attendanceRepository.UpdateAttendance(_attendance);
+            XtraMessageBox.Show("Attendance updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.DialogResult = DialogResult.OK;
         }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
