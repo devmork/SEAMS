@@ -17,26 +17,25 @@ namespace AttendanceManagementSystem.Forms.Events
 	public partial class EditAttendance_Form: DevExpress.XtraEditors.XtraForm
 	{
         private readonly IAttendanceRepository _attendanceRepository;
-        private Attendance attendance;
-
-        public EditAttendance_Form(Attendance attendance)
+        private Attendance _attendance;
+        public EditAttendance_Form(Attendance attendance = null)
         {
             InitializeComponent();
             _attendanceRepository = new AttendanceRepository();
-            this.attendance = attendance ?? throw new ArgumentNullException(nameof(attendance), "Attendance object cannot be null.");
-            LoadAttendanceData();
-            btn_SaveChanges.Click += btn_SaveChanges_Click;
+            _attendance = attendance;
+            if (attendance != null)
+            {
+                LoadAttendanceData();
+            }
         }
-
-
         private void LoadAttendanceData()
         {
-            txt_AttendanceName.Text = attendance.AttendanceName;
-            txt_AttedanceLocation.Text = attendance.AttendanceLocation;
-            cbe_LogType.Text = attendance.LogType;
-            de_AttendanceDate.DateTime = attendance.Date;
-            te_StartTime.Time = attendance.StartTime;
-            te_EndTime.Time = attendance.EndTime;
+            txt_AttendanceName.Text = _attendance.AttendanceName;
+            txt_AttedanceLocation.Text = _attendance.AttendanceLocation;
+            cbe_LogType.Text = _attendance.LogType;
+            de_AttendanceDate.DateTime = _attendance.Date;
+            te_StartTime.Time = _attendance.StartTime;
+            te_EndTime.Time = _attendance.EndTime;
         }
 
         private void btn_SaveChanges_Click(object sender, EventArgs e)
@@ -48,23 +47,22 @@ namespace AttendanceManagementSystem.Forms.Events
             DateTime startTime = date + te_StartTime.Time.TimeOfDay;
             DateTime endTime = date + te_EndTime.Time.TimeOfDay;
 
-            attendance.AttendanceName = attendanceName;
-            attendance.AttendanceLocation = attendanceLocation;
-            attendance.LogType = logType;
-            attendance.Date = date;
-            attendance.StartTime = startTime;
-            attendance.EndTime = endTime;
-            attendance.Status = (DateTime.Now >= startTime && DateTime.Now <= endTime); //This ensures the Status reflects whether the attendance is active based on the updated StartTime and EndTime, which is then saved to the database.
+            _attendance.AttendanceName = attendanceName;
+            _attendance.AttendanceLocation = attendanceLocation;
+            _attendance.LogType = logType;
+            _attendance.Date = date;
+            _attendance.StartTime = startTime;
+            _attendance.EndTime = endTime;
+            _attendance.Status = (DateTime.Now >= startTime && DateTime.Now <= endTime); //This ensures the Status reflects whether the attendance is active based on the updated StartTime and EndTime, which is then saved to the database.
 
             if (startTime >= endTime)
             {
                 XtraMessageBox.Show("Start time must be before end time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
             try
             {
-                _attendanceRepository.UpdateAttendance(attendance);
+                _attendanceRepository.UpdateAttendance(_attendance);
                 XtraMessageBox.Show("Attendance updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
@@ -72,9 +70,7 @@ namespace AttendanceManagementSystem.Forms.Events
             {
                 XtraMessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
