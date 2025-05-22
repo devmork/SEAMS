@@ -32,9 +32,9 @@ namespace AttendanceManagementSystem.Forms.Events
             string attendanceName = txt_AttendanceName.Text;
             string attendanceLocation = txt_AttendanceLocation.Text;
             string logType = cbe_LogType.Text;
-            DateTime date = de_Date.DateTime.Date; // Selected date without time
-            DateTime startTime = date + te_StartTime.Time.TimeOfDay; // Combine date with start time
-            DateTime endTime = date + te_EndTime.Time.TimeOfDay; // Combine date with end time
+            DateTime date = de_Date.DateTime.Date;
+            DateTime startTime = date + te_StartTime.Time.TimeOfDay; 
+            DateTime endTime = date + te_EndTime.Time.TimeOfDay;
 
             if (startTime >= endTime)
             {
@@ -62,13 +62,13 @@ namespace AttendanceManagementSystem.Forms.Events
             _attendanceRepository.AddAttendance(attendance);
             ClearFields();
             XtraMessageBox.Show("Attendance created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void ClearFields()
         {
             txt_AttendanceName.Text = string.Empty;
