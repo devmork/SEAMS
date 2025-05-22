@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditStudent_Form));
             this.lc_EditStudent = new DevExpress.XtraLayout.LayoutControl();
+            this.panel_NavButtons = new DevExpress.XtraEditors.PanelControl();
+            this.btn_CloseForm = new DevExpress.XtraEditors.PictureEdit();
             this.panel_Actions = new DevExpress.XtraEditors.PanelControl();
+            this.btn_Generate = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Cancel = new DevExpress.XtraEditors.SimpleButton();
             this.btn_SaveChanges = new DevExpress.XtraEditors.SimpleButton();
             this.gc_StudentData = new DevExpress.XtraEditors.GroupControl();
@@ -55,9 +59,12 @@
             this.lci_StudentData = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_SaveStudentData = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_Actions = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btn_Generate = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.lc_EditStudent)).BeginInit();
             this.lc_EditStudent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_NavButtons)).BeginInit();
+            this.panel_NavButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_CloseForm.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Actions)).BeginInit();
             this.panel_Actions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_StudentData)).BeginInit();
@@ -86,10 +93,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_StudentData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_SaveStudentData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_Actions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // lc_EditStudent
             // 
+            this.lc_EditStudent.Controls.Add(this.panel_NavButtons);
             this.lc_EditStudent.Controls.Add(this.panel_Actions);
             this.lc_EditStudent.Controls.Add(this.gc_StudentData);
             this.lc_EditStudent.Controls.Add(this.panel_QRCode);
@@ -97,25 +106,62 @@
             this.lc_EditStudent.Location = new System.Drawing.Point(0, 0);
             this.lc_EditStudent.Name = "lc_EditStudent";
             this.lc_EditStudent.Root = this.Root;
-            this.lc_EditStudent.Size = new System.Drawing.Size(776, 480);
+            this.lc_EditStudent.Size = new System.Drawing.Size(776, 515);
             this.lc_EditStudent.TabIndex = 0;
             this.lc_EditStudent.Text = "layoutControl1";
+            // 
+            // panel_NavButtons
+            // 
+            this.panel_NavButtons.Controls.Add(this.btn_CloseForm);
+            this.panel_NavButtons.Location = new System.Drawing.Point(16, 16);
+            this.panel_NavButtons.Name = "panel_NavButtons";
+            this.panel_NavButtons.Size = new System.Drawing.Size(744, 28);
+            this.panel_NavButtons.TabIndex = 9;
+            // 
+            // btn_CloseForm
+            // 
+            this.btn_CloseForm.EditValue = ((object)(resources.GetObject("btn_CloseForm.EditValue")));
+            this.btn_CloseForm.Location = new System.Drawing.Point(723, 5);
+            this.btn_CloseForm.Name = "btn_CloseForm";
+            this.btn_CloseForm.Properties.AllowZoom = DevExpress.Utils.DefaultBoolean.True;
+            this.btn_CloseForm.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btn_CloseForm.Properties.Appearance.Options.UseBackColor = true;
+            this.btn_CloseForm.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.btn_CloseForm.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.btn_CloseForm.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.btn_CloseForm.Properties.SvgImageSize = new System.Drawing.Size(14, 14);
+            this.btn_CloseForm.Size = new System.Drawing.Size(22, 18);
+            this.btn_CloseForm.TabIndex = 20;
+            this.btn_CloseForm.Click += new System.EventHandler(this.btn_CloseForm_Click);
             // 
             // panel_Actions
             // 
             this.panel_Actions.Controls.Add(this.btn_Generate);
             this.panel_Actions.Controls.Add(this.btn_Cancel);
             this.panel_Actions.Controls.Add(this.btn_SaveChanges);
-            this.panel_Actions.Location = new System.Drawing.Point(472, 243);
+            this.panel_Actions.Location = new System.Drawing.Point(472, 286);
             this.panel_Actions.Name = "panel_Actions";
-            this.panel_Actions.Size = new System.Drawing.Size(288, 221);
+            this.panel_Actions.Size = new System.Drawing.Size(288, 213);
             this.panel_Actions.TabIndex = 2;
+            // 
+            // btn_Generate
+            // 
+            this.btn_Generate.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
+            this.btn_Generate.Appearance.Font = new System.Drawing.Font("Poppins", 9.25F);
+            this.btn_Generate.Appearance.Options.UseBackColor = true;
+            this.btn_Generate.Appearance.Options.UseFont = true;
+            this.btn_Generate.Location = new System.Drawing.Point(4, 5);
+            this.btn_Generate.Name = "btn_Generate";
+            this.btn_Generate.Size = new System.Drawing.Size(281, 41);
+            this.btn_Generate.TabIndex = 7;
+            this.btn_Generate.Text = "Generate QR Code";
+            this.btn_Generate.Click += new System.EventHandler(this.btn_Generate_Click);
             // 
             // btn_Cancel
             // 
             this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Cancel.Location = new System.Drawing.Point(6, 177);
+            this.btn_Cancel.Location = new System.Drawing.Point(6, 169);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(275, 34);
             this.btn_Cancel.TabIndex = 5;
@@ -126,7 +172,7 @@
             // 
             this.btn_SaveChanges.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SaveChanges.Location = new System.Drawing.Point(6, 138);
+            this.btn_SaveChanges.Location = new System.Drawing.Point(6, 130);
             this.btn_SaveChanges.Name = "btn_SaveChanges";
             this.btn_SaveChanges.Size = new System.Drawing.Size(275, 34);
             this.btn_SaveChanges.TabIndex = 4;
@@ -136,9 +182,9 @@
             // gc_StudentData
             // 
             this.gc_StudentData.Controls.Add(this.lc_TextFields);
-            this.gc_StudentData.Location = new System.Drawing.Point(16, 15);
+            this.gc_StudentData.Location = new System.Drawing.Point(16, 49);
             this.gc_StudentData.Name = "gc_StudentData";
-            this.gc_StudentData.Size = new System.Drawing.Size(450, 450);
+            this.gc_StudentData.Size = new System.Drawing.Size(450, 451);
             this.gc_StudentData.TabIndex = 6;
             this.gc_StudentData.Text = "Student Data";
             // 
@@ -155,7 +201,7 @@
             this.lc_TextFields.Location = new System.Drawing.Point(2, 29);
             this.lc_TextFields.Name = "lc_TextFields";
             this.lc_TextFields.Root = this.lc_StudentData;
-            this.lc_TextFields.Size = new System.Drawing.Size(446, 419);
+            this.lc_TextFields.Size = new System.Drawing.Size(446, 420);
             this.lc_TextFields.TabIndex = 0;
             this.lc_TextFields.Text = "layoutControl1";
             // 
@@ -264,7 +310,7 @@
             this.lci_YearLevel,
             this.lci_Email});
             this.lc_StudentData.Name = "Root";
-            this.lc_StudentData.Size = new System.Drawing.Size(446, 419);
+            this.lc_StudentData.Size = new System.Drawing.Size(446, 420);
             this.lc_StudentData.TextVisible = false;
             // 
             // lci_FirstName
@@ -336,7 +382,7 @@
             this.lci_Email.Control = this.txt_EmailAddress;
             this.lci_Email.Location = new System.Drawing.Point(0, 325);
             this.lci_Email.Name = "lci_Email";
-            this.lci_Email.Size = new System.Drawing.Size(420, 68);
+            this.lci_Email.Size = new System.Drawing.Size(420, 69);
             this.lci_Email.Text = "Email";
             this.lci_Email.TextLocation = DevExpress.Utils.Locations.Top;
             this.lci_Email.TextSize = new System.Drawing.Size(72, 19);
@@ -344,9 +390,9 @@
             // panel_QRCode
             // 
             this.panel_QRCode.Controls.Add(this.pe_QRCode);
-            this.panel_QRCode.Location = new System.Drawing.Point(472, 15);
+            this.panel_QRCode.Location = new System.Drawing.Point(472, 49);
             this.panel_QRCode.Name = "panel_QRCode";
-            this.panel_QRCode.Size = new System.Drawing.Size(288, 223);
+            this.panel_QRCode.Size = new System.Drawing.Size(288, 232);
             this.panel_QRCode.TabIndex = 5;
             // 
             // pe_QRCode
@@ -355,7 +401,7 @@
             this.pe_QRCode.Location = new System.Drawing.Point(2, 2);
             this.pe_QRCode.Name = "pe_QRCode";
             this.pe_QRCode.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pe_QRCode.Size = new System.Drawing.Size(284, 219);
+            this.pe_QRCode.Size = new System.Drawing.Size(284, 228);
             this.pe_QRCode.TabIndex = 1;
             // 
             // Root
@@ -365,9 +411,10 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.lci_StudentData,
             this.lci_SaveStudentData,
-            this.lci_Actions});
+            this.lci_Actions,
+            this.layoutControlItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(776, 480);
+            this.Root.Size = new System.Drawing.Size(776, 515);
             this.Root.TextVisible = false;
             // 
             // lci_StudentData
@@ -375,10 +422,10 @@
             this.lci_StudentData.Control = this.gc_StudentData;
             this.lci_StudentData.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lci_StudentData.CustomizationFormText = "lci_StudentData";
-            this.lci_StudentData.Location = new System.Drawing.Point(0, 0);
+            this.lci_StudentData.Location = new System.Drawing.Point(0, 34);
             this.lci_StudentData.Name = "lci_StudentData";
             this.lci_StudentData.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 2, 2);
-            this.lci_StudentData.Size = new System.Drawing.Size(456, 454);
+            this.lci_StudentData.Size = new System.Drawing.Size(456, 455);
             this.lci_StudentData.TextSize = new System.Drawing.Size(0, 0);
             this.lci_StudentData.TextVisible = false;
             // 
@@ -387,40 +434,36 @@
             this.lci_SaveStudentData.Control = this.panel_QRCode;
             this.lci_SaveStudentData.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lci_SaveStudentData.CustomizationFormText = "lci_SaveStudentData";
-            this.lci_SaveStudentData.Location = new System.Drawing.Point(456, 0);
+            this.lci_SaveStudentData.Location = new System.Drawing.Point(456, 34);
             this.lci_SaveStudentData.Name = "lci_SaveStudentData";
             this.lci_SaveStudentData.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 2, 2);
-            this.lci_SaveStudentData.Size = new System.Drawing.Size(294, 227);
+            this.lci_SaveStudentData.Size = new System.Drawing.Size(294, 236);
             this.lci_SaveStudentData.TextSize = new System.Drawing.Size(0, 0);
             this.lci_SaveStudentData.TextVisible = false;
             // 
             // lci_Actions
             // 
             this.lci_Actions.Control = this.panel_Actions;
-            this.lci_Actions.Location = new System.Drawing.Point(456, 227);
+            this.lci_Actions.Location = new System.Drawing.Point(456, 270);
             this.lci_Actions.Name = "lci_Actions";
-            this.lci_Actions.Size = new System.Drawing.Size(294, 227);
+            this.lci_Actions.Size = new System.Drawing.Size(294, 219);
             this.lci_Actions.TextSize = new System.Drawing.Size(0, 0);
             this.lci_Actions.TextVisible = false;
             // 
-            // btn_Generate
+            // layoutControlItem1
             // 
-            this.btn_Generate.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
-            this.btn_Generate.Appearance.Font = new System.Drawing.Font("Poppins", 9.25F);
-            this.btn_Generate.Appearance.Options.UseBackColor = true;
-            this.btn_Generate.Appearance.Options.UseFont = true;
-            this.btn_Generate.Location = new System.Drawing.Point(4, 5);
-            this.btn_Generate.Name = "btn_Generate";
-            this.btn_Generate.Size = new System.Drawing.Size(281, 41);
-            this.btn_Generate.TabIndex = 7;
-            this.btn_Generate.Text = "Generate QR Code";
-            this.btn_Generate.Click += new System.EventHandler(this.btn_Generate_Click);
+            this.layoutControlItem1.Control = this.panel_NavButtons;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(750, 34);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
             // 
             // EditStudent_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 480);
+            this.ClientSize = new System.Drawing.Size(776, 515);
             this.Controls.Add(this.lc_EditStudent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditStudent_Form";
@@ -428,6 +471,9 @@
             this.Text = "EditStudent_Form";
             ((System.ComponentModel.ISupportInitialize)(this.lc_EditStudent)).EndInit();
             this.lc_EditStudent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panel_NavButtons)).EndInit();
+            this.panel_NavButtons.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_CloseForm.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Actions)).EndInit();
             this.panel_Actions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_StudentData)).EndInit();
@@ -456,6 +502,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_StudentData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_SaveStudentData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_Actions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -470,25 +517,28 @@
         private DevExpress.XtraLayout.LayoutControlItem lci_SaveStudentData;
         private DevExpress.XtraLayout.LayoutControl lc_TextFields;
         private DevExpress.XtraLayout.LayoutControlGroup lc_StudentData;
-        private DevExpress.XtraEditors.TextEdit txt_FirstName;
         private DevExpress.XtraLayout.LayoutControlItem lci_FirstName;
-        private DevExpress.XtraEditors.TextEdit txt_MiddleName;
         private DevExpress.XtraLayout.LayoutControlItem lci_MiddleName;
-        private DevExpress.XtraEditors.TextEdit txt_LastName;
-        private DevExpress.XtraEditors.TextEdit txt_SchoolStudentId;
         private DevExpress.XtraLayout.LayoutControlItem lci_LastName;
         private DevExpress.XtraLayout.LayoutControlItem lci_StudentId;
-        private DevExpress.XtraEditors.ComboBoxEdit cbe_Course;
         private DevExpress.XtraLayout.LayoutControlItem lci_Course;
-        private DevExpress.XtraEditors.SpinEdit se_YearLevel;
         private DevExpress.XtraLayout.LayoutControlItem lci_YearLevel;
-        private DevExpress.XtraEditors.TextEdit txt_EmailAddress;
         private DevExpress.XtraLayout.LayoutControlItem lci_Email;
-        private DevExpress.XtraEditors.PictureEdit pe_QRCode;
         private DevExpress.XtraEditors.PanelControl panel_Actions;
         private DevExpress.XtraLayout.LayoutControlItem lci_Actions;
         private DevExpress.XtraEditors.SimpleButton btn_Cancel;
         private DevExpress.XtraEditors.SimpleButton btn_SaveChanges;
         private DevExpress.XtraEditors.SimpleButton btn_Generate;
+        public DevExpress.XtraEditors.TextEdit txt_FirstName;
+        public DevExpress.XtraEditors.TextEdit txt_MiddleName;
+        public DevExpress.XtraEditors.TextEdit txt_LastName;
+        public DevExpress.XtraEditors.TextEdit txt_SchoolStudentId;
+        public DevExpress.XtraEditors.ComboBoxEdit cbe_Course;
+        public DevExpress.XtraEditors.TextEdit txt_EmailAddress;
+        public DevExpress.XtraEditors.PictureEdit pe_QRCode;
+        public DevExpress.XtraEditors.SpinEdit se_YearLevel;
+        private DevExpress.XtraEditors.PanelControl panel_NavButtons;
+        private DevExpress.XtraEditors.PictureEdit btn_CloseForm;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }

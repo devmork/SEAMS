@@ -6,6 +6,8 @@ using Dapper;
 using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Data.Repositories;
 using System.IO;
+using DevExpress.XtraGrid.Views.Grid;
+using System.Windows.Forms;
 
 namespace AttendanceManagementSystem.Forms.Students
 {
@@ -19,6 +21,7 @@ namespace AttendanceManagementSystem.Forms.Students
             InitializeComponent();
             _studentsRepository = new StudentRepository();
             _qrCodeService = new QRCodeService();
+
         }
         private void btn_Generate_Click(object sender, EventArgs e)
         {
@@ -41,7 +44,6 @@ namespace AttendanceManagementSystem.Forms.Students
                     course: cbe_Course.Text,
                     email: txt_EmailAddress.Text
                 );
-                // Generate QR code  
                 _qrCodeService.GenerateQRCode(student.SchoolStudentId);
                 pe_QRCode.Image = _qrCodeService.GetQRCodeImage();
                 student.QRCode = _qrCodeService.GetQRCodeByteArray();
@@ -61,9 +63,10 @@ namespace AttendanceManagementSystem.Forms.Students
             }
             try
             {
-                _studentsRepository.AddStudent(student);
+                _studentsRepository.AddStudent(student);            
+                XtraMessageBox.Show("Student saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearFields();
-                XtraMessageBox.Show("Student saved successfully.");
+                this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
             {
@@ -71,6 +74,10 @@ namespace AttendanceManagementSystem.Forms.Students
             }
         }
         private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void btn_CloseForm_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -84,6 +91,6 @@ namespace AttendanceManagementSystem.Forms.Students
             cbe_Course.SelectedIndex = -1;
             txt_EmailAddress.Text = string.Empty;
             pe_QRCode.Image = null;
-        }
+        }  
     }
 }

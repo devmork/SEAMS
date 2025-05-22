@@ -13,42 +13,77 @@ using System.Data.SQLite;
 using DevExpress.XtraGrid;
 using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Data.Repositories;
+using ZXing.QrCode.Internal;
+using System.IO;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace AttendanceManagementSystem.Forms.Students
 {
     public partial class Students_UserControl : DevExpress.XtraEditors.XtraUserControl
     {
         private readonly IStudentsRepository _studentsRepository;
-
         public Students_UserControl()
         {
             InitializeComponent();
             _studentsRepository = new StudentRepository();
+            LoadData();
         }
         private void btn_AddStudent_Click(object sender, EventArgs e)
         {
-            AddStudent_Form addStudent_Form = new AddStudent_Form();
-            addStudent_Form.ShowDialog();
+            using (var addStudentForm = new AddStudent_Form())
+            {
+                if (addStudentForm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData();
+                }
+            }
         }
         private void repositoryItem_ActionButton_Click(object sender, EventArgs e)
         {
-            DevExpress.XtraGrid.Views.Grid.GridView gv_Students = (gc_Students.MainView as DevExpress.XtraGrid.Views.Grid.GridView);
-
-            Student selectedStudent = gv_Students.GetFocusedRow() as Student;
-
-            if (selectedStudent != null)
+            try
             {
-                EditStudent_Form editStudent_Form = new EditStudent_Form(selectedStudent);
-                editStudent_Form.ShowDialog();
+                Student selectedRow = gv_Students.GetFocusedRow() as Student;
+
+                if (selectedRow != null)
+                {
+                    EditStudent_Form editStudentForm = new EditStudent_Form(selectedRow);
+                    if (editStudentForm.ShowDialog() == DialogResult.OK)
+                    {
+                        LoadData();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Error editing student: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void LoadData()
+        {
+            gc_Students.DataSource = _studentsRepository.GetAllStudent();
+        }
+        private void cbe_Course_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string selectedCourse = cbe_Course.SelectedItem.ToString();
+            gv_Students.ActiveFilterString = $"[Course] = '{selectedCourse}'";
+        }
+        private void cbe_YearLevel_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string selectedYearLevel = cbe_YearLevel.SelectedItem.ToString();
+            gv_Students.ActiveFilterString = $"[YearLevel] = '{selectedYearLevel}'";
+        }
+        private void findPanel_TextChanged(object sender, EventArgs e)
+        {
+            string searchStudentId = findPanel.Text.ToString();
+
+            if (string.IsNullOrEmpty(searchStudentId))
+            {
+                gv_Students.ActiveFilterString = "";
             }
             else
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Please select a student to edit.");
+                gv_Students.ActiveFilterString = $"[SchoolStudentId] = '{searchStudentId}'";
             }
-        }
-        private void gc_Students_Load(object sender, EventArgs e)
-        {
-            gc_Students.DataSource = _studentsRepository.GetAllStudent();
         }
     }
 }

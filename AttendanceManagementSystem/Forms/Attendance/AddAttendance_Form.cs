@@ -24,6 +24,8 @@ namespace AttendanceManagementSystem.Forms.Events
 		{
             InitializeComponent();
             _attendanceRepository = new AttendanceRepository();
+            te_StartTime.EditValue = DateTime.Now;
+            te_EndTime.EditValue = DateTime.Now;
         }
         private void btn_CreateAttendance_Click(object sender, EventArgs e)
         {
@@ -31,35 +33,50 @@ namespace AttendanceManagementSystem.Forms.Events
             string attendanceLocation = txt_AttendanceLocation.Text;
             string logType = cbe_LogType.Text;
             DateTime date = de_Date.DateTime.Date;
-            TimeSpan startTime = te_StartTime.Time.TimeOfDay;
-            TimeSpan endTime = te_EndTime.Time.TimeOfDay;
+            DateTime startTime = date + te_StartTime.Time.TimeOfDay; 
+            DateTime endTime = date + te_EndTime.Time.TimeOfDay;
 
             if (startTime >= endTime)
             {
                 XtraMessageBox.Show("Start time must be before end time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+           
+            if (string.IsNullOrWhiteSpace(attendanceName) || string.IsNullOrWhiteSpace(attendanceLocation) || string.IsNullOrWhiteSpace(logType))
+            {
+                XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             var attendance = new Attendance
             {
-                AttendanceId = Guid.NewGuid(),
+                AttendanceId = 0,
                 AttendanceName = attendanceName,
                 AttendanceLocation = attendanceLocation,
                 LogType = logType,
                 Date = date,
                 StartTime = startTime,
-                EndTime = endTime
+                EndTime = endTime,
+                Status = (DateTime.Now >= startTime && DateTime.Now <= endTime)
             };
             _attendanceRepository.AddAttendance(attendance);
-            
-
-            // Show success message and close
+            ClearFields();
             XtraMessageBox.Show("Attendance created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void ClearFields()
+        {
+            txt_AttendanceName.Text = string.Empty;
+            txt_AttendanceLocation.Text = string.Empty;
+            cbe_LogType.SelectedIndex = -1;
+            de_Date.Text = string.Empty;
+            te_StartTime.Text = string.Empty;
+            te_EndTime.Text = string.Empty;
         }
     }
 }

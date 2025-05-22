@@ -14,14 +14,14 @@ namespace AttendanceManagementSystem.Data.Repositories
     public class StudentRepository : IStudentsRepository
     {
         private string _connectionStrng = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
-        public BindingList<Student> GetAllStudent()
+        public List<Student> GetAllStudent()
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            using (var connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
-                string sql = "SELECT FirstName, MiddleName, LastName, SchoolStudentId, Course, YearLevel, Email, QRCode FROM Student;";
+                string sql = "SELECT Id, FirstName, MiddleName, LastName, SchoolStudentId, Course, YearLevel, Email, QRCode FROM Student;";
                 var students = connection.Query<Student>(sql).ToList();
-                return new BindingList<Student>(students);
+                return students;
             }
         }
         public void AddStudent(Student student)
@@ -40,11 +40,10 @@ namespace AttendanceManagementSystem.Data.Repositories
                 parameters.Add("@Course", student.Course);
                 parameters.Add("@YearLevel", student.YearLevel);
                 parameters.Add("@Email", student.Email);
-                parameters.Add("@QRCode", student.QRCode); // Fails if QRCode is null
+                parameters.Add("@QRCode", student.QRCode);
                 connection.Execute(sql, parameters);
             }
         }
-
         public void UpdateStudent(Student student)
         {
             using (var connection = new SQLiteConnection(_connectionStrng))
@@ -57,7 +56,7 @@ namespace AttendanceManagementSystem.Data.Repositories
                              WHERE Id = @Id";
 
                 var parameters = new DynamicParameters();
-                parameters.Add("@Id", student.PersonId);
+                parameters.Add("@Id", student.Id);
                 parameters.Add("@FirstName", student.FirstName);
                 parameters.Add("@MiddleName", student.MiddleName);
                 parameters.Add("@LastName", student.LastName);
@@ -68,6 +67,6 @@ namespace AttendanceManagementSystem.Data.Repositories
                 parameters.Add("@QRCode", student.QRCode);
                 connection.Execute(sql, parameters);
             }
-        }
+        } 
     }
 }

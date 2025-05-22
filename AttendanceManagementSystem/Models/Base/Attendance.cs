@@ -9,13 +9,14 @@ namespace AttendanceManagementSystem.Models.Base
 {
     public class Attendance
     {
-        public Guid AttendanceId { get; set; }
+        public int AttendanceId { get; set; }
         public string AttendanceName { get; set; }
         public string AttendanceLocation { get; set; }
         public string LogType { get; set; }
         public DateTime Date { get; set; }
-        public TimeSpan StartTime { get; set; }
-        public TimeSpan EndTime { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+        public bool Status { get; set; }
 
     }
 }
