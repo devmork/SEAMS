@@ -60,12 +60,23 @@ namespace AttendanceManagementSystem.Forms.Events
                 Status = (DateTime.Now >= startTime && DateTime.Now <= endTime)
             };
             _attendanceRepository.AddAttendance(attendance);
+            ClearFields();
             XtraMessageBox.Show("Attendance created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ClearFields()
+        {
+            txt_AttendanceName.Text = string.Empty;
+            txt_AttendanceLocation.Text = string.Empty;
+            cbe_LogType.SelectedIndex = -1;
+            de_Date.Text = string.Empty;
+            te_StartTime.Text = string.Empty;
+            te_EndTime.Text = string.Empty;
         }
     }
 }
