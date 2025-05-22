@@ -124,6 +124,7 @@
             "4"});
             this.cbe_YearLevel.Size = new System.Drawing.Size(145, 34);
             this.cbe_YearLevel.TabIndex = 2;
+            this.cbe_YearLevel.SelectedValueChanged += new System.EventHandler(this.cbe_YearLevel_SelectedValueChanged);
             // 
             // panel_CourseFilter
             // 
@@ -153,6 +154,7 @@
             "BSED"});
             this.cbe_Course.Size = new System.Drawing.Size(143, 34);
             this.cbe_Course.TabIndex = 0;
+            this.cbe_Course.SelectedValueChanged += new System.EventHandler(this.cbe_Course_SelectedValueChanged);
             // 
             // panel_SearchBar
             // 

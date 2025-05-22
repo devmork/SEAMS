@@ -16,6 +16,7 @@ using AttendanceManagementSystem.Data.Repositories;
 using ZXing.QrCode.Internal;
 using System.IO;
 using DevExpress.XtraGrid.Views.Grid;
+using Dapper;
 
 namespace AttendanceManagementSystem.Forms.Students
 {
@@ -42,8 +43,7 @@ namespace AttendanceManagementSystem.Forms.Students
         {
             try
             {
-                GridView grdview_Students = (gc_Students.MainView as GridView);
-                Student selectedRow = grdview_Students.GetFocusedRow() as Student;
+                Student selectedRow = gv_Students.GetFocusedRow() as Student;
 
                 if (selectedRow != null)
                 {
@@ -62,6 +62,17 @@ namespace AttendanceManagementSystem.Forms.Students
         public void LoadData()
         {
             gc_Students.DataSource = _studentsRepository.GetAllStudent();
+        }
+        private void cbe_Course_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string selectedCourse = cbe_Course.SelectedItem.ToString();
+            gv_Students.ActiveFilterString = $"[Course] = '{selectedCourse}'";
+        }
+
+        private void cbe_YearLevel_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string selectedYearLevel = cbe_YearLevel.SelectedItem.ToString();
+            gv_Students.ActiveFilterString = $"[YearLevel] = '{selectedYearLevel}'";
         }
     }
 }
