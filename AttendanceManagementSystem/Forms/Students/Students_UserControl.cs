@@ -15,6 +15,7 @@ using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Data.Repositories;
 using ZXing.QrCode.Internal;
 using System.IO;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace AttendanceManagementSystem.Forms.Students
 {
@@ -39,19 +40,28 @@ namespace AttendanceManagementSystem.Forms.Students
         }
         private void repositoryItem_ActionButton_Click(object sender, EventArgs e)
         {
-            DevExpress.XtraGrid.Views.Grid.GridView gv_Students = (gc_Students.MainView as DevExpress.XtraGrid.Views.Grid.GridView);
-
-            Student selectedStudent = gv_Students.GetFocusedRow() as Student;
-
-            if (selectedStudent != null)
+            try
             {
-                EditStudent_Form editStudent_Form = new EditStudent_Form(selectedStudent);
-                editStudent_Form.ShowDialog();
+                GridView grdview_Students = (gc_Students.MainView as GridView);
+                Student selectedRow = grdview_Students.GetFocusedRow() as Student;
+
+                if (selectedRow != null)
+                {
+                    EditStudent_Form editStudentForm = new EditStudent_Form(selectedRow);
+                    if (editStudentForm.ShowDialog() == DialogResult.OK)
+                    {
+                        LoadData();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Error editing student: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void LoadData()
         {
             gc_Students.DataSource = _studentsRepository.GetAllStudent();
-        }    
+        }
     }
 }
