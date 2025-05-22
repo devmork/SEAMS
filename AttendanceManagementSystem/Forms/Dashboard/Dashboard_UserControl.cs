@@ -8,14 +8,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using AttendanceManagementSystem.Interfaces.Repositories;
+using AttendanceManagementSystem.Data.Repositories;
 
 namespace AttendanceManagementSystem.Forms.Dashboard
 {
 	public partial class Dashboard_UserControl: DevExpress.XtraEditors.XtraUserControl
 	{
+        private AttendanceRepository _attendanceRepository;
+        private StudentRepository _studentRepository;
         public Dashboard_UserControl()
 		{
             InitializeComponent();
 		}
-	}
+
+        private void Dashboard_UserControl_Load(object sender, EventArgs e)
+        {
+            txt_TotalAttendance.Text = _attendanceRepository.GetTotalAttendance().ToString();
+            txt_TotalStudents.Text = _studentRepository.GetTotalStudents().ToString();
+        }
+    }
 }
