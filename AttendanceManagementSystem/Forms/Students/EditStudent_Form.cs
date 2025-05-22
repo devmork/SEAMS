@@ -18,14 +18,14 @@ namespace AttendanceManagementSystem.Forms.Students
 	{
         private readonly IStudentsRepository _studentRepository;
         private readonly IQRCodeService _qrCodeService;
-        private readonly Student _student;
+        public Student _student;
         public EditStudent_Form(Student student = null)
 		{
             InitializeComponent();
             _studentRepository = new StudentRepository();
             _qrCodeService = new QRCodeService();
             _student = student;
-            if (_student != null)
+            if (student != null)
             {
                 LoadStudentData();
             }
@@ -39,22 +39,10 @@ namespace AttendanceManagementSystem.Forms.Students
             se_YearLevel.Value = _student.YearLevel;
             cbe_Course.Text = _student.Course;
             txt_EmailAddress.Text = _student.Email;
-
-            if (_student.QRCode != null)
+            using (var ms = new System.IO.MemoryStream(_student.QRCode))
             {
-                using (var ms = new System.IO.MemoryStream(_student.QRCode))
-                {
-                    pe_QRCode.Image = Image.FromStream(ms);
-                }
+                pe_QRCode.Image = Image.FromStream(ms);
             }
-        }
-        private void btn_Generate_Click(object sender, EventArgs e)
-        {
-            _qrCodeService.GenerateQRCode(_student.SchoolStudentId);
-            pe_QRCode.Image = _qrCodeService.GetQRCodeImage();
-            _student.QRCode = _qrCodeService.GetQRCodeByteArray();
-
-
         }
         private void btn_SaveChanges_Click(object sender, EventArgs e)
         {
@@ -65,11 +53,21 @@ namespace AttendanceManagementSystem.Forms.Students
             _student.YearLevel = (int)se_YearLevel.Value;
             _student.Course = cbe_Course.Text;
             _student.Email = txt_EmailAddress.Text;
+            _student.QRCode = _qrCodeService.GetQRCodeByteArray();
 
             _studentRepository.UpdateStudent(_student);
             XtraMessageBox.Show("Student updated successfully.");
         }
+        private void btn_Generate_Click(object sender, EventArgs e)
+        {
+            _qrCodeService.GenerateQRCode(txt_SchoolStudentId.Text);
+            pe_QRCode.Image = _qrCodeService.GetQRCodeImage();
+        }
         private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void btn_CloseForm_Click(object sender, EventArgs e)
         {
             this.Close();
         }
