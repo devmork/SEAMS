@@ -4,6 +4,7 @@ using ZXing;
 using ZXing.Common;
 using AttendanceManagementSystem.Interfaces.Repositories;
 using System.IO;
+using DevExpress.XtraEditors;
 
 namespace AttendanceManagementSystem.Data.Repositories
 {
@@ -13,8 +14,10 @@ namespace AttendanceManagementSystem.Data.Repositories
         public void GenerateQRCode(string schoolStudentId)
         {
             if (string.IsNullOrEmpty(schoolStudentId))
-                throw new InvalidOperationException("School Student ID must be set before generating QR code.");
-
+            {
+                XtraMessageBox.Show("School Student ID must be set before generating QR code.");
+                return;
+            }
             BarcodeWriter writer = new BarcodeWriter
             {
                 Format = BarcodeFormat.QR_CODE,
@@ -27,16 +30,19 @@ namespace AttendanceManagementSystem.Data.Repositories
             };
             GeneratedQRCode = writer.Write(schoolStudentId);
         }
+        // Used to display the QR code in the UI
         public Image GetQRCodeImage()
         {
             if (GeneratedQRCode == null)
-                throw new InvalidOperationException("QR code has not been generated. Call GenerateQRCode first.");
+                XtraMessageBox.Show("QR code has not been generated. GenerateQRCode first.");
             return GeneratedQRCode;
         }
+
+        // Store QR code as byte array
         public byte[] GetQRCodeByteArray()
         {
             if (GeneratedQRCode == null)
-                throw new InvalidOperationException("QR code has not been generated. Call GenerateQRCode first.");
+                XtraMessageBox.Show("QR code has not been generated.GenerateQRCode first.");
 
             using (MemoryStream ms = new MemoryStream())
             {

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditStudent_Form));
             this.lc_EditStudent = new DevExpress.XtraLayout.LayoutControl();
+            this.panel_NavButtons = new DevExpress.XtraEditors.PanelControl();
+            this.btn_CloseForm = new DevExpress.XtraEditors.PictureEdit();
             this.panel_Actions = new DevExpress.XtraEditors.PanelControl();
             this.btn_Generate = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Cancel = new DevExpress.XtraEditors.SimpleButton();
@@ -57,11 +59,12 @@
             this.lci_StudentData = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_SaveStudentData = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_Actions = new DevExpress.XtraLayout.LayoutControlItem();
-            this.panel_NavButtons = new DevExpress.XtraEditors.PanelControl();
-            this.btn_CloseForm = new DevExpress.XtraEditors.PictureEdit();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.lc_EditStudent)).BeginInit();
             this.lc_EditStudent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_NavButtons)).BeginInit();
+            this.panel_NavButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_CloseForm.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Actions)).BeginInit();
             this.panel_Actions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_StudentData)).BeginInit();
@@ -90,9 +93,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_StudentData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_SaveStudentData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_Actions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panel_NavButtons)).BeginInit();
-            this.panel_NavButtons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_CloseForm.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,6 +109,30 @@
             this.lc_EditStudent.Size = new System.Drawing.Size(776, 515);
             this.lc_EditStudent.TabIndex = 0;
             this.lc_EditStudent.Text = "layoutControl1";
+            // 
+            // panel_NavButtons
+            // 
+            this.panel_NavButtons.Controls.Add(this.btn_CloseForm);
+            this.panel_NavButtons.Location = new System.Drawing.Point(16, 16);
+            this.panel_NavButtons.Name = "panel_NavButtons";
+            this.panel_NavButtons.Size = new System.Drawing.Size(744, 28);
+            this.panel_NavButtons.TabIndex = 9;
+            // 
+            // btn_CloseForm
+            // 
+            this.btn_CloseForm.EditValue = ((object)(resources.GetObject("btn_CloseForm.EditValue")));
+            this.btn_CloseForm.Location = new System.Drawing.Point(723, 5);
+            this.btn_CloseForm.Name = "btn_CloseForm";
+            this.btn_CloseForm.Properties.AllowZoom = DevExpress.Utils.DefaultBoolean.True;
+            this.btn_CloseForm.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btn_CloseForm.Properties.Appearance.Options.UseBackColor = true;
+            this.btn_CloseForm.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.btn_CloseForm.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.btn_CloseForm.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.btn_CloseForm.Properties.SvgImageSize = new System.Drawing.Size(14, 14);
+            this.btn_CloseForm.Size = new System.Drawing.Size(22, 18);
+            this.btn_CloseForm.TabIndex = 20;
+            this.btn_CloseForm.Click += new System.EventHandler(this.btn_CloseForm_Click);
             // 
             // panel_Actions
             // 
@@ -426,30 +450,6 @@
             this.lci_Actions.TextSize = new System.Drawing.Size(0, 0);
             this.lci_Actions.TextVisible = false;
             // 
-            // panel_NavButtons
-            // 
-            this.panel_NavButtons.Controls.Add(this.btn_CloseForm);
-            this.panel_NavButtons.Location = new System.Drawing.Point(16, 16);
-            this.panel_NavButtons.Name = "panel_NavButtons";
-            this.panel_NavButtons.Size = new System.Drawing.Size(744, 28);
-            this.panel_NavButtons.TabIndex = 9;
-            // 
-            // btn_CloseForm
-            // 
-            this.btn_CloseForm.EditValue = ((object)(resources.GetObject("btn_CloseForm.EditValue")));
-            this.btn_CloseForm.Location = new System.Drawing.Point(723, 5);
-            this.btn_CloseForm.Name = "btn_CloseForm";
-            this.btn_CloseForm.Properties.AllowZoom = DevExpress.Utils.DefaultBoolean.True;
-            this.btn_CloseForm.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.btn_CloseForm.Properties.Appearance.Options.UseBackColor = true;
-            this.btn_CloseForm.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.btn_CloseForm.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.btn_CloseForm.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.btn_CloseForm.Properties.SvgImageSize = new System.Drawing.Size(14, 14);
-            this.btn_CloseForm.Size = new System.Drawing.Size(22, 18);
-            this.btn_CloseForm.TabIndex = 20;
-            this.btn_CloseForm.Click += new System.EventHandler(this.btn_CloseForm_Click);
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.panel_NavButtons;
@@ -471,6 +471,9 @@
             this.Text = "EditStudent_Form";
             ((System.ComponentModel.ISupportInitialize)(this.lc_EditStudent)).EndInit();
             this.lc_EditStudent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panel_NavButtons)).EndInit();
+            this.panel_NavButtons.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_CloseForm.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Actions)).EndInit();
             this.panel_Actions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_StudentData)).EndInit();
@@ -499,9 +502,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_StudentData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_SaveStudentData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_Actions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panel_NavButtons)).EndInit();
-            this.panel_NavButtons.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_CloseForm.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
 

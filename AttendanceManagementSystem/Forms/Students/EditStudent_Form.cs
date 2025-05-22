@@ -18,7 +18,7 @@ namespace AttendanceManagementSystem.Forms.Students
 	{
         private readonly IStudentsRepository _studentRepository;
         private readonly IQRCodeService _qrCodeService;
-        public Student _student;
+        private Student _student;
         public EditStudent_Form(Student student = null)
 		{
             InitializeComponent();
@@ -39,30 +39,57 @@ namespace AttendanceManagementSystem.Forms.Students
             se_YearLevel.Value = _student.YearLevel;
             cbe_Course.Text = _student.Course;
             txt_EmailAddress.Text = _student.Email;
-            using (var ms = new System.IO.MemoryStream(_student.QRCode))
-            {
-                pe_QRCode.Image = Image.FromStream(ms);
-            }
-        }
-        private void btn_SaveChanges_Click(object sender, EventArgs e)
-        {
-            _student.FirstName = txt_FirstName.Text;
-            _student.MiddleName = txt_MiddleName.Text;
-            _student.LastName = txt_LastName.Text;
-            _student.SchoolStudentId = txt_SchoolStudentId.Text;
-            _student.YearLevel = (int)se_YearLevel.Value;
-            _student.Course = cbe_Course.Text;
-            _student.Email = txt_EmailAddress.Text;
-            _student.QRCode = _qrCodeService.GetQRCodeByteArray();
 
-            _studentRepository.UpdateStudent(_student);
-            XtraMessageBox.Show("Student updated successfully.");
+            if (_student.QRCode != null)
+            {
+                using (var ms = new System.IO.MemoryStream(_student.QRCode))
+                {
+                    pe_QRCode.Image = Image.FromStream(ms);
+                }
+            } 
         }
         private void btn_Generate_Click(object sender, EventArgs e)
         {
             _qrCodeService.GenerateQRCode(txt_SchoolStudentId.Text);
             pe_QRCode.Image = _qrCodeService.GetQRCodeImage();
+            _student.QRCode = _qrCodeService.GetQRCodeByteArray();
+            _student.SchoolStudentId = txt_SchoolStudentId.Text;
         }
+        private void btn_SaveChanges_Click(object sender, EventArgs e)
+        {
+            string existingStudentId = _student.SchoolStudentId;
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txt_FirstName.Text) ||
+                    string.IsNullOrWhiteSpace(txt_LastName.Text) ||
+                    string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text))
+                {
+                    XtraMessageBox.Show("Please fill in all required fields (First Name, Last Name, School ID).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (txt_SchoolStudentId.Text != existingStudentId)
+                {
+                    XtraMessageBox.Show("You need to generate a new QR code before saving. Changes to Student ID detected.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                _student.FirstName = txt_FirstName.Text;
+                _student.MiddleName = txt_MiddleName.Text;
+                _student.LastName = txt_MiddleName.Text;
+                _student.SchoolStudentId = txt_SchoolStudentId.Text;
+                _student.YearLevel = (int)se_YearLevel.Value;
+                _student.Course = cbe_Course.Text;
+                _student.Email = txt_EmailAddress.Text;
+
+                _studentRepository.UpdateStudent(_student);
+                XtraMessageBox.Show("Student updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Error saving student: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        } 
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
