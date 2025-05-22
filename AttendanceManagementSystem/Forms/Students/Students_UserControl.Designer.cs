@@ -332,12 +332,14 @@
             this.grdclm_Action.ColumnEdit = this.repositoryItem_ActionButton;
             this.grdclm_Action.MinWidth = 22;
             this.grdclm_Action.Name = "grdclm_Action";
+            this.grdclm_Action.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.grdclm_Action.Visible = true;
             this.grdclm_Action.VisibleIndex = 5;
             // 
             // repositoryItem_ActionButton
             // 
             this.repositoryItem_ActionButton.AutoHeight = false;
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
             editorButtonImageOptions1.SvgImageSize = new System.Drawing.Size(16, 16);
             serializableAppearanceObject1.Options.UseTextOptions = true;
             serializableAppearanceObject1.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
