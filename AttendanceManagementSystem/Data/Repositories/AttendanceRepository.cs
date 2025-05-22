@@ -19,7 +19,8 @@ namespace AttendanceManagementSystem.Data.Repositories
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
-                string sql = @"INSERT INTO Attendance
+                string sql = 
+                     @"INSERT INTO Attendance
                      (AttendanceName, AttendanceLocation, LogType, Date, StartTime, EndTime, Status)
                      VALUES (@AttendanceName, @AttendanceLocation, @LogType, @Date, @StartTime, @EndTime, @Status)";
 
@@ -39,7 +40,9 @@ namespace AttendanceManagementSystem.Data.Repositories
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
-                string sql = "SELECT AttendanceId, AttendanceName, AttendanceLocation, LogType, Date, StartTime, EndTime FROM Attendance";
+                string sql = 
+                    "SELECT AttendanceId, AttendanceName, AttendanceLocation, LogType, Date, StartTime, EndTime " +
+                    "FROM Attendance";
                 return connection.Query<Attendance>(sql).ToList();
             }
         }
@@ -54,13 +57,13 @@ namespace AttendanceManagementSystem.Data.Repositories
                 connection.Execute(sql, parameters);
             }
         }
-
         public void UpdateAttendance(Attendance attendance)
         {
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
-                string sql = @"UPDATE Attendance 
+                string sql =
+                       @"UPDATE Attendance 
                        SET AttendanceName = @AttendanceName, 
                            AttendanceLocation = @AttendanceLocation, 
                            LogType = @LogType, 
@@ -79,12 +82,6 @@ namespace AttendanceManagementSystem.Data.Repositories
                 parameters.Add("EndTime", attendance.EndTime.ToString("hh:mm tt"));
                 parameters.Add("Status", attendance.Status ? 1 : 0); // Add Status parameter
                 parameters.Add("AttendanceId", attendance.AttendanceId);
-
-                int rowsAffected = connection.Execute(sql, parameters);
-                if (rowsAffected == 0)
-                {
-                    throw new Exception($"No attendance record found with AttendanceId: {attendance.AttendanceId}");
-                }
             }
         }
     }
