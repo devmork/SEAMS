@@ -16,7 +16,7 @@ namespace AttendanceManagementSystem.Data.Repositories
         private string _connectionStrng = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
         public List<Student> GetAllStudent()
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            using (var connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
                 string sql = "SELECT Id, FirstName, MiddleName, LastName, SchoolStudentId, Course, YearLevel, Email, QRCode FROM Student;";
@@ -56,6 +56,7 @@ namespace AttendanceManagementSystem.Data.Repositories
                              WHERE Id = @Id";
 
                 var parameters = new DynamicParameters();
+                parameters.Add("@Id", student.Id);
                 parameters.Add("@FirstName", student.FirstName);
                 parameters.Add("@MiddleName", student.MiddleName);
                 parameters.Add("@LastName", student.LastName);
