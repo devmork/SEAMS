@@ -68,5 +68,14 @@ namespace AttendanceManagementSystem.Data.Repositories
                 connection.Execute(sql, parameters);
             }
         } 
+        public int GetTotalStudents()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            {
+                connection.Open();
+                string sql = @"SELECT COUNT(SchoolStudentId) FROM Student";
+                return connection.ExecuteScalar<int>(sql);
+            }
+        }
     }
 }
