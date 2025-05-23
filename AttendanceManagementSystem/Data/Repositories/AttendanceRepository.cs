@@ -16,6 +16,11 @@ namespace AttendanceManagementSystem.Data.Repositories
 
         public void AddAttendance(Attendance attendance)
         {
+            var now = DateTime.Now; // 2025-05-24 02:32 AM PST
+            DateTime eventStart = attendance.Date.Date + attendance.StartTime.TimeOfDay;
+            DateTime eventEnd = attendance.Date.Date + attendance.EndTime.TimeOfDay;
+            attendance.Status = now >= eventStart && now <= eventEnd;
+
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
@@ -96,6 +101,26 @@ namespace AttendanceManagementSystem.Data.Repositories
                 return connection.ExecuteScalar<int>(sql);
             }
         }
+        public void UpdateAttendanceStatus()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            {
+                connection.Open();
+                string sql =
+                    @"UPDATE Attendance 
+                      SET Status = CASE 
+                          WHEN datetime(Date || ' ' || StartTime, 'localtime') <= @Now 
+                          AND datetime(Date || ' ' || EndTime, 'localtime') >= @Now 
+                          THEN 1 
+                          ELSE 0 
+                      END";
+
+                var parameters = new DynamicParameters();
+                parameters.Add("Now", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // 2025-05-24 02:32 AM PST
+                connection.Execute(sql, parameters);
+            }
+        }
+
     }
 }
 
