@@ -13,6 +13,6 @@ namespace AttendanceManagementSystem.Interfaces.Repositories
         List<Student> GetAllStudent();
         void AddStudent(Student student);
         void UpdateStudent(Student student);
-
+        int GetTotalStudents();
     }
 }
