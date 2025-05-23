@@ -29,9 +29,9 @@ namespace AttendanceManagementSystem.Forms
 		{
             InitializeComponent();
             _attendanceRepository = new AttendanceRepository();
-            InitializeStatusTimer();
+            SetStatusTimer();
 		}
-        private void InitializeStatusTimer()
+        private void SetStatusTimer()
         {
             statusTimer = new Timer();
             statusTimer.Interval = 30000;
