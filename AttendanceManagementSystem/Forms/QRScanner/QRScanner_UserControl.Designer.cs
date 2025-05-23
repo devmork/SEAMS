@@ -40,7 +40,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btn_StopScan = new DevExpress.XtraEditors.SimpleButton();
-            this.cbe_ChooseCamera = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panel_Actions = new DevExpress.XtraEditors.PanelControl();
             this.panel_QRCamera = new DevExpress.XtraEditors.PanelControl();
             this.pe_QRCamera = new DevExpress.XtraEditors.PictureEdit();
@@ -51,9 +50,10 @@
             this.lci_PageHeading = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_PanelQRCamera = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_PanelActions = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txt_SchoolStudentId = new DevExpress.XtraEditors.LabelControl();
+            this.txt_FullName = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.lc_QRScanner)).BeginInit();
             this.lc_QRScanner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -63,13 +63,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_QRCodeData)).BeginInit();
             this.panel_QRCodeData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_ChooseAttendance.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_ChooseCamera.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Actions)).BeginInit();
             this.panel_Actions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_QRCamera)).BeginInit();
@@ -81,7 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PanelQRCamera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PanelActions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
@@ -90,7 +89,6 @@
             // 
             this.lc_QRScanner.Controls.Add(this.panelControl2);
             this.lc_QRScanner.Controls.Add(this.panelControl1);
-            this.lc_QRScanner.Controls.Add(this.cbe_ChooseCamera);
             this.lc_QRScanner.Controls.Add(this.panel_Actions);
             this.lc_QRScanner.Controls.Add(this.panel_QRCamera);
             this.lc_QRScanner.Controls.Add(this.panel_PageHeading);
@@ -124,7 +122,7 @@
             this.btn_StartScan.StyleController = this.layoutControl1;
             this.btn_StartScan.TabIndex = 9;
             this.btn_StartScan.Text = "Start Scan";
-
+            this.btn_StartScan.Click += new System.EventHandler(this.btn_StartScan_Click);
             // 
             // layoutControl1
             // 
@@ -134,7 +132,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(450, 546);
+            this.layoutControl1.Size = new System.Drawing.Size(450, 586);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -143,16 +141,18 @@
             this.panel_QRCodeData.Controls.Add(this.panelControl4);
             this.panel_QRCodeData.Location = new System.Drawing.Point(3, 43);
             this.panel_QRCodeData.Name = "panel_QRCodeData";
-            this.panel_QRCodeData.Size = new System.Drawing.Size(444, 500);
+            this.panel_QRCodeData.Size = new System.Drawing.Size(444, 540);
             this.panel_QRCodeData.TabIndex = 6;
             // 
             // panelControl4
             // 
+            this.panelControl4.Controls.Add(this.txt_FullName);
+            this.panelControl4.Controls.Add(this.txt_SchoolStudentId);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl4.Location = new System.Drawing.Point(2, 2);
             this.panelControl4.Margin = new System.Windows.Forms.Padding(0);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(440, 496);
+            this.panelControl4.Size = new System.Drawing.Size(440, 536);
             this.panelControl4.TabIndex = 1;
             // 
             // cbe_ChooseAttendance
@@ -178,7 +178,7 @@
             this.layoutControlItem2});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(450, 546);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(450, 586);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -195,7 +195,7 @@
             this.layoutControlItem2.Control = this.panel_QRCodeData;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 40);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(450, 506);
+            this.layoutControlItem2.Size = new System.Drawing.Size(450, 546);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -221,29 +221,15 @@
             this.btn_StopScan.StyleController = this.layoutControl1;
             this.btn_StopScan.TabIndex = 7;
             this.btn_StopScan.Text = "Stop Scan";
-
-            // 
-            // cbe_ChooseCamera
-            // 
-            this.cbe_ChooseCamera.EditValue = "Choose Camera";
-            this.cbe_ChooseCamera.Location = new System.Drawing.Point(568, 114);
-            this.cbe_ChooseCamera.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbe_ChooseCamera.Name = "cbe_ChooseCamera";
-            this.cbe_ChooseCamera.Properties.Appearance.Options.UseTextOptions = true;
-            this.cbe_ChooseCamera.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.cbe_ChooseCamera.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbe_ChooseCamera.Size = new System.Drawing.Size(454, 34);
-            this.cbe_ChooseCamera.StyleController = this.lc_QRScanner;
-            this.cbe_ChooseCamera.TabIndex = 6;
+            this.btn_StopScan.Click += new System.EventHandler(this.btn_StopScan_Click);
             // 
             // panel_Actions
             // 
             this.panel_Actions.Controls.Add(this.layoutControl1);
-            this.panel_Actions.Location = new System.Drawing.Point(568, 154);
+            this.panel_Actions.Location = new System.Drawing.Point(568, 114);
             this.panel_Actions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_Actions.Name = "panel_Actions";
-            this.panel_Actions.Size = new System.Drawing.Size(454, 550);
+            this.panel_Actions.Size = new System.Drawing.Size(454, 590);
             this.panel_Actions.TabIndex = 0;
             // 
             // panel_QRCamera
@@ -308,7 +294,6 @@
             this.lci_PageHeading,
             this.lci_PanelQRCamera,
             this.lci_PanelActions,
-            this.layoutControlItem3,
             this.layoutControlItem4,
             this.layoutControlItem5});
             this.Root.Name = "Root";
@@ -339,20 +324,11 @@
             // lci_PanelActions
             // 
             this.lci_PanelActions.Control = this.panel_Actions;
-            this.lci_PanelActions.Location = new System.Drawing.Point(552, 138);
+            this.lci_PanelActions.Location = new System.Drawing.Point(552, 98);
             this.lci_PanelActions.Name = "lci_PanelActions";
-            this.lci_PanelActions.Size = new System.Drawing.Size(460, 556);
+            this.lci_PanelActions.Size = new System.Drawing.Size(460, 596);
             this.lci_PanelActions.TextSize = new System.Drawing.Size(0, 0);
             this.lci_PanelActions.TextVisible = false;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.cbe_ChooseCamera;
-            this.layoutControlItem3.Location = new System.Drawing.Point(552, 98);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(460, 40);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
@@ -372,6 +348,26 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
+            // txt_SchoolStudentId
+            // 
+            this.txt_SchoolStudentId.Appearance.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SchoolStudentId.Appearance.Options.UseFont = true;
+            this.txt_SchoolStudentId.Location = new System.Drawing.Point(70, 159);
+            this.txt_SchoolStudentId.Name = "txt_SchoolStudentId";
+            this.txt_SchoolStudentId.Size = new System.Drawing.Size(100, 37);
+            this.txt_SchoolStudentId.TabIndex = 0;
+            this.txt_SchoolStudentId.Text = "2023-2172";
+            // 
+            // txt_FullName
+            // 
+            this.txt_FullName.Appearance.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_FullName.Appearance.Options.UseFont = true;
+            this.txt_FullName.Location = new System.Drawing.Point(70, 215);
+            this.txt_FullName.Name = "txt_FullName";
+            this.txt_FullName.Size = new System.Drawing.Size(208, 37);
+            this.txt_FullName.TabIndex = 1;
+            this.txt_FullName.Text = "JEEVON M. RICAFORT";
+            // 
             // QRScanner_UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
@@ -389,13 +385,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_QRCodeData)).EndInit();
             this.panel_QRCodeData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
+            this.panelControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_ChooseAttendance.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_ChooseCamera.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Actions)).EndInit();
             this.panel_Actions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panel_QRCamera)).EndInit();
@@ -408,7 +405,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PanelQRCamera)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PanelActions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
@@ -434,8 +430,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem lci_PanelActions;
         private DevExpress.XtraEditors.PanelControl panelControl4;
-        private DevExpress.XtraEditors.ComboBoxEdit cbe_ChooseCamera;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.PictureEdit pe_QRCamera;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.SimpleButton btn_StartScan;
@@ -443,5 +437,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_StopScan;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraEditors.LabelControl txt_FullName;
+        private DevExpress.XtraEditors.LabelControl txt_SchoolStudentId;
     }
 }
