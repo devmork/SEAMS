@@ -13,8 +13,8 @@ using AttendanceManagementSystem.Data.Repositories;
 using AttendanceManagementSystem.Models.Base;
 using DevExpress.Utils.MVVM;
 using ZXing;
-using OpenCvSharp;
 using OpenCvSharp.Extensions;
+using OpenCvSharp;
 namespace AttendanceManagementSystem.Forms.QRScanner
 {
 	public partial class QRScanner_UserControl: DevExpress.XtraEditors.XtraUserControl
@@ -36,7 +36,7 @@ namespace AttendanceManagementSystem.Forms.QRScanner
                 cbe_ChooseAttendance.Properties.Items.Add(attendance.AttendanceName);
             }
         }
-        private void simpleButton4_Click(object sender, EventArgs e)
+        private void btn_StartScan_Click(object sender, EventArgs e)
         {
             // Open the default camera (index 0)
             capture = new VideoCapture(0);
@@ -69,7 +69,7 @@ namespace AttendanceManagementSystem.Forms.QRScanner
                 }
             }
         }
-        private void simpleButton3_Click(object sender, EventArgs e)
+        private void btn_StopScan_Click(object sender, EventArgs e)
         {
             StopCamera();
         }
