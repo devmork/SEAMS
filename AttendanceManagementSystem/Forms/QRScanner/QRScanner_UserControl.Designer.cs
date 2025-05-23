@@ -354,6 +354,7 @@
             this.simpleButton3.StyleController = this.layoutControl1;
             this.simpleButton3.TabIndex = 7;
             this.simpleButton3.Text = "Stop Scan";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton4
             // 
@@ -369,6 +370,7 @@
             this.simpleButton4.StyleController = this.layoutControl1;
             this.simpleButton4.TabIndex = 9;
             this.simpleButton4.Text = "Start Scan";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // QRScanner_UserControl
             // 
