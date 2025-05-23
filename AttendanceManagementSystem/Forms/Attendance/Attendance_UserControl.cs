@@ -13,6 +13,8 @@ using AttendanceManagementSystem.Data.Repositories;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using AttendanceManagementSystem.Models.Base;
+using OpenCvSharp;
+using OpenCvSharp.Extensions;
 
 namespace AttendanceManagementSystem.Forms.Events
 {
