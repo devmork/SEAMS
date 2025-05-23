@@ -17,5 +17,10 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
 		{
             InitializeComponent();
 		}
-	}
+
+        private void btn_CloseForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
 }
