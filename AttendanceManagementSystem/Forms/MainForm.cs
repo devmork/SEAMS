@@ -37,9 +37,16 @@ namespace AttendanceManagementSystem.Forms
             statusTimer.Interval = 30000;
             statusTimer.Tick += (sender, e) =>
             {
-                _attendanceRepository.UpdateAllAttendanceStatus();
+                _attendanceRepository.UpdateAttendanceStatus();
             };
             statusTimer.Start();
+        }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            Dashboard_UserControl dashboard_UserControl = new Dashboard_UserControl();
+            dashboard_UserControl.Dock = DockStyle.Fill;
+            panel_Body.Controls.Clear();
+            panel_Body.Controls.Add(dashboard_UserControl);
         }
 
         private void btn_Dashboard_Click(object sender, EventArgs e)
@@ -85,10 +92,6 @@ namespace AttendanceManagementSystem.Forms
             logIn_Form.ShowDialog();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            
-
-        }
+        
     }
 }
