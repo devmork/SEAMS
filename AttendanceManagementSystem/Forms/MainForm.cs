@@ -16,15 +16,32 @@ using AttendanceManagementSystem.Forms.Attendance_Report;
 using AttendanceManagementSystem.Forms.Attendance_Record;
 using AttendanceManagementSystem.Forms.Auth;
 using DevExpress.XtraBars.Navigation;
+using AttendanceManagementSystem.Interfaces.Repositories;
+using AttendanceManagementSystem.Data.Repositories;
 
 namespace AttendanceManagementSystem.Forms
 {
 	public partial class MainForm: DevExpress.XtraEditors.XtraForm
 	{
+        private readonly IAttendanceRepository _attendanceRepository;
+        private Timer statusTimer;
         public MainForm()
 		{
             InitializeComponent();
+            _attendanceRepository = new AttendanceRepository();
+            InitializeStatusTimer();
 		}
+        private void InitializeStatusTimer()
+        {
+            statusTimer = new Timer();
+            statusTimer.Interval = 30000;
+            statusTimer.Tick += (sender, e) =>
+            {
+                _attendanceRepository.UpdateAllAttendanceStatus();
+            };
+            statusTimer.Start();
+        }
+
         private void btn_Dashboard_Click(object sender, EventArgs e)
         {
             Dashboard_UserControl dashboard_UserControl = new Dashboard_UserControl();
