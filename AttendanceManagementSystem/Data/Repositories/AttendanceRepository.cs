@@ -36,7 +36,7 @@ namespace AttendanceManagementSystem.Data.Repositories
                 parameters.Add("Date", attendance.Date.ToString("yyyy-MM-dd"));
                 parameters.Add("StartTime", attendance.StartTime.ToString("hh:mm tt"));
                 parameters.Add("EndTime", attendance.EndTime.ToString("hh:mm tt"));
-                parameters.Add("Status", attendance.Status ? 1 : 0);
+                parameters.Add("Status", attendance.Status);
                 connection.Execute(sql, parameters);
             }
         }
@@ -45,8 +45,8 @@ namespace AttendanceManagementSystem.Data.Repositories
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
-                string sql = 
-                    @"SELECT AttendanceId, AttendanceName, AttendanceLocation, LogType, Date, StartTime, EndTime
+                string sql =
+                    @"SELECT AttendanceId, AttendanceName, AttendanceLocation, LogType, Date, StartTime, EndTime, CAST(Status as INTEGER)Status
                     FROM Attendance";
                 var attendance = connection.Query<Attendance>(sql).ToList();
                 return attendance;
@@ -92,8 +92,7 @@ namespace AttendanceManagementSystem.Data.Repositories
                 parameters.Add("Date", attendance.Date.ToString("yyyy-MM-dd"));
                 parameters.Add("StartTime", attendance.StartTime.ToString("hh:mm tt"));
                 parameters.Add("EndTime", attendance.EndTime.ToString("hh:mm tt"));
-                parameters.Add("Status", attendance.Status ? 1 : 0); // Add Status parameter
-                parameters.Add("AttendanceId", attendance.AttendanceId);
+                parameters.Add("Status", attendance.Status);
                 connection.Execute(sql, parameters);
             }
         }
@@ -112,14 +111,10 @@ namespace AttendanceManagementSystem.Data.Repositories
             {
                 connection.Open();
                 string sql =
-                    @"UPDATE Attendance 
-                      SET Status = CASE 
-                          WHEN datetime(Date || ' ' || StartTime, 'localtime') <= @Now 
-                          AND datetime(Date || ' ' || EndTime, 'localtime') >= @Now 
-                          THEN 1 
-                          ELSE 0 
-                      END";
-
+                        @"UPDATE Attendance SET Status = CASE
+                            WHEN Date + StartTime <= @Now AND Date + EndTime >= @Now THEN 1
+                            ELSE 0
+                        END";
                 var parameters = new DynamicParameters();
                 parameters.Add("Now", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // 2025-05-24 02:32 AM PST
                 connection.Execute(sql, parameters);

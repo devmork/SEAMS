@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Attendance_UserControl));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lc_Attendance = new DevExpress.XtraLayout.LayoutControl();
             this.panel_PageHeading = new DevExpress.XtraEditors.PanelControl();
             this.btn_AddAttendance = new DevExpress.XtraEditors.SimpleButton();
@@ -46,6 +46,7 @@
             this.label_PageDescription = new DevExpress.XtraEditors.LabelControl();
             this.gc_Attendance = new DevExpress.XtraGrid.GridControl();
             this.gv_Attendance = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grdclm_AttendanceId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_AttendanceName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_AttendanceLocation = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_LogType = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,18 +54,19 @@
             this.grdclm_StartTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_EndTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_Status = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit_Status = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.grdclm_Action = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItem_ActionButton = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lci_PageHeading = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_PanelBody = new DevExpress.XtraLayout.LayoutControlItem();
-            this.grdclm_AttendanceId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.lc_Attendance)).BeginInit();
             this.lc_Attendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).BeginInit();
             this.panel_PageHeading.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Attendance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Attendance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit_Status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItem_ActionButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).BeginInit();
@@ -150,7 +152,8 @@
             this.gc_Attendance.MainView = this.gv_Attendance;
             this.gc_Attendance.Name = "gc_Attendance";
             this.gc_Attendance.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItem_ActionButton});
+            this.repositoryItem_ActionButton,
+            this.repositoryItemTextEdit_Status});
             this.gc_Attendance.Size = new System.Drawing.Size(1006, 630);
             this.gc_Attendance.TabIndex = 8;
             this.gc_Attendance.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -180,6 +183,12 @@
             this.gv_Attendance.OptionsMenu.EnableColumnMenu = false;
             this.gv_Attendance.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
             // 
+            // grdclm_AttendanceId
+            // 
+            this.grdclm_AttendanceId.Caption = "ID";
+            this.grdclm_AttendanceId.FieldName = "AttendanceId";
+            this.grdclm_AttendanceId.Name = "grdclm_AttendanceId";
+            // 
             // grdclm_AttendanceName
             // 
             this.grdclm_AttendanceName.Caption = "Name";
@@ -188,7 +197,7 @@
             this.grdclm_AttendanceName.OptionsColumn.AllowEdit = false;
             this.grdclm_AttendanceName.OptionsColumn.ReadOnly = true;
             this.grdclm_AttendanceName.Visible = true;
-            this.grdclm_AttendanceName.VisibleIndex = 1;
+            this.grdclm_AttendanceName.VisibleIndex = 0;
             this.grdclm_AttendanceName.Width = 124;
             // 
             // grdclm_AttendanceLocation
@@ -199,7 +208,7 @@
             this.grdclm_AttendanceLocation.OptionsColumn.AllowEdit = false;
             this.grdclm_AttendanceLocation.OptionsColumn.ReadOnly = true;
             this.grdclm_AttendanceLocation.Visible = true;
-            this.grdclm_AttendanceLocation.VisibleIndex = 2;
+            this.grdclm_AttendanceLocation.VisibleIndex = 1;
             this.grdclm_AttendanceLocation.Width = 218;
             // 
             // grdclm_LogType
@@ -210,7 +219,7 @@
             this.grdclm_LogType.OptionsColumn.AllowEdit = false;
             this.grdclm_LogType.OptionsColumn.ReadOnly = true;
             this.grdclm_LogType.Visible = true;
-            this.grdclm_LogType.VisibleIndex = 3;
+            this.grdclm_LogType.VisibleIndex = 2;
             this.grdclm_LogType.Width = 145;
             // 
             // grdclm_AttendanceDate
@@ -221,38 +230,56 @@
             this.grdclm_AttendanceDate.OptionsColumn.AllowEdit = false;
             this.grdclm_AttendanceDate.OptionsColumn.ReadOnly = true;
             this.grdclm_AttendanceDate.Visible = true;
-            this.grdclm_AttendanceDate.VisibleIndex = 4;
+            this.grdclm_AttendanceDate.VisibleIndex = 3;
             this.grdclm_AttendanceDate.Width = 119;
             // 
             // grdclm_StartTime
             // 
             this.grdclm_StartTime.Caption = "Start Time";
+            this.grdclm_StartTime.DisplayFormat.FormatString = "hh:mm tt";
+            this.grdclm_StartTime.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.grdclm_StartTime.FieldName = "StartTime";
             this.grdclm_StartTime.Name = "grdclm_StartTime";
             this.grdclm_StartTime.OptionsColumn.AllowEdit = false;
             this.grdclm_StartTime.OptionsColumn.ReadOnly = true;
             this.grdclm_StartTime.Visible = true;
-            this.grdclm_StartTime.VisibleIndex = 5;
+            this.grdclm_StartTime.VisibleIndex = 4;
             this.grdclm_StartTime.Width = 121;
             // 
             // grdclm_EndTime
             // 
             this.grdclm_EndTime.Caption = "End Time";
+            this.grdclm_EndTime.DisplayFormat.FormatString = "hh:mm tt";
+            this.grdclm_EndTime.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.grdclm_EndTime.FieldName = "EndTime";
             this.grdclm_EndTime.Name = "grdclm_EndTime";
             this.grdclm_EndTime.OptionsColumn.AllowEdit = false;
             this.grdclm_EndTime.OptionsColumn.ReadOnly = true;
             this.grdclm_EndTime.Visible = true;
-            this.grdclm_EndTime.VisibleIndex = 6;
+            this.grdclm_EndTime.VisibleIndex = 5;
             this.grdclm_EndTime.Width = 181;
             // 
             // grdclm_Status
             // 
             this.grdclm_Status.Caption = "Status";
+            this.grdclm_Status.ColumnEdit = this.repositoryItemTextEdit_Status;
+            this.grdclm_Status.DisplayFormat.FormatString = "[True] = ACTIVE; [False] = INACTIVE";
+            this.grdclm_Status.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.grdclm_Status.FieldName = "Status";
             this.grdclm_Status.Name = "grdclm_Status";
+            this.grdclm_Status.ShowUnboundExpressionMenu = true;
+            this.grdclm_Status.UnboundDataType = typeof(string);
+            this.grdclm_Status.UnboundExpression = "Iif([Status], \'ACTIVE\', \'INACTIVE\')";
             this.grdclm_Status.Visible = true;
-            this.grdclm_Status.VisibleIndex = 7;
+            this.grdclm_Status.VisibleIndex = 6;
+            // 
+            // repositoryItemTextEdit_Status
+            // 
+            this.repositoryItemTextEdit_Status.AutoHeight = false;
+            this.repositoryItemTextEdit_Status.DisplayFormat.FormatString = "[True] = ACTIVE; [False] = INACTIVE";
+            this.repositoryItemTextEdit_Status.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.repositoryItemTextEdit_Status.Name = "repositoryItemTextEdit_Status";
+            this.repositoryItemTextEdit_Status.ReadOnly = true;
             // 
             // grdclm_Action
             // 
@@ -274,17 +301,17 @@
             // 
             this.repositoryItem_ActionButton.Appearance.Options.UseTextOptions = true;
             this.repositoryItem_ActionButton.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            editorButtonImageOptions7.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions7.SvgImage")));
-            editorButtonImageOptions7.SvgImageSize = new System.Drawing.Size(16, 16);
-            serializableAppearanceObject25.Options.UseTextOptions = true;
-            serializableAppearanceObject25.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            editorButtonImageOptions8.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions8.SvgImage")));
-            editorButtonImageOptions8.SvgImageSize = new System.Drawing.Size(16, 16);
-            serializableAppearanceObject29.Options.UseTextOptions = true;
-            serializableAppearanceObject29.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
+            editorButtonImageOptions1.SvgImageSize = new System.Drawing.Size(16, 16);
+            serializableAppearanceObject1.Options.UseTextOptions = true;
+            serializableAppearanceObject1.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
+            editorButtonImageOptions2.SvgImageSize = new System.Drawing.Size(16, 16);
+            serializableAppearanceObject5.Options.UseTextOptions = true;
+            serializableAppearanceObject5.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.repositoryItem_ActionButton.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", "Edit", null, DevExpress.Utils.ToolTipAnchor.Default),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", "Delete", null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", "Edit", null, DevExpress.Utils.ToolTipAnchor.Default),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", "Delete", null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItem_ActionButton.Name = "repositoryItem_ActionButton";
             this.repositoryItem_ActionButton.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItem_ActionButton.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItem_ActionButton_ButtonClick);
@@ -324,12 +351,6 @@
             this.lci_PanelBody.TextSize = new System.Drawing.Size(0, 0);
             this.lci_PanelBody.TextVisible = false;
             // 
-            // grdclm_AttendanceId
-            // 
-            this.grdclm_AttendanceId.Caption = "ID";
-            this.grdclm_AttendanceId.FieldName = "AttendanceId";
-            this.grdclm_AttendanceId.Name = "grdclm_AttendanceId";
-            // 
             // Attendance_UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
@@ -345,6 +366,7 @@
             this.panel_PageHeading.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Attendance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Attendance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit_Status)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItem_ActionButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).EndInit();
@@ -375,5 +397,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItem_ActionButton;
         private DevExpress.XtraGrid.Columns.GridColumn grdclm_Status;
         private DevExpress.XtraGrid.Columns.GridColumn grdclm_AttendanceId;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit_Status;
     }
 }
