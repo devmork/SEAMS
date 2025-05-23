@@ -65,6 +65,11 @@ namespace AttendanceManagementSystem.Data.Repositories
         }
         public void UpdateAttendance(Attendance attendance)
         {
+            var now = DateTime.Now; // 2025-05-24 02:32 AM PST
+            DateTime eventStart = attendance.Date.Date + attendance.StartTime.TimeOfDay;
+            DateTime eventEnd = attendance.Date.Date + attendance.EndTime.TimeOfDay;
+            attendance.Status = now >= eventStart && now <= eventEnd;
+
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
