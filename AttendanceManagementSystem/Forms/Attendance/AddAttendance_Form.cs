@@ -41,7 +41,6 @@ namespace AttendanceManagementSystem.Forms.Events
                 XtraMessageBox.Show("Start time must be before end time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-           
             if (string.IsNullOrWhiteSpace(attendanceName) || string.IsNullOrWhiteSpace(attendanceLocation) || string.IsNullOrWhiteSpace(logType))
             {
                 XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -57,8 +56,8 @@ namespace AttendanceManagementSystem.Forms.Events
                 Date = date,
                 StartTime = startTime,
                 EndTime = endTime,
-                Status = (DateTime.Now >= startTime && DateTime.Now <= endTime)
             };
+
             _attendanceRepository.AddAttendance(attendance);
             ClearFields();
             XtraMessageBox.Show("Attendance created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

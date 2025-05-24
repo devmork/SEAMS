@@ -42,10 +42,8 @@
             this.accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.btn_LogOut = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.panel_Body = new DevExpress.XtraEditors.PanelControl();
-            this.dashboard_UserControl1 = new AttendanceManagementSystem.Forms.Dashboard.Dashboard_UserControl();
             ((System.ComponentModel.ISupportInitialize)(this.accordion_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Body)).BeginInit();
-            this.panel_Body.SuspendLayout();
             this.SuspendLayout();
             // 
             // accordion_Menu
@@ -79,8 +77,9 @@
             this.accordion_Menu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.accordion_Menu.Name = "accordion_Menu";
             this.accordion_Menu.OptionsFooter.ActiveGroupDisplayMode = DevExpress.XtraBars.Navigation.ActiveGroupDisplayMode.GroupHeaderAndContent;
+            this.accordion_Menu.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized;
             this.accordion_Menu.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.AutoCollapse;
-            this.accordion_Menu.Size = new System.Drawing.Size(270, 734);
+            this.accordion_Menu.Size = new System.Drawing.Size(48, 734);
             this.accordion_Menu.TabIndex = 5;
             this.accordion_Menu.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -173,21 +172,11 @@
             // 
             // panel_Body
             // 
-            this.panel_Body.Controls.Add(this.dashboard_UserControl1);
             this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Body.Location = new System.Drawing.Point(270, 0);
-            this.panel_Body.Margin = new System.Windows.Forms.Padding(4);
+            this.panel_Body.Location = new System.Drawing.Point(48, 0);
             this.panel_Body.Name = "panel_Body";
-            this.panel_Body.Size = new System.Drawing.Size(1016, 734);
-            this.panel_Body.TabIndex = 6;
-            // 
-            // dashboard_UserControl1
-            // 
-            this.dashboard_UserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dashboard_UserControl1.Location = new System.Drawing.Point(2, 2);
-            this.dashboard_UserControl1.Name = "dashboard_UserControl1";
-            this.dashboard_UserControl1.Size = new System.Drawing.Size(1012, 730);
-            this.dashboard_UserControl1.TabIndex = 0;
+            this.panel_Body.Size = new System.Drawing.Size(1238, 734);
+            this.panel_Body.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -204,7 +193,6 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accordion_Menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Body)).EndInit();
-            this.panel_Body.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -219,11 +207,10 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_Students;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator5;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_QRScanner;
-        private DevExpress.XtraEditors.PanelControl panel_Body;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator3;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_LogOut;
-        private Dashboard.Dashboard_UserControl dashboard_UserControl1;
+        private DevExpress.XtraEditors.PanelControl panel_Body;
     }
 }

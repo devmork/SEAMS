@@ -52,7 +52,6 @@ namespace AttendanceManagementSystem.Forms.Events
             _attendance.Date = date;
             _attendance.StartTime = startTime;
             _attendance.EndTime = endTime;
-            _attendance.Status = (DateTime.Now >= startTime && DateTime.Now <= endTime); //This ensures the Status reflects whether the attendance is active based on the updated StartTime and EndTime, which is then saved to the database.
 
             if (startTime >= endTime)
             {
