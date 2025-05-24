@@ -16,6 +16,8 @@ using AttendanceManagementSystem.Forms.Attendance_Report;
 using AttendanceManagementSystem.Forms.Attendance_Record;
 using AttendanceManagementSystem.Forms.Auth;
 using DevExpress.XtraBars.Navigation;
+using AttendanceManagementSystem.Interfaces.Repositories;
+using AttendanceManagementSystem.Data.Repositories;
 
 namespace AttendanceManagementSystem.Forms
 {
@@ -25,6 +27,14 @@ namespace AttendanceManagementSystem.Forms
 		{
             InitializeComponent();
 		}
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            Dashboard_UserControl dashboard_UserControl = new Dashboard_UserControl();
+            dashboard_UserControl.Dock = DockStyle.Fill;
+            panel_Body.Controls.Clear();
+            panel_Body.Controls.Add(dashboard_UserControl);
+        }
+
         private void btn_Dashboard_Click(object sender, EventArgs e)
         {
             Dashboard_UserControl dashboard_UserControl = new Dashboard_UserControl();
@@ -68,10 +78,6 @@ namespace AttendanceManagementSystem.Forms
             logIn_Form.ShowDialog();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            
-
-        }
+        
     }
 }
