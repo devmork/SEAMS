@@ -28,23 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator5;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.accordion_Menu = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.btn_QRScanner = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.btn_Dashboard = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btn_Attendance = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btn_Students = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btn_AttendanceRecord = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.btn_Attendance = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.btn_Students = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator4 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.btn_AttendanceRecord = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btn_LogOut = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.panel_Body = new DevExpress.XtraEditors.PanelControl();
+            accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.accordion_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_Body)).BeginInit();
             this.SuspendLayout();
+            // 
+            // accordionControlSeparator5
+            // 
+            accordionControlSeparator5.Name = "accordionControlSeparator5";
+            accordionControlSeparator5.VisibleInFooter = false;
             // 
             // accordion_Menu
             // 
@@ -71,7 +77,7 @@
             this.btn_Students,
             this.accordionControlSeparator4,
             this.btn_AttendanceRecord,
-            this.accordionControlSeparator5,
+            accordionControlSeparator5,
             this.btn_LogOut});
             this.accordion_Menu.Location = new System.Drawing.Point(0, 0);
             this.accordion_Menu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -108,6 +114,10 @@
             this.btn_Dashboard.Text = "Dashboard";
             this.btn_Dashboard.Click += new System.EventHandler(this.btn_Dashboard_Click);
             // 
+            // accordionControlSeparator2
+            // 
+            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
+            // 
             // btn_Attendance
             // 
             this.btn_Attendance.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,6 +128,10 @@
             this.btn_Attendance.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_Attendance.Text = "Attendance";
             this.btn_Attendance.Click += new System.EventHandler(this.btn_Attendance_Click);
+            // 
+            // accordionControlSeparator3
+            // 
+            this.accordionControlSeparator3.Name = "accordionControlSeparator3";
             // 
             // btn_Students
             // 
@@ -130,6 +144,10 @@
             this.btn_Students.Text = "Students";
             this.btn_Students.Click += new System.EventHandler(this.btn_Students_Click);
             // 
+            // accordionControlSeparator4
+            // 
+            this.accordionControlSeparator4.Name = "accordionControlSeparator4";
+            // 
             // btn_AttendanceRecord
             // 
             this.btn_AttendanceRecord.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -140,22 +158,6 @@
             this.btn_AttendanceRecord.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_AttendanceRecord.Text = "Attendance Records";
             this.btn_AttendanceRecord.Click += new System.EventHandler(this.btn_AttendanceRecord_Click);
-            // 
-            // accordionControlSeparator2
-            // 
-            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
-            // 
-            // accordionControlSeparator3
-            // 
-            this.accordionControlSeparator3.Name = "accordionControlSeparator3";
-            // 
-            // accordionControlSeparator4
-            // 
-            this.accordionControlSeparator4.Name = "accordionControlSeparator4";
-            // 
-            // accordionControlSeparator5
-            // 
-            this.accordionControlSeparator5.Name = "accordionControlSeparator5";
             // 
             // btn_LogOut
             // 
@@ -205,7 +207,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_Attendance;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_AttendanceRecord;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_Students;
-        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator5;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_QRScanner;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator3;

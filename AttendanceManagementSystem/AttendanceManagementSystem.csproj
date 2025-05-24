@@ -354,6 +354,7 @@
     <Content Include="Resources\Icons\mail.png" />
     <Content Include="Resources\Icons\person.png" />
     <Content Include="Resources\Images\display.png" />
+    <Content Include="Resources\Images\seams-logo.png" />
     <Content Include="Resources\Images\ssg-logo.png" />
     <Content Include="SEAMS.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
