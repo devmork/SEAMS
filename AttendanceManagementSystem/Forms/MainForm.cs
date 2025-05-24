@@ -23,24 +23,10 @@ namespace AttendanceManagementSystem.Forms
 {
 	public partial class MainForm: DevExpress.XtraEditors.XtraForm
 	{
-        private readonly IAttendanceRepository _attendanceRepository;
-        private Timer statusTimer;
         public MainForm()
 		{
             InitializeComponent();
-            _attendanceRepository = new AttendanceRepository();
-            SetStatusTimer();
 		}
-        private void SetStatusTimer()
-        {
-            statusTimer = new Timer();
-            statusTimer.Interval = 30000;
-            statusTimer.Tick += (sender, e) =>
-            {
-                _attendanceRepository.UpdateAttendanceStatus();
-            };
-            statusTimer.Start();
-        }
         private void MainForm_Load(object sender, EventArgs e)
         {
             Dashboard_UserControl dashboard_UserControl = new Dashboard_UserControl();

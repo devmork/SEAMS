@@ -14,6 +14,5 @@ namespace AttendanceManagementSystem.Interfaces.Repositories
         void UpdateAttendance(Attendance attendance);
         void DeleteAttendance(int attendanceId);
         int GetTotalAttendance();
-        void UpdateAttendanceStatus();
     }
 }
