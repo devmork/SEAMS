@@ -11,9 +11,9 @@ namespace AttendanceManagementSystem.Data.Repositories
     public class QRCodeService : IQRCodeService
     {
         public Bitmap GeneratedQRCode { get; private set; }
-        public void GenerateQRCode(string schoolStudentId, string firstName, string lastName)
+        public void GenerateQRCode(string schoolStudentId)
         {
-            if (string.IsNullOrEmpty(schoolStudentId) || string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
+            if (string.IsNullOrEmpty(schoolStudentId))
             {
                 XtraMessageBox.Show("Please fill in all required fields before generating QR code.");
                 return;
@@ -29,7 +29,7 @@ namespace AttendanceManagementSystem.Data.Repositories
                 }
             };
             //GeneratedQRCode = writer.Write(schoolStudentId);
-            GeneratedQRCode = writer.Write($"{schoolStudentId}\n{firstName} {lastName}");
+            GeneratedQRCode = writer.Write(schoolStudentId);
         }
         // Used to display the QR code in the UI
         public Image GetQRCodeImage()
