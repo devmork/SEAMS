@@ -40,6 +40,7 @@
             this.txt_Password = new DevExpress.XtraEditors.TextEdit();
             this.txt_Email = new DevExpress.XtraEditors.TextEdit();
             this.label_Heading = new System.Windows.Forms.Label();
+            this.btn_Close = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pe_ImageDisplay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_UserData)).BeginInit();
             this.panel_UserData.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             this.panel_UserData.Appearance.BackColor = System.Drawing.Color.White;
             this.panel_UserData.Appearance.Options.UseBackColor = true;
+            this.panel_UserData.Controls.Add(this.btn_Close);
             this.panel_UserData.Controls.Add(this.icon_Password);
             this.panel_UserData.Controls.Add(this.icon_Email);
             this.panel_UserData.Controls.Add(this.btn_LogIn);
@@ -128,7 +130,7 @@
             this.label_SignUp.AutoSize = true;
             this.label_SignUp.BackColor = System.Drawing.Color.Transparent;
             this.label_SignUp.Font = new System.Drawing.Font("Poppins SemiBold", 8.54F);
-            this.label_SignUp.Location = new System.Drawing.Point(438, 20);
+            this.label_SignUp.Location = new System.Drawing.Point(392, 479);
             this.label_SignUp.Name = "label_SignUp";
             this.label_SignUp.Size = new System.Drawing.Size(56, 22);
             this.label_SignUp.TabIndex = 17;
@@ -140,7 +142,7 @@
             this.label_Instruction.AutoSize = true;
             this.label_Instruction.BackColor = System.Drawing.Color.Transparent;
             this.label_Instruction.Font = new System.Drawing.Font("Poppins", 8.54F);
-            this.label_Instruction.Location = new System.Drawing.Point(292, 20);
+            this.label_Instruction.Location = new System.Drawing.Point(64, 479);
             this.label_Instruction.Name = "label_Instruction";
             this.label_Instruction.Size = new System.Drawing.Size(152, 22);
             this.label_Instruction.TabIndex = 15;
@@ -187,6 +189,17 @@
             this.label_Heading.TabIndex = 10;
             this.label_Heading.Text = "Welcome!";
             // 
+            // btn_Close
+            // 
+            this.btn_Close.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btn_Close.Location = new System.Drawing.Point(477, 0);
+            this.btn_Close.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
+            this.btn_Close.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(40, 33);
+            this.btn_Close.TabIndex = 5;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
+            // 
             // LogIn_Form
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -225,5 +238,6 @@
         private DevExpress.XtraEditors.TextEdit txt_Password;
         private DevExpress.XtraEditors.TextEdit txt_Email;
         private System.Windows.Forms.Label label_Heading;
+        private DevExpress.XtraEditors.SimpleButton btn_Close;
     }
 }

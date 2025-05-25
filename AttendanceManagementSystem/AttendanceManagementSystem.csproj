@@ -228,6 +228,12 @@
     <Compile Include="Forms\Auth\SignUp_Form.Designer.cs">
       <DependentUpon>SignUp_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QR Code Management\QRCodeManagement_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QR Code Management\QRCodeManagement_Form.Designer.cs">
+      <DependentUpon>QRCodeManagement_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reports\Student_Report.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -335,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QR Code Management\QRCodeManagement_Form.resx">
+      <DependentUpon>QRCodeManagement_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRScanner\QRScanner_UserControl.resx">
       <DependentUpon>QRScanner_UserControl.cs</DependentUpon>

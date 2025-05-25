@@ -64,5 +64,10 @@ namespace AttendanceManagementSystem.Forms.Auth
             txt_Email.Text = string.Empty;
             txt_Password.Text = string.Empty;
         }
+
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
