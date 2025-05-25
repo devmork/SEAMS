@@ -25,7 +25,7 @@ namespace AttendanceManagementSystem.Forms.Students
         public Students_UserControl()
         {
             InitializeComponent();
-            _studentsRepository = new StudenstRepository();
+            _studentsRepository = new StudentsRepository();
             LoadData();
         }
         private void btn_AddStudent_Click(object sender, EventArgs e)

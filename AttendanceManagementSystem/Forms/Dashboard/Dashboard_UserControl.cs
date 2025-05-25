@@ -21,7 +21,7 @@ namespace AttendanceManagementSystem.Forms.Dashboard
 		{
             InitializeComponent();
             _attendanceRepository = new AttendanceRepository();
-            _studentRepository = new StudenstRepository();
+            _studentRepository = new StudentsRepository();
         }
         private void Dashboard_UserControl_Load(object sender, EventArgs e)
         {

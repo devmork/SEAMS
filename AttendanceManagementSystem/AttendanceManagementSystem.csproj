@@ -236,9 +236,10 @@
     </Compile>
     <Compile Include="Interfaces\Repositories\IUserRepository.cs" />
     <Compile Include="Interfaces\Utilities\IQRScannerHelper.cs" />
+    <Compile Include="Models\Base\AttendanceRecords.cs" />
     <Compile Include="Models\Derived\User.cs" />
     <Compile Include="Services\QRCodeService.cs" />
-    <Compile Include="Data\Repositories\StudenstRepository.cs" />
+    <Compile Include="Data\Repositories\StudentsRepository.cs" />
     <Compile Include="Forms\Attendance Record\StudentAttendanceRecord_Form.cs">
       <SubType>Form</SubType>
     </Compile>

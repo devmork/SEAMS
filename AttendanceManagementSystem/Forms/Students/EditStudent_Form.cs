@@ -22,7 +22,7 @@ namespace AttendanceManagementSystem.Forms.Students
         public EditStudent_Form(Student student = null)
 		{
             InitializeComponent();
-            _studentRepository = new StudenstRepository();
+            _studentRepository = new StudentsRepository();
             _qrCodeService = new QRCodeService();
             _student = student;
             if (student != null)
