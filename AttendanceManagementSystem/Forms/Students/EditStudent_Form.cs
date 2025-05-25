@@ -50,10 +50,12 @@ namespace AttendanceManagementSystem.Forms.Students
         }
         private void btn_Generate_Click(object sender, EventArgs e)
         {
-            _qrCodeService.GenerateQRCode(txt_SchoolStudentId.Text);
+            _qrCodeService.GenerateQRCode(txt_SchoolStudentId.Text, txt_FirstName.Text, txt_LastName.Text);
             pe_QRCode.Image = _qrCodeService.GetQRCodeImage();
             _student.QRCode = _qrCodeService.GetQRCodeByteArray();
             _student.SchoolStudentId = txt_SchoolStudentId.Text;
+            _student.FirstName = txt_FirstName.Text;
+            _student.LastName = txt_LastName.Text;
         }
         private void btn_SaveChanges_Click(object sender, EventArgs e)
         {

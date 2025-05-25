@@ -15,6 +15,7 @@ using DevExpress.Utils.MVVM;
 using ZXing;
 using OpenCvSharp.Extensions;
 using OpenCvSharp;
+using AttendanceManagementSystem.Utilities;
 namespace AttendanceManagementSystem.Forms.QRScanner
 {
 	public partial class QRScanner_UserControl: DevExpress.XtraEditors.XtraUserControl
@@ -38,6 +39,7 @@ namespace AttendanceManagementSystem.Forms.QRScanner
         }
         private void btn_StartScan_Click(object sender, EventArgs e)
         {
+            txt_QRValue.Text = "Scanning...";
             // Open the default camera (index 0)
             capture = new VideoCapture(0);
             if (!capture.IsOpened())
@@ -53,17 +55,17 @@ namespace AttendanceManagementSystem.Forms.QRScanner
             {
                 if (capture.Read(frame) && !frame.Empty())
                 {
+                    Cv2.Resize(frame, frame, new OpenCvSharp.Size(pe_QRCamera.Width, pe_QRCamera.Height));
                     // Convert the OpenCvSharp Mat to a Bitmap for display and scanning
                     Bitmap bitmap = BitmapConverter.ToBitmap(frame);
                     pe_QRCamera.Image = bitmap;
 
-                    // Try to decode the QR code using ZXing.Net
-                    var reader = new BarcodeReader();
-                    var result = reader.Decode(bitmap);
-                    if (result != null)
+                    string qrCodeText = QRScannerHelper.DecodeQRCode(bitmap);
+                    if (!string.IsNullOrEmpty(qrCodeText))
                     {
                         frameTimer.Stop();
-                        XtraMessageBox.Show($"QR Code Scanned: {result.Text}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txt_QRValue.Text = qrCodeText;
+                        //XtraMessageBox.Show($"QR Code Scanned: {qrCodeText}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         StopCamera();
                     }
                 }

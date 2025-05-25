@@ -44,7 +44,7 @@ namespace AttendanceManagementSystem.Forms.Students
                     course: cbe_Course.Text,
                     email: txt_EmailAddress.Text
                 );
-                _qrCodeService.GenerateQRCode(student.SchoolStudentId);
+                _qrCodeService.GenerateQRCode(student.SchoolStudentId, student.FirstName, student.LastName);
                 pe_QRCode.Image = _qrCodeService.GetQRCodeImage();
                 student.QRCode = _qrCodeService.GetQRCodeByteArray();
 

@@ -34,6 +34,7 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.panel_QRCodeData = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.txt_QRValue = new DevExpress.XtraEditors.LabelControl();
             this.cbe_ChooseAttendance = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -52,8 +53,6 @@
             this.lci_PanelActions = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txt_SchoolStudentId = new DevExpress.XtraEditors.LabelControl();
-            this.txt_FullName = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.lc_QRScanner)).BeginInit();
             this.lc_QRScanner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -146,14 +145,23 @@
             // 
             // panelControl4
             // 
-            this.panelControl4.Controls.Add(this.txt_FullName);
-            this.panelControl4.Controls.Add(this.txt_SchoolStudentId);
+            this.panelControl4.Controls.Add(this.txt_QRValue);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl4.Location = new System.Drawing.Point(2, 2);
             this.panelControl4.Margin = new System.Windows.Forms.Padding(0);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(440, 536);
             this.panelControl4.TabIndex = 1;
+            // 
+            // txt_QRValue
+            // 
+            this.txt_QRValue.Appearance.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_QRValue.Appearance.Options.UseFont = true;
+            this.txt_QRValue.Location = new System.Drawing.Point(46, 212);
+            this.txt_QRValue.Name = "txt_QRValue";
+            this.txt_QRValue.Size = new System.Drawing.Size(189, 74);
+            this.txt_QRValue.TabIndex = 0;
+            this.txt_QRValue.Text = "2023-2172\r\nJeevon M. Ricafort\r\n";
             // 
             // cbe_ChooseAttendance
             // 
@@ -348,26 +356,6 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // txt_SchoolStudentId
-            // 
-            this.txt_SchoolStudentId.Appearance.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SchoolStudentId.Appearance.Options.UseFont = true;
-            this.txt_SchoolStudentId.Location = new System.Drawing.Point(70, 159);
-            this.txt_SchoolStudentId.Name = "txt_SchoolStudentId";
-            this.txt_SchoolStudentId.Size = new System.Drawing.Size(100, 37);
-            this.txt_SchoolStudentId.TabIndex = 0;
-            this.txt_SchoolStudentId.Text = "2023-2172";
-            // 
-            // txt_FullName
-            // 
-            this.txt_FullName.Appearance.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_FullName.Appearance.Options.UseFont = true;
-            this.txt_FullName.Location = new System.Drawing.Point(70, 215);
-            this.txt_FullName.Name = "txt_FullName";
-            this.txt_FullName.Size = new System.Drawing.Size(208, 37);
-            this.txt_FullName.TabIndex = 1;
-            this.txt_FullName.Text = "JEEVON M. RICAFORT";
-            // 
             // QRScanner_UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
@@ -437,7 +425,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_StopScan;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraEditors.LabelControl txt_FullName;
-        private DevExpress.XtraEditors.LabelControl txt_SchoolStudentId;
+        private DevExpress.XtraEditors.LabelControl txt_QRValue;
     }
 }
