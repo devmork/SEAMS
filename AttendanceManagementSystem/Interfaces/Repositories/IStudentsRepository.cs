@@ -14,5 +14,6 @@ namespace AttendanceManagementSystem.Interfaces.Repositories
         void AddStudent(Student student);
         void UpdateStudent(Student student);
         int GetTotalStudents();
+        Student GetStudentById(string schoolStudentId);
     }
 }
