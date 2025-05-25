@@ -42,7 +42,7 @@
             this.grdclm_Remarks = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel_TotalAttendance = new DevExpress.XtraEditors.PanelControl();
             this.label_TotalAttendance = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_TotalAttendance = new DevExpress.XtraEditors.TextEdit();
             this.panel_TotalAbsent = new DevExpress.XtraEditors.PanelControl();
             this.label_TotalAbsent = new DevExpress.XtraEditors.LabelControl();
             this.txt_TotalAbsent = new DevExpress.XtraEditors.TextEdit();
@@ -68,7 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gv_AttendanceRecord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_TotalAttendance)).BeginInit();
             this.panel_TotalAttendance.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalAttendance.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_TotalAbsent)).BeginInit();
             this.panel_TotalAbsent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TotalAbsent.Properties)).BeginInit();
@@ -199,7 +199,7 @@
             // panel_TotalAttendance
             // 
             this.panel_TotalAttendance.Controls.Add(this.label_TotalAttendance);
-            this.panel_TotalAttendance.Controls.Add(this.textEdit1);
+            this.panel_TotalAttendance.Controls.Add(this.txt_TotalAttendance);
             this.panel_TotalAttendance.Location = new System.Drawing.Point(730, 66);
             this.panel_TotalAttendance.Name = "panel_TotalAttendance";
             this.panel_TotalAttendance.Size = new System.Drawing.Size(373, 138);
@@ -217,24 +217,24 @@
             this.label_TotalAttendance.TabIndex = 3;
             this.label_TotalAttendance.Text = "Total Attendance";
             // 
-            // textEdit1
+            // txt_TotalAttendance
             // 
-            this.textEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textEdit1.EditValue = "6";
-            this.textEdit1.Location = new System.Drawing.Point(2, 2);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Poppins", 35.84F);
-            this.textEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.textEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit1.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit1.Properties.AutoHeight = false;
-            this.textEdit1.Properties.ReadOnly = true;
-            this.textEdit1.Size = new System.Drawing.Size(369, 134);
-            this.textEdit1.TabIndex = 2;
+            this.txt_TotalAttendance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_TotalAttendance.EditValue = "6";
+            this.txt_TotalAttendance.Location = new System.Drawing.Point(2, 2);
+            this.txt_TotalAttendance.Name = "txt_TotalAttendance";
+            this.txt_TotalAttendance.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.txt_TotalAttendance.Properties.Appearance.Font = new System.Drawing.Font("Poppins", 35.84F);
+            this.txt_TotalAttendance.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
+            this.txt_TotalAttendance.Properties.Appearance.Options.UseBackColor = true;
+            this.txt_TotalAttendance.Properties.Appearance.Options.UseFont = true;
+            this.txt_TotalAttendance.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_TotalAttendance.Properties.Appearance.Options.UseTextOptions = true;
+            this.txt_TotalAttendance.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txt_TotalAttendance.Properties.AutoHeight = false;
+            this.txt_TotalAttendance.Properties.ReadOnly = true;
+            this.txt_TotalAttendance.Size = new System.Drawing.Size(369, 134);
+            this.txt_TotalAttendance.TabIndex = 2;
             // 
             // panel_TotalAbsent
             // 
@@ -264,7 +264,7 @@
             // txt_TotalAbsent
             // 
             this.txt_TotalAbsent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_TotalAbsent.EditValue = "3";
+            this.txt_TotalAbsent.EditValue = "4";
             this.txt_TotalAbsent.Location = new System.Drawing.Point(2, 2);
             this.txt_TotalAbsent.Name = "txt_TotalAbsent";
             this.txt_TotalAbsent.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
@@ -458,7 +458,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_TotalAttendance)).EndInit();
             this.panel_TotalAttendance.ResumeLayout(false);
             this.panel_TotalAttendance.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalAttendance.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_TotalAbsent)).EndInit();
             this.panel_TotalAbsent.ResumeLayout(false);
             this.panel_TotalAbsent.PerformLayout();
@@ -511,7 +511,7 @@
         private DevExpress.XtraLayout.LayoutControlItem lci_ResetRecord;
         private DevExpress.XtraEditors.TextEdit txt_TotalPresent;
         private DevExpress.XtraEditors.TextEdit txt_TotalAbsent;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txt_TotalAttendance;
         private DevExpress.XtraEditors.LabelControl label_TotalPresent;
         private DevExpress.XtraEditors.LabelControl label_TotalAttendance;
         private DevExpress.XtraEditors.LabelControl label_TotalAbsent;

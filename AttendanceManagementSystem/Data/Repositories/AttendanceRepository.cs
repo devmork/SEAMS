@@ -40,9 +40,7 @@ namespace AttendanceManagementSystem.Data.Repositories
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
-                string sql =
-                    @"SELECT AttendanceId, AttendanceName, AttendanceLocation, LogType, Date, StartTime, EndTime
-                    FROM Attendance";
+                string sql = @"SELECT * FROM Attendance";
                 var attendance = connection.Query<Attendance>(sql).ToList();
                 return attendance;
             }
@@ -89,7 +87,7 @@ namespace AttendanceManagementSystem.Data.Repositories
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
-                string sql = @"SELECT COUNT(AttendanceName) FROM Attendance";
+                string sql = @"SELECT COUNT(AttendanceId) FROM Attendance";
                 return connection.ExecuteScalar<int>(sql);
             }
         }
@@ -101,7 +99,7 @@ namespace AttendanceManagementSystem.Data.Repositories
                 connection.Open();
                 var parameters = new DynamicParameters();
 
-                // Validate AttendanceId exists
+                // Check if attendance id exist
                 string checkAttendanceSql = "SELECT COUNT(AttendanceId) FROM Attendance WHERE AttendanceId = @AttendanceId";
                 parameters.Add("AttendanceId", attendanceId);
                 if (connection.ExecuteScalar<int>(checkAttendanceSql, parameters) == 0)
@@ -109,7 +107,7 @@ namespace AttendanceManagementSystem.Data.Repositories
                     throw new Exception("Invalid AttendanceId.");
                 }
 
-                // Validate StudentId and QRCode match
+                // Check if student id exist
                 string checkStudentIdSql = "SELECT COUNT(SchoolStudentId) FROM Student WHERE SchoolStudentId = @SchoolStudentId";
                 parameters.Add("SchoolStudentId", schoolStudentId);
                 if (connection.ExecuteScalar<int>(checkStudentIdSql, parameters) == 0)
@@ -137,6 +135,47 @@ namespace AttendanceManagementSystem.Data.Repositories
                 connection.Execute(sql, parameters);
             }
         }
+        public List<AttendanceRecords> GetAttendanceRecordsByStudentId(string schoolStudentId)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            {
+                connection.Open();
+                string sql =
+                    @"SELECT ar.RecordId, ar.AttendanceId, ar.SchoolStudentId AS StudentId, ar.TimeStamp AS Timestamp, ar.Remarks, 
+                    a.AttendanceName, a.LogType, a.Date, a.StartTime, a.EndTime 
+                    FROM AttendanceRecords ar
+                    JOIN Attendance a ON ar.AttendanceId = a.AttendanceId
+                    WHERE ar.SchoolStudentId = @StudentId";
+
+                var parameters = new DynamicParameters();
+                parameters.Add("StudentId", schoolStudentId);
+                return connection.Query<AttendanceRecords>(sql, parameters).ToList();
+            }
+        }
+        public int GetTotalAbsentCount(string studentId)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            {
+                connection.Open();
+                // Get all AttendanceIds from the Attendance table
+                string attendanceSql = @"SELECT AttendanceId FROM Attendance";
+                var allAttendanceIds = connection.Query<int>(attendanceSql).ToList();
+
+                // Get AttendanceIds where the student was present
+                string presentSql =
+                    @"SELECT AttendanceId FROM AttendanceRecords 
+                    WHERE SchoolStudentId = @StudentId AND Remarks = 'Present'";
+                var parameters = new DynamicParameters();
+                parameters.Add("StudentId", studentId);
+                var presentAttendanceIds = connection.Query<int>(presentSql, parameters).ToList();
+
+                // Count absences (AttendanceIds with no present record)
+                int totalAbsent = allAttendanceIds.Except(presentAttendanceIds).Count();
+                return totalAbsent;
+            }
+        }
+
+
     }
 }
 

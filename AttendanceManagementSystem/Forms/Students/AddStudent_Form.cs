@@ -19,7 +19,7 @@ namespace AttendanceManagementSystem.Forms.Students
         public AddStudent_Form()
         {
             InitializeComponent();
-            _studentsRepository = new StudenstRepository();
+            _studentsRepository = new StudentsRepository();
             _qrCodeService = new QRCodeService();
 
         }

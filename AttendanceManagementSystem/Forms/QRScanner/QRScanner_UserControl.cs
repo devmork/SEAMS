@@ -33,7 +33,7 @@ namespace AttendanceManagementSystem.Forms.QRScanner
             InitializeComponent();
             _attendanceRepository = new AttendanceRepository();
             _qrScannerHelper = new QRScannerHelper();
-            _studentsRepository = new StudenstRepository();
+            _studentsRepository = new StudentsRepository();
             frameTimer.Interval = 30;
             frameTimer.Tick += FrameTimer_Tick;
         }
