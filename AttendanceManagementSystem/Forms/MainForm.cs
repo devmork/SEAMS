@@ -77,7 +77,5 @@ namespace AttendanceManagementSystem.Forms
             LogIn_Form logIn_Form = new LogIn_Form();
             logIn_Form.ShowDialog();
         }
-
-        
     }
 }
