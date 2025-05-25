@@ -22,7 +22,7 @@ namespace AttendanceManagementSystem.Forms.Students
         public EditStudent_Form(Student student = null)
 		{
             InitializeComponent();
-            _studentRepository = new StudentRepository();
+            _studentRepository = new StudenstRepository();
             _qrCodeService = new QRCodeService();
             _student = student;
             if (student != null)
@@ -50,12 +50,11 @@ namespace AttendanceManagementSystem.Forms.Students
         }
         private void btn_Generate_Click(object sender, EventArgs e)
         {
-            _qrCodeService.GenerateQRCode(txt_SchoolStudentId.Text, txt_FirstName.Text, txt_LastName.Text);
+            _qrCodeService.GenerateQRCode(txt_SchoolStudentId.Text);
             pe_QRCode.Image = _qrCodeService.GetQRCodeImage();
             _student.QRCode = _qrCodeService.GetQRCodeByteArray();
             _student.SchoolStudentId = txt_SchoolStudentId.Text;
-            _student.FirstName = txt_FirstName.Text;
-            _student.LastName = txt_LastName.Text;
+
         }
         private void btn_SaveChanges_Click(object sender, EventArgs e)
         {

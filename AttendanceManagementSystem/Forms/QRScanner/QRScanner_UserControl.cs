@@ -23,6 +23,7 @@ namespace AttendanceManagementSystem.Forms.QRScanner
 	{
         private readonly IAttendanceRepository _attendanceRepository;
         private readonly IQRScannerHelper _qrScannerHelper;
+        private readonly IStudentsRepository _studentsRepository;
         private VideoCapture capture;
         private Timer frameTimer = new Timer();
         private List<Attendance> attendances; // Store attendance list for mapping
@@ -32,6 +33,7 @@ namespace AttendanceManagementSystem.Forms.QRScanner
             InitializeComponent();
             _attendanceRepository = new AttendanceRepository();
             _qrScannerHelper = new QRScannerHelper();
+            _studentsRepository = new StudenstRepository();
             frameTimer.Interval = 30;
             frameTimer.Tick += FrameTimer_Tick;
         }
@@ -45,18 +47,11 @@ namespace AttendanceManagementSystem.Forms.QRScanner
         }
         private void cbe_ChooseAttendance_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbe_ChooseAttendance.SelectedIndex >= 0)
+            if (cbe_ChooseAttendance.SelectedIndex >= 0 && attendances != null)
             {
-                string selectedText = cbe_ChooseAttendance.SelectedItem.ToString();
-                var selectedAttendance = attendances.FirstOrDefault(a => $"{a.AttendanceId} - {a.AttendanceName} - {a.LogType}" == selectedText);
-                if (selectedAttendance != null)
-                {
-                    selectedAttendanceId = selectedAttendance.AttendanceId;
-                }
-                else
-                {
-                    selectedAttendanceId = -1;
-                }
+                string selectedItem = cbe_ChooseAttendance.SelectedItem.ToString();
+                var selectedAttendance = attendances.FirstOrDefault(a => $"{a.AttendanceId} - {a.AttendanceName} - {a.LogType}" == selectedItem);
+                selectedAttendanceId = selectedAttendance?.AttendanceId ?? -1;
             }
             else
             {
@@ -92,22 +87,21 @@ namespace AttendanceManagementSystem.Forms.QRScanner
                     // Convert the OpenCvSharp Mat to a Bitmap for display and scanning
                     Bitmap bitmap = BitmapConverter.ToBitmap(frame);
                     pe_QRCamera.Image = bitmap;
-
+                     
                     try
                     {
                         string qrCodeText = _qrScannerHelper.DecodeQRCode(bitmap);
                         if (!string.IsNullOrEmpty(qrCodeText))
                         {
-                            // Parse QR code content (format: SchoolStudentId\nFirstName LastName)
-                            string[] qrParts = qrCodeText.Split('\n');
-                            if (qrParts.Length < 1)
+                            string schoolStudentId = qrCodeText; // QR code contains only SchoolStudentId
+                            var student = _studentsRepository.GetStudentById(schoolStudentId);
+                            if (student == null)
                             {
-                                XtraMessageBox.Show("Invalid QR code format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                XtraMessageBox.Show("Student not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
-                            string schoolStudentId = qrParts[0]; // Extract SchoolStudentId
 
-                            if (selectedAttendanceId == -1)
+                            if (selectedAttendanceId == -1 || attendances == null)
                             {
                                 XtraMessageBox.Show("Please select an attendance event.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
@@ -123,25 +117,17 @@ namespace AttendanceManagementSystem.Forms.QRScanner
                                 selectedAttendanceId,
                                 selectedAttendance.AttendanceName,
                                 selectedAttendance.LogType,
-                                schoolStudentId,
-                                qrCodeText
+                                schoolStudentId
                             );
 
                             frameTimer.Stop();
-                            txt_QRValue.Text = $"Attendance Recorded: {qrCodeText}";
+                            txt_QRValue.Text = $"Attendance Recorded: {student.FirstName} {student.LastName}";
                             XtraMessageBox.Show("Attendance recorded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     catch (Exception ex)
                     {
                         XtraMessageBox.Show($"Error processing QR code: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        if (!string.IsNullOrEmpty(txt_QRValue.Text) && txt_QRValue.Text.StartsWith("Attendance Recorded"))
-                        {
-                            StopCamera();
-                        }
                     }
                 }
             }

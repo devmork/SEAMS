@@ -19,7 +19,7 @@ namespace AttendanceManagementSystem.Forms.Students
         public AddStudent_Form()
         {
             InitializeComponent();
-            _studentsRepository = new StudentRepository();
+            _studentsRepository = new StudenstRepository();
             _qrCodeService = new QRCodeService();
 
         }
@@ -44,7 +44,7 @@ namespace AttendanceManagementSystem.Forms.Students
                     course: cbe_Course.Text,
                     email: txt_EmailAddress.Text
                 );
-                _qrCodeService.GenerateQRCode(student.SchoolStudentId, student.FirstName, student.LastName);
+                _qrCodeService.GenerateQRCode(student.SchoolStudentId);
                 pe_QRCode.Image = _qrCodeService.GetQRCodeImage();
                 student.QRCode = _qrCodeService.GetQRCodeByteArray();
 
