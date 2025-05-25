@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AttendanceManagementSystem.Interfaces.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -8,13 +9,20 @@ using ZXing;
 
 namespace AttendanceManagementSystem.Utilities
 {
-    public static class QRScannerHelper
+    public class QRScannerHelper : IQRScannerHelper
     {
-        public static string DecodeQRCode(Bitmap bitmap)
+        public string DecodeQRCode(Bitmap bitmap)
         {
-            var reader = new BarcodeReader();
-            var result = reader.Decode(bitmap);
-            return result?.Text;
+            try
+            {
+                BarcodeReader reader = new BarcodeReader();
+                var result = reader.Decode(bitmap);
+                return result?.Text;
+            }
+            catch
+            {
+                return null; // Return null if decoding fails
+            }
         }
     }
 }

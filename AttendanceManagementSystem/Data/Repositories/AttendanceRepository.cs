@@ -1,12 +1,14 @@
 ﻿using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Models.Base;
 using Dapper;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using ZXing.QrCode.Internal;
 
 namespace AttendanceManagementSystem.Data.Repositories
 {
@@ -89,6 +91,44 @@ namespace AttendanceManagementSystem.Data.Repositories
                 connection.Open();
                 string sql = @"SELECT COUNT(AttendanceName) FROM Attendance";
                 return connection.ExecuteScalar<int>(sql);
+            }
+        }
+
+        public void RecordAttendance(int attendanceId, string attendanceName, string logType, string schoolStudentId, string qrCodeValue)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            {
+                connection.Open();
+                var parameters = new DynamicParameters();
+
+                // Validate AttendanceId exists
+                string checkAttendanceSql = "SELECT COUNT(AttendanceId) FROM Attendance WHERE AttendanceId = @AttendanceId";
+                parameters.Add("AttendanceId", attendanceId);
+                if (connection.ExecuteScalar<int>(checkAttendanceSql, parameters) == 0)
+                {
+                    throw new Exception("Invalid AttendanceId.");
+                }
+
+                // Validate StudentId and QRCode match
+                string checkStudentIdSql = "SELECT COUNT(SchoolStudentId) FROM Student WHERE SchoolStudentId = @SchoolStudentId AND QRCode = @QRCode";
+                parameters.Add("SchoolStudentId", schoolStudentId);
+                parameters.Add("QRCode", qrCodeValue);
+                if (connection.ExecuteScalar<int>(checkStudentIdSql, parameters) == 0)
+                {
+                    throw new Exception("Invalid StudentId or QRCode mismatch.");
+                }
+
+                string sql =
+                      @"INSERT INTO AttendanceRecords (AttendanceId, AttendanceName, LogType, StudentId, QRCode, Timestamp, Remarks) 
+                      VALUES (@AttendanceId, @AttendanceName, @LogType, @StudentId, @QRCode, @Timestamp, @Remarks)";
+                parameters.Add("AttendanceId", attendanceId);
+                parameters.Add("AttendanceName", attendanceName);
+                parameters.Add("LogType", logType);
+                parameters.Add("StudentId", schoolStudentId);
+                parameters.Add("QRCode", qrCodeValue);
+                parameters.Add("Timestamp", DateTime.Now.ToString("yyyy-MM-dd HH:mm"));
+                parameters.Add("Remarks", "Present");
+                connection.Execute(sql, parameters);
             }
         }
     }
