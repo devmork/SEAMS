@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Linq;
@@ -14,6 +13,8 @@ using AttendanceManagementSystem.Forms.Attendance_Report;
 using System.Data.SqlTypes;
 using System.IO;
 using AttendanceManagementSystem.Models.Base;
+using System.Web.UI.WebControls;
+using AttendanceManagementSystem.Forms.Students;
 
 namespace AttendanceManagementSystem.Forms.Attendance_Record
 {
@@ -24,14 +25,19 @@ namespace AttendanceManagementSystem.Forms.Attendance_Record
         public AttendanceRecords_UserControl()
 		{
             InitializeComponent();
-			_studentsRepository = new StudenstRepository();
+			_studentsRepository = new StudentsRepository();
             _qrCodeService = new QRCodeService();
             LoadStudents();
         }
         private void repositoryItemButton_Action_Click(object sender, EventArgs e)
         {
-            StudentAttendanceRecord_Form studentAttendanceRecord_Form = new StudentAttendanceRecord_Form();
-            studentAttendanceRecord_Form.ShowDialog();
+            Student selectedRow = gv_AttendanceRecords.GetFocusedRow() as Student;
+            if (selectedRow != null)
+            {
+                string schoolStudentId = selectedRow.SchoolStudentId; // Assuming Student class has this property
+                StudentAttendanceRecord_Form attendanceForm = new StudentAttendanceRecord_Form(schoolStudentId);
+                attendanceForm.ShowDialog();
+            }
         }
         private void LoadStudents()
         {
@@ -50,7 +56,7 @@ namespace AttendanceManagementSystem.Forms.Attendance_Record
             {
                 using (MemoryStream ms = new MemoryStream(qrBytes))
                 {
-                    pe_QRCode.Image = Image.FromStream(ms);
+                    pe_QRCode.Image = System.Drawing.Image.FromStream(ms);
                 }
             }
         }

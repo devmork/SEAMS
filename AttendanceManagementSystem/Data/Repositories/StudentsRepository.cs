@@ -11,7 +11,7 @@ using Dapper;
 
 namespace AttendanceManagementSystem.Data.Repositories
 {
-    public class StudenstRepository : IStudentsRepository
+    public class StudentsRepository : IStudentsRepository
     {
         private string _connectionStrng = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
         public List<Student> GetAllStudent()
