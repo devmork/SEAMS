@@ -50,8 +50,10 @@
     <Reference Include="DevExpress.Images.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Map.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v23.2.Export, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.TreeMap.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v23.2" />
     <Reference Include="DevExpress.Sparkline.v23.2.Core" />
@@ -73,6 +75,7 @@
     <Reference Include="DevExpress.XtraPivotGrid.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v23.2.Extensions, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeMap.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -225,6 +228,12 @@
     <Compile Include="Forms\Auth\SignUp_Form.Designer.cs">
       <DependentUpon>SignUp_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Reports\Student_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\Student_Report.Designer.cs">
+      <DependentUpon>Student_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Repositories\IUserRepository.cs" />
     <Compile Include="Interfaces\Utilities\IQRScannerHelper.cs" />
     <Compile Include="Models\Derived\User.cs" />
@@ -329,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRScanner\QRScanner_UserControl.resx">
       <DependentUpon>QRScanner_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\Student_Report.resx">
+      <DependentUpon>Student_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Students\AddStudent_Form.resx">
       <DependentUpon>AddStudent_Form.cs</DependentUpon>
