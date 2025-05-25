@@ -24,7 +24,7 @@ namespace AttendanceManagementSystem.Forms.Attendance_Record
         public AttendanceRecords_UserControl()
 		{
             InitializeComponent();
-			_studentsRepository = new StudentRepository();
+			_studentsRepository = new StudenstRepository();
             _qrCodeService = new QRCodeService();
             LoadStudents();
         }

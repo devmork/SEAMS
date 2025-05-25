@@ -9,7 +9,7 @@ namespace AttendanceManagementSystem.Interfaces.Repositories
 {
     public interface IQRCodeService
     {
-        void GenerateQRCode(string schoolStudentId, string firstName, string lastName);
+        void GenerateQRCode(string schoolStudentId);
         Image GetQRCodeImage();
         byte[] GetQRCodeByteArray();
     }
