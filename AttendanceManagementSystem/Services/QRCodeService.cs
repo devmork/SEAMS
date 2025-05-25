@@ -15,7 +15,7 @@ namespace AttendanceManagementSystem.Data.Repositories
         {
             if (string.IsNullOrEmpty(schoolStudentId))
             {
-                XtraMessageBox.Show("School Student ID must be set before generating QR code.");
+                XtraMessageBox.Show("Please fill in all required fields before generating QR code.");
                 return;
             }
             BarcodeWriter writer = new BarcodeWriter
@@ -28,6 +28,7 @@ namespace AttendanceManagementSystem.Data.Repositories
                     Margin = 1
                 }
             };
+            //GeneratedQRCode = writer.Write(schoolStudentId);
             GeneratedQRCode = writer.Write(schoolStudentId);
         }
         // Used to display the QR code in the UI
