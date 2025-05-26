@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttendanceRecords_UserControl));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lc_AttendanceRecords = new DevExpress.XtraLayout.LayoutControl();
             this.panel_PageHeading = new DevExpress.XtraEditors.PanelControl();
             this.label_PageTitle = new DevExpress.XtraEditors.LabelControl();
             this.label_PageDescription = new DevExpress.XtraEditors.LabelControl();
+            this.panel_SearchBar = new DevExpress.XtraEditors.PanelControl();
+            this.findPanel = new DevExpress.XtraEditors.SearchControl();
             this.panel_CourseFilter = new DevExpress.XtraEditors.PanelControl();
             this.cbe_Course = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panel_YearLevelFilter = new DevExpress.XtraEditors.PanelControl();
@@ -47,8 +49,8 @@
             this.gv_AttendanceRecords = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grdclm_SchoolStudentId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_Name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.grdclm_Action = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButton_Action = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.grdclm_View = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButton_View = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panel_QRCode = new DevExpress.XtraEditors.PanelControl();
             this.pe_QRCode = new DevExpress.XtraEditors.PictureEdit();
             this.panel_StudentInfo = new DevExpress.XtraEditors.PanelControl();
@@ -76,18 +78,19 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lci_PageHeading = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lci_FindPanel = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_PageBody = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_CourseFilter = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_YearLevel = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_QRCode = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_StudentInfo = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lci_FindPanel = new DevExpress.XtraLayout.LayoutControlItem();
-            this.panel_SearchBar = new DevExpress.XtraEditors.PanelControl();
-            this.findPanel = new DevExpress.XtraEditors.SearchControl();
             ((System.ComponentModel.ISupportInitialize)(this.lc_AttendanceRecords)).BeginInit();
             this.lc_AttendanceRecords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).BeginInit();
             this.panel_PageHeading.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_SearchBar)).BeginInit();
+            this.panel_SearchBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.findPanel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_CourseFilter)).BeginInit();
             this.panel_CourseFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_Course.Properties)).BeginInit();
@@ -98,7 +101,7 @@
             this.panel_PageBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_AttendanceRecords)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_AttendanceRecords)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButton_Action)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButton_View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_QRCode)).BeginInit();
             this.panel_QRCode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pe_QRCode.Properties)).BeginInit();
@@ -119,15 +122,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_FindPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageBody)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_CourseFilter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_YearLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_QRCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_StudentInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lci_FindPanel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panel_SearchBar)).BeginInit();
-            this.panel_SearchBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.findPanel.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lc_AttendanceRecords
@@ -143,7 +143,7 @@
             this.lc_AttendanceRecords.Location = new System.Drawing.Point(0, 0);
             this.lc_AttendanceRecords.Name = "lc_AttendanceRecords";
             this.lc_AttendanceRecords.Root = this.Root;
-            this.lc_AttendanceRecords.Size = new System.Drawing.Size(1038, 768);
+            this.lc_AttendanceRecords.Size = new System.Drawing.Size(1440, 1024);
             this.lc_AttendanceRecords.TabIndex = 0;
             this.lc_AttendanceRecords.Text = "layoutControl1";
             // 
@@ -153,7 +153,7 @@
             this.panel_PageHeading.Controls.Add(this.label_PageDescription);
             this.panel_PageHeading.Location = new System.Drawing.Point(16, 15);
             this.panel_PageHeading.Name = "panel_PageHeading";
-            this.panel_PageHeading.Size = new System.Drawing.Size(1006, 100);
+            this.panel_PageHeading.Size = new System.Drawing.Size(1408, 105);
             this.panel_PageHeading.TabIndex = 12;
             // 
             // label_PageTitle
@@ -163,7 +163,7 @@
             this.label_PageTitle.Appearance.Font = new System.Drawing.Font("Poppins", 17.71F, System.Drawing.FontStyle.Bold);
             this.label_PageTitle.Appearance.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.label_PageTitle.Appearance.Options.UseFont = true;
-            this.label_PageTitle.Location = new System.Drawing.Point(31, 17);
+            this.label_PageTitle.Location = new System.Drawing.Point(31, 20);
             this.label_PageTitle.Margin = new System.Windows.Forms.Padding(4);
             this.label_PageTitle.Name = "label_PageTitle";
             this.label_PageTitle.Size = new System.Drawing.Size(251, 42);
@@ -176,19 +176,39 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label_PageDescription.Appearance.Font = new System.Drawing.Font("Poppins", 12F);
             this.label_PageDescription.Appearance.Options.UseFont = true;
-            this.label_PageDescription.Location = new System.Drawing.Point(31, 53);
+            this.label_PageDescription.Location = new System.Drawing.Point(31, 56);
             this.label_PageDescription.Margin = new System.Windows.Forms.Padding(4);
             this.label_PageDescription.Name = "label_PageDescription";
             this.label_PageDescription.Size = new System.Drawing.Size(379, 28);
             this.label_PageDescription.TabIndex = 1;
             this.label_PageDescription.Text = "View and manage student attendance records.";
             // 
+            // panel_SearchBar
+            // 
+            this.panel_SearchBar.Controls.Add(this.findPanel);
+            this.panel_SearchBar.Location = new System.Drawing.Point(16, 124);
+            this.panel_SearchBar.Name = "panel_SearchBar";
+            this.panel_SearchBar.Size = new System.Drawing.Size(946, 38);
+            this.panel_SearchBar.TabIndex = 8;
+            // 
+            // findPanel
+            // 
+            this.findPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.findPanel.Location = new System.Drawing.Point(2, 2);
+            this.findPanel.Name = "findPanel";
+            this.findPanel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Repository.ClearButton(),
+            new DevExpress.XtraEditors.Repository.SearchButton()});
+            this.findPanel.Size = new System.Drawing.Size(942, 34);
+            this.findPanel.TabIndex = 0;
+            this.findPanel.TextChanged += new System.EventHandler(this.findPanel_TextChanged);
+            // 
             // panel_CourseFilter
             // 
             this.panel_CourseFilter.Controls.Add(this.cbe_Course);
-            this.panel_CourseFilter.Location = new System.Drawing.Point(697, 119);
+            this.panel_CourseFilter.Location = new System.Drawing.Point(968, 124);
             this.panel_CourseFilter.Name = "panel_CourseFilter";
-            this.panel_CourseFilter.Size = new System.Drawing.Size(201, 38);
+            this.panel_CourseFilter.Size = new System.Drawing.Size(283, 38);
             this.panel_CourseFilter.TabIndex = 9;
             // 
             // cbe_Course
@@ -209,17 +229,17 @@
             "BSHM",
             "BSBA",
             "BSED"});
-            this.cbe_Course.Size = new System.Drawing.Size(197, 34);
+            this.cbe_Course.Size = new System.Drawing.Size(279, 34);
             this.cbe_Course.TabIndex = 1;
             this.cbe_Course.SelectedValueChanged += new System.EventHandler(this.cbe_Course_SelectedValueChanged);
             // 
             // panel_YearLevelFilter
             // 
             this.panel_YearLevelFilter.Controls.Add(this.cbe_YearLevel);
-            this.panel_YearLevelFilter.Location = new System.Drawing.Point(904, 119);
+            this.panel_YearLevelFilter.Location = new System.Drawing.Point(1257, 124);
             this.panel_YearLevelFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_YearLevelFilter.Name = "panel_YearLevelFilter";
-            this.panel_YearLevelFilter.Size = new System.Drawing.Size(118, 38);
+            this.panel_YearLevelFilter.Size = new System.Drawing.Size(167, 38);
             this.panel_YearLevelFilter.TabIndex = 13;
             // 
             // cbe_YearLevel
@@ -235,16 +255,16 @@
             "2",
             "3",
             "4"});
-            this.cbe_YearLevel.Size = new System.Drawing.Size(114, 34);
+            this.cbe_YearLevel.Size = new System.Drawing.Size(163, 34);
             this.cbe_YearLevel.TabIndex = 2;
             this.cbe_YearLevel.SelectedValueChanged += new System.EventHandler(this.cbe_YearLevel_SelectedValueChanged);
             // 
             // panel_PageBody
             // 
             this.panel_PageBody.Controls.Add(this.gc_AttendanceRecords);
-            this.panel_PageBody.Location = new System.Drawing.Point(16, 161);
+            this.panel_PageBody.Location = new System.Drawing.Point(16, 166);
             this.panel_PageBody.Name = "panel_PageBody";
-            this.panel_PageBody.Size = new System.Drawing.Size(675, 592);
+            this.panel_PageBody.Size = new System.Drawing.Size(946, 843);
             this.panel_PageBody.TabIndex = 7;
             // 
             // gc_AttendanceRecords
@@ -254,8 +274,8 @@
             this.gc_AttendanceRecords.MainView = this.gv_AttendanceRecords;
             this.gc_AttendanceRecords.Name = "gc_AttendanceRecords";
             this.gc_AttendanceRecords.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemButton_Action});
-            this.gc_AttendanceRecords.Size = new System.Drawing.Size(671, 588);
+            this.repositoryItemButton_View});
+            this.gc_AttendanceRecords.Size = new System.Drawing.Size(942, 839);
             this.gc_AttendanceRecords.TabIndex = 0;
             this.gc_AttendanceRecords.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_AttendanceRecords});
@@ -265,7 +285,7 @@
             this.gv_AttendanceRecords.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.grdclm_SchoolStudentId,
             this.grdclm_Name,
-            this.grdclm_Action});
+            this.grdclm_View});
             this.gv_AttendanceRecords.GridControl = this.gc_AttendanceRecords;
             this.gv_AttendanceRecords.Name = "gv_AttendanceRecords";
             this.gv_AttendanceRecords.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
@@ -294,35 +314,35 @@
             this.grdclm_Name.Visible = true;
             this.grdclm_Name.VisibleIndex = 1;
             // 
-            // grdclm_Action
+            // grdclm_View
             // 
-            this.grdclm_Action.AppearanceHeader.Options.UseTextOptions = true;
-            this.grdclm_Action.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.grdclm_Action.Caption = "Action";
-            this.grdclm_Action.ColumnEdit = this.repositoryItemButton_Action;
-            this.grdclm_Action.Name = "grdclm_Action";
-            this.grdclm_Action.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.grdclm_Action.Visible = true;
-            this.grdclm_Action.VisibleIndex = 2;
+            this.grdclm_View.AppearanceHeader.Options.UseTextOptions = true;
+            this.grdclm_View.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grdclm_View.Caption = "View";
+            this.grdclm_View.ColumnEdit = this.repositoryItemButton_View;
+            this.grdclm_View.Name = "grdclm_View";
+            this.grdclm_View.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.grdclm_View.Visible = true;
+            this.grdclm_View.VisibleIndex = 2;
             // 
-            // repositoryItemButton_Action
+            // repositoryItemButton_View
             // 
-            this.repositoryItemButton_Action.AutoHeight = false;
-            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
-            editorButtonImageOptions2.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.repositoryItemButton_Action.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItemButton_Action.Name = "repositoryItemButton_Action";
-            this.repositoryItemButton_Action.ReadOnly = true;
-            this.repositoryItemButton_Action.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButton_Action.Click += new System.EventHandler(this.repositoryItemButton_Action_Click);
+            this.repositoryItemButton_View.AutoHeight = false;
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
+            editorButtonImageOptions1.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.repositoryItemButton_View.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButton_View.Name = "repositoryItemButton_View";
+            this.repositoryItemButton_View.ReadOnly = true;
+            this.repositoryItemButton_View.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButton_View.Click += new System.EventHandler(this.repositoryItemButton_Action_Click);
             // 
             // panel_QRCode
             // 
             this.panel_QRCode.Controls.Add(this.pe_QRCode);
-            this.panel_QRCode.Location = new System.Drawing.Point(697, 161);
+            this.panel_QRCode.Location = new System.Drawing.Point(968, 166);
             this.panel_QRCode.Name = "panel_QRCode";
-            this.panel_QRCode.Size = new System.Drawing.Size(325, 362);
+            this.panel_QRCode.Size = new System.Drawing.Size(456, 584);
             this.panel_QRCode.TabIndex = 10;
             // 
             // pe_QRCode
@@ -331,15 +351,15 @@
             this.pe_QRCode.Location = new System.Drawing.Point(2, 2);
             this.pe_QRCode.Name = "pe_QRCode";
             this.pe_QRCode.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pe_QRCode.Size = new System.Drawing.Size(321, 358);
+            this.pe_QRCode.Size = new System.Drawing.Size(452, 580);
             this.pe_QRCode.TabIndex = 2;
             // 
             // panel_StudentInfo
             // 
             this.panel_StudentInfo.Controls.Add(this.layoutControl1);
-            this.panel_StudentInfo.Location = new System.Drawing.Point(697, 527);
+            this.panel_StudentInfo.Location = new System.Drawing.Point(968, 754);
             this.panel_StudentInfo.Name = "panel_StudentInfo";
-            this.panel_StudentInfo.Size = new System.Drawing.Size(325, 226);
+            this.panel_StudentInfo.Size = new System.Drawing.Size(456, 255);
             this.panel_StudentInfo.TabIndex = 11;
             // 
             // layoutControl1
@@ -358,7 +378,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(321, 222);
+            this.layoutControl1.Size = new System.Drawing.Size(452, 251);
             this.layoutControl1.TabIndex = 10;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -518,7 +538,7 @@
             this.layoutControlItem10,
             this.layoutControlItem11});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(321, 222);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(452, 251);
             // 
             // layoutControlItem2
             // 
@@ -534,7 +554,7 @@
             this.layoutControlItem3.Control = this.txt_SchoolStudentId;
             this.layoutControlItem3.Location = new System.Drawing.Point(92, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(203, 34);
+            this.layoutControlItem3.Size = new System.Drawing.Size(334, 34);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -552,7 +572,7 @@
             this.layoutControlItem5.Control = this.txt_Name;
             this.layoutControlItem5.Location = new System.Drawing.Point(89, 34);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(206, 34);
+            this.layoutControlItem5.Size = new System.Drawing.Size(337, 34);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -570,7 +590,7 @@
             this.layoutControlItem7.Control = this.txt_Email;
             this.layoutControlItem7.Location = new System.Drawing.Point(89, 68);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(206, 34);
+            this.layoutControlItem7.Size = new System.Drawing.Size(337, 34);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -588,7 +608,7 @@
             this.layoutControlItem9.Control = this.txt_Course;
             this.layoutControlItem9.Location = new System.Drawing.Point(89, 102);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(206, 34);
+            this.layoutControlItem9.Size = new System.Drawing.Size(337, 34);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -597,7 +617,7 @@
             this.layoutControlItem10.Control = this.label_YearLevel;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 136);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(89, 60);
+            this.layoutControlItem10.Size = new System.Drawing.Size(89, 89);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
@@ -606,7 +626,7 @@
             this.layoutControlItem11.Control = this.txt_YearLevel;
             this.layoutControlItem11.Location = new System.Drawing.Point(89, 136);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(206, 60);
+            this.layoutControlItem11.Size = new System.Drawing.Size(337, 89);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
@@ -623,7 +643,7 @@
             this.lci_QRCode,
             this.lci_StudentInfo});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1038, 768);
+            this.Root.Size = new System.Drawing.Size(1440, 1024);
             this.Root.TextVisible = false;
             // 
             // lci_PageHeading
@@ -634,19 +654,31 @@
             this.lci_PageHeading.Location = new System.Drawing.Point(0, 0);
             this.lci_PageHeading.Name = "lci_PageHeading";
             this.lci_PageHeading.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 2, 2);
-            this.lci_PageHeading.Size = new System.Drawing.Size(1012, 104);
+            this.lci_PageHeading.Size = new System.Drawing.Size(1414, 109);
             this.lci_PageHeading.TextSize = new System.Drawing.Size(0, 0);
             this.lci_PageHeading.TextVisible = false;
+            // 
+            // lci_FindPanel
+            // 
+            this.lci_FindPanel.Control = this.panel_SearchBar;
+            this.lci_FindPanel.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lci_FindPanel.CustomizationFormText = "lci_SearchBar";
+            this.lci_FindPanel.Location = new System.Drawing.Point(0, 109);
+            this.lci_FindPanel.Name = "lci_FindPanel";
+            this.lci_FindPanel.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 2, 2);
+            this.lci_FindPanel.Size = new System.Drawing.Size(952, 42);
+            this.lci_FindPanel.TextSize = new System.Drawing.Size(0, 0);
+            this.lci_FindPanel.TextVisible = false;
             // 
             // lci_PageBody
             // 
             this.lci_PageBody.Control = this.panel_PageBody;
             this.lci_PageBody.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lci_PageBody.CustomizationFormText = "layoutControlItem1";
-            this.lci_PageBody.Location = new System.Drawing.Point(0, 146);
+            this.lci_PageBody.Location = new System.Drawing.Point(0, 151);
             this.lci_PageBody.Name = "lci_PageBody";
             this.lci_PageBody.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 2, 2);
-            this.lci_PageBody.Size = new System.Drawing.Size(681, 596);
+            this.lci_PageBody.Size = new System.Drawing.Size(952, 847);
             this.lci_PageBody.Text = "layoutControlItem1";
             this.lci_PageBody.TextSize = new System.Drawing.Size(0, 0);
             this.lci_PageBody.TextVisible = false;
@@ -656,10 +688,10 @@
             this.lci_CourseFilter.Control = this.panel_CourseFilter;
             this.lci_CourseFilter.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lci_CourseFilter.CustomizationFormText = "lci_FilterSection";
-            this.lci_CourseFilter.Location = new System.Drawing.Point(681, 104);
+            this.lci_CourseFilter.Location = new System.Drawing.Point(952, 109);
             this.lci_CourseFilter.Name = "lci_CourseFilter";
             this.lci_CourseFilter.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 2, 2);
-            this.lci_CourseFilter.Size = new System.Drawing.Size(207, 42);
+            this.lci_CourseFilter.Size = new System.Drawing.Size(289, 42);
             this.lci_CourseFilter.TextSize = new System.Drawing.Size(0, 0);
             this.lci_CourseFilter.TextVisible = false;
             // 
@@ -668,10 +700,10 @@
             this.lci_YearLevel.Control = this.panel_YearLevelFilter;
             this.lci_YearLevel.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lci_YearLevel.CustomizationFormText = "lci_YearLevel";
-            this.lci_YearLevel.Location = new System.Drawing.Point(888, 104);
+            this.lci_YearLevel.Location = new System.Drawing.Point(1241, 109);
             this.lci_YearLevel.Name = "lci_YearLevel";
             this.lci_YearLevel.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 2, 2);
-            this.lci_YearLevel.Size = new System.Drawing.Size(124, 42);
+            this.lci_YearLevel.Size = new System.Drawing.Size(173, 42);
             this.lci_YearLevel.TextSize = new System.Drawing.Size(0, 0);
             this.lci_YearLevel.TextVisible = false;
             // 
@@ -680,10 +712,10 @@
             this.lci_QRCode.Control = this.panel_QRCode;
             this.lci_QRCode.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lci_QRCode.CustomizationFormText = "lci_QRCode";
-            this.lci_QRCode.Location = new System.Drawing.Point(681, 146);
+            this.lci_QRCode.Location = new System.Drawing.Point(952, 151);
             this.lci_QRCode.Name = "lci_QRCode";
             this.lci_QRCode.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 2, 2);
-            this.lci_QRCode.Size = new System.Drawing.Size(331, 366);
+            this.lci_QRCode.Size = new System.Drawing.Size(462, 588);
             this.lci_QRCode.TextSize = new System.Drawing.Size(0, 0);
             this.lci_QRCode.TextVisible = false;
             // 
@@ -692,44 +724,12 @@
             this.lci_StudentInfo.Control = this.panel_StudentInfo;
             this.lci_StudentInfo.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lci_StudentInfo.CustomizationFormText = "lci_StudentInfo";
-            this.lci_StudentInfo.Location = new System.Drawing.Point(681, 512);
+            this.lci_StudentInfo.Location = new System.Drawing.Point(952, 739);
             this.lci_StudentInfo.Name = "lci_StudentInfo";
             this.lci_StudentInfo.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 2, 2);
-            this.lci_StudentInfo.Size = new System.Drawing.Size(331, 230);
+            this.lci_StudentInfo.Size = new System.Drawing.Size(462, 259);
             this.lci_StudentInfo.TextSize = new System.Drawing.Size(0, 0);
             this.lci_StudentInfo.TextVisible = false;
-            // 
-            // lci_FindPanel
-            // 
-            this.lci_FindPanel.Control = this.panel_SearchBar;
-            this.lci_FindPanel.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lci_FindPanel.CustomizationFormText = "lci_SearchBar";
-            this.lci_FindPanel.Location = new System.Drawing.Point(0, 104);
-            this.lci_FindPanel.Name = "lci_FindPanel";
-            this.lci_FindPanel.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 2, 2);
-            this.lci_FindPanel.Size = new System.Drawing.Size(681, 42);
-            this.lci_FindPanel.TextSize = new System.Drawing.Size(0, 0);
-            this.lci_FindPanel.TextVisible = false;
-            // 
-            // panel_SearchBar
-            // 
-            this.panel_SearchBar.Controls.Add(this.findPanel);
-            this.panel_SearchBar.Location = new System.Drawing.Point(16, 119);
-            this.panel_SearchBar.Name = "panel_SearchBar";
-            this.panel_SearchBar.Size = new System.Drawing.Size(675, 38);
-            this.panel_SearchBar.TabIndex = 8;
-            // 
-            // findPanel
-            // 
-            this.findPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.findPanel.Location = new System.Drawing.Point(2, 2);
-            this.findPanel.Name = "findPanel";
-            this.findPanel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Repository.ClearButton(),
-            new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.findPanel.Size = new System.Drawing.Size(671, 34);
-            this.findPanel.TabIndex = 0;
-            this.findPanel.TextChanged += new System.EventHandler(this.findPanel_TextChanged);
             // 
             // AttendanceRecords_UserControl
             // 
@@ -737,12 +737,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lc_AttendanceRecords);
             this.Name = "AttendanceRecords_UserControl";
-            this.Size = new System.Drawing.Size(1038, 768);
+            this.Size = new System.Drawing.Size(1440, 1024);
             ((System.ComponentModel.ISupportInitialize)(this.lc_AttendanceRecords)).EndInit();
             this.lc_AttendanceRecords.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panel_PageHeading)).EndInit();
             this.panel_PageHeading.ResumeLayout(false);
             this.panel_PageHeading.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panel_SearchBar)).EndInit();
+            this.panel_SearchBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.findPanel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_CourseFilter)).EndInit();
             this.panel_CourseFilter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbe_Course.Properties)).EndInit();
@@ -753,7 +756,7 @@
             this.panel_PageBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_AttendanceRecords)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_AttendanceRecords)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButton_Action)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButton_View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_QRCode)).EndInit();
             this.panel_QRCode.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pe_QRCode.Properties)).EndInit();
@@ -774,15 +777,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageHeading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lci_FindPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_PageBody)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_CourseFilter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_YearLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_QRCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_StudentInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lci_FindPanel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panel_SearchBar)).EndInit();
-            this.panel_SearchBar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.findPanel.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -804,7 +804,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gv_AttendanceRecords;
         private DevExpress.XtraGrid.Columns.GridColumn grdclm_SchoolStudentId;
         private DevExpress.XtraGrid.Columns.GridColumn grdclm_Name;
-        private DevExpress.XtraGrid.Columns.GridColumn grdclm_Action;
+        private DevExpress.XtraGrid.Columns.GridColumn grdclm_View;
         private DevExpress.XtraLayout.LayoutControlItem lci_PageBody;
         private DevExpress.XtraEditors.PanelControl panel_QRCode;
         private DevExpress.XtraLayout.LayoutControlItem lci_QRCode;
@@ -818,7 +818,7 @@
         private DevExpress.XtraEditors.PictureEdit pe_QRCode;
         private DevExpress.XtraEditors.ComboBoxEdit cbe_Course;
         private DevExpress.XtraEditors.ComboBoxEdit cbe_YearLevel;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButton_Action;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButton_View;
         private DevExpress.XtraEditors.LabelControl txt_YearLevel;
         private DevExpress.XtraEditors.LabelControl txt_Course;
         private DevExpress.XtraEditors.LabelControl txt_Email;

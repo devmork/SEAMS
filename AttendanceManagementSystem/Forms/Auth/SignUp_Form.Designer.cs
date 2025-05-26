@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUp_Form));
             this.pe_ImageDisplay = new DevExpress.XtraEditors.PictureEdit();
             this.panel_UserData = new DevExpress.XtraEditors.PanelControl();
+            this.btn_Close = new DevExpress.XtraEditors.SimpleButton();
             this.icon_Password = new DevExpress.XtraEditors.PictureEdit();
             this.icon_Email = new DevExpress.XtraEditors.PictureEdit();
             this.icon_Person = new DevExpress.XtraEditors.PictureEdit();
@@ -42,7 +43,6 @@
             this.txt_Email = new DevExpress.XtraEditors.TextEdit();
             this.txt_UserName = new DevExpress.XtraEditors.TextEdit();
             this.label_Heading = new System.Windows.Forms.Label();
-            this.btn_Close = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pe_ImageDisplay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_UserData)).BeginInit();
             this.panel_UserData.SuspendLayout();
@@ -85,6 +85,17 @@
             this.panel_UserData.Name = "panel_UserData";
             this.panel_UserData.Size = new System.Drawing.Size(517, 734);
             this.panel_UserData.TabIndex = 5;
+            // 
+            // btn_Close
+            // 
+            this.btn_Close.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Close.Appearance.Options.UseBackColor = true;
+            this.btn_Close.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Close.ImageOptions.SvgImage")));
+            this.btn_Close.Location = new System.Drawing.Point(478, 0);
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(39, 38);
+            this.btn_Close.TabIndex = 32;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
             // 
             // icon_Password
             // 
@@ -218,15 +229,6 @@
             this.label_Heading.Size = new System.Drawing.Size(142, 42);
             this.label_Heading.TabIndex = 21;
             this.label_Heading.Text = "Welcome!";
-            // 
-            // btn_Close
-            // 
-            this.btn_Close.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Close.ImageOptions.SvgImage")));
-            this.btn_Close.Location = new System.Drawing.Point(478, 0);
-            this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(39, 38);
-            this.btn_Close.TabIndex = 32;
-            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
             // 
             // SignUp_Form
             // 

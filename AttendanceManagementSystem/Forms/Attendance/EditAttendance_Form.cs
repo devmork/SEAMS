@@ -69,5 +69,10 @@ namespace AttendanceManagementSystem.Forms.Events
         {
             this.Close();
         }
+
+        private void btn_CloseForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
