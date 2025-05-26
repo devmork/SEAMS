@@ -35,10 +35,8 @@
             this.gc_AttendanceRecord = new DevExpress.XtraGrid.GridControl();
             this.gv_AttendanceRecord = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grdclm_AttendanceName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.grdclm_Data = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdclm_Date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_LogType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.grdclm_StartTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.grdclm_EndTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_Remarks = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel_TotalAttendance = new DevExpress.XtraEditors.PanelControl();
             this.label_TotalAttendance = new DevExpress.XtraEditors.LabelControl();
@@ -60,6 +58,7 @@
             this.lci_gridControl = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem = new DevExpress.XtraLayout.EmptySpaceItem();
             this.lci_ResetRecord = new DevExpress.XtraLayout.LayoutControlItem();
+            this.icon_Student = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_StudentAttendanceRecord)).BeginInit();
             this.lc_StudentAttendanceRecord.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_ResetRecord)).BeginInit();
@@ -86,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_ResetRecord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_Student.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lc_StudentAttendanceRecord
@@ -145,10 +145,8 @@
             // 
             this.gv_AttendanceRecord.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.grdclm_AttendanceName,
-            this.grdclm_Data,
+            this.grdclm_Date,
             this.grdclm_LogType,
-            this.grdclm_StartTime,
-            this.grdclm_EndTime,
             this.grdclm_Remarks});
             this.gv_AttendanceRecord.GridControl = this.gc_AttendanceRecord;
             this.gv_AttendanceRecord.Name = "gv_AttendanceRecord";
@@ -157,44 +155,33 @@
             // grdclm_AttendanceName
             // 
             this.grdclm_AttendanceName.Caption = "Name";
+            this.grdclm_AttendanceName.FieldName = "AttendanceName";
             this.grdclm_AttendanceName.Name = "grdclm_AttendanceName";
             this.grdclm_AttendanceName.Visible = true;
             this.grdclm_AttendanceName.VisibleIndex = 0;
             // 
-            // grdclm_Data
+            // grdclm_Date
             // 
-            this.grdclm_Data.Caption = "Date";
-            this.grdclm_Data.Name = "grdclm_Data";
-            this.grdclm_Data.Visible = true;
-            this.grdclm_Data.VisibleIndex = 1;
+            this.grdclm_Date.Caption = "Date";
+            this.grdclm_Date.FieldName = "Date";
+            this.grdclm_Date.Name = "grdclm_Date";
+            this.grdclm_Date.Visible = true;
+            this.grdclm_Date.VisibleIndex = 1;
             // 
             // grdclm_LogType
             // 
             this.grdclm_LogType.Caption = "Log Type";
+            this.grdclm_LogType.FieldName = "LogType";
             this.grdclm_LogType.Name = "grdclm_LogType";
             this.grdclm_LogType.Visible = true;
             this.grdclm_LogType.VisibleIndex = 2;
-            // 
-            // grdclm_StartTime
-            // 
-            this.grdclm_StartTime.Caption = "Start Time";
-            this.grdclm_StartTime.Name = "grdclm_StartTime";
-            this.grdclm_StartTime.Visible = true;
-            this.grdclm_StartTime.VisibleIndex = 3;
-            // 
-            // grdclm_EndTime
-            // 
-            this.grdclm_EndTime.Caption = "End Time";
-            this.grdclm_EndTime.Name = "grdclm_EndTime";
-            this.grdclm_EndTime.Visible = true;
-            this.grdclm_EndTime.VisibleIndex = 4;
             // 
             // grdclm_Remarks
             // 
             this.grdclm_Remarks.Caption = "Remarks";
             this.grdclm_Remarks.Name = "grdclm_Remarks";
             this.grdclm_Remarks.Visible = true;
-            this.grdclm_Remarks.VisibleIndex = 5;
+            this.grdclm_Remarks.VisibleIndex = 3;
             // 
             // panel_TotalAttendance
             // 
@@ -328,6 +315,7 @@
             // 
             // panel_PageHeading
             // 
+            this.panel_PageHeading.Controls.Add(this.icon_Student);
             this.panel_PageHeading.Controls.Add(this.btn_CloseForm);
             this.panel_PageHeading.Controls.Add(this.label_PageTitle);
             this.panel_PageHeading.Location = new System.Drawing.Point(16, 16);
@@ -355,7 +343,7 @@
             // 
             this.label_PageTitle.Appearance.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
             this.label_PageTitle.Appearance.Options.UseFont = true;
-            this.label_PageTitle.Location = new System.Drawing.Point(20, 8);
+            this.label_PageTitle.Location = new System.Drawing.Point(61, 8);
             this.label_PageTitle.Name = "label_PageTitle";
             this.label_PageTitle.Size = new System.Drawing.Size(231, 28);
             this.label_PageTitle.TabIndex = 0;
@@ -439,6 +427,21 @@
             this.lci_ResetRecord.TextSize = new System.Drawing.Size(0, 0);
             this.lci_ResetRecord.TextVisible = false;
             // 
+            // icon_Student
+            // 
+            this.icon_Student.EditValue = ((object)(resources.GetObject("icon_Student.EditValue")));
+            this.icon_Student.Location = new System.Drawing.Point(15, 8);
+            this.icon_Student.Name = "icon_Student";
+            this.icon_Student.Properties.AllowZoom = DevExpress.Utils.DefaultBoolean.True;
+            this.icon_Student.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.icon_Student.Properties.Appearance.Options.UseBackColor = true;
+            this.icon_Student.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.icon_Student.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.icon_Student.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.icon_Student.Properties.SvgImageSize = new System.Drawing.Size(14, 14);
+            this.icon_Student.Size = new System.Drawing.Size(29, 28);
+            this.icon_Student.TabIndex = 22;
+            // 
             // StudentAttendanceRecord_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
@@ -479,6 +482,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_ResetRecord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_Student.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -500,10 +504,8 @@
         private DevExpress.XtraLayout.LayoutControlItem lci_gridControl;
         private DevExpress.XtraEditors.LabelControl label_PageTitle;
         private DevExpress.XtraGrid.Columns.GridColumn grdclm_AttendanceName;
-        private DevExpress.XtraGrid.Columns.GridColumn grdclm_Data;
+        private DevExpress.XtraGrid.Columns.GridColumn grdclm_Date;
         private DevExpress.XtraGrid.Columns.GridColumn grdclm_LogType;
-        private DevExpress.XtraGrid.Columns.GridColumn grdclm_StartTime;
-        private DevExpress.XtraGrid.Columns.GridColumn grdclm_EndTime;
         private DevExpress.XtraGrid.Columns.GridColumn grdclm_Remarks;
         private DevExpress.XtraEditors.PanelControl panel_ResetRecord;
         private DevExpress.XtraEditors.SimpleButton btn_ResetRecord;
@@ -516,5 +518,6 @@
         private DevExpress.XtraEditors.LabelControl label_TotalAttendance;
         private DevExpress.XtraEditors.LabelControl label_TotalAbsent;
         private DevExpress.XtraEditors.PictureEdit btn_CloseForm;
+        private DevExpress.XtraEditors.PictureEdit icon_Student;
     }
 }

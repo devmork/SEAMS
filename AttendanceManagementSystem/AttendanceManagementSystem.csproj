@@ -234,15 +234,14 @@
     <Compile Include="Forms\QR Code Management\QRCodeManagement_Form.Designer.cs">
       <DependentUpon>QRCodeManagement_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Reports\Student_Report.cs">
+    <Compile Include="Reports\Student_Report.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\Reports\Student_Report.Designer.cs">
+    <Compile Include="Reports\Student_Report.Designer.cs">
       <DependentUpon>Student_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Repositories\IUserRepository.cs" />
     <Compile Include="Interfaces\Utilities\IQRScannerHelper.cs" />
-    <Compile Include="Models\Base\AttendanceRecords.cs" />
     <Compile Include="Models\Derived\User.cs" />
     <Compile Include="Services\QRCodeService.cs" />
     <Compile Include="Data\Repositories\StudentsRepository.cs" />
@@ -349,7 +348,7 @@
     <EmbeddedResource Include="Forms\QRScanner\QRScanner_UserControl.resx">
       <DependentUpon>QRScanner_UserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Reports\Student_Report.resx">
+    <EmbeddedResource Include="Reports\Student_Report.resx">
       <DependentUpon>Student_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Students\AddStudent_Form.resx">

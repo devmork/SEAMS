@@ -24,16 +24,11 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
             _attendanceRepository = new AttendanceRepository();
             _schoolStudentId = schoolStudentId;
             LoadAttendanceRecord();
-
 		}
         private void LoadAttendanceRecord()
         {
             try
             {
-                // Fetch attendance records for the student
-                var records = _attendanceRepository.GetAttendanceRecordsByStudentId(_schoolStudentId);
-                gc_AttendanceRecord.DataSource = records;
-
                 // Calculate total attendance events
                 int totalAttendance = _attendanceRepository.GetTotalAttendance();
                 txt_TotalAttendance.EditValue = totalAttendance.ToString();
@@ -43,8 +38,9 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
                 txt_TotalAbsent.EditValue = totalAbsent.ToString();
 
                 // Calculate total present (records where Remarks is "Present")
-                int totalPresent = records.Count(r => r.Remarks == "Present");
-                txt_TotalPresent.EditValue = totalPresent.ToString();
+                //var records = _attendanceRepository.GetAttendanceRecordsByStudentId(_schoolStudentId);
+                //int totalPresent = records.Count(r => r.Remarks == "Present");
+                //txt_TotalPresent.EditValue = totalPresent.ToString();
             }
             catch (Exception ex)
             {

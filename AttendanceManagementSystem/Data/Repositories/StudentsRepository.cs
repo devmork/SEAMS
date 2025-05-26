@@ -77,7 +77,6 @@ namespace AttendanceManagementSystem.Data.Repositories
                 return connection.ExecuteScalar<int>(sql);
             }
         }
-
         public Student GetStudentById(string schoolStudentId)
         {
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))

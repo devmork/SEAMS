@@ -25,18 +25,18 @@ namespace AttendanceManagementSystem.Forms.QR_Code_Management
         public QRCodeManagement_Form()
         {
             InitializeComponent();
-            _studentsRepository = new StudenstRepository();
+            _studentsRepository = new StudentsRepository();
             LoadData();
         }
 
 
         private void LoadData()
         {
-            string course = cbe_Course.SelectedIndex > 0 ? cbe_Course.Text : string.Empty;
-            int? yearLevel = cbe_YearLevel.SelectedIndex > 0 ? (int?)int.Parse(cbe_YearLevel.Text) : null;
+            //string course = cbe_Course.SelectedIndex > 0 ? cbe_Course.Text : string.Empty;
+            //int? yearLevel = cbe_YearLevel.SelectedIndex > 0 ? (int?)int.Parse(cbe_YearLevel.Text) : null;
 
-            var filteredStudents = _studentsRepository.GetAllStudent(course, yearLevel) ?? new List<Student>();
-            gc_QRCodes.DataSource = filteredStudents;
+            //var filteredStudents = _studentsRepository.GetAllStudent(course, yearLevel) ?? new List<Student>();
+            //gc_QRCodes.DataSource = filteredStudents;
         }
 
 
@@ -66,23 +66,23 @@ namespace AttendanceManagementSystem.Forms.QR_Code_Management
 
             await Task.Run(() =>
             {
-                using (var zip = new ZipFile())
-                {
-                    int count = 0;
-                    foreach (var student in students)
-                    {
-                        if (student.QRCode != null)
-                        {
-                            using (var ms = new MemoryStream(student.QRCode))
-                            {
-                                zip.AddEntry($"{student.SchoolStudentId}.png", ms.ToArray());
-                            }
-                        }
-                        count++;
-                        Invoke(new Action(() => progressBar.EditValue = (count * 100) / students.Count));
-                    }
-                    zip.Save(fileName);
-                }
+                //using (var zip = new ZipFile())
+                //{
+                //    int count = 0;
+                //    foreach (var student in students)
+                //    {
+                //        if (student.QRCode != null)
+                //        {
+                //            using (var ms = new MemoryStream(student.QRCode))
+                //            {
+                //                zip.AddEntry($"{student.SchoolStudentId}.png", ms.ToArray());
+                //            }
+                //        }
+                //        count++;
+                //        Invoke(new Action(() => progressBar.EditValue = (count * 100) / students.Count));
+                //    }
+                //    zip.Save(fileName);
+                //}
             });
 
             progressBar.Visible = false;

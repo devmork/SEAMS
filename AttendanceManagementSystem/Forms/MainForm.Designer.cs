@@ -40,6 +40,10 @@
             this.btn_Students = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator4 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.btn_AttendanceRecord = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace_Reports = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btn_AllAttendanceReport = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btn_AllQRCodes = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator6 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.btn_LogOut = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.panel_Body = new DevExpress.XtraEditors.PanelControl();
             accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
@@ -78,6 +82,8 @@
             this.accordionControlSeparator4,
             this.btn_AttendanceRecord,
             accordionControlSeparator5,
+            this.ace_Reports,
+            this.accordionControlSeparator6,
             this.btn_LogOut});
             this.accordion_Menu.Location = new System.Drawing.Point(0, 0);
             this.accordion_Menu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -159,6 +165,42 @@
             this.btn_AttendanceRecord.Text = "Attendance Records";
             this.btn_AttendanceRecord.Click += new System.EventHandler(this.btn_AttendanceRecord_Click);
             // 
+            // ace_Reports
+            // 
+            this.ace_Reports.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F);
+            this.ace_Reports.Appearance.Default.Options.UseFont = true;
+            this.ace_Reports.Appearance.Default.Options.UseTextOptions = true;
+            this.ace_Reports.Appearance.Default.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.ace_Reports.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.btn_AllAttendanceReport,
+            this.btn_AllQRCodes});
+            this.ace_Reports.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ace_Reports.ImageOptions.SvgImage")));
+            this.ace_Reports.Name = "ace_Reports";
+            this.ace_Reports.Text = "Reports";
+            this.ace_Reports.Click += new System.EventHandler(this.ace_Reports_Click);
+            // 
+            // btn_AllAttendanceReport
+            // 
+            this.btn_AllAttendanceReport.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F);
+            this.btn_AllAttendanceReport.Appearance.Default.Options.UseFont = true;
+            this.btn_AllAttendanceReport.Appearance.Default.Options.UseTextOptions = true;
+            this.btn_AllAttendanceReport.Appearance.Default.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.btn_AllAttendanceReport.Name = "btn_AllAttendanceReport";
+            this.btn_AllAttendanceReport.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btn_AllAttendanceReport.Text = "All Attendance Record";
+            // 
+            // btn_AllQRCodes
+            // 
+            this.btn_AllQRCodes.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F);
+            this.btn_AllQRCodes.Appearance.Default.Options.UseFont = true;
+            this.btn_AllQRCodes.Name = "btn_AllQRCodes";
+            this.btn_AllQRCodes.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btn_AllQRCodes.Text = "All QRCodes";
+            // 
+            // accordionControlSeparator6
+            // 
+            this.accordionControlSeparator6.Name = "accordionControlSeparator6";
+            // 
             // btn_LogOut
             // 
             this.btn_LogOut.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F);
@@ -213,5 +255,9 @@
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_LogOut;
         private DevExpress.XtraEditors.PanelControl panel_Body;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_Reports;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_AllAttendanceReport;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_AllQRCodes;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator6;
     }
 }

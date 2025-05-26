@@ -21,23 +21,19 @@ namespace AttendanceManagementSystem.Forms.Attendance_Record
 	public partial class AttendanceRecords_UserControl: DevExpress.XtraEditors.XtraUserControl
 	{
 		private readonly IStudentsRepository _studentsRepository;
-        private readonly IQRCodeService _qrCodeService;
         public AttendanceRecords_UserControl()
 		{
             InitializeComponent();
 			_studentsRepository = new StudentsRepository();
-            _qrCodeService = new QRCodeService();
             LoadStudents();
         }
         private void repositoryItemButton_Action_Click(object sender, EventArgs e)
         {
             Student selectedRow = gv_AttendanceRecords.GetFocusedRow() as Student;
-            if (selectedRow != null)
-            {
-                string schoolStudentId = selectedRow.SchoolStudentId; // Assuming Student class has this property
-                StudentAttendanceRecord_Form attendanceForm = new StudentAttendanceRecord_Form(schoolStudentId);
-                attendanceForm.ShowDialog();
-            }
+
+            string schoolStudentId = selectedRow.SchoolStudentId;
+            StudentAttendanceRecord_Form attendanceForm = new StudentAttendanceRecord_Form(schoolStudentId);
+            attendanceForm.ShowDialog();
         }
         private void LoadStudents()
         {
@@ -70,7 +66,6 @@ namespace AttendanceManagementSystem.Forms.Attendance_Record
             string selectedYearLevel = cbe_YearLevel.SelectedItem.ToString();
             gv_AttendanceRecords.ActiveFilterString = $"[YearLevel] = '{selectedYearLevel}'";
         }
-
         private void findPanel_TextChanged(object sender, EventArgs e)
         {
             string searchStudentId = findPanel.Text.ToString();
@@ -83,6 +78,11 @@ namespace AttendanceManagementSystem.Forms.Attendance_Record
             {
                 gv_AttendanceRecords.ActiveFilterString = $"[SchoolStudentId] = '{searchStudentId}'";
             }
+        }
+
+        private void btn_Report_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

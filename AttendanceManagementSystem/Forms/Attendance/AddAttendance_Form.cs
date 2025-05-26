@@ -36,17 +36,17 @@ namespace AttendanceManagementSystem.Forms.Events
             DateTime startTime = date + te_StartTime.Time.TimeOfDay; 
             DateTime endTime = date + te_EndTime.Time.TimeOfDay;
 
-            if (startTime >= endTime)
-            {
-                XtraMessageBox.Show("Start time must be before end time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
             if (string.IsNullOrWhiteSpace(attendanceName) || string.IsNullOrWhiteSpace(attendanceLocation) || string.IsNullOrWhiteSpace(logType))
             {
                 XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            if (startTime >= endTime)
+            {
+                XtraMessageBox.Show("Start time must be before end time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
             var attendance = new Attendance
             {
                 AttendanceId = 0,

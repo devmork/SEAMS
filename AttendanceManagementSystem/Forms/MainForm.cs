@@ -77,5 +77,10 @@ namespace AttendanceManagementSystem.Forms
             LogIn_Form logIn_Form = new LogIn_Form();
             logIn_Form.ShowDialog();
         }
+
+        private void ace_Reports_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

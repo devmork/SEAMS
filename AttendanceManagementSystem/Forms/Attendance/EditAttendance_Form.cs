@@ -18,15 +18,12 @@ namespace AttendanceManagementSystem.Forms.Events
 	{
         private readonly IAttendanceRepository _attendanceRepository;
         private Attendance _attendance;
-        public EditAttendance_Form(Attendance attendance = null)
+        public EditAttendance_Form(Attendance attendance)
         {
             InitializeComponent();
             _attendanceRepository = new AttendanceRepository();
             _attendance = attendance;
-            if (attendance != null)
-            {
-                LoadAttendanceData();
-            }
+            LoadAttendanceData();
         }
         private void LoadAttendanceData()
         {
@@ -46,18 +43,23 @@ namespace AttendanceManagementSystem.Forms.Events
             DateTime startTime = date + te_StartTime.Time.TimeOfDay;
             DateTime endTime = date + te_EndTime.Time.TimeOfDay;
 
+            if (string.IsNullOrWhiteSpace(attendanceName) || string.IsNullOrWhiteSpace(attendanceLocation) || string.IsNullOrWhiteSpace(logType))
+            {
+                XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (startTime >= endTime)
+            {
+                XtraMessageBox.Show("Start time must be before end time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             _attendance.AttendanceName = attendanceName;
             _attendance.AttendanceLocation = attendanceLocation;
             _attendance.LogType = logType;
             _attendance.Date = date;
             _attendance.StartTime = startTime;
             _attendance.EndTime = endTime;
-
-            if (startTime >= endTime)
-            {
-                XtraMessageBox.Show("Start time must be before end time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
             _attendanceRepository.UpdateAttendance(_attendance);
             XtraMessageBox.Show("Attendance updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
