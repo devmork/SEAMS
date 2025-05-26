@@ -30,31 +30,32 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllQRCodes));
             this.lc_AllQRCodes = new DevExpress.XtraLayout.LayoutControl();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_Report = new DevExpress.XtraEditors.SimpleButton();
+            this.cbe_FilterYearLevel = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbe_FilterCourse = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panel_AllAttendanceReport = new DevExpress.XtraEditors.PanelControl();
             this.label_PageDescription = new DevExpress.XtraEditors.LabelControl();
             this.btn_CloseForm = new DevExpress.XtraEditors.PictureEdit();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cbe_FilterCourse = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cbe_FilterYearLevel = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.btn_Report = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btn_Cancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.lc_AllQRCodes)).BeginInit();
             this.lc_AllQRCodes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_FilterYearLevel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_FilterCourse.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_AllAttendanceReport)).BeginInit();
             this.panel_AllAttendanceReport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_CloseForm.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_FilterCourse.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_FilterYearLevel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,18 +73,75 @@
             this.lc_AllQRCodes.TabIndex = 0;
             this.lc_AllQRCodes.Text = "layoutControl1";
             // 
-            // Root
+            // panelControl4
             // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem4});
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(790, 226);
-            this.Root.TextVisible = false;
+            this.panelControl4.Controls.Add(this.btn_Cancel);
+            this.panelControl4.Controls.Add(this.btn_Report);
+            this.panelControl4.Location = new System.Drawing.Point(16, 133);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(758, 77);
+            this.panelControl4.TabIndex = 8;
+            // 
+            // btn_Report
+            // 
+            this.btn_Report.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Report.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
+            this.btn_Report.Appearance.Font = new System.Drawing.Font("Poppins", 12.08F);
+            this.btn_Report.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_Report.Appearance.Options.UseBackColor = true;
+            this.btn_Report.Appearance.Options.UseFont = true;
+            this.btn_Report.Appearance.Options.UseForeColor = true;
+            this.btn_Report.Appearance.Options.UseTextOptions = true;
+            this.btn_Report.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btn_Report.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btn_Report.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            this.btn_Report.Location = new System.Drawing.Point(508, 13);
+            this.btn_Report.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Report.Name = "btn_Report";
+            this.btn_Report.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.btn_Report.Size = new System.Drawing.Size(234, 50);
+            this.btn_Report.TabIndex = 14;
+            this.btn_Report.Text = "Download";
+            // 
+            // cbe_FilterYearLevel
+            // 
+            this.cbe_FilterYearLevel.Location = new System.Drawing.Point(398, 78);
+            this.cbe_FilterYearLevel.Name = "cbe_FilterYearLevel";
+            this.cbe_FilterYearLevel.Properties.AutoHeight = false;
+            this.cbe_FilterYearLevel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_FilterYearLevel.Properties.Items.AddRange(new object[] {
+            "All Year Level",
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.cbe_FilterYearLevel.Size = new System.Drawing.Size(376, 49);
+            this.cbe_FilterYearLevel.StyleController = this.lc_AllQRCodes;
+            this.cbe_FilterYearLevel.TabIndex = 7;
+            // 
+            // cbe_FilterCourse
+            // 
+            this.cbe_FilterCourse.Location = new System.Drawing.Point(16, 78);
+            this.cbe_FilterCourse.Name = "cbe_FilterCourse";
+            this.cbe_FilterCourse.Properties.AutoHeight = false;
+            this.cbe_FilterCourse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_FilterCourse.Properties.Items.AddRange(new object[] {
+            "All Courses",
+            "BSN",
+            "BSMT",
+            "BS-RADTECH",
+            "BS-PHARMA",
+            "BSPT",
+            "BSIT",
+            "BSHM",
+            "BSBA",
+            "BSED"});
+            this.cbe_FilterCourse.Size = new System.Drawing.Size(376, 49);
+            this.cbe_FilterCourse.StyleController = this.lc_AllQRCodes;
+            this.cbe_FilterCourse.TabIndex = 6;
             // 
             // panel_AllAttendanceReport
             // 
@@ -121,6 +179,20 @@
             this.btn_CloseForm.Properties.SvgImageSize = new System.Drawing.Size(14, 14);
             this.btn_CloseForm.Size = new System.Drawing.Size(41, 35);
             this.btn_CloseForm.TabIndex = 21;
+            this.btn_CloseForm.Click += new System.EventHandler(this.btn_CloseForm_Click);
+            // 
+            // Root
+            // 
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem4});
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(790, 226);
+            this.Root.TextVisible = false;
             // 
             // layoutControlItem1
             // 
@@ -131,28 +203,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // cbe_FilterCourse
-            // 
-            this.cbe_FilterCourse.Location = new System.Drawing.Point(16, 78);
-            this.cbe_FilterCourse.Name = "cbe_FilterCourse";
-            this.cbe_FilterCourse.Properties.AutoHeight = false;
-            this.cbe_FilterCourse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbe_FilterCourse.Properties.Items.AddRange(new object[] {
-            "All Courses",
-            "BSN",
-            "BSMT",
-            "BS-RADTECH",
-            "BS-PHARMA",
-            "BSPT",
-            "BSIT",
-            "BSHM",
-            "BSBA",
-            "BSED"});
-            this.cbe_FilterCourse.Size = new System.Drawing.Size(376, 49);
-            this.cbe_FilterCourse.StyleController = this.lc_AllQRCodes;
-            this.cbe_FilterCourse.TabIndex = 6;
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.cbe_FilterCourse;
@@ -161,23 +211,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(382, 55);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
-            // 
-            // cbe_FilterYearLevel
-            // 
-            this.cbe_FilterYearLevel.Location = new System.Drawing.Point(398, 78);
-            this.cbe_FilterYearLevel.Name = "cbe_FilterYearLevel";
-            this.cbe_FilterYearLevel.Properties.AutoHeight = false;
-            this.cbe_FilterYearLevel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbe_FilterYearLevel.Properties.Items.AddRange(new object[] {
-            "All Year Level",
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.cbe_FilterYearLevel.Size = new System.Drawing.Size(376, 49);
-            this.cbe_FilterYearLevel.StyleController = this.lc_AllQRCodes;
-            this.cbe_FilterYearLevel.TabIndex = 7;
             // 
             // layoutControlItem3
             // 
@@ -188,37 +221,6 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
-            // panelControl4
-            // 
-            this.panelControl4.Controls.Add(this.btn_Report);
-            this.panelControl4.Location = new System.Drawing.Point(16, 133);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(758, 77);
-            this.panelControl4.TabIndex = 8;
-            // 
-            // btn_Report
-            // 
-            this.btn_Report.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Report.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
-            this.btn_Report.Appearance.Font = new System.Drawing.Font("Poppins", 12.08F);
-            this.btn_Report.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn_Report.Appearance.Options.UseBackColor = true;
-            this.btn_Report.Appearance.Options.UseFont = true;
-            this.btn_Report.Appearance.Options.UseForeColor = true;
-            this.btn_Report.Appearance.Options.UseTextOptions = true;
-            this.btn_Report.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btn_Report.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btn_Report.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Report.ImageOptions.SvgImage")));
-            this.btn_Report.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            this.btn_Report.Location = new System.Drawing.Point(509, 11);
-            this.btn_Report.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Report.Name = "btn_Report";
-            this.btn_Report.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_Report.Size = new System.Drawing.Size(234, 55);
-            this.btn_Report.TabIndex = 14;
-            this.btn_Report.Text = "Download";
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.panelControl4;
@@ -227,6 +229,31 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(764, 83);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Cancel.Appearance.BackColor = System.Drawing.Color.White;
+            this.btn_Cancel.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
+            this.btn_Cancel.Appearance.Font = new System.Drawing.Font("Poppins", 12.08F);
+            this.btn_Cancel.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn_Cancel.Appearance.Options.UseBackColor = true;
+            this.btn_Cancel.Appearance.Options.UseBorderColor = true;
+            this.btn_Cancel.Appearance.Options.UseFont = true;
+            this.btn_Cancel.Appearance.Options.UseForeColor = true;
+            this.btn_Cancel.Appearance.Options.UseTextOptions = true;
+            this.btn_Cancel.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btn_Cancel.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btn_Cancel.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            this.btn_Cancel.Location = new System.Drawing.Point(262, 13);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.btn_Cancel.Size = new System.Drawing.Size(234, 50);
+            this.btn_Cancel.TabIndex = 16;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // AllQRCodes
             // 
@@ -240,18 +267,18 @@
             this.Text = "AllQRCodes";
             ((System.ComponentModel.ISupportInitialize)(this.lc_AllQRCodes)).EndInit();
             this.lc_AllQRCodes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_FilterYearLevel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_FilterCourse.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_AllAttendanceReport)).EndInit();
             this.panel_AllAttendanceReport.ResumeLayout(false);
             this.panel_AllAttendanceReport.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_CloseForm.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_FilterCourse.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_FilterYearLevel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
@@ -272,5 +299,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.SimpleButton btn_Report;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraEditors.SimpleButton btn_Cancel;
     }
 }

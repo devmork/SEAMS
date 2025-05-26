@@ -18,6 +18,7 @@ using AttendanceManagementSystem.Forms.Auth;
 using DevExpress.XtraBars.Navigation;
 using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Data.Repositories;
+using AttendanceManagementSystem.Forms.Reports;
 
 namespace AttendanceManagementSystem.Forms
 {
@@ -77,10 +78,15 @@ namespace AttendanceManagementSystem.Forms
             LogIn_Form logIn_Form = new LogIn_Form();
             logIn_Form.ShowDialog();
         }
-
-        private void ace_Reports_Click(object sender, EventArgs e)
+        private void btn_AllAttendanceReport_Click(object sender, EventArgs e)
         {
-
+            AllAttendanceRecord_Form allAttendanceRecord_Form = new AllAttendanceRecord_Form();
+            allAttendanceRecord_Form.ShowDialog();
+        }
+        private void btn_AllQRCodes_Click(object sender, EventArgs e)
+        {
+            AllQRCodes allQRCodes = new AllQRCodes();
+            allQRCodes.ShowDialog();
         }
     }
 }

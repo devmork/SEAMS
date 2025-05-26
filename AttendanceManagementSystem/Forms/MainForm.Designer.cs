@@ -174,10 +174,10 @@
             this.ace_Reports.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btn_AllAttendanceReport,
             this.btn_AllQRCodes});
+            this.ace_Reports.Expanded = true;
             this.ace_Reports.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ace_Reports.ImageOptions.SvgImage")));
             this.ace_Reports.Name = "ace_Reports";
             this.ace_Reports.Text = "Reports";
-            this.ace_Reports.Click += new System.EventHandler(this.ace_Reports_Click);
             // 
             // btn_AllAttendanceReport
             // 
@@ -188,6 +188,7 @@
             this.btn_AllAttendanceReport.Name = "btn_AllAttendanceReport";
             this.btn_AllAttendanceReport.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_AllAttendanceReport.Text = "All Attendance Record";
+            this.btn_AllAttendanceReport.Click += new System.EventHandler(this.btn_AllAttendanceReport_Click);
             // 
             // btn_AllQRCodes
             // 
@@ -196,6 +197,7 @@
             this.btn_AllQRCodes.Name = "btn_AllQRCodes";
             this.btn_AllQRCodes.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_AllQRCodes.Text = "All QRCodes";
+            this.btn_AllQRCodes.Click += new System.EventHandler(this.btn_AllQRCodes_Click);
             // 
             // accordionControlSeparator6
             // 

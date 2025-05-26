@@ -240,11 +240,11 @@
     <Compile Include="Forms\Reports\AllQRCodes.Designer.cs">
       <DependentUpon>AllQRCodes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Student_Report.cs">
+    <Compile Include="Reports\Attendance_Report.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\Student_Report.Designer.cs">
-      <DependentUpon>Student_Report.cs</DependentUpon>
+    <Compile Include="Reports\Attendance_Report.Designer.cs">
+      <DependentUpon>Attendance_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Repositories\IUserRepository.cs" />
     <Compile Include="Interfaces\Utilities\IQRScannerHelper.cs" />
@@ -356,8 +356,8 @@
     <EmbeddedResource Include="Forms\Reports\AllQRCodes.resx">
       <DependentUpon>AllQRCodes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Student_Report.resx">
-      <DependentUpon>Student_Report.cs</DependentUpon>
+    <EmbeddedResource Include="Reports\Attendance_Report.resx">
+      <DependentUpon>Attendance_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Students\AddStudent_Form.resx">
       <DependentUpon>AddStudent_Form.cs</DependentUpon>

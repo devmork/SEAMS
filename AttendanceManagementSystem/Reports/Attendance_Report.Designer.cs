@@ -1,6 +1,6 @@
 ﻿namespace AttendanceManagementSystem.Forms.Reports
 {
-    partial class Student_Report
+    partial class Attendance_Report
     {
         /// <summary>
         /// Required designer variable.
