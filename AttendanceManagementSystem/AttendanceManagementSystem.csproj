@@ -212,6 +212,7 @@
   <ItemGroup>
     <Compile Include="Data\Repositories\AttendanceRepository.cs" />
     <Compile Include="Data\Repositories\UserRepository.cs" />
+    <Compile Include="DTO\AttendanceRecordsDTO.cs" />
     <Compile Include="Forms\Attendance Record\AttendanceRecords_UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -230,10 +231,6 @@
     <Compile Include="Forms\Auth\SignUp_Form.Designer.cs">
       <DependentUpon>SignUp_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\QR Code Management\QRCodeManagement_Form.cs" />
-    <Compile Include="Forms\QR Code Management\QRCodeManagement_Form.Designer.cs">
-      <DependentUpon>QRCodeManagement_Form.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Reports\AllAttendanceRecord_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +243,7 @@
     <Compile Include="Forms\Reports\AllQRCodes.Designer.cs">
       <DependentUpon>AllQRCodes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Services\IAttendanceService.cs" />
     <Compile Include="Reports\Attendance_Report.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -255,6 +253,7 @@
     <Compile Include="Interfaces\Repositories\IUserRepository.cs" />
     <Compile Include="Interfaces\Utilities\IQRScannerHelper.cs" />
     <Compile Include="Models\Base\User.cs" />
+    <Compile Include="Services\AttendanceService.cs" />
     <Compile Include="Services\QRCodeService.cs" />
     <Compile Include="Data\Repositories\StudentsRepository.cs" />
     <Compile Include="Forms\Attendance Record\StudentAttendanceRecord_Form.cs">
@@ -353,9 +352,6 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QR Code Management\QRCodeManagement_Form.resx">
-      <DependentUpon>QRCodeManagement_Form.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRScanner\QRScanner_UserControl.resx">
       <DependentUpon>QRScanner_UserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -409,7 +405,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\NewFolder1\" />
     <Folder Include="Models\Derived\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

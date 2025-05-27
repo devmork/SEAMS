@@ -139,7 +139,6 @@
             this.cbe_FilterYearLevel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbe_FilterYearLevel.Properties.Items.AddRange(new object[] {
-            "All Year Level",
             "1",
             "2",
             "3",
@@ -157,7 +156,6 @@
             this.cbe_FilterCourse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbe_FilterCourse.Properties.Items.AddRange(new object[] {
-            "All Courses",
             "BSN",
             "BSMT",
             "BS-RADTECH",

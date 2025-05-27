@@ -17,11 +17,14 @@ using OpenCvSharp.Extensions;
 using OpenCvSharp;
 using AttendanceManagementSystem.Utilities;
 using AttendanceManagementSystem.Interfaces.Utilities;
+using AttendanceManagementSystem.Interfaces.Services;
+using AttendanceManagementSystem.Services;
 
 namespace AttendanceManagementSystem.Forms.QRScanner
 {
     public partial class QRScanner_UserControl : DevExpress.XtraEditors.XtraUserControl
     {
+        private readonly IAttendanceService _attendanceService = new AttendanceService();
         private readonly IAttendanceRepository _attendanceRepository = new AttendanceRepository();
         private readonly IQRScannerHelper _qrScannerHelper = new QRScannerHelper();
         private readonly IStudentsRepository _studentsRepository = new StudentsRepository();
@@ -159,12 +162,12 @@ namespace AttendanceManagementSystem.Forms.QRScanner
                                     return;
                                 }
 
-                                _attendanceRepository.RecordAttendance(
-                                    selectedAttendanceId,
-                                    selectedAttendance.AttendanceName,
-                                    selectedAttendance.LogType,
-                                    schoolStudentId
-                                );
+                                //_attendanceRepository.RecordAttendance(
+                                //    selectedAttendanceId,
+                                //    selectedAttendance.AttendanceName,
+                                //    selectedAttendance.LogType,
+                                //    schoolStudentId
+                                //);
 
                                 txt_QRValue.Text = $"Scanned: {student.FirstName} {student.LastName}";
                                 XtraMessageBox.Show("Attendance recorded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

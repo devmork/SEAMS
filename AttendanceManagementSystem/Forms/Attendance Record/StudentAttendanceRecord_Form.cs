@@ -1,51 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+using AttendanceManagementSystem.Interfaces.Services;
 using AttendanceManagementSystem.Models.Base;
-using AttendanceManagementSystem.Interfaces.Repositories;
-using AttendanceManagementSystem.Data.Repositories;
+using AttendanceManagementSystem.Services;
 
 namespace AttendanceManagementSystem.Forms.Attendance_Report
 {
 	public partial class StudentAttendanceRecord_Form: DevExpress.XtraEditors.XtraForm
 	{
-        private readonly IAttendanceRepository _attendanceRepository;
-        private readonly string _schoolStudentId;
-        public StudentAttendanceRecord_Form(string schoolStudentId)
+        private readonly IAttendanceService _attendanceService;
+        private Student _student;
+        public StudentAttendanceRecord_Form(Student student)
 		{
             InitializeComponent();
-            _attendanceRepository = new AttendanceRepository();
-            _schoolStudentId = schoolStudentId;
+            _attendanceService = new AttendanceService();
+            _student = student;
             LoadAttendanceRecord();
 		}
         private void LoadAttendanceRecord()
         {
-            try
-            {
-                // Calculate total attendance events
-                int totalAttendance = _attendanceRepository.GetTotalAttendance();
-                txt_TotalAttendance.EditValue = totalAttendance.ToString();
+            txt_SchoolStudentId.Text = _student.SchoolStudentId;
+            txt_Name.Text = _student.FullName;
 
-                // Calculate total absent
-                int totalAbsent = _attendanceRepository.GetTotalAbsentCount(_schoolStudentId);
-                txt_TotalAbsent.EditValue = totalAbsent.ToString();
+            
+            int totalPresent = _attendanceService.GetTotalPresent(_student.SchoolStudentId);
+            txt_TotalPresent.EditValue = totalPresent.ToString();
 
-                // Calculate total present (records where Remarks is "Present")
-                //var records = _attendanceRepository.GetAttendanceRecordsByStudentId(_schoolStudentId);
-                //int totalPresent = records.Count(r => r.Remarks == "Present");
-                //txt_TotalPresent.EditValue = totalPresent.ToString();
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show($"Error loading attendance data: {ex.Message}");
-            }
         }
         private void btn_CloseForm_Click(object sender, EventArgs e)
         {

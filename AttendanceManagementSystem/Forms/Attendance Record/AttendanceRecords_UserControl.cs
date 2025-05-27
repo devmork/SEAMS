@@ -31,8 +31,7 @@ namespace AttendanceManagementSystem.Forms.Attendance_Record
         {
             Student selectedRow = gv_AttendanceRecords.GetFocusedRow() as Student;
 
-            string schoolStudentId = selectedRow.SchoolStudentId;
-            StudentAttendanceRecord_Form attendanceForm = new StudentAttendanceRecord_Form(schoolStudentId);
+            StudentAttendanceRecord_Form attendanceForm = new StudentAttendanceRecord_Form(selectedRow);
             attendanceForm.ShowDialog();
         }
         private void LoadStudents()

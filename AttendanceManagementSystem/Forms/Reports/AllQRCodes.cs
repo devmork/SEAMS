@@ -74,10 +74,10 @@ namespace AttendanceManagementSystem.Forms.Reports
 
                             // Query students with dynamic filtering for "ALL" selections
                             string sql = @"
-                        SELECT SchoolStudentId, LastName, FirstName 
-                        FROM Student 
-                        WHERE (Course = @Course OR @Course IS NULL) 
-                          AND (YearLevel = @YearLevel OR @YearLevel IS NULL)";
+                                SELECT SchoolStudentId, LastName, FirstName 
+                                FROM Student 
+                                WHERE (Course = @Course OR @Course IS NULL) 
+                                AND (YearLevel = @YearLevel OR @YearLevel IS NULL)";
 
                             var parameters = new DynamicParameters();
                             parameters.Add("@Course", selectedCourse == "All Courses" ? (object)DBNull.Value : selectedCourse);
