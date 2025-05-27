@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllQRCodes));
             this.lc_AllQRCodes = new DevExpress.XtraLayout.LayoutControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_Cancel = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Report = new DevExpress.XtraEditors.SimpleButton();
             this.cbe_FilterYearLevel = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbe_FilterCourse = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -42,7 +43,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btn_Cancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.lc_AllQRCodes)).BeginInit();
             this.lc_AllQRCodes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -82,6 +82,31 @@
             this.panelControl4.Size = new System.Drawing.Size(758, 77);
             this.panelControl4.TabIndex = 8;
             // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Cancel.Appearance.BackColor = System.Drawing.Color.White;
+            this.btn_Cancel.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
+            this.btn_Cancel.Appearance.Font = new System.Drawing.Font("Poppins", 12.08F);
+            this.btn_Cancel.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btn_Cancel.Appearance.Options.UseBackColor = true;
+            this.btn_Cancel.Appearance.Options.UseBorderColor = true;
+            this.btn_Cancel.Appearance.Options.UseFont = true;
+            this.btn_Cancel.Appearance.Options.UseForeColor = true;
+            this.btn_Cancel.Appearance.Options.UseTextOptions = true;
+            this.btn_Cancel.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btn_Cancel.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btn_Cancel.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
+            this.btn_Cancel.Location = new System.Drawing.Point(262, 13);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.btn_Cancel.Size = new System.Drawing.Size(234, 50);
+            this.btn_Cancel.TabIndex = 16;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
             // btn_Report
             // 
             this.btn_Report.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -103,9 +128,11 @@
             this.btn_Report.Size = new System.Drawing.Size(234, 50);
             this.btn_Report.TabIndex = 14;
             this.btn_Report.Text = "Download";
+            this.btn_Report.Click += new System.EventHandler(this.btn_Report_Click);
             // 
             // cbe_FilterYearLevel
             // 
+            this.cbe_FilterYearLevel.EditValue = "Year Level";
             this.cbe_FilterYearLevel.Location = new System.Drawing.Point(398, 78);
             this.cbe_FilterYearLevel.Name = "cbe_FilterYearLevel";
             this.cbe_FilterYearLevel.Properties.AutoHeight = false;
@@ -123,6 +150,7 @@
             // 
             // cbe_FilterCourse
             // 
+            this.cbe_FilterCourse.EditValue = "Select Course";
             this.cbe_FilterCourse.Location = new System.Drawing.Point(16, 78);
             this.cbe_FilterCourse.Name = "cbe_FilterCourse";
             this.cbe_FilterCourse.Properties.AutoHeight = false;
@@ -230,31 +258,6 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // btn_Cancel
-            // 
-            this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Cancel.Appearance.BackColor = System.Drawing.Color.White;
-            this.btn_Cancel.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
-            this.btn_Cancel.Appearance.Font = new System.Drawing.Font("Poppins", 12.08F);
-            this.btn_Cancel.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.btn_Cancel.Appearance.Options.UseBackColor = true;
-            this.btn_Cancel.Appearance.Options.UseBorderColor = true;
-            this.btn_Cancel.Appearance.Options.UseFont = true;
-            this.btn_Cancel.Appearance.Options.UseForeColor = true;
-            this.btn_Cancel.Appearance.Options.UseTextOptions = true;
-            this.btn_Cancel.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btn_Cancel.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.btn_Cancel.ImageOptions.SvgImageSize = new System.Drawing.Size(26, 26);
-            this.btn_Cancel.Location = new System.Drawing.Point(262, 13);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_Cancel.Size = new System.Drawing.Size(234, 50);
-            this.btn_Cancel.TabIndex = 16;
-            this.btn_Cancel.Text = "Cancel";
-            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
-            // 
             // AllQRCodes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
@@ -265,6 +268,7 @@
             this.Name = "AllQRCodes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AllQRCodes";
+            this.Load += new System.EventHandler(this.AllQRCodes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lc_AllQRCodes)).EndInit();
             this.lc_AllQRCodes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();

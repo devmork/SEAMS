@@ -16,6 +16,9 @@ using AttendanceManagementSystem.Data.Repositories;
 using ZXing.QrCode.Internal;
 using System.IO;
 using DevExpress.XtraGrid.Views.Grid;
+using System.IO.Compression;
+using ZXing.QrCode;
+using ZXing;
 
 namespace AttendanceManagementSystem.Forms.Students
 {

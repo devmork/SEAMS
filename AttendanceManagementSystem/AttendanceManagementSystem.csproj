@@ -164,6 +164,8 @@
     <Reference Include="System.Formats.Asn1, Version=9.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Formats.Asn1.9.0.5\lib\net462\System.Formats.Asn1.dll</HintPath>
     </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
     </Reference>
@@ -227,6 +229,10 @@
     </Compile>
     <Compile Include="Forms\Auth\SignUp_Form.Designer.cs">
       <DependentUpon>SignUp_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QR Code Management\QRCodeManagement_Form.cs" />
+    <Compile Include="Forms\QR Code Management\QRCodeManagement_Form.Designer.cs">
+      <DependentUpon>QRCodeManagement_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Reports\AllAttendanceRecord_Form.cs">
       <SubType>Form</SubType>
@@ -347,6 +353,9 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QR Code Management\QRCodeManagement_Form.resx">
+      <DependentUpon>QRCodeManagement_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRScanner\QRScanner_UserControl.resx">
       <DependentUpon>QRScanner_UserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -400,6 +409,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Forms\NewFolder1\" />
     <Folder Include="Models\Derived\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

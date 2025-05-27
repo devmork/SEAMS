@@ -9,6 +9,7 @@ using AttendanceManagementSystem.Forms;
 using AttendanceManagementSystem.Forms.Students;
 using AttendanceManagementSystem.Forms.Events;
 using AttendanceManagementSystem.Forms.Auth;
+using AttendanceManagementSystem.Forms.QR_Code_Management;
 
 namespace AttendanceManagementSystem
 {
