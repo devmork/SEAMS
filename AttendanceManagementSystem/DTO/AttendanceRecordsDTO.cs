@@ -8,9 +8,8 @@ namespace AttendanceManagementSystem.DTO
 {
     public class AttendanceRecordsDTO
     {
-        public string FullName { get; set; }
-        public string Course { get; set; }
-        public int YearLevel { get; set; }
-        public int TotalAbsent { get; set; }
+        public string AttendanceName { get; set; }
+        public string LogType { get; set; }
+        public DateTime TimeStamp { get; set; }
     }
 }

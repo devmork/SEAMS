@@ -174,8 +174,8 @@
             this.ace_Reports.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btn_AllAttendanceReport,
             this.btn_AllQRCodes});
-            this.ace_Reports.Expanded = true;
             this.ace_Reports.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ace_Reports.ImageOptions.SvgImage")));
+            this.ace_Reports.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
             this.ace_Reports.Name = "ace_Reports";
             this.ace_Reports.Text = "Reports";
             // 
@@ -209,7 +209,7 @@
             this.btn_LogOut.Appearance.Default.Options.UseFont = true;
             this.btn_LogOut.ControlFooterAlignment = DevExpress.XtraBars.Navigation.AccordionItemFooterAlignment.Far;
             this.btn_LogOut.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_LogOut.ImageOptions.SvgImage")));
-            this.btn_LogOut.ImageOptions.SvgImageSize = new System.Drawing.Size(22, 22);
+            this.btn_LogOut.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
             this.btn_LogOut.Name = "btn_LogOut";
             this.btn_LogOut.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btn_LogOut.Text = "Log out";
@@ -230,6 +230,7 @@
             this.ClientSize = new System.Drawing.Size(1286, 734);
             this.Controls.Add(this.panel_Body);
             this.Controls.Add(this.accordion_Menu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("MainForm.IconOptions.Image")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
