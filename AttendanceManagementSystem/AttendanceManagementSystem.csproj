@@ -237,6 +237,12 @@
     <Compile Include="Forms\Reports\AllAttendanceRecord_Form.Designer.cs">
       <DependentUpon>AllAttendanceRecord_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\AllAttendance_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\AllAttendance_Report.Designer.cs">
+      <DependentUpon>AllAttendance_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reports\AllQRCodes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\AllAttendanceRecord_Form.resx">
       <DependentUpon>AllAttendanceRecord_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AllAttendance_Report.resx">
+      <DependentUpon>AllAttendance_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\AllQRCodes.resx">
       <DependentUpon>AllQRCodes.cs</DependentUpon>

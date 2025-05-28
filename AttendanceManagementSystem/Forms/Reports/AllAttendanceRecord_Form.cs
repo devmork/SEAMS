@@ -20,8 +20,8 @@ namespace AttendanceManagementSystem.Forms.Reports
 		}
         private void btn_Report_Click(object sender, EventArgs e)
         {
-            Attendance_Report attendance_Report = new Attendance_Report();
-            attendance_Report.ShowPreviewDialog();
+            AllAttendance_Report allAttendance_Report = new AllAttendance_Report();
+            allAttendance_Report.ShowPreviewDialog();
         }
         private void btn_CloseForm_Click(object sender, EventArgs e)
         {
