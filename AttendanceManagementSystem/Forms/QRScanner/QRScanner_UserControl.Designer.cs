@@ -142,12 +142,14 @@
             // 
             // txt_QRValue
             // 
+            this.txt_QRValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_QRValue.Appearance.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_QRValue.Appearance.Options.UseFont = true;
             this.txt_QRValue.Appearance.Options.UseTextOptions = true;
             this.txt_QRValue.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txt_QRValue.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.txt_QRValue.Location = new System.Drawing.Point(236, 363);
+            this.txt_QRValue.Location = new System.Drawing.Point(191, 375);
             this.txt_QRValue.Name = "txt_QRValue";
             this.txt_QRValue.Size = new System.Drawing.Size(155, 37);
             this.txt_QRValue.TabIndex = 0;
@@ -354,6 +356,7 @@
             this.Controls.Add(this.lc_QRScanner);
             this.Name = "QRScanner_UserControl";
             this.Size = new System.Drawing.Size(1440, 1024);
+            this.Load += new System.EventHandler(this.QRScanner_UserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lc_QRScanner)).EndInit();
             this.lc_QRScanner.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panel_StartScan)).EndInit();

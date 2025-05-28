@@ -24,31 +24,41 @@ namespace AttendanceManagementSystem.Forms.QRScanner
 {
     public partial class QRScanner_UserControl : DevExpress.XtraEditors.XtraUserControl
     {
-        private readonly IAttendanceService _attendanceService = new AttendanceService();
-        private readonly IAttendanceRepository _attendanceRepository = new AttendanceRepository();
-        private readonly IQRScannerHelper _qrScannerHelper = new QRScannerHelper();
-        private readonly IStudentsRepository _studentsRepository = new StudentsRepository();
-        private VideoCapture capture;
-        private Timer frameTimer = new Timer();
-        private List<Attendance> attendances;
-        private int selectedAttendanceId = -1;
-        private bool isScanning = false;
+        private readonly IAttendanceService _attendanceService;
+        private readonly IAttendanceRepository _attendanceRepository;
+        private readonly IQRScannerHelper _qrScannerHelper;
+        private readonly IStudentsRepository _studentsRepository;
 
+        private List<Attendance> allAttendance;
+        private int selectedAttendanceId = -1;
+        private bool isScanning;
+        private VideoCapture videoCapture; // WEBCAM CAPTURE OBJECT
+        private Timer timer = new Timer(); // CAPTURE FRAME AND PROCESS FRAME\
         public QRScanner_UserControl()
         {
             InitializeComponent();
+            _attendanceService = new AttendanceService();
+            _attendanceRepository = new AttendanceRepository();
+            _qrScannerHelper = new QRScannerHelper();
+            _studentsRepository = new StudentsRepository();
+            timer.Interval = 30;
+            timer.Tick += FrameScanner;
             LoadActiveAttendance();
-            frameTimer.Interval = 30;
-            frameTimer.Tick += FrameScanner;
-        }
 
+
+        }
+        private void QRScanner_UserControl_Load(object sender, EventArgs e)
+        {
+            
+
+        }
         private void LoadActiveAttendance()
         {
-            attendances = _attendanceRepository.GetAllAttendance();
+            allAttendance = _attendanceRepository.GetAllAttendance();
             cbe_ChooseAttendance.Properties.Items.Clear();
 
             DateTime now = DateTime.Now;
-            foreach (var attendance in attendances)
+            foreach (var attendance in allAttendance)
             {
                 if (now >= attendance.StartTime && now <= attendance.EndTime)
                 {
@@ -64,13 +74,12 @@ namespace AttendanceManagementSystem.Forms.QRScanner
                 cbe_ChooseAttendance.Enabled = true;
             }
         }
-
         private void cbe_ChooseAttendance_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbe_ChooseAttendance.SelectedIndex >= 0 && attendances != null)
+            if (cbe_ChooseAttendance.SelectedIndex >= 0)
             {
                 string selectedItem = cbe_ChooseAttendance.SelectedItem.ToString();
-                foreach (var attendance in attendances)
+                foreach (var attendance in allAttendance)
                 {
                     string itemValue = $"{attendance.AttendanceId} - {attendance.AttendanceName} - {attendance.LogType}";
                     if (itemValue == selectedItem)
@@ -90,7 +99,7 @@ namespace AttendanceManagementSystem.Forms.QRScanner
         {
             if (selectedAttendanceId == -1)
             {
-                XtraMessageBox.Show("Please select an active attendance event.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Please select an attendance first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (isScanning)
@@ -99,28 +108,29 @@ namespace AttendanceManagementSystem.Forms.QRScanner
                 return;
             }
 
-            txt_QRValue.Text = "Scanning...";
-            capture = new VideoCapture(0);
-            if (!capture.IsOpened())
+            txt_QRValue.Text = "Scanning....";
+            videoCapture = new VideoCapture(0);
+            if (!videoCapture.IsOpened())
             {
                 XtraMessageBox.Show("Unable to access the webcam.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                capture = null;
+                videoCapture = null;
+                isScanning = false;
+                txt_QRValue.Text = "Start Scanning";
                 return;
             }
             isScanning = true;
-            frameTimer.Start();
+            timer.Start();
         }
-
         private void FrameScanner(object sender, EventArgs e)
         {
-            if (!isScanning || capture == null || !capture.IsOpened())
+            if (!isScanning || !videoCapture.IsOpened())
             {
                 return;
             }
 
             using (Mat frame = new Mat())
             {
-                if (capture.Read(frame) && !frame.Empty())
+                if (videoCapture.Read(frame) && !frame.Empty())
                 {
                     Cv2.Resize(frame, frame, new OpenCvSharp.Size(pe_QRCamera.Width, pe_QRCamera.Height));
 
@@ -149,25 +159,22 @@ namespace AttendanceManagementSystem.Forms.QRScanner
                                     XtraMessageBox.Show("Student not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     return;
                                 }
-
-                                if (selectedAttendanceId == -1 || attendances == null)
-                                {
-                                    XtraMessageBox.Show("Please select an attendance event.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    return;
-                                }
-                                var selectedAttendance = attendances.FirstOrDefault(a => a.AttendanceId == selectedAttendanceId);
+                                var selectedAttendance = allAttendance.FirstOrDefault(a => a.AttendanceId == selectedAttendanceId);
                                 if (selectedAttendance == null)
                                 {
                                     XtraMessageBox.Show("Selected attendance not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     return;
                                 }
 
-                                //_attendanceRepository.RecordAttendance(
-                                //    selectedAttendanceId,
-                                //    selectedAttendance.AttendanceName,
-                                //    selectedAttendance.LogType,
-                                //    schoolStudentId
-                                //);
+                                _attendanceService.RecordAttendance(
+                                    selectedAttendanceId,
+                                    selectedAttendance.AttendanceName,
+                                    selectedAttendance.LogType,
+                                    schoolStudentId,
+                                    student.FullName,
+                                    student.Course,
+                                    student.YearLevel
+                                );
 
                                 txt_QRValue.Text = $"Scanned: {student.FirstName} {student.LastName}";
                                 XtraMessageBox.Show("Attendance recorded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -185,18 +192,15 @@ namespace AttendanceManagementSystem.Forms.QRScanner
 
         private void btn_StopScan_Click(object sender, EventArgs e)
         {
-            StopCamera();
-        }
-        private void StopCamera()
-        {
+            if (!isScanning) return;
             isScanning = false;
-            frameTimer.Stop();
-            if (capture != null && capture.IsOpened())
+            timer.Stop();
+            if (videoCapture != null)
             {
-                capture.Release();
-                capture.Dispose();
+                videoCapture.Release();
+                videoCapture.Dispose();
+                videoCapture = null;
             }
-            capture = null;
             pe_QRCamera.Image = null;
             txt_QRValue.Text = "Start Scanning";
         }

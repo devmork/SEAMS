@@ -82,7 +82,7 @@ namespace AttendanceManagementSystem.Data.Repositories
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
-                string sql = "SELECT SchoolStudentId, FirstName, LastName, QRCode FROM Student WHERE SchoolStudentId = @SchoolStudentId";
+                string sql = "SELECT SchoolStudentId, FirstName, MiddleName, LastName, QRCode, Course, YearLevel FROM Student WHERE SchoolStudentId = @SchoolStudentId";
                 var parameters = new DynamicParameters();
                 parameters.Add("SchoolStudentId", schoolStudentId);
                 return connection.QueryFirstOrDefault<Student>(sql, parameters);

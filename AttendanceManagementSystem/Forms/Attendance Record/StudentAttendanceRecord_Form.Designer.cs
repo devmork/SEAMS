@@ -40,8 +40,8 @@
             this.gc_AttendanceRecord = new DevExpress.XtraGrid.GridControl();
             this.gv_AttendanceRecord = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grdclm_AttendanceName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.grdclm_Date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdclm_LogType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdclm_TimeStamp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel_TotalAbsent = new DevExpress.XtraEditors.PanelControl();
             this.label_TotalAbsent = new DevExpress.XtraEditors.LabelControl();
             this.txt_TotalAbsent = new DevExpress.XtraEditors.TextEdit();
@@ -181,6 +181,7 @@
             this.btn_ResetRecord.Size = new System.Drawing.Size(178, 38);
             this.btn_ResetRecord.TabIndex = 0;
             this.btn_ResetRecord.Text = "Reset Record";
+            this.btn_ResetRecord.Click += new System.EventHandler(this.btn_ResetRecord_Click);
             // 
             // gc_AttendanceRecord
             // 
@@ -191,13 +192,14 @@
             this.gc_AttendanceRecord.TabIndex = 8;
             this.gc_AttendanceRecord.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_AttendanceRecord});
+            this.gc_AttendanceRecord.Load += new System.EventHandler(this.gc_AttendanceRecord_Load);
             // 
             // gv_AttendanceRecord
             // 
             this.gv_AttendanceRecord.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.grdclm_AttendanceName,
-            this.grdclm_Date,
-            this.grdclm_LogType});
+            this.grdclm_LogType,
+            this.grdclm_TimeStamp});
             this.gv_AttendanceRecord.GridControl = this.gc_AttendanceRecord;
             this.gv_AttendanceRecord.Name = "gv_AttendanceRecord";
             this.gv_AttendanceRecord.OptionsView.ShowGroupPanel = false;
@@ -210,14 +212,6 @@
             this.grdclm_AttendanceName.Visible = true;
             this.grdclm_AttendanceName.VisibleIndex = 0;
             // 
-            // grdclm_Date
-            // 
-            this.grdclm_Date.Caption = "Date";
-            this.grdclm_Date.FieldName = "Date";
-            this.grdclm_Date.Name = "grdclm_Date";
-            this.grdclm_Date.Visible = true;
-            this.grdclm_Date.VisibleIndex = 1;
-            // 
             // grdclm_LogType
             // 
             this.grdclm_LogType.Caption = "Log Type";
@@ -225,6 +219,16 @@
             this.grdclm_LogType.Name = "grdclm_LogType";
             this.grdclm_LogType.Visible = true;
             this.grdclm_LogType.VisibleIndex = 2;
+            // 
+            // grdclm_TimeStamp
+            // 
+            this.grdclm_TimeStamp.Caption = "Time Stamp";
+            this.grdclm_TimeStamp.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm";
+            this.grdclm_TimeStamp.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.grdclm_TimeStamp.FieldName = "TimeStamp";
+            this.grdclm_TimeStamp.Name = "grdclm_TimeStamp";
+            this.grdclm_TimeStamp.Visible = true;
+            this.grdclm_TimeStamp.VisibleIndex = 1;
             // 
             // panel_TotalAbsent
             // 
@@ -455,6 +459,7 @@
             this.Name = "StudentAttendanceRecord_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudentAttendanceRecord_Form";
+            this.Load += new System.EventHandler(this.StudentAttendanceRecord_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lc_StudentAttendanceRecord)).EndInit();
             this.lc_StudentAttendanceRecord.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panel_StudentInfo)).EndInit();
@@ -504,7 +509,7 @@
         private DevExpress.XtraLayout.LayoutControlItem lci_gridControl;
         private DevExpress.XtraEditors.LabelControl label_PageTitle;
         private DevExpress.XtraGrid.Columns.GridColumn grdclm_AttendanceName;
-        private DevExpress.XtraGrid.Columns.GridColumn grdclm_Date;
+        private DevExpress.XtraGrid.Columns.GridColumn grdclm_TimeStamp;
         private DevExpress.XtraGrid.Columns.GridColumn grdclm_LogType;
         private DevExpress.XtraEditors.PanelControl panel_ResetRecord;
         private DevExpress.XtraEditors.SimpleButton btn_ResetRecord;
