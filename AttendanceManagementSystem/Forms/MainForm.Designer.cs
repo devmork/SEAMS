@@ -41,8 +41,8 @@
             this.accordionControlSeparator4 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.btn_AttendanceRecord = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_Reports = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btn_AllAttendanceReport = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.btn_AllQRCodes = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btn_StudentsAttendance = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btn_QRCodes = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator6 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.btn_LogOut = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.panel_Body = new DevExpress.XtraEditors.PanelControl();
@@ -172,32 +172,33 @@
             this.ace_Reports.Appearance.Default.Options.UseTextOptions = true;
             this.ace_Reports.Appearance.Default.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.ace_Reports.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.btn_AllAttendanceReport,
-            this.btn_AllQRCodes});
+            this.btn_StudentsAttendance,
+            this.btn_QRCodes});
+            this.ace_Reports.Expanded = true;
             this.ace_Reports.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ace_Reports.ImageOptions.SvgImage")));
             this.ace_Reports.ImageOptions.SvgImageSize = new System.Drawing.Size(18, 18);
             this.ace_Reports.Name = "ace_Reports";
             this.ace_Reports.Text = "Reports";
             // 
-            // btn_AllAttendanceReport
+            // btn_StudentsAttendance
             // 
-            this.btn_AllAttendanceReport.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F);
-            this.btn_AllAttendanceReport.Appearance.Default.Options.UseFont = true;
-            this.btn_AllAttendanceReport.Appearance.Default.Options.UseTextOptions = true;
-            this.btn_AllAttendanceReport.Appearance.Default.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.btn_AllAttendanceReport.Name = "btn_AllAttendanceReport";
-            this.btn_AllAttendanceReport.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btn_AllAttendanceReport.Text = "All Attendance Record";
-            this.btn_AllAttendanceReport.Click += new System.EventHandler(this.btn_AllAttendanceReport_Click);
+            this.btn_StudentsAttendance.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F);
+            this.btn_StudentsAttendance.Appearance.Default.Options.UseFont = true;
+            this.btn_StudentsAttendance.Appearance.Default.Options.UseTextOptions = true;
+            this.btn_StudentsAttendance.Appearance.Default.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.btn_StudentsAttendance.Name = "btn_StudentsAttendance";
+            this.btn_StudentsAttendance.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btn_StudentsAttendance.Text = "Students Attendance";
+            this.btn_StudentsAttendance.Click += new System.EventHandler(this.btn_StudentsAttendance_Click);
             // 
-            // btn_AllQRCodes
+            // btn_QRCodes
             // 
-            this.btn_AllQRCodes.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F);
-            this.btn_AllQRCodes.Appearance.Default.Options.UseFont = true;
-            this.btn_AllQRCodes.Name = "btn_AllQRCodes";
-            this.btn_AllQRCodes.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btn_AllQRCodes.Text = "All QRCodes";
-            this.btn_AllQRCodes.Click += new System.EventHandler(this.btn_AllQRCodes_Click);
+            this.btn_QRCodes.Appearance.Default.Font = new System.Drawing.Font("Poppins", 12F);
+            this.btn_QRCodes.Appearance.Default.Options.UseFont = true;
+            this.btn_QRCodes.Name = "btn_QRCodes";
+            this.btn_QRCodes.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btn_QRCodes.Text = "QR Codes";
+            this.btn_QRCodes.Click += new System.EventHandler(this.btn_AllQRCodes_Click);
             // 
             // accordionControlSeparator6
             // 
@@ -259,8 +260,8 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement btn_LogOut;
         private DevExpress.XtraEditors.PanelControl panel_Body;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_Reports;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_AllAttendanceReport;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_AllQRCodes;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_StudentsAttendance;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btn_QRCodes;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator6;
     }
 }

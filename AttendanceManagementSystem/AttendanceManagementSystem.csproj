@@ -213,6 +213,7 @@
     <Compile Include="Data\Repositories\AttendanceRepository.cs" />
     <Compile Include="Data\Repositories\UserRepository.cs" />
     <Compile Include="DTO\AttendanceRecordsDTO.cs" />
+    <Compile Include="DTO\StudentsAttendanceDTO.cs" />
     <Compile Include="Forms\Attendance Record\AttendanceRecords_UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -237,11 +238,11 @@
     <Compile Include="Forms\Reports\AllAttendanceRecord_Form.Designer.cs">
       <DependentUpon>AllAttendanceRecord_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\AllAttendance_Report.cs">
+    <Compile Include="Reports\StudentsAttendance_Report.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\AllAttendance_Report.Designer.cs">
-      <DependentUpon>AllAttendance_Report.cs</DependentUpon>
+    <Compile Include="Reports\StudentsAttendance_Report.Designer.cs">
+      <DependentUpon>StudentsAttendance_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Reports\AllQRCodes.cs">
       <SubType>Form</SubType>
@@ -250,12 +251,6 @@
       <DependentUpon>AllQRCodes.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Services\IAttendanceService.cs" />
-    <Compile Include="Reports\Attendance_Report.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reports\Attendance_Report.Designer.cs">
-      <DependentUpon>Attendance_Report.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interfaces\Repositories\IUserRepository.cs" />
     <Compile Include="Interfaces\Utilities\IQRScannerHelper.cs" />
     <Compile Include="Models\Base\User.cs" />
@@ -364,14 +359,11 @@
     <EmbeddedResource Include="Forms\Reports\AllAttendanceRecord_Form.resx">
       <DependentUpon>AllAttendanceRecord_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\AllAttendance_Report.resx">
-      <DependentUpon>AllAttendance_Report.cs</DependentUpon>
+    <EmbeddedResource Include="Reports\StudentsAttendance_Report.resx">
+      <DependentUpon>StudentsAttendance_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\AllQRCodes.resx">
       <DependentUpon>AllQRCodes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Attendance_Report.resx">
-      <DependentUpon>Attendance_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Students\AddStudent_Form.resx">
       <DependentUpon>AddStudent_Form.cs</DependentUpon>

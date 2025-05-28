@@ -35,7 +35,7 @@ namespace AttendanceManagementSystem.Services
                 {
                     throw new Exception("Invalid school student id.");
                 }
-
+                  
                 // Check for duplicate attendance record
                 string checkDuplicateSql = "SELECT COUNT(*) FROM AttendanceRecords WHERE AttendanceId = @AttendanceId AND SchoolStudentId = @SchoolStudentId AND DATE(Timestamp) = DATE('now')";
                 if (connection.ExecuteScalar<int>(checkDuplicateSql, parameters) > 0)
@@ -61,11 +61,16 @@ namespace AttendanceManagementSystem.Services
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
-                string sql = @"SELECT AttendanceId FROM Attendance
-                               JOIN AttendanceRecords ON AttendanceRecords.AttendanceId = Attendance.AttendanceId
-                               WHERE AttendanceRecords.SchoolStudentId = @SchoolStudentId";
+                string getAllAttendanceIdSQL = @"SELECT COUNT(*) FROM Attendance";
+                int allAttendanceCount = connection.ExecuteScalar<int>(getAllAttendanceIdSQL);
 
-                return connection.ExecuteScalar<int>(sql);
+                string presentAttendanceIdSQL = @"SELECT COUNT(*) FROM AttendanceRecords 
+                                                WHERE SchoolStudentId = @SchoolStudentId AND IsPaid = 0";
+                var parameters = new DynamicParameters();
+                parameters.Add("SchoolStudentId", schoolStudentId);
+                int presentAttendanceCount = connection.ExecuteScalar<int>(presentAttendanceIdSQL, parameters);
+
+                return allAttendanceCount - presentAttendanceCount;
             }
         }
         public int GetTotalPresent(string schoolStudentId)
@@ -80,5 +85,7 @@ namespace AttendanceManagementSystem.Services
                 return connection.ExecuteScalar<int>(sql, parameters);
             }
         } 
+
+
     }
 }

@@ -23,7 +23,6 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
             InitializeComponent();
             _attendanceService = new AttendanceService();
             _student = student;
-
 		}
         private void StudentAttendanceRecord_Form_Load(object sender, EventArgs e)
         {
@@ -34,6 +33,17 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
             //LOAD RECORD ON TXTEDIT
             int totalPresent = _attendanceService.GetTotalPresent(_student.SchoolStudentId);
             txt_TotalPresent.EditValue = totalPresent.ToString();
+
+
+            if (IsAttendanceReset(_student.SchoolStudentId))
+            {
+                txt_TotalAbsent.EditValue = "0"; // Records successfully reset
+            }
+            else
+            {
+                int totalAbsent = _attendanceService.GetTotalAbsent(_student.SchoolStudentId);
+                txt_TotalAbsent.EditValue = totalAbsent.ToString();
+            }
 
         }
         private void gc_AttendanceRecord_Load(object sender, EventArgs e)
@@ -56,6 +66,7 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
         {
             RecordLogs(_student.SchoolStudentId);
             ResetRecord(_student.SchoolStudentId);
+
             DialogResult result = XtraMessageBox.Show("Attendance record reset successfully.", "Success", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
@@ -113,12 +124,39 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
                 }
             }
         }
+        private bool IsAttendanceReset(string schoolStudentId)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            {
+                connection.Open();
+
+                string sql = @"SELECT COUNT(*) FROM AttendanceRecords 
+                       WHERE SchoolStudentId = @SchoolStudentId AND IsPaid = 0";
+
+                var parameters = new DynamicParameters();
+                parameters.Add("SchoolStudentId", schoolStudentId);
+
+                int unpaidCount = connection.ExecuteScalar<int>(sql, parameters);
+
+                return unpaidCount == 0; // If no unpaid records remain, reset is successful
+            }
+        }
         private void RefreshForm()
         {
             gc_AttendanceRecord.DataSource = GetAttendanceRecords(_student.SchoolStudentId);
             gc_AttendanceRecord.RefreshDataSource();
+
             int totalPresent = _attendanceService.GetTotalPresent(_student.SchoolStudentId);
-            txt_TotalPresent.EditValue = totalPresent.ToString();    
+            txt_TotalPresent.EditValue = totalPresent.ToString();
+            if (IsAttendanceReset(_student.SchoolStudentId))
+            {
+                txt_TotalAbsent.EditValue = "0"; // Records successfully reset
+            }
+            else
+            {
+                int totalAbsent = _attendanceService.GetTotalAbsent(_student.SchoolStudentId);
+                txt_TotalAbsent.EditValue = totalAbsent.ToString();
+            }
         }
         private void btn_CloseForm_Click(object sender, EventArgs e)
         {

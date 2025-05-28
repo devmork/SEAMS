@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace AttendanceManagementSystem.Forms.Reports
 {
-    public partial class AllAttendance_Report : DevExpress.XtraReports.UI.XtraReport
+    public partial class StudentsAttendance_Report : DevExpress.XtraReports.UI.XtraReport
     {
-        public AllAttendance_Report()
+        public StudentsAttendance_Report()
         {
             InitializeComponent();
         }
