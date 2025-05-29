@@ -36,7 +36,6 @@ namespace AttendanceManagementSystem.Forms
             InitializeComponent();
             _studentsRepository = new StudentsRepository();
             _attendanceService = new AttendanceService();
-
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -116,7 +115,9 @@ namespace AttendanceManagementSystem.Forms
                 var attendanceSummary = new StudentsAttendanceDTO
                 {
                     SchoolStudentId = student.SchoolStudentId,
-                    Name = student.FullName,
+                    FirstName = student.FirstName,
+                    MiddleName = student.MiddleName,
+                    LastName = student.LastName,
                     Course = student.Course,
                     YearLevel = student.YearLevel,
                     TotalAbsent = _attendanceService.GetTotalAbsent(student.SchoolStudentId),

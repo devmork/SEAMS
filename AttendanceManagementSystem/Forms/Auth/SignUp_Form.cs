@@ -36,7 +36,7 @@ namespace AttendanceManagementSystem.Forms.Auth
             }
             try
             {
-                var existingUser = _userRepository.GetUserByEmail(email);
+                var existingUser = _userRepository.GetUserByEmail(email, password);
                 if (existingUser != null)
                 {
                     XtraMessageBox.Show("Email is already registered.", "Sign Up Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);

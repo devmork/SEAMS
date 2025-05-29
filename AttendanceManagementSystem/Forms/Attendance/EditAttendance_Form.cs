@@ -48,12 +48,16 @@ namespace AttendanceManagementSystem.Forms.Events
                 XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (date < DateTime.Today)
+            {
+                XtraMessageBox.Show("Attendance date is not valid.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (startTime >= endTime)
             {
                 XtraMessageBox.Show("Start time must be before end time.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
             _attendance.AttendanceName = attendanceName;
             _attendance.AttendanceLocation = attendanceLocation;
             _attendance.LogType = logType;
@@ -69,7 +73,6 @@ namespace AttendanceManagementSystem.Forms.Events
         {
             this.Close();
         }
-
         private void btn_CloseForm_Click(object sender, EventArgs e)
         {
             this.Close();

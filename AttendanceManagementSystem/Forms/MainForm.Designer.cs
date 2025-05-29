@@ -68,7 +68,9 @@
             this.accordion_Menu.Appearance.Item.Hovered.Options.UseFont = true;
             this.accordion_Menu.Appearance.Item.Normal.Font = new System.Drawing.Font("Poppins SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordion_Menu.Appearance.Item.Normal.Options.UseFont = true;
+            this.accordion_Menu.Appearance.Item.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
             this.accordion_Menu.Appearance.Item.Pressed.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordion_Menu.Appearance.Item.Pressed.Options.UseBackColor = true;
             this.accordion_Menu.Appearance.Item.Pressed.Options.UseFont = true;
             this.accordion_Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.accordion_Menu.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
@@ -232,6 +234,7 @@
             this.Controls.Add(this.panel_Body);
             this.Controls.Add(this.accordion_Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("MainForm.IconOptions.Icon")));
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("MainForm.IconOptions.Image")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";

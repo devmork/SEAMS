@@ -12,5 +12,6 @@ namespace AttendanceManagementSystem.Interfaces.Services
         void RecordAttendance(int attendanceId, string attendanceName, string logType, string schoolStudentId, string name, string course, int yearLevel);
         int GetTotalAbsent(string schoolStudentId);
         int GetTotalPresent(string schoolStudentId);
+        int GetAttendanceCount();
     }
 }

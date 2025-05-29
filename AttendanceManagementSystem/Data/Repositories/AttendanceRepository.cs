@@ -82,15 +82,6 @@ namespace AttendanceManagementSystem.Data.Repositories
                 connection.Execute(sql, parameters);
             }
         }
-        public int GetTotalAttendance()
-        {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
-            {
-                connection.Open();
-                string sql = @"SELECT COUNT(AttendanceId) FROM Attendance";
-                return connection.ExecuteScalar<int>(sql);
-            }
-        }
     }
 }
 

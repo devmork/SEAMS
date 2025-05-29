@@ -88,5 +88,15 @@ namespace AttendanceManagementSystem.Data.Repositories
                 return connection.QueryFirstOrDefault<Student>(sql, parameters);
             }
         }
+        public bool CheckIfStudentIdExist(string schoolStudentId)
+        {
+            using (var connection = new SQLiteConnection(_connectionStrng))
+            {
+                connection.Open();
+                var query = "SELECT COUNT(1) FROM Student WHERE SchoolStudentId = @SchoolStudentId";
+                var count = connection.ExecuteScalar<int>(query, new { SchoolStudentId = schoolStudentId });
+                return count > 0;
+            }
+        }
     }
 }

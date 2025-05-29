@@ -64,6 +64,11 @@ namespace AttendanceManagementSystem.Forms.Students
                 XtraMessageBox.Show("Please generate a QR code before saving.");
                 return;
             }
+            if (_studentsRepository.CheckIfStudentIdExist(student.SchoolStudentId))
+            {
+                XtraMessageBox.Show("A student with this ID already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 _studentsRepository.AddStudent(student);

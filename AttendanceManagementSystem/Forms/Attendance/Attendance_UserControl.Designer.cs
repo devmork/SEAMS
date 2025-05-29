@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Attendance_UserControl));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lc_Attendance = new DevExpress.XtraLayout.LayoutControl();
             this.panel_PageHeading = new DevExpress.XtraEditors.PanelControl();
             this.btn_AddAttendance = new DevExpress.XtraEditors.SimpleButton();
@@ -194,6 +194,10 @@
             // 
             // grdclm_AttendanceName
             // 
+            this.grdclm_AttendanceName.AppearanceCell.Options.UseTextOptions = true;
+            this.grdclm_AttendanceName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grdclm_AttendanceName.AppearanceHeader.Options.UseTextOptions = true;
+            this.grdclm_AttendanceName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.grdclm_AttendanceName.Caption = "Name";
             this.grdclm_AttendanceName.FieldName = "AttendanceName";
             this.grdclm_AttendanceName.Name = "grdclm_AttendanceName";
@@ -205,6 +209,10 @@
             // 
             // grdclm_AttendanceLocation
             // 
+            this.grdclm_AttendanceLocation.AppearanceCell.Options.UseTextOptions = true;
+            this.grdclm_AttendanceLocation.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grdclm_AttendanceLocation.AppearanceHeader.Options.UseTextOptions = true;
+            this.grdclm_AttendanceLocation.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.grdclm_AttendanceLocation.Caption = "Location";
             this.grdclm_AttendanceLocation.FieldName = "AttendanceLocation";
             this.grdclm_AttendanceLocation.Name = "grdclm_AttendanceLocation";
@@ -216,6 +224,10 @@
             // 
             // grdclm_LogType
             // 
+            this.grdclm_LogType.AppearanceCell.Options.UseTextOptions = true;
+            this.grdclm_LogType.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grdclm_LogType.AppearanceHeader.Options.UseTextOptions = true;
+            this.grdclm_LogType.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.grdclm_LogType.Caption = "Log Type";
             this.grdclm_LogType.FieldName = "LogType";
             this.grdclm_LogType.Name = "grdclm_LogType";
@@ -227,6 +239,10 @@
             // 
             // grdclm_AttendanceDate
             // 
+            this.grdclm_AttendanceDate.AppearanceCell.Options.UseTextOptions = true;
+            this.grdclm_AttendanceDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grdclm_AttendanceDate.AppearanceHeader.Options.UseTextOptions = true;
+            this.grdclm_AttendanceDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.grdclm_AttendanceDate.Caption = "Date";
             this.grdclm_AttendanceDate.FieldName = "Date";
             this.grdclm_AttendanceDate.Name = "grdclm_AttendanceDate";
@@ -238,6 +254,10 @@
             // 
             // grdclm_StartTime
             // 
+            this.grdclm_StartTime.AppearanceCell.Options.UseTextOptions = true;
+            this.grdclm_StartTime.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grdclm_StartTime.AppearanceHeader.Options.UseTextOptions = true;
+            this.grdclm_StartTime.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.grdclm_StartTime.Caption = "Start Time";
             this.grdclm_StartTime.DisplayFormat.FormatString = "hh:mm tt";
             this.grdclm_StartTime.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
@@ -251,6 +271,10 @@
             // 
             // grdclm_EndTime
             // 
+            this.grdclm_EndTime.AppearanceCell.Options.UseTextOptions = true;
+            this.grdclm_EndTime.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grdclm_EndTime.AppearanceHeader.Options.UseTextOptions = true;
+            this.grdclm_EndTime.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.grdclm_EndTime.Caption = "End Time";
             this.grdclm_EndTime.DisplayFormat.FormatString = "hh:mm tt";
             this.grdclm_EndTime.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
@@ -264,6 +288,10 @@
             // 
             // grdclm_Status
             // 
+            this.grdclm_Status.AppearanceCell.Options.UseTextOptions = true;
+            this.grdclm_Status.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grdclm_Status.AppearanceHeader.Options.UseTextOptions = true;
+            this.grdclm_Status.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.grdclm_Status.Caption = "Status";
             this.grdclm_Status.ColumnEdit = this.repositoryItemTextEdit_Status;
             this.grdclm_Status.DisplayFormat.FormatString = "[True] = ACTIVE; [False] = INACTIVE";
@@ -304,17 +332,17 @@
             // 
             this.repositoryItem_ActionButton.Appearance.Options.UseTextOptions = true;
             this.repositoryItem_ActionButton.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
-            editorButtonImageOptions1.SvgImageSize = new System.Drawing.Size(16, 16);
-            serializableAppearanceObject1.Options.UseTextOptions = true;
-            serializableAppearanceObject1.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
-            editorButtonImageOptions2.SvgImageSize = new System.Drawing.Size(16, 16);
-            serializableAppearanceObject5.Options.UseTextOptions = true;
-            serializableAppearanceObject5.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            editorButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions3.SvgImage")));
+            editorButtonImageOptions3.SvgImageSize = new System.Drawing.Size(16, 16);
+            serializableAppearanceObject9.Options.UseTextOptions = true;
+            serializableAppearanceObject9.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            editorButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions4.SvgImage")));
+            editorButtonImageOptions4.SvgImageSize = new System.Drawing.Size(16, 16);
+            serializableAppearanceObject13.Options.UseTextOptions = true;
+            serializableAppearanceObject13.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.repositoryItem_ActionButton.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", "Edit", null, DevExpress.Utils.ToolTipAnchor.Default),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", "Delete", null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", "Edit", null, DevExpress.Utils.ToolTipAnchor.Default),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", "Delete", null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItem_ActionButton.Name = "repositoryItem_ActionButton";
             this.repositoryItem_ActionButton.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItem_ActionButton.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItem_ActionButton_ButtonClick);

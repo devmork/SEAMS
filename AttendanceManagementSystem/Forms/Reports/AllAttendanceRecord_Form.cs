@@ -44,7 +44,9 @@ namespace AttendanceManagementSystem.Forms.Reports
                 var attendanceSummary = new StudentsAttendanceDTO
                 {
                     SchoolStudentId = student.SchoolStudentId,
-                    Name = student.FullName,
+                    FirstName = student.FirstName,
+                    MiddleName = student.MiddleName,
+                    LastName = student.LastName,
                     Course = student.Course,
                     YearLevel = student.YearLevel,
                     TotalAbsent = _attendanceService.GetTotalAbsent(student.SchoolStudentId),

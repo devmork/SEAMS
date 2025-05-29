@@ -55,28 +55,16 @@ namespace AttendanceManagementSystem.Forms.Students
         {
             gc_Students.DataSource = _studentsRepository.GetAllStudent();
         }
-        private void cbe_Course_SelectedValueChanged(object sender, EventArgs e)
+        private void cbe_FilterCourse_SelectedValueChanged(object sender, EventArgs e)
         {
-            string selectedCourse = cbe_Course.SelectedItem.ToString();
+            string selectedCourse = cbe_FilterCourse.SelectedItem.ToString();
             gv_Students.ActiveFilterString = $"[Course] = '{selectedCourse}'";
         }
-        private void cbe_YearLevel_SelectedValueChanged(object sender, EventArgs e)
-        {
-            string selectedYearLevel = cbe_YearLevel.SelectedItem.ToString();
-            gv_Students.ActiveFilterString = $"[YearLevel] = '{selectedYearLevel}'";
-        }
-        private void findPanel_TextChanged(object sender, EventArgs e)
-        {
-            string searchStudentId = findPanel.Text.ToString();
 
-            if (string.IsNullOrEmpty(searchStudentId))
-            {
-                gv_Students.ActiveFilterString = "";
-            }
-            else
-            {
-                gv_Students.ActiveFilterString = $"[SchoolStudentId] = '{searchStudentId}'";
-            }
+        private void cbe_FilterYearLevel_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string selectedYearLevel = cbe_FilterYearLevel.SelectedItem.ToString();
+            gv_Students.ActiveFilterString = $"[YearLevel] = '{selectedYearLevel}'";
         }
     }
 }

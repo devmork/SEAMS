@@ -1,20 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using AttendanceManagementSystem.Data.Repositories;
 using AttendanceManagementSystem.Interfaces.Repositories;
-using AttendanceManagementSystem.Data.Repositories;
-using DevExpress.XtraGrid;
-using DevExpress.XtraGrid.Views.Grid;
 using AttendanceManagementSystem.Models.Base;
-using OpenCvSharp;
-using OpenCvSharp.Extensions;
+using DevExpress.XtraEditors;
+using System;
+using System.Windows.Forms;
 
 namespace AttendanceManagementSystem.Forms.Events
 {
@@ -68,8 +57,23 @@ namespace AttendanceManagementSystem.Forms.Events
             {
                 var row = gv_Attendance.GetRow(e.ListSourceRowIndex) as Attendance;
 
-                bool isActive = DateTime.Now >= row.StartTime && DateTime.Now <= row.EndTime;
-                e.DisplayText = isActive ? "ACTIVE" : "INACTIVE";
+                DateTime currenDate = DateTime.Today;
+                DateTime attendanceDate = row.Date.Date;
+
+                if (attendanceDate < currenDate)
+                {
+                    e.DisplayText = "INACTIVE";
+                }
+                else if (attendanceDate == currenDate)
+                {
+                    DateTime currentDateTime = DateTime.Now;
+                    bool isActive = currentDateTime >= row.StartTime && currentDateTime <= row.EndTime;
+                    e.DisplayText = isActive ? "ACTIVE" : "INACTIVE";
+                }
+                else
+                {
+                    e.DisplayText = "INACTIVE";
+                }
             }
         }
         private void LoadData()

@@ -33,8 +33,8 @@ namespace AttendanceManagementSystem.Forms.Auth
             }
             try
             {
-                var user = _userRepository.GetUserByEmail(email);
-                if (user != null && user.Password == password) 
+                var user = _userRepository.GetUserByEmail(email, password);
+                if (user.Email == email && user.Password == password) 
                 {
                     XtraMessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     var mainForm = new MainForm();

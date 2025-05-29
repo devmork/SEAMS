@@ -56,21 +56,22 @@ namespace AttendanceManagementSystem.Services
                 connection.Execute(sql, parameters);
             }   
         }
+        
         public int GetTotalAbsent(string schoolStudentId)
         {
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
-                string getAllAttendanceIdSQL = @"SELECT COUNT(*) FROM Attendance";
-                int allAttendanceCount = connection.ExecuteScalar<int>(getAllAttendanceIdSQL);
 
+                int allAttendanceId = GetAttendanceCount();
                 string presentAttendanceIdSQL = @"SELECT COUNT(*) FROM AttendanceRecords 
                                                 WHERE SchoolStudentId = @SchoolStudentId AND IsPaid = 0";
+
                 var parameters = new DynamicParameters();
                 parameters.Add("SchoolStudentId", schoolStudentId);
-                int presentAttendanceCount = connection.ExecuteScalar<int>(presentAttendanceIdSQL, parameters);
+                int presentAttendanceIdCount = connection.ExecuteScalar<int>(presentAttendanceIdSQL, parameters);
 
-                return allAttendanceCount - presentAttendanceCount;
+                return allAttendanceId - presentAttendanceIdCount;
             }
         }
         public int GetTotalPresent(string schoolStudentId)
@@ -84,8 +85,15 @@ namespace AttendanceManagementSystem.Services
                 parameters.Add("SchoolStudentId", schoolStudentId);
                 return connection.ExecuteScalar<int>(sql, parameters);
             }
-        } 
-
-
+        }
+        public int GetAttendanceCount()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            {
+                connection.Open();
+                string getAttendaceCountSQL = @"SELECT COUNT(AttendanceId) FROM Attendance";
+                return connection.ExecuteScalar<int>(getAttendaceCountSQL);
+            }
+        }
     }
 }
