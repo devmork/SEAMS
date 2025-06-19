@@ -28,6 +28,15 @@ Build a full-featured windows form application where SSG officeers can:
 | ORM            | Dapper                         |
 | Deployment     | Local Execution (EXE)          |
 
+## Features (Work in Progress)
+
+- [x] Register student
+- [x] Generate qr code
+- [x] Create attendance
+- [x] Scan qr code
+- [x] View student attendance record
+- [x] Generate all attendance report
+
 
 
 
