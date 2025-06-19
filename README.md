@@ -4,3 +4,18 @@
 
 ---
 
+## Project Goal
+
+Build a full-featured windows form application where SSG officeers can:
+
+- Create attendance
+- Register student
+- Generate qr code
+- Scan qr code
+- Track attendance record (absent, present)
+- Generate attendance report
+
+
+
+
+
