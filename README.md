@@ -39,6 +39,8 @@ Build a full-featured windows form application where SSG officeers can:
 
 ---
 
+## Project Structure
+
 ```
 ├── Forms/
 │   ├── MainForm.cs                      
@@ -96,8 +98,6 @@ Build a full-featured windows form application where SSG officeers can:
 │   │   ├── IExportHelper.cs            
 │   │   ├── ILogger.cs                   
 │   │   ├── IConfigurationManager.cs    
-
-
 ├── Utilities/
 │    ├── QRScannerHelper.cs           
 │    ├── AttendanceCalculationHelper.cs 
