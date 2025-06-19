@@ -15,6 +15,18 @@ Build a full-featured windows form application where SSG officeers can:
 - Track attendance record (absent, present)
 - Generate attendance report
 
+## Teck Stack (Initial Setup)
+
+| Layer          | Tech                           |
+| -------------- | ------------------------------ |
+| Framework      | Windows Form                   |
+| Language       | C#                             |
+| Styling        | DevExpress                     |
+| Forms          | DevExpress XtraEditors         |
+| Authentication | N/A (not implemented)          |
+| Database       | SQLite                         |
+| ORM            | Dapper                         |
+| Deployment     | Local Execution (EXE)          |
 
 
 
