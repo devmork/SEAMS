@@ -46,7 +46,7 @@ namespace AttendanceManagementSystem.Forms.Attendance_Record
             txt_YearLevel.Text = gv_Students.GetFocusedRowCellValue("YearLevel").ToString();
             var qrCodeValue = gv_Students.GetFocusedRowCellValue("QRCode");
 
-            if (qrCodeValue != null && qrCodeValue is byte[] qrBytes)
+            if (qrCodeValue is byte[] qrBytes)
             {
                 using (MemoryStream ms = new MemoryStream(qrBytes))
                 {
