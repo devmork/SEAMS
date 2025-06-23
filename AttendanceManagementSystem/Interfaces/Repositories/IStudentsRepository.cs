@@ -15,5 +15,6 @@ namespace AttendanceManagementSystem.Interfaces.Repositories
         void UpdateStudent(Student student);
         int GetTotalStudents();
         Student GetStudentById(string schoolStudentId);
+        bool CheckIfStudentIdExist(string schoolStudentId);
     }
 }

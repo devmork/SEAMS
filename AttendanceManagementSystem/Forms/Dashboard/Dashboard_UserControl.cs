@@ -10,23 +10,78 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Data.Repositories;
+using AttendanceManagementSystem.Interfaces.Services;
+using AttendanceManagementSystem.Services;
+using System.Data.SQLite;
+using Dapper;
+using DevExpress.XtraCharts;
+using AttendanceManagementSystem.DTO;
 
 namespace AttendanceManagementSystem.Forms.Dashboard
 {
-	public partial class Dashboard_UserControl: DevExpress.XtraEditors.XtraUserControl
-	{
-        private IAttendanceRepository _attendanceRepository;
+    public partial class Dashboard_UserControl : DevExpress.XtraEditors.XtraUserControl
+    {
+        private string _connectionStrng = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
+
+        private IAttendanceService _attendanceService;
         private IStudentsRepository _studentRepository;
+        private IAttendanceRepository _attendanceRepository;
+
         public Dashboard_UserControl()
-		{
+        {
             InitializeComponent();
+            _attendanceService = new AttendanceService();
+            _studentRepository = new StudentsRepository();
             _attendanceRepository = new AttendanceRepository();
-            _studentRepository = new StudenstRepository();
         }
         private void Dashboard_UserControl_Load(object sender, EventArgs e)
         {
-            txt_TotalAttendance.Text = _attendanceRepository.GetTotalAttendance().ToString();
+            txt_TotalAttendance.Text = _attendanceService.GetAttendanceCount().ToString();
             txt_TotalStudents.Text = _studentRepository.GetTotalStudents().ToString();
+
+            string allCourse = "All Course";
+            var attendanceSummary = GetAttendanceSummary(allCourse);
+
+            Series attendanceSeries = chartControl_AttendaceSummary.Series["AttendanceSummary"];
+
+            attendanceSeries.Points.Clear();
+            foreach (var data in attendanceSummary)
+            {
+                attendanceSeries.Points.Add(new SeriesPoint(data.YearLevel, data.AttendanceCount));
+            }
+            chartControl_AttendaceSummary.RefreshData();
+        }
+        private List<AttendanceSummaryDTO> GetAttendanceSummary(string course)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            {
+                connection.Open();
+
+                string sql = @"SELECT Course, YearLevel, AttendanceId, COUNT(AttendanceId) AS AttendanceCount 
+                                FROM AttendanceRecords 
+                                WHERE (Course = @Course OR @Course = 'All Course')
+                                GROUP BY YearLevel";
+                var attendanceSummary = connection.Query<AttendanceSummaryDTO>(sql, new { Course = course }).ToList();
+                return attendanceSummary;
+            }
+        }
+        private void cbe_FilterCourse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCourse = cbe_FilterCourse.SelectedItem.ToString();
+
+            var attendanceSummary = GetAttendanceSummary(selectedCourse);
+            LoadAttendanceSummaryToChart(attendanceSummary);
+        }
+        private void LoadAttendanceSummaryToChart(List<AttendanceSummaryDTO> attendanceSummary)
+        {
+            Series attendanceSeries = chartControl_AttendaceSummary.Series["AttendanceSummary"];
+            attendanceSeries.Points.Clear();
+
+            foreach (var data in attendanceSummary)
+            {
+                attendanceSeries.Points.Add(new SeriesPoint(data.YearLevel, data.AttendanceCount));
+            }
+            chartControl_AttendaceSummary.RefreshData();
         }
     }
 }

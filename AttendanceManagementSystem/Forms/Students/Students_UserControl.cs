@@ -16,6 +16,9 @@ using AttendanceManagementSystem.Data.Repositories;
 using ZXing.QrCode.Internal;
 using System.IO;
 using DevExpress.XtraGrid.Views.Grid;
+using System.IO.Compression;
+using ZXing.QrCode;
+using ZXing;
 
 namespace AttendanceManagementSystem.Forms.Students
 {
@@ -25,8 +28,8 @@ namespace AttendanceManagementSystem.Forms.Students
         public Students_UserControl()
         {
             InitializeComponent();
-            _studentsRepository = new StudenstRepository();
-            LoadData();
+            _studentsRepository = new StudentsRepository();
+            LoadStudents();
         }
         private void btn_AddStudent_Click(object sender, EventArgs e)
         {
@@ -34,55 +37,33 @@ namespace AttendanceManagementSystem.Forms.Students
             {
                 if (addStudentForm.ShowDialog() == DialogResult.OK)
                 {
-                    LoadData();
+                    LoadStudents();
                 }
             }
         }
-        private void repositoryItem_ActionButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Student selectedRow = gv_Students.GetFocusedRow() as Student;
-
-                if (selectedRow != null)
-                {
-                    EditStudent_Form editStudentForm = new EditStudent_Form(selectedRow);
-                    if (editStudentForm.ShowDialog() == DialogResult.OK)
-                    {
-                        LoadData();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show($"Error editing student: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        public void LoadData()
+        public void LoadStudents()
         {
             gc_Students.DataSource = _studentsRepository.GetAllStudent();
         }
-        private void cbe_Course_SelectedValueChanged(object sender, EventArgs e)
+        private void cbe_FilterCourse_SelectedValueChanged(object sender, EventArgs e)
         {
-            string selectedCourse = cbe_Course.SelectedItem.ToString();
+            string selectedCourse = cbe_FilterCourse.SelectedItem.ToString();
             gv_Students.ActiveFilterString = $"[Course] = '{selectedCourse}'";
         }
-        private void cbe_YearLevel_SelectedValueChanged(object sender, EventArgs e)
+
+        private void cbe_FilterYearLevel_SelectedValueChanged(object sender, EventArgs e)
         {
-            string selectedYearLevel = cbe_YearLevel.SelectedItem.ToString();
+            string selectedYearLevel = cbe_FilterYearLevel.SelectedItem.ToString();
             gv_Students.ActiveFilterString = $"[YearLevel] = '{selectedYearLevel}'";
         }
-        private void findPanel_TextChanged(object sender, EventArgs e)
+        private void repositoryItemButtonEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            string searchStudentId = findPanel.Text.ToString();
+            Student selectedRow = gv_Students.GetFocusedRow() as Student;
 
-            if (string.IsNullOrEmpty(searchStudentId))
+            EditStudent_Form editStudentForm = new EditStudent_Form(selectedRow);
+            if (editStudentForm.ShowDialog() == DialogResult.OK)
             {
-                gv_Students.ActiveFilterString = "";
-            }
-            else
-            {
-                gv_Students.ActiveFilterString = $"[SchoolStudentId] = '{searchStudentId}'";
+                LoadStudents();
             }
         }
     }

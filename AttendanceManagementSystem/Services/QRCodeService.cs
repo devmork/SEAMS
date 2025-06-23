@@ -28,18 +28,16 @@ namespace AttendanceManagementSystem.Data.Repositories
                     Margin = 1
                 }
             };
-            //GeneratedQRCode = writer.Write(schoolStudentId);
             GeneratedQRCode = writer.Write(schoolStudentId);
         }
-        // Used to display the QR code in the UI
+        // USED TO DISPLAY QRCODE ON THE UI
         public Image GetQRCodeImage()
         {
             if (GeneratedQRCode == null)
                 XtraMessageBox.Show("QR code has not been generated. GenerateQRCode first.");
             return GeneratedQRCode;
         }
-
-        // Store QR code as byte array
+        // STORE QRCODE AS BYTE ARRAY
         public byte[] GetQRCodeByteArray()
         {
             if (GeneratedQRCode == null)

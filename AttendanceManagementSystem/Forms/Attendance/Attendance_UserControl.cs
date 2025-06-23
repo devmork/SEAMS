@@ -1,28 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using AttendanceManagementSystem.Data.Repositories;
 using AttendanceManagementSystem.Interfaces.Repositories;
-using AttendanceManagementSystem.Data.Repositories;
-using DevExpress.XtraGrid;
-using DevExpress.XtraGrid.Views.Grid;
 using AttendanceManagementSystem.Models.Base;
-using OpenCvSharp;
-using OpenCvSharp.Extensions;
+using DevExpress.XtraEditors;
+using System;
+using System.Windows.Forms;
 
 namespace AttendanceManagementSystem.Forms.Events
 {
     public partial class Attendance_UserControl : DevExpress.XtraEditors.XtraUserControl
     {
         private readonly IAttendanceRepository _attendanceRepository;
-        private Timer statusTimer;
-
         public Attendance_UserControl()
         {
             InitializeComponent();
@@ -31,7 +18,6 @@ namespace AttendanceManagementSystem.Forms.Events
         private void gc_Attendance_Load(object sender, EventArgs e)
         {
             LoadData();
-            SetStatusTimer();
         }
         private void btn_AddAttendance_Click(object sender, EventArgs e)
         {
@@ -47,14 +33,10 @@ namespace AttendanceManagementSystem.Forms.Events
             if (e.Button.Index == 0)
             {
                 Attendance selectedRow = gv_Attendance.GetFocusedRow() as Attendance;
-
-                if (selectedRow != null)
+                EditAttendance_Form editAttendance_Form = new EditAttendance_Form(selectedRow);
+                if (editAttendance_Form.ShowDialog() == DialogResult.OK)
                 {
-                    EditAttendance_Form editAttendance_Form = new EditAttendance_Form(selectedRow);
-                    if (editAttendance_Form.ShowDialog() == DialogResult.OK)
-                    {
-                        LoadData();
-                    }
+                    LoadData();
                 }
             }
             else if (e.Button.Index == 1)
@@ -63,13 +45,9 @@ namespace AttendanceManagementSystem.Forms.Events
                 {
                     Attendance selectedRow = gv_Attendance.GetFocusedRow() as Attendance;
 
-                    if (selectedRow != null)
-                    {
-                        _attendanceRepository.DeleteAttendance(selectedRow.AttendanceId);
-                        XtraMessageBox.Show("Attendance deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadData();
-
-                    }
+                    _attendanceRepository.DeleteAttendance(selectedRow.AttendanceId);
+                    XtraMessageBox.Show("Attendance deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
                 }
             }
         }
@@ -78,33 +56,29 @@ namespace AttendanceManagementSystem.Forms.Events
             if (e.Column.FieldName == "Status")
             {
                 var row = gv_Attendance.GetRow(e.ListSourceRowIndex) as Attendance;
-                if (row != null)
+
+                DateTime currenDate = DateTime.Today;
+                DateTime attendanceDate = row.Date.Date;
+
+                if (attendanceDate < currenDate)
                 {
-                    DateTime startDateTime = row.StartTime;
-                    DateTime endDateTime = row.EndTime;
-                    e.DisplayText = (DateTime.Now >= startDateTime && DateTime.Now <= endDateTime)
-                                    ? "ACTIVE"
-                                    : "INACTIVE";
+                    e.DisplayText = "INACTIVE";
+                }
+                else if (attendanceDate == currenDate)      
+                {
+                    DateTime currentDateTime = DateTime.Now;
+                    bool isActive = currentDateTime >= row.StartTime && currentDateTime <= row.EndTime;
+                    e.DisplayText = isActive ? "ACTIVE" : "INACTIVE";
+                }
+                else
+                {
+                    e.DisplayText = "INACTIVE";
                 }
             }
-        }
-        private void SetStatusTimer()
-        {
-            statusTimer = new Timer();
-            statusTimer.Interval = 60000;
-            statusTimer.Tick += (sender, e) =>
-            {
-                LoadData();
-                Console.WriteLine($"Status timer ticked at {DateTime.Now}");
-
-            };
-            statusTimer.Start();
         }
         private void LoadData()
         {
             gc_Attendance.DataSource = _attendanceRepository.GetAllAttendance();
-        }
-
-        
+        }  
     }
 }

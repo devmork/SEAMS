@@ -11,7 +11,7 @@ using Dapper;
 
 namespace AttendanceManagementSystem.Data.Repositories
 {
-    public class StudenstRepository : IStudentsRepository
+    public class StudentsRepository : IStudentsRepository
     {
         private string _connectionStrng = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
         public List<Student> GetAllStudent()
@@ -77,16 +77,25 @@ namespace AttendanceManagementSystem.Data.Repositories
                 return connection.ExecuteScalar<int>(sql);
             }
         }
-
         public Student GetStudentById(string schoolStudentId)
         {
             using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
             {
                 connection.Open();
-                string sql = "SELECT SchoolStudentId, FirstName, LastName, QRCode FROM Student WHERE SchoolStudentId = @SchoolStudentId";
+                string sql = "SELECT SchoolStudentId, FirstName, MiddleName, LastName, QRCode, Course, YearLevel FROM Student WHERE SchoolStudentId = @SchoolStudentId";
                 var parameters = new DynamicParameters();
                 parameters.Add("SchoolStudentId", schoolStudentId);
                 return connection.QueryFirstOrDefault<Student>(sql, parameters);
+            }
+        }
+        public bool CheckIfStudentIdExist(string schoolStudentId)
+        {
+            using (var connection = new SQLiteConnection(_connectionStrng))
+            {
+                connection.Open();
+                var query = "SELECT COUNT(1) FROM Student WHERE SchoolStudentId = @SchoolStudentId";
+                var count = connection.ExecuteScalar<int>(query, new { SchoolStudentId = schoolStudentId });
+                return count > 0;
             }
         }
     }
