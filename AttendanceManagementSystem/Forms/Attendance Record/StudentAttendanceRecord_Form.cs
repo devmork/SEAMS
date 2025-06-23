@@ -130,8 +130,8 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
             {
                 connection.Open();
 
-                string sql = @"SELECT COUNT(*) FROM AttendanceRecords 
-                       WHERE SchoolStudentId = @SchoolStudentId AND IsPaid = 0";
+                string sql = @"SELECT COUNT(SchoolStudentId) FROM AttendanceRecords 
+                               WHERE SchoolStudentId = @SchoolStudentId AND IsPaid = 0";
 
                 var parameters = new DynamicParameters();
                 parameters.Add("SchoolStudentId", schoolStudentId);
@@ -150,7 +150,7 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
             txt_TotalPresent.EditValue = totalPresent.ToString();
             if (IsAttendanceReset(_student.SchoolStudentId))
             {
-                txt_TotalAbsent.EditValue = "0"; // Records successfully reset
+                txt_TotalAbsent.EditValue = "0";
             }
             else
             {
