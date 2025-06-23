@@ -50,7 +50,7 @@ namespace AttendanceManagementSystem.Forms.Students
                 _qrCodeService.GenerateQRCode(student.SchoolStudentId);
                 pe_QRCode.Image = _qrCodeService.GetQRCodeImage();
                 student.QRCode = _qrCodeService.GetQRCodeByteArray();
-
+                btn_Save.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -59,7 +59,7 @@ namespace AttendanceManagementSystem.Forms.Students
         }
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            if (student.QRCode == null)
+            if (student == null || student.QRCode == null)
             {
                 XtraMessageBox.Show("Please generate a QR code before saving.");
                 return;
@@ -99,6 +99,8 @@ namespace AttendanceManagementSystem.Forms.Students
             cbe_Course.SelectedIndex = -1;
             txt_EmailAddress.Text = string.Empty;
             pe_QRCode.Image = null;
+            btn_Save.Enabled = false;
+            student = null;
         }
     }
 }
