@@ -134,7 +134,7 @@ namespace AttendanceManagementSystem.Forms.QRScanner
                 {
                     Cv2.Resize(frame, frame, new OpenCvSharp.Size(pe_QRCamera.Width, pe_QRCamera.Height));
 
-                    // Convert and dispose Bitmap properly
+                    
                     using (Bitmap bitmap = BitmapConverter.ToBitmap(frame))
                     {
                         // Update UI thread safely

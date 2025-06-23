@@ -64,7 +64,7 @@ namespace AttendanceManagementSystem.Forms.Events
                 {
                     e.DisplayText = "INACTIVE";
                 }
-                else if (attendanceDate == currenDate)
+                else if (attendanceDate == currenDate)      
                 {
                     DateTime currentDateTime = DateTime.Now;
                     bool isActive = currentDateTime >= row.StartTime && currentDateTime <= row.EndTime;

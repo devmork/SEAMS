@@ -62,15 +62,13 @@
             this.accordion_Menu.Appearance.Item.Default.Options.UseFont = true;
             this.accordion_Menu.Appearance.Item.Disabled.Font = new System.Drawing.Font("Poppins Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordion_Menu.Appearance.Item.Disabled.Options.UseFont = true;
-            this.accordion_Menu.Appearance.Item.Hovered.BackColor = System.Drawing.Color.White;
+            this.accordion_Menu.Appearance.Item.Hovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
             this.accordion_Menu.Appearance.Item.Hovered.Font = new System.Drawing.Font("Poppins Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordion_Menu.Appearance.Item.Hovered.Options.UseBackColor = true;
             this.accordion_Menu.Appearance.Item.Hovered.Options.UseFont = true;
             this.accordion_Menu.Appearance.Item.Normal.Font = new System.Drawing.Font("Poppins SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordion_Menu.Appearance.Item.Normal.Options.UseFont = true;
-            this.accordion_Menu.Appearance.Item.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
             this.accordion_Menu.Appearance.Item.Pressed.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accordion_Menu.Appearance.Item.Pressed.Options.UseBackColor = true;
             this.accordion_Menu.Appearance.Item.Pressed.Options.UseFont = true;
             this.accordion_Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.accordion_Menu.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {

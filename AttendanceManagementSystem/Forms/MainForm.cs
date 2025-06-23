@@ -30,7 +30,6 @@ namespace AttendanceManagementSystem.Forms
 	{
         private readonly IStudentsRepository _studentsRepository;
         private readonly IAttendanceService _attendanceService;
-
         public MainForm()
 		{
             InitializeComponent();
@@ -44,7 +43,6 @@ namespace AttendanceManagementSystem.Forms
             panel_Body.Controls.Clear();
             panel_Body.Controls.Add(dashboard_UserControl);
         }
-
         private void btn_Dashboard_Click(object sender, EventArgs e)
         {
             Dashboard_UserControl dashboard_UserControl = new Dashboard_UserControl();
@@ -80,7 +78,6 @@ namespace AttendanceManagementSystem.Forms
             panel_Body.Controls.Clear();
             panel_Body.Controls.Add(qrScanner_UserControl);
         }
-
         private void btn_LogOut_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -95,16 +92,14 @@ namespace AttendanceManagementSystem.Forms
         private void btn_AllQRCodes_Click(object sender, EventArgs e)
         {
             AllQRCodes allQRCodes = new AllQRCodes();
-            allQRCodes.ShowDialog();
+            allQRCodes.ShowDialog();    
         }
-
         private void btn_StudentsAttendance_Click(object sender, EventArgs e)
         {
             StudentsAttendance_Report studentsAttendance_Report = new StudentsAttendance_Report();
             studentsAttendance_Report.DataSource = GetStudentsAttendanceSummary();
             studentsAttendance_Report.ShowPreviewDialog();
         }
-
         public List<StudentsAttendanceDTO> GetStudentsAttendanceSummary()
         {
             var students = _studentsRepository.GetAllStudent();

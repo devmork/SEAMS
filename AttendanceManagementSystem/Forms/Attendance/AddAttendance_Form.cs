@@ -82,7 +82,6 @@ namespace AttendanceManagementSystem.Forms.Events
             te_StartTime.Text = string.Empty;
             te_EndTime.Text = string.Empty;
         }
-
         private void btn_CloseForm_Click(object sender, EventArgs e)
         {
             this.Close();
