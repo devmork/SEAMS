@@ -41,16 +41,6 @@ namespace AttendanceManagementSystem.Forms.Students
                 }
             }
         }
-        private void repositoryItem_ActionButton_Click(object sender, EventArgs e)
-        {
-            Student selectedRow = gv_Students.GetFocusedRow() as Student;
-
-            EditStudent_Form editStudentForm = new EditStudent_Form(selectedRow);
-            if (editStudentForm.ShowDialog() == DialogResult.OK)
-            {
-                LoadStudents();
-            }
-        }
         public void LoadStudents()
         {
             gc_Students.DataSource = _studentsRepository.GetAllStudent();
@@ -65,6 +55,16 @@ namespace AttendanceManagementSystem.Forms.Students
         {
             string selectedYearLevel = cbe_FilterYearLevel.SelectedItem.ToString();
             gv_Students.ActiveFilterString = $"[YearLevel] = '{selectedYearLevel}'";
+        }
+        private void repositoryItemButtonEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            Student selectedRow = gv_Students.GetFocusedRow() as Student;
+
+            EditStudent_Form editStudentForm = new EditStudent_Form(selectedRow);
+            if (editStudentForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadStudents();
+            }
         }
     }
 }

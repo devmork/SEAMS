@@ -245,7 +245,7 @@
             this.grdclm_Edit.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.grdclm_Edit.AppearanceHeader.Options.UseTextOptions = true;
             this.grdclm_Edit.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.grdclm_Edit.Caption = "View";
+            this.grdclm_Edit.Caption = "Edit";
             this.grdclm_Edit.ColumnEdit = this.repositoryItemButtonEdit;
             this.grdclm_Edit.MinWidth = 22;
             this.grdclm_Edit.Name = "grdclm_Edit";
@@ -265,6 +265,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit.Name = "repositoryItemButtonEdit";
             this.repositoryItemButtonEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit_ButtonClick);
             // 
             // panel_PageHeading
             // 
