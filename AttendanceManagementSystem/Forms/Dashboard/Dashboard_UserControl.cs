@@ -21,7 +21,7 @@ namespace AttendanceManagementSystem.Forms.Dashboard
 {
     public partial class Dashboard_UserControl : DevExpress.XtraEditors.XtraUserControl
     {
-        private string _connectionStrng = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
+        private string _connectionString = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
 
         private IAttendanceService _attendanceService;
         private IStudentsRepository _studentRepository;
@@ -53,7 +53,7 @@ namespace AttendanceManagementSystem.Forms.Dashboard
         }
         private List<AttendanceSummaryDTO> GetAttendanceSummary(string course)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
 

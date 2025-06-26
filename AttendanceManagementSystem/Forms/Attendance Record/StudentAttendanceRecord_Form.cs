@@ -15,7 +15,7 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
 {
 	public partial class StudentAttendanceRecord_Form: DevExpress.XtraEditors.XtraForm
 	{
-        private string _connectionStrng = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
+        private string _connectionString = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
         private readonly IAttendanceService _attendanceService;
         private Student _student;
         public StudentAttendanceRecord_Form(Student student)
@@ -52,7 +52,7 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
         }
         private List<AttendanceRecordsDTO> GetAttendanceRecords(string schoolStudentId)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
                 string sql = @"SELECT AttendanceName, LogType, TimeStamp FROM AttendanceRecords WHERE SchoolStudentId = @SchoolStudentId AND IsPaid = 0";
@@ -75,7 +75,7 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
         }
         public void ResetRecord(string schoolStudentId)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
 
@@ -91,7 +91,7 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
         }
         public void RecordLogs(string schoolStudentId)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
                 // GET STUDENT ALL ATTENDANCE RECORDS
@@ -126,7 +126,7 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
         }
         private bool IsAttendanceReset(string schoolStudentId)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
 

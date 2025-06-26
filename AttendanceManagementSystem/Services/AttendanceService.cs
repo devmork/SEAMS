@@ -12,10 +12,10 @@ namespace AttendanceManagementSystem.Services
 {
     public class AttendanceService : IAttendanceService
     {
-        private string _connectionStrng = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
+        private string _connectionString = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
         public void RecordAttendance(int attendanceId, string attendanceName, string logType, string schoolStudentId, string name, string course, int yearLevel)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
                 var parameters = new DynamicParameters();
@@ -59,7 +59,7 @@ namespace AttendanceManagementSystem.Services
         
         public int GetTotalAbsent(string schoolStudentId)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
 
@@ -76,7 +76,7 @@ namespace AttendanceManagementSystem.Services
         }
         public int GetTotalPresent(string schoolStudentId)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
                 string sql = @"SELECT COUNT (AttendanceId) FROM AttendanceRecords WHERE SchoolStudentId = @SchoolStudentId AND IsPaid = 0";
@@ -88,7 +88,7 @@ namespace AttendanceManagementSystem.Services
         }
         public int GetAttendanceCount()
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
                 string getAttendaceCountSQL = @"SELECT COUNT(AttendanceId) FROM Attendance";

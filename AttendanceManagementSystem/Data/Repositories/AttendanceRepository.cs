@@ -14,10 +14,10 @@ namespace AttendanceManagementSystem.Data.Repositories
 {
     public class AttendanceRepository : IAttendanceRepository
     {
-        private string _connectionStrng = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
+        private string _connectionString = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
         public void AddAttendance(Attendance attendance)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
                 string sql = 
@@ -37,7 +37,7 @@ namespace AttendanceManagementSystem.Data.Repositories
         }
         public List<Attendance> GetAllAttendance()
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
                 string sql = @"SELECT * FROM Attendance";
@@ -47,7 +47,7 @@ namespace AttendanceManagementSystem.Data.Repositories
         }
         public void DeleteAttendance(int attendanceId)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
                 string sql = "DELETE FROM Attendance WHERE AttendanceId = @AttendanceId";
@@ -58,7 +58,7 @@ namespace AttendanceManagementSystem.Data.Repositories
         }
         public void UpdateAttendance(Attendance attendance)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionStrng))
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
                 string sql =

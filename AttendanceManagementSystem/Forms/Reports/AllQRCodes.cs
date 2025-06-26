@@ -24,7 +24,7 @@ namespace AttendanceManagementSystem.Forms.Reports
 {
     public partial class AllQRCodes : DevExpress.XtraEditors.XtraForm
     {
-        private string _connectionStrng = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
+        private string _connectionString = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
         private IQRCodeService _qrCodeService;
 
         public AllQRCodes()
@@ -94,7 +94,8 @@ namespace AttendanceManagementSystem.Forms.Reports
         }
         private List<Student> GetStudents(string course, string yearLevel)
         {
-            using (var connection = new SQLiteConnection(_connectionStrng))
+            using (var connection = new SQLiteConnection(_connectionString))
+
             {
                 connection.Open();
                 string sql = @"
@@ -137,7 +138,7 @@ namespace AttendanceManagementSystem.Forms.Reports
         {
             try
             {
-                using (var connection = new SQLiteConnection(_connectionStrng))
+                using (var connection = new SQLiteConnection(_connectionString))
                 {
                     connection.Open();
                     var courses = connection.Query<string>("SELECT DISTINCT Course FROM Student").ToList();

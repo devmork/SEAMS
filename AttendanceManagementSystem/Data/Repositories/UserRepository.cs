@@ -12,10 +12,10 @@ namespace AttendanceManagementSystem.Data.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private string _connectionStrng = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
+        private string _connectionString = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
         public void AddUser(User user)
         {
-            using (var connection = new SQLiteConnection(_connectionStrng))
+            using (var connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
                 string sql = @"INSERT INTO Users (UserName, Email, Password)
@@ -30,7 +30,7 @@ namespace AttendanceManagementSystem.Data.Repositories
         }
         public User GetUserByEmail(string email, string password)
         {
-            using (var connection = new SQLiteConnection(_connectionStrng))
+            using (var connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
                 string sql = "SELECT Email, Password FROM Users WHERE Email = @Email AND Password = @Password;";
