@@ -356,7 +356,6 @@
             this.Controls.Add(this.lc_QRScanner);
             this.Name = "QRScanner_UserControl";
             this.Size = new System.Drawing.Size(1440, 1024);
-            this.Load += new System.EventHandler(this.QRScanner_UserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lc_QRScanner)).EndInit();
             this.lc_QRScanner.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panel_StartScan)).EndInit();

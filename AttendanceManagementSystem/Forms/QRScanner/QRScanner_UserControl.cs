@@ -47,11 +47,6 @@ namespace AttendanceManagementSystem.Forms.QRScanner
 
 
         }
-        private void QRScanner_UserControl_Load(object sender, EventArgs e)
-        {
-            
-
-        }
         private void LoadActiveAttendance()
         {
             allAttendance = _attendanceRepository.GetAllAttendance();
