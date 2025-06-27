@@ -12,7 +12,7 @@ namespace AttendanceManagementSystem.Data.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private string _connectionString = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
+        private string _connectionString = SQLiteDataAccess.LoadConnectionString();
         public void AddUser(User user)
         {
             using (var connection = new SQLiteConnection(_connectionString))

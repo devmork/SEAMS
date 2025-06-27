@@ -14,7 +14,7 @@ namespace AttendanceManagementSystem.Data.Repositories
 {
     public class AttendanceRepository : IAttendanceRepository
     {
-        private string _connectionString = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
+        private string _connectionString = SQLiteDataAccess.LoadConnectionString();
         public void AddAttendance(Attendance attendance)
         {
             using (SQLiteConnection connection = new SQLiteConnection(_connectionString))

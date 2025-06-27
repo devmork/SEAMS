@@ -220,6 +220,7 @@
   <ItemGroup>
     <Compile Include="Data\Repositories\AttendanceRepository.cs" />
     <Compile Include="Data\Repositories\UserRepository.cs" />
+    <Compile Include="Data\SQLiteDataAccess.cs" />
     <Compile Include="DTO\AttendanceRecordsDTO.cs" />
     <Compile Include="DTO\AttendanceSummaryDTO.cs" />
     <Compile Include="DTO\StudentsAttendanceDTO.cs" />
