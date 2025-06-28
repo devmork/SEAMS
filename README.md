@@ -42,68 +42,61 @@ Build a full-featured windows form application where SSG officeers can:
 ## Project Structure
 
 ```
-├── Forms/
-│   ├── MainForm.cs                      
-│   ├── Dashboard/
-│   │   └── Dashboard_UserControl.cs     
-│   ├── Attendance/
-│   │   ├── Attendance_UserControl.cs   
-│   │   ├── AddEvent_Form.cs            
-│   │   ├── EditEvent_Form.cs            
-│   ├── Reports/
-│   │   ├── Reports_UserControl.cs       
-│   │   ├── StudentAttendanceReport_Form 
-│   ├── Student/
-│   │   ├── Student_UserControl.cs       
-│   │   ├── AddStudent_Form.cs           
-│   │   └── StudentDetailsForm.cs        
-│   ├── QRScanner/
-│   │   └── QRScanner_UserControl.cs     
-├── Models/
-│   ├── Base/                           
-│   │   ├──
-│   │   ├── Attendance.cs               
-│   ├── Student.cs                      
-│   ├── AttendanceRecords.cs                       
-│   ├── User.cs                          
+AttendanceManagementSystem/
+├── DTO/
+│   ├── AttendanceRecordsDTO.cs
+│   ├── AttendanceSummaryDTO.cs
+│   └── StudentsAttendanceDTO.cs
 ├── Data/
-│   ├── DatabaseContext.cs              
 │   ├── Repositories/
-│   │   ├── AttendanceRepository.cs      
-│   │   ├── ReportsRepository.cs         
-│   │   ├── StudentsRepository.cs        
-│   │   └── UsersRepository.cs           
-├── Services/
-│   ├── AttendanceService.cs             
-│   ├── QRCodeService.cs                
-│   ├── EmailService.cs                  
-│   ├── ReportService.cs                 
-│   ├── AuthenticationService.cs         
-├── Interfaces/                          
+│   │   ├── AttendanceRepository.cs
+│   │   ├── StudentsRepository.cs
+│   │   └── UserRepository.cs
+│   └── SQLiteDataAccess.cs
+├── Forms/
+│   ├── Attendance/
+│   │   ├── AddAttendance_Form.cs
+│   │   ├── Attendance_UserControl.cs
+│   │   └── EditAttendance_Form.cs
+│   ├── Attendance Record/
+│   │   ├── AttendanceRecords_UserControl.cs
+│   │   └── StudentAttendanceRecord_Form.cs
+│   ├── Auth/
+│   │   ├── LogIn_Form.cs
+│   │   └── SignUp_Form.cs
+│   ├── Dashboard/
+│   │   └── Dashboard_UserControl.cs
+│   ├── QRScanner/
+│   │   └── QRScanner_UserControl.cs
+│   ├── Reports/
+│   │   ├── AllAttendanceRecord_Form.cs
+│   │   └── AllQRCodes.cs
+│   ├── Students/
+│   │   ├── AddStudent_Form.cs
+│   │   ├── EditStudent_Form.cs
+│   │   └── Students_UserControl.cs
+│   └── MainForm.cs
+├── Interfaces/
 │   ├── Repositories/
-│   │   ├── IAttendanceRepository.cs     
-│   │   ├── IReportsRepository.cs        
-│   │   ├── IStudentsRepository.cs       
-│   │   ├── IUsersRepository.cs         
+│   │   ├── IAttendanceRepository.cs
+│   │   ├── IStudentsRepository.cs
+│   │   └── IUserRepository.cs
 │   ├── Services/
-│   │   ├── IAttendanceService.cs        
-│   │   ├── IQRCodeService.cs           
-│   │   ├── IEmailService.cs            
-│   │   ├── IReportService.cs            
-│   │   ├── IAuthenticationService.cs    
-│   ├── Utilities/
-│   │   ├── IQRScannerHelper.cs          
-│   │   ├── IAttendanceCalculationHelper.cs
-│   │   ├── IValidationHelper.cs         
-│   │   ├── IExportHelper.cs            
-│   │   ├── ILogger.cs                   
-│   │   ├── IConfigurationManager.cs    
+│   │   ├── IAttendanceService.cs
+│   │   └── IQRCodeService.cs
+│   └── Utilities/
+│       └── IQRScannerHelper.cs
+├── Models/
+│   ├── Base/
+│   │   ├── Attendance.cs
+│   │   └── Student.cs
+│   └── Derived/
+│       └── User.cs
+├── Services/
+│   ├── AttendanceService.cs
+│   └── QRCodeService.cs
 ├── Utilities/
-│    ├── QRScannerHelper.cs           
-│    ├── AttendanceCalculationHelper.cs 
-│    ├── ValidationHelper.cs          
-│    └── ExportHelper.cs              
-└── Reports/
+│   └── QRScannerHelper.cs
 ```
 
 
