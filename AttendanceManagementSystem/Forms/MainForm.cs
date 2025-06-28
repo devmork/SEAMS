@@ -80,7 +80,7 @@ namespace AttendanceManagementSystem.Forms
         }
         private void btn_LogOut_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             LogIn_Form logIn_Form = new LogIn_Form();
             logIn_Form.ShowDialog();
         }
