@@ -96,7 +96,7 @@
             // cbe_FilterYearLevel
             // 
             this.cbe_FilterYearLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbe_FilterYearLevel.EditValue = "Year Level";
+            this.cbe_FilterYearLevel.EditValue = "All Year Level";
             this.cbe_FilterYearLevel.Location = new System.Drawing.Point(1189, 20);
             this.cbe_FilterYearLevel.Name = "cbe_FilterYearLevel";
             this.cbe_FilterYearLevel.Properties.AutoHeight = false;
@@ -114,7 +114,7 @@
             // cbe_FilterCourse
             // 
             this.cbe_FilterCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbe_FilterCourse.EditValue = "Course";
+            this.cbe_FilterCourse.EditValue = "All Courses";
             this.cbe_FilterCourse.Location = new System.Drawing.Point(973, 21);
             this.cbe_FilterCourse.Name = "cbe_FilterCourse";
             this.cbe_FilterCourse.Properties.AutoHeight = false;
@@ -149,6 +149,8 @@
             // 
             // gv_Students
             // 
+            this.gv_Students.Appearance.HeaderPanel.Font = new System.Drawing.Font("Poppins SemiBold", 8.25F);
+            this.gv_Students.Appearance.HeaderPanel.Options.UseFont = true;
             this.gv_Students.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.grdclm_Id,
             this.grdclm_IdNumber,
