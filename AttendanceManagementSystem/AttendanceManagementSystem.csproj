@@ -218,8 +218,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Repositories\AttendanceRepository.cs" />
-    <Compile Include="Data\Repositories\UserRepository.cs" />
+    <Compile Include="Presenters\AttendancePresenter.cs" />
+    <Compile Include="Repositories\AttendanceRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Data\SQLiteDataAccess.cs" />
     <Compile Include="DTO\AttendanceRecordsDTO.cs" />
     <Compile Include="DTO\AttendanceSummaryDTO.cs" />
@@ -263,10 +264,10 @@
     <Compile Include="Interfaces\Services\IAttendanceService.cs" />
     <Compile Include="Interfaces\Repositories\IUserRepository.cs" />
     <Compile Include="Interfaces\Utilities\IQRScannerHelper.cs" />
-    <Compile Include="Models\Base\User.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Services\AttendanceService.cs" />
     <Compile Include="Services\QRCodeService.cs" />
-    <Compile Include="Data\Repositories\StudentsRepository.cs" />
+    <Compile Include="Repositories\StudentsRepository.cs" />
     <Compile Include="Forms\Attendance Record\StudentAttendanceRecord_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,11 +331,13 @@
     <Compile Include="Interfaces\Repositories\IAttendanceRepository.cs" />
     <Compile Include="Interfaces\Services\IQRCodeService.cs" />
     <Compile Include="Interfaces\Repositories\IStudentsRepository.cs" />
-    <Compile Include="Models\Base\Attendance.cs" />
-    <Compile Include="Models\Base\Student.cs" />
+    <Compile Include="Models\Attendance.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\QRScannerHelper.cs" />
+    <Compile Include="Views\IAddAttendanceView.cs" />
+    <Compile Include="Views\IStudentsView.cs" />
     <EmbeddedResource Include="Forms\Attendance Record\AttendanceRecords_UserControl.resx">
       <DependentUpon>AttendanceRecords_UserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -423,10 +426,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
