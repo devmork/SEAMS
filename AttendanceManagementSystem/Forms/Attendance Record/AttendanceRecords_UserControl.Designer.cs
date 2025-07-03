@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttendanceRecords_UserControl));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -227,11 +227,11 @@
             this.txt_SchoolStudentId.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_SchoolStudentId.Appearance.Font = new System.Drawing.Font("Poppins", 12F);
+            this.txt_SchoolStudentId.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 12F);
             this.txt_SchoolStudentId.Appearance.Options.UseFont = true;
             this.txt_SchoolStudentId.Location = new System.Drawing.Point(121, 687);
             this.txt_SchoolStudentId.Name = "txt_SchoolStudentId";
-            this.txt_SchoolStudentId.Size = new System.Drawing.Size(85, 28);
+            this.txt_SchoolStudentId.Size = new System.Drawing.Size(86, 28);
             this.txt_SchoolStudentId.StyleController = this.layoutControl2;
             this.txt_SchoolStudentId.TabIndex = 5;
             this.txt_SchoolStudentId.Text = "2023-0444";
@@ -255,11 +255,11 @@
             this.txt_Name.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Name.Appearance.Font = new System.Drawing.Font("Poppins", 12F);
+            this.txt_Name.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 12F);
             this.txt_Name.Appearance.Options.UseFont = true;
             this.txt_Name.Location = new System.Drawing.Point(86, 721);
             this.txt_Name.Name = "txt_Name";
-            this.txt_Name.Size = new System.Drawing.Size(170, 28);
+            this.txt_Name.Size = new System.Drawing.Size(173, 28);
             this.txt_Name.StyleController = this.layoutControl2;
             this.txt_Name.TabIndex = 6;
             this.txt_Name.Text = "Den Mark Caoile Enoy";
@@ -283,11 +283,11 @@
             this.txt_Email.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Email.Appearance.Font = new System.Drawing.Font("Poppins", 12F);
+            this.txt_Email.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 12F);
             this.txt_Email.Appearance.Options.UseFont = true;
             this.txt_Email.Location = new System.Drawing.Point(81, 789);
             this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(193, 28);
+            this.txt_Email.Size = new System.Drawing.Size(202, 28);
             this.txt_Email.StyleController = this.layoutControl2;
             this.txt_Email.TabIndex = 7;
             this.txt_Email.Text = "den_enoy@dmc.edu.ph";
@@ -311,11 +311,11 @@
             this.txt_Course.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Course.Appearance.Font = new System.Drawing.Font("Poppins", 12F);
+            this.txt_Course.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 12F);
             this.txt_Course.Appearance.Options.UseFont = true;
             this.txt_Course.Location = new System.Drawing.Point(94, 823);
             this.txt_Course.Name = "txt_Course";
-            this.txt_Course.Size = new System.Drawing.Size(31, 28);
+            this.txt_Course.Size = new System.Drawing.Size(32, 28);
             this.txt_Course.StyleController = this.layoutControl2;
             this.txt_Course.TabIndex = 8;
             this.txt_Course.Text = "BSIT";
@@ -339,7 +339,7 @@
             this.txt_YearLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_YearLevel.Appearance.Font = new System.Drawing.Font("Poppins", 12F);
+            this.txt_YearLevel.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 12F);
             this.txt_YearLevel.Appearance.Options.UseFont = true;
             this.txt_YearLevel.Location = new System.Drawing.Point(118, 755);
             this.txt_YearLevel.Name = "txt_YearLevel";
@@ -585,6 +585,8 @@
             // 
             // gv_Students
             // 
+            this.gv_Students.Appearance.HeaderPanel.Font = new System.Drawing.Font("Poppins SemiBold", 8.25F);
+            this.gv_Students.Appearance.HeaderPanel.Options.UseFont = true;
             this.gv_Students.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.grdclm_SchoolStudentId,
             this.grdclm_FullName,
