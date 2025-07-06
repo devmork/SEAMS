@@ -31,6 +31,17 @@ namespace AttendanceManagementSystem.Forms.Students
             _studentsRepository = new StudentsRepository();
             LoadStudents();
         }
+        public void LoadStudents()
+        {
+            try
+            {
+                gc_Students.DataSource = _studentsRepository.GetAllStudent();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("An error occurred while loading students: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void btn_AddStudent_Click(object sender, EventArgs e)
         {
             using (var addStudentForm = new AddStudent_Form())
@@ -41,9 +52,15 @@ namespace AttendanceManagementSystem.Forms.Students
                 }
             }
         }
-        public void LoadStudents()
+        private void repositoryItemButtonEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            gc_Students.DataSource = _studentsRepository.GetAllStudent();
+            Student selectedRow = gv_Students.GetFocusedRow() as Student;
+
+            EditStudent_Form editStudentForm = new EditStudent_Form(selectedRow);
+            if (editStudentForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadStudents();
+            }
         }
         private void cbe_FilterCourse_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -56,15 +73,6 @@ namespace AttendanceManagementSystem.Forms.Students
             string selectedYearLevel = cbe_FilterYearLevel.SelectedItem.ToString();
             gv_Students.ActiveFilterString = $"[YearLevel] = '{selectedYearLevel}'";
         }
-        private void repositoryItemButtonEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            Student selectedRow = gv_Students.GetFocusedRow() as Student;
-
-            EditStudent_Form editStudentForm = new EditStudent_Form(selectedRow);
-            if (editStudentForm.ShowDialog() == DialogResult.OK)
-            {
-                LoadStudents();
-            }
-        }
+        
     }
 }
