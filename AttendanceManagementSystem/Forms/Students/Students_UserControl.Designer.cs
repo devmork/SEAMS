@@ -107,6 +107,7 @@
             "2",
             "3",
             "4"});
+            this.cbe_FilterYearLevel.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_FilterYearLevel.Size = new System.Drawing.Size(206, 34);
             this.cbe_FilterYearLevel.TabIndex = 3;
             this.cbe_FilterYearLevel.SelectedValueChanged += new System.EventHandler(this.cbe_FilterYearLevel_SelectedValueChanged);
@@ -130,6 +131,7 @@
             "BSHM",
             "BSBA",
             "BSED"});
+            this.cbe_FilterCourse.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbe_FilterCourse.Size = new System.Drawing.Size(204, 34);
             this.cbe_FilterCourse.TabIndex = 3;
             this.cbe_FilterCourse.SelectedValueChanged += new System.EventHandler(this.cbe_FilterCourse_SelectedValueChanged);
