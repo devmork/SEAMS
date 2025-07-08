@@ -61,7 +61,7 @@ namespace AttendanceManagementSystem.Forms.Students
         {
             if (student.QRCode == null)
             {
-                XtraMessageBox.Show("Please generate a QR code before saving.");
+                XtraMessageBox.Show("Please generate a QR code before adding student..", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (_studentsRepository.CheckIfStudentIdExist(student.SchoolStudentId))
