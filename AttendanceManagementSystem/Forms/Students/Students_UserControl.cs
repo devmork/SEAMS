@@ -29,7 +29,6 @@ namespace AttendanceManagementSystem.Forms.Students
         {
             InitializeComponent();
             _studentsRepository = new StudentsRepository();
-            
         }
         public void LoadStudents()
         {
@@ -45,24 +44,18 @@ namespace AttendanceManagementSystem.Forms.Students
         }
         private void btn_AddStudent_Click(object sender, EventArgs e)
         {
-            //var addStudentForm = new AddStudent_Form();
-            //addStudentForm.ShowDialog();
+            var addStudentForm = new AddStudent_Form();
 
-            using (var addStudentForm = new AddStudent_Form())
+            if (addStudentForm.ShowDialog() == DialogResult.OK)
             {
-                if (addStudentForm.ShowDialog() == DialogResult.OK)
-                {
-                    LoadStudents();
-                }
-            }
+                LoadStudents();
+            }           
         }
         private void repositoryItemButtonEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             Student selectedRow = gv_Students.GetFocusedRow() as Student;
 
             EditStudent_Form editStudentForm = new EditStudent_Form(selectedRow);
-            //editStudentForm.ShowDialog();
-
             if (editStudentForm.ShowDialog() == DialogResult.OK)
             {
                 LoadStudents();
