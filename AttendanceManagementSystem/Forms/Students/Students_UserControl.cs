@@ -49,7 +49,7 @@ namespace AttendanceManagementSystem.Forms.Students
             if (addStudentForm.ShowDialog() == DialogResult.OK)
             {
                 LoadStudents();
-            }           
+            }          
         }
         private void repositoryItemButtonEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
