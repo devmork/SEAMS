@@ -29,13 +29,14 @@ namespace AttendanceManagementSystem.Forms.Students
         {
             InitializeComponent();
             _studentsRepository = new StudentsRepository();
-            LoadStudents();
+            
         }
         public void LoadStudents()
         {
             try
             {
                 gc_Students.DataSource = _studentsRepository.GetAllStudent();
+                gv_Students.BestFitColumns();
             }
             catch (Exception ex)
             {
@@ -44,6 +45,9 @@ namespace AttendanceManagementSystem.Forms.Students
         }
         private void btn_AddStudent_Click(object sender, EventArgs e)
         {
+            //var addStudentForm = new AddStudent_Form();
+            //addStudentForm.ShowDialog();
+
             using (var addStudentForm = new AddStudent_Form())
             {
                 if (addStudentForm.ShowDialog() == DialogResult.OK)
@@ -57,6 +61,8 @@ namespace AttendanceManagementSystem.Forms.Students
             Student selectedRow = gv_Students.GetFocusedRow() as Student;
 
             EditStudent_Form editStudentForm = new EditStudent_Form(selectedRow);
+            //editStudentForm.ShowDialog();
+
             if (editStudentForm.ShowDialog() == DialogResult.OK)
             {
                 LoadStudents();
@@ -73,6 +79,17 @@ namespace AttendanceManagementSystem.Forms.Students
             string selectedYearLevel = cbe_FilterYearLevel.SelectedItem.ToString();
             gv_Students.ActiveFilterString = $"[YearLevel] = '{selectedYearLevel}'";
         }
-        
+
+        private void Students_UserControl_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                gc_Students.DataSource = _studentsRepository.GetAllStudent();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("An error occurred while loading students: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
