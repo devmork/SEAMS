@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Students_UserControl));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lc_Students = new DevExpress.XtraLayout.LayoutControl();
             this.panel = new DevExpress.XtraEditors.PanelControl();
             this.cbe_FilterYearLevel = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -99,10 +99,15 @@
             this.cbe_FilterYearLevel.EditValue = "All Year Level";
             this.cbe_FilterYearLevel.Location = new System.Drawing.Point(1189, 20);
             this.cbe_FilterYearLevel.Name = "cbe_FilterYearLevel";
+            this.cbe_FilterYearLevel.Properties.Appearance.Font = new System.Drawing.Font("Poppins Medium", 10F);
+            this.cbe_FilterYearLevel.Properties.Appearance.Options.UseFont = true;
+            this.cbe_FilterYearLevel.Properties.Appearance.Options.UseTextOptions = true;
+            this.cbe_FilterYearLevel.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.cbe_FilterYearLevel.Properties.AutoHeight = false;
             this.cbe_FilterYearLevel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbe_FilterYearLevel.Properties.Items.AddRange(new object[] {
+            "All Year Level",
             "1",
             "2",
             "3",
@@ -118,10 +123,15 @@
             this.cbe_FilterCourse.EditValue = "All Courses";
             this.cbe_FilterCourse.Location = new System.Drawing.Point(973, 21);
             this.cbe_FilterCourse.Name = "cbe_FilterCourse";
+            this.cbe_FilterCourse.Properties.Appearance.Font = new System.Drawing.Font("Poppins Medium", 10F);
+            this.cbe_FilterCourse.Properties.Appearance.Options.UseFont = true;
+            this.cbe_FilterCourse.Properties.Appearance.Options.UseTextOptions = true;
+            this.cbe_FilterCourse.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.cbe_FilterCourse.Properties.AutoHeight = false;
             this.cbe_FilterCourse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbe_FilterCourse.Properties.Items.AddRange(new object[] {
+            "All Courses",
             "BSN",
             "BSMT",
             "BS-RADTECH",
@@ -260,13 +270,12 @@
             // repositoryItemButtonEdit
             // 
             this.repositoryItemButtonEdit.AutoHeight = false;
-            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
-            editorButtonImageOptions1.SvgImageSize = new System.Drawing.Size(16, 16);
-            serializableAppearanceObject1.Options.UseTextOptions = true;
-            serializableAppearanceObject1.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            serializableAppearanceObject1.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            editorButtonImageOptions2.SvgImageSize = new System.Drawing.Size(16, 16);
+            serializableAppearanceObject5.Options.UseTextOptions = true;
+            serializableAppearanceObject5.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            serializableAppearanceObject5.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.repositoryItemButtonEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit.Name = "repositoryItemButtonEdit";
             this.repositoryItemButtonEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit_ButtonClick);
@@ -300,7 +309,7 @@
             this.btn_AddStudent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_AddStudent.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
-            this.btn_AddStudent.Appearance.Font = new System.Drawing.Font("Poppins", 12.08F);
+            this.btn_AddStudent.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 12F);
             this.btn_AddStudent.Appearance.ForeColor = System.Drawing.Color.White;
             this.btn_AddStudent.Appearance.Options.UseBackColor = true;
             this.btn_AddStudent.Appearance.Options.UseFont = true;
