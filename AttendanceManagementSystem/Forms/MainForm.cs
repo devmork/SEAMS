@@ -20,7 +20,6 @@ using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Data.Repositories;
 using AttendanceManagementSystem.Forms.Reports;
 using AttendanceManagementSystem.DTO;
-using AttendanceManagementSystem.Interfaces.Services;
 using AttendanceManagementSystem.Services;
 using DevExpress.XtraReports.UI;
 
@@ -29,12 +28,10 @@ namespace AttendanceManagementSystem.Forms
 	public partial class MainForm: DevExpress.XtraEditors.XtraForm
 	{
         private readonly IStudentsRepository _studentsRepository;
-        private readonly IAttendanceService _attendanceService;
         public MainForm()
 		{
             InitializeComponent();
             _studentsRepository = new StudentsRepository();
-            _attendanceService = new AttendanceService();
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -115,7 +112,7 @@ namespace AttendanceManagementSystem.Forms
                     LastName = student.LastName,
                     Course = student.Course,
                     YearLevel = student.YearLevel,
-                    TotalAbsent = _attendanceService.GetTotalAbsent(student.SchoolStudentId),
+                    TotalAbsent = AttendanceService.GetTotalAbsent(student.SchoolStudentId),
                 };
 
                 result.Add(attendanceSummary);

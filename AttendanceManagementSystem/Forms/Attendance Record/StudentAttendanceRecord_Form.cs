@@ -4,7 +4,6 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Windows.Forms;
 using AttendanceManagementSystem.DTO;
-using AttendanceManagementSystem.Interfaces.Services;
 using AttendanceManagementSystem.Models.Base;
 using AttendanceManagementSystem.Services;
 using Dapper;
@@ -16,12 +15,10 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
 	public partial class StudentAttendanceRecord_Form: DevExpress.XtraEditors.XtraForm
 	{
         private string _connectionString = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
-        private readonly IAttendanceService _attendanceService;
         private Student _student;
         public StudentAttendanceRecord_Form(Student student)
 		{
             InitializeComponent();
-            _attendanceService = new AttendanceService();
             _student = student;
 		}
         private void StudentAttendanceRecord_Form_Load(object sender, EventArgs e)
@@ -31,7 +28,7 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
             txt_Name.Text = _student.FullName;
 
             //LOAD RECORD ON TXTEDIT
-            int totalPresent = _attendanceService.GetTotalPresent(_student.SchoolStudentId);
+            int totalPresent = AttendanceService.GetTotalPresent(_student.SchoolStudentId);
             txt_TotalPresent.EditValue = totalPresent.ToString();
 
 
@@ -41,7 +38,7 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
             }
             else
             {
-                int totalAbsent = _attendanceService.GetTotalAbsent(_student.SchoolStudentId);
+                int totalAbsent = AttendanceService.GetTotalAbsent(_student.SchoolStudentId);
                 txt_TotalAbsent.EditValue = totalAbsent.ToString();
             }
 

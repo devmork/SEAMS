@@ -2,16 +2,15 @@
 using System.Drawing;
 using ZXing;
 using ZXing.Common;
-using AttendanceManagementSystem.Interfaces.Repositories;
 using System.IO;
 using DevExpress.XtraEditors;
 
 namespace AttendanceManagementSystem.Data.Repositories
 {
-    public class QRCodeService : IQRCodeService
+    public class QRCodeService
     {
-        public Bitmap GeneratedQRCode { get; private set; }
-        public void GenerateQRCode(string schoolStudentId)
+        public static Bitmap GeneratedQRCode { get; set; }
+        public static void GenerateQRCode(string schoolStudentId)
         {
             if (string.IsNullOrEmpty(schoolStudentId))
             {
@@ -31,14 +30,14 @@ namespace AttendanceManagementSystem.Data.Repositories
             GeneratedQRCode = writer.Write(schoolStudentId);
         }
         // USED TO DISPLAY QRCODE ON THE UI
-        public Image GetQRCodeImage()
+        public static Image GetQRCodeImage()
         {
             if (GeneratedQRCode == null)
                 XtraMessageBox.Show("QR code has not been generated. GenerateQRCode first.");
             return GeneratedQRCode;
         }
         // STORE QRCODE AS BYTE ARRAY
-        public byte[] GetQRCodeByteArray()
+        public static byte[] GetQRCodeByteArray()
         {
             if (GeneratedQRCode == null)
                 XtraMessageBox.Show("QR code has not been generated.GenerateQRCode first.");

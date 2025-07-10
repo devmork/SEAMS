@@ -14,33 +14,19 @@ namespace AttendanceManagementSystem.Forms.Students
     public partial class AddStudent_Form : DevExpress.XtraEditors.XtraForm
     {
         private readonly IStudentsRepository _studentsRepository;
-        private readonly IQRCodeService _qrCodeService;
         private Student student;
         public AddStudent_Form()
         {
             InitializeComponent();
             _studentsRepository = new StudentsRepository();
-            _qrCodeService = new QRCodeService();
-
         }
         private void btn_Generate_Click(object sender, EventArgs e)
         {
-            CheckNullOrWhiteSpace();
             try
             {
-                student = new Student
-                (
-                    firstName: txt_FirstName.Text,
-                    middleName: txt_MiddleName.Text,
-                    lastName: txt_LastName.Text,
-                    schoolStudentId: txt_SchoolStudentId.Text,
-                    yearLevel: cbe_YearLevel.Text,
-                    course: cbe_Course.Text,
-                    email: txt_EmailAddress.Text
-                );
-                _qrCodeService.GenerateQRCode(student.SchoolStudentId);
-                pe_QRCode.Image = _qrCodeService.GetQRCodeImage();
-                student.QRCode = _qrCodeService.GetQRCodeByteArray();
+                QRCodeService.GenerateQRCode(student.SchoolStudentId);
+                pe_QRCode.Image = QRCodeService.GetQRCodeImage();
+                student.QRCode = QRCodeService.GetQRCodeByteArray();
             }
             catch (Exception ex)
             {
@@ -49,14 +35,20 @@ namespace AttendanceManagementSystem.Forms.Students
         }
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            if (student.QRCode == null)
-            {
-                XtraMessageBox.Show("Please generate a QR code before adding student..", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            student = new Student();
+
+            student.FirstName = txt_FirstName.Text;
+            student.MiddleName = txt_MiddleName.Text;
+            student.LastName = txt_LastName.Text;
+            student.SchoolStudentId = txt_SchoolStudentId.Text;
+            student.YearLevel = cbe_YearLevel.Text;
+            student.Course = cbe_Course.Text;
+            student.Email = txt_EmailAddress.Text;
+            
+            CheckNullOrWhiteSpace();
             if (_studentsRepository.CheckIfStudentIdExist(student.SchoolStudentId))
             {
-                XtraMessageBox.Show("A student with this ID already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show($"A student with this ID: {student.SchoolStudentId} already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
@@ -98,7 +90,8 @@ namespace AttendanceManagementSystem.Forms.Students
                 string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text) ||
                 string.IsNullOrWhiteSpace(cbe_YearLevel.Text) ||
                 string.IsNullOrWhiteSpace(cbe_Course.Text) ||
-                string.IsNullOrWhiteSpace(txt_EmailAddress.Text))
+                string.IsNullOrWhiteSpace(txt_EmailAddress.Text) ||
+                pe_QRCode.Image == null)
             {
                 XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

@@ -16,17 +16,13 @@ using ZXing;
 using OpenCvSharp.Extensions;
 using OpenCvSharp;
 using AttendanceManagementSystem.Utilities;
-using AttendanceManagementSystem.Interfaces.Utilities;
-using AttendanceManagementSystem.Interfaces.Services;
 using AttendanceManagementSystem.Services;
 
 namespace AttendanceManagementSystem.Forms.QRScanner
 {
     public partial class QRScanner_UserControl : DevExpress.XtraEditors.XtraUserControl
     {
-        private readonly IAttendanceService _attendanceService;
         private readonly IAttendanceRepository _attendanceRepository;
-        private readonly IQRScannerHelper _qrScannerHelper;
         private readonly IStudentsRepository _studentsRepository;
 
         private List<Attendance> allAttendance;
@@ -37,9 +33,7 @@ namespace AttendanceManagementSystem.Forms.QRScanner
         public QRScanner_UserControl()
         {
             InitializeComponent();
-            _attendanceService = new AttendanceService();
             _attendanceRepository = new AttendanceRepository();
-            _qrScannerHelper = new QRScannerHelper();
             _studentsRepository = new StudentsRepository();
             timer.Interval = 30;
             timer.Tick += FrameScanner;
@@ -144,7 +138,7 @@ namespace AttendanceManagementSystem.Forms.QRScanner
 
                         try
                         {
-                            string qrCodeText = _qrScannerHelper.DecodeQRCode(bitmap);
+                            string qrCodeText = QRScannerHelper.DecodeQRCode(bitmap);
                             if (!string.IsNullOrEmpty(qrCodeText))
                             {
                                 string schoolStudentId = qrCodeText; // QR code contains only SchoolStudentId
@@ -161,7 +155,7 @@ namespace AttendanceManagementSystem.Forms.QRScanner
                                     return;
                                 }
 
-                                _attendanceService.RecordAttendance(
+                                AttendanceService.RecordAttendance(
                                     selectedAttendanceId,
                                     selectedAttendance.AttendanceName,
                                     selectedAttendance.LogType,

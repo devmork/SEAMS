@@ -25,12 +25,10 @@ namespace AttendanceManagementSystem.Forms.Reports
     public partial class AllQRCodes : DevExpress.XtraEditors.XtraForm
     {
         private string _connectionString = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
-        private IQRCodeService _qrCodeService;
 
         public AllQRCodes()
         {
             InitializeComponent();
-            _qrCodeService = new QRCodeService();
         }
 
         private void btn_CloseForm_Click(object sender, EventArgs e)
@@ -116,8 +114,8 @@ namespace AttendanceManagementSystem.Forms.Reports
             {
                 foreach (var student in students)
                 {
-                    _qrCodeService.GenerateQRCode(student.SchoolStudentId);
-                    using (var qrCodeImage = _qrCodeService.GetQRCodeImage())
+                    QRCodeService.GenerateQRCode(student.SchoolStudentId);
+                    using (var qrCodeImage = QRCodeService.GetQRCodeImage())
                     {
                         if (qrCodeImage == null) continue;
                         string entryName = $"{SanitizeName(student.LastName)}_{SanitizeName(student.FirstName)}.png";

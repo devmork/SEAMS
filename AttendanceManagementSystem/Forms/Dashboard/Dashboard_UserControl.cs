@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using AttendanceManagementSystem.Interfaces.Repositories;
 using AttendanceManagementSystem.Data.Repositories;
-using AttendanceManagementSystem.Interfaces.Services;
 using AttendanceManagementSystem.Services;
 using System.Data.SQLite;
 using Dapper;
@@ -23,20 +22,18 @@ namespace AttendanceManagementSystem.Forms.Dashboard
     {
         private string _connectionString = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
 
-        private IAttendanceService _attendanceService;
         private IStudentsRepository _studentRepository;
         private IAttendanceRepository _attendanceRepository;
 
         public Dashboard_UserControl()
         {
             InitializeComponent();
-            _attendanceService = new AttendanceService();
             _studentRepository = new StudentsRepository();
             _attendanceRepository = new AttendanceRepository();
         }
         private void Dashboard_UserControl_Load(object sender, EventArgs e)
         {
-            txt_TotalAttendance.Text = _attendanceService.GetAttendanceCount().ToString();
+            txt_TotalAttendance.Text = AttendanceService.GetAttendanceCount().ToString();
             txt_TotalStudents.Text = _studentRepository.GetTotalStudents().ToString();
 
             string allCourse = "All Course";

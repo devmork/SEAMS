@@ -17,13 +17,11 @@ namespace AttendanceManagementSystem.Forms.Students
 	public partial class EditStudent_Form: DevExpress.XtraEditors.XtraForm
 	{
         private readonly IStudentsRepository _studentsRepository;
-        private readonly IQRCodeService _qrCodeService;
         private Student _student;
         public EditStudent_Form(Student student)
 		{
             InitializeComponent();
             _studentsRepository = new StudentsRepository();
-            _qrCodeService = new QRCodeService();
             _student = student;
             LoadStudentData();
         }
@@ -47,9 +45,9 @@ namespace AttendanceManagementSystem.Forms.Students
         }
         private void btn_Generate_Click(object sender, EventArgs e)
         {
-            _qrCodeService.GenerateQRCode(txt_SchoolStudentId.Text);
-            pe_QRCode.Image = _qrCodeService.GetQRCodeImage();
-            _student.QRCode = _qrCodeService.GetQRCodeByteArray();
+            QRCodeService.GenerateQRCode(txt_SchoolStudentId.Text);
+            pe_QRCode.Image = QRCodeService.GetQRCodeImage();
+            _student.QRCode = QRCodeService.GetQRCodeByteArray();
             _student.SchoolStudentId = txt_SchoolStudentId.Text;
         }
         private void btn_SaveChanges_Click(object sender, EventArgs e)
