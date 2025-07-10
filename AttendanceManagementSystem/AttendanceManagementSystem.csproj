@@ -260,9 +260,7 @@
     <Compile Include="Forms\Reports\AllQRCodes.Designer.cs">
       <DependentUpon>AllQRCodes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\Services\IAttendanceService.cs" />
     <Compile Include="Interfaces\Repositories\IUserRepository.cs" />
-    <Compile Include="Interfaces\Utilities\IQRScannerHelper.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Services\AttendanceService.cs" />
     <Compile Include="Services\QRCodeService.cs" />
@@ -328,7 +326,6 @@
       <DependentUpon>Students_UserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Repositories\IAttendanceRepository.cs" />
-    <Compile Include="Interfaces\Services\IQRCodeService.cs" />
     <Compile Include="Interfaces\Repositories\IStudentsRepository.cs" />
     <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Student.cs" />
