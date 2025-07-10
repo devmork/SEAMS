@@ -30,6 +30,10 @@ namespace AttendanceManagementSystem.Forms.Students
             InitializeComponent();
             _studentsRepository = new StudentsRepository();
         }
+        private void Students_UserControl_Load(object sender, EventArgs e)
+        {
+            LoadStudents();
+        }
         public void LoadStudents()
         {
             try
@@ -75,17 +79,14 @@ namespace AttendanceManagementSystem.Forms.Students
         private void cbe_FilterYearLevel_SelectedValueChanged(object sender, EventArgs e)
         {
             string selectedYearLevel = cbe_FilterYearLevel.SelectedItem.ToString();
-            gv_Students.ActiveFilterString = $"[YearLevel] = '{selectedYearLevel}'";
-        }
-        private void Students_UserControl_Load(object sender, EventArgs e)
-        {
-            try
+
+            if (selectedYearLevel == "All Year Level")
             {
-                gc_Students.DataSource = _studentsRepository.GetAllStudent();
+                gv_Students.ActiveFilterString = string.Empty;
             }
-            catch (Exception ex)
+            else
             {
-                XtraMessageBox.Show("An error occurred while loading students: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                gv_Students.ActiveFilterString = $"[YearLevel] = '{selectedYearLevel}'";
             }
         }
     }
