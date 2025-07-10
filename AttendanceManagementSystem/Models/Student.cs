@@ -15,11 +15,11 @@ namespace AttendanceManagementSystem.Models.Base
         public string MiddleName { get; set; }
         public string LastName { get; set; }
         public string SchoolStudentId { get; set; }
-        public int YearLevel { get; set; }
+        public string YearLevel { get; set; }
         public string Course { get; set; }
         public string Email { get; set; }
         public byte[] QRCode { get; set; }
-        public Student(string firstName, string middleName, string lastName, string schoolStudentId, int yearLevel, string course, string email)
+        public Student(string firstName, string middleName, string lastName, string schoolStudentId, string yearLevel, string course, string email)
         {
             FirstName = firstName;
             MiddleName = middleName;
