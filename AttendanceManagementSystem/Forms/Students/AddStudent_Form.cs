@@ -25,16 +25,7 @@ namespace AttendanceManagementSystem.Forms.Students
         }
         private void btn_Generate_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txt_FirstName.Text) ||
-                string.IsNullOrWhiteSpace(txt_LastName.Text) ||
-                string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text) ||
-                string.IsNullOrWhiteSpace(se_YearLevel.Value.ToString()) ||
-                string.IsNullOrWhiteSpace(cbe_Course.Text) ||
-                string.IsNullOrWhiteSpace(txt_EmailAddress.Text))
-            {
-                XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            CheckNullOrWhiteSpace();
             try
             {
                 student = new Student
@@ -43,14 +34,13 @@ namespace AttendanceManagementSystem.Forms.Students
                     middleName: txt_MiddleName.Text,
                     lastName: txt_LastName.Text,
                     schoolStudentId: txt_SchoolStudentId.Text,
-                    yearLevel: (int)se_YearLevel.Value,
+                    yearLevel: cbe_YearLevel.Text,
                     course: cbe_Course.Text,
                     email: txt_EmailAddress.Text
                 );
                 _qrCodeService.GenerateQRCode(student.SchoolStudentId);
                 pe_QRCode.Image = _qrCodeService.GetQRCodeImage();
                 student.QRCode = _qrCodeService.GetQRCodeByteArray();
-
             }
             catch (Exception ex)
             {
@@ -95,10 +85,24 @@ namespace AttendanceManagementSystem.Forms.Students
             txt_MiddleName.Text = string.Empty;
             txt_LastName.Text = string.Empty;
             txt_SchoolStudentId.Text = string.Empty;
-            se_YearLevel.Value = 1;
+            cbe_YearLevel.SelectedIndex = -1;
             cbe_Course.SelectedIndex = -1;
             txt_EmailAddress.Text = string.Empty;
             pe_QRCode.Image = null;
+        }
+
+        private void CheckNullOrWhiteSpace()
+        {
+            if (string.IsNullOrWhiteSpace(txt_FirstName.Text) ||
+                string.IsNullOrWhiteSpace(txt_LastName.Text) ||
+                string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text) ||
+                string.IsNullOrWhiteSpace(cbe_YearLevel.Text) ||
+                string.IsNullOrWhiteSpace(cbe_Course.Text) ||
+                string.IsNullOrWhiteSpace(txt_EmailAddress.Text))
+            {
+                XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }
