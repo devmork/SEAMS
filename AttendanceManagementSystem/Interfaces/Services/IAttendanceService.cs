@@ -9,7 +9,7 @@ namespace AttendanceManagementSystem.Interfaces.Services
 {
     public interface IAttendanceService
     {
-        void RecordAttendance(int attendanceId, string attendanceName, string logType, string schoolStudentId, string name, string course, int yearLevel);
+        void RecordAttendance(int attendanceId, string attendanceName, string logType, string schoolStudentId, string name, string course, string yearLevel);
         int GetTotalAbsent(string schoolStudentId);
         int GetTotalPresent(string schoolStudentId);
         int GetAttendanceCount();

@@ -33,7 +33,7 @@ namespace AttendanceManagementSystem.Forms.Students
             txt_MiddleName.Text = _student.MiddleName;
             txt_LastName.Text = _student.LastName;
             txt_SchoolStudentId.Text = _student.SchoolStudentId;
-            se_YearLevel.Value = _student.YearLevel;
+            cbe_YearLevel.Text = _student.YearLevel;
             cbe_Course.Text = _student.Course;
             txt_EmailAddress.Text = _student.Email;
 
@@ -60,7 +60,7 @@ namespace AttendanceManagementSystem.Forms.Students
                 if (string.IsNullOrWhiteSpace(txt_FirstName.Text) ||
                     string.IsNullOrWhiteSpace(txt_LastName.Text) ||
                     string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text) ||
-                    string.IsNullOrWhiteSpace(se_YearLevel.Value.ToString()) ||
+                    string.IsNullOrWhiteSpace(cbe_YearLevel.Text) ||
                     string.IsNullOrWhiteSpace(cbe_Course.Text) ||
                     string.IsNullOrWhiteSpace(txt_EmailAddress.Text))
                 {
@@ -81,7 +81,7 @@ namespace AttendanceManagementSystem.Forms.Students
                 _student.FirstName = txt_FirstName.Text;
                 _student.MiddleName = txt_MiddleName.Text;
                 _student.LastName = txt_LastName.Text;
-                _student.YearLevel = (int)se_YearLevel.Value;
+                _student.YearLevel = cbe_YearLevel.Text;
                 _student.Course = cbe_Course.Text;
                 _student.Email = txt_EmailAddress.Text;
 

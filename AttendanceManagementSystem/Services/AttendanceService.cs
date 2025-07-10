@@ -13,7 +13,7 @@ namespace AttendanceManagementSystem.Services
     public class AttendanceService : IAttendanceService
     {
         private string _connectionString = "Data Source=SEAMS.db;Version=3;Mode=ReadWrite;";
-        public void RecordAttendance(int attendanceId, string attendanceName, string logType, string schoolStudentId, string name, string course, int yearLevel)
+        public void RecordAttendance(int attendanceId, string attendanceName, string logType, string schoolStudentId, string name, string course, string yearLevel)
         {
             using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {

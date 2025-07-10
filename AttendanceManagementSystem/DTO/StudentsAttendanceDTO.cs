@@ -13,7 +13,7 @@ namespace AttendanceManagementSystem.DTO
         public string MiddleName { get; set; }
         public string LastName { get; set; }
         public string Course { get; set; }
-        public int YearLevel { get; set; }
+        public string YearLevel { get; set; }
         public int TotalAbsent { get; set; }
     }
 }

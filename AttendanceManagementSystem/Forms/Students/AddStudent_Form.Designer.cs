@@ -35,7 +35,6 @@
             this.gc_StudentData = new DevExpress.XtraEditors.GroupControl();
             this.lc_TextFields = new DevExpress.XtraLayout.LayoutControl();
             this.txt_EmailAddress = new DevExpress.XtraEditors.TextEdit();
-            this.se_YearLevel = new DevExpress.XtraEditors.SpinEdit();
             this.cbe_Course = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txt_MiddleName = new DevExpress.XtraEditors.TextEdit();
             this.txt_FirstName = new DevExpress.XtraEditors.TextEdit();
@@ -60,6 +59,7 @@
             this.lci_SaveStudentData = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_Actions = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_NavButtons = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cbe_YearLevel = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_AddStudent)).BeginInit();
             this.lc_AddStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_NavButtons)).BeginInit();
@@ -70,7 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lc_TextFields)).BeginInit();
             this.lc_TextFields.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_EmailAddress.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.se_YearLevel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_Course.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MiddleName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_FirstName.Properties)).BeginInit();
@@ -94,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_SaveStudentData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_Actions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_NavButtons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_YearLevel.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lc_AddStudent
@@ -150,12 +150,12 @@
             // lc_TextFields
             // 
             this.lc_TextFields.Controls.Add(this.txt_EmailAddress);
-            this.lc_TextFields.Controls.Add(this.se_YearLevel);
             this.lc_TextFields.Controls.Add(this.cbe_Course);
             this.lc_TextFields.Controls.Add(this.txt_MiddleName);
             this.lc_TextFields.Controls.Add(this.txt_FirstName);
             this.lc_TextFields.Controls.Add(this.txt_LastName);
             this.lc_TextFields.Controls.Add(this.txt_SchoolStudentId);
+            this.lc_TextFields.Controls.Add(this.cbe_YearLevel);
             this.lc_TextFields.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lc_TextFields.Location = new System.Drawing.Point(2, 39);
             this.lc_TextFields.Name = "lc_TextFields";
@@ -173,40 +173,6 @@
             this.txt_EmailAddress.Size = new System.Drawing.Size(599, 38);
             this.txt_EmailAddress.StyleController = this.lc_TextFields;
             this.txt_EmailAddress.TabIndex = 9;
-            // 
-            // se_YearLevel
-            // 
-            this.se_YearLevel.EditValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.se_YearLevel.Location = new System.Drawing.Point(312, 362);
-            this.se_YearLevel.Name = "se_YearLevel";
-            this.se_YearLevel.Properties.Appearance.Font = new System.Drawing.Font("Poppins Medium", 10F);
-            this.se_YearLevel.Properties.Appearance.Options.UseFont = true;
-            this.se_YearLevel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.se_YearLevel.Properties.Increment = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.se_YearLevel.Properties.IsFloatValue = false;
-            this.se_YearLevel.Properties.MaskSettings.Set("mask", "N00");
-            this.se_YearLevel.Properties.MaxValue = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.se_YearLevel.Properties.MinValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.se_YearLevel.Size = new System.Drawing.Size(303, 38);
-            this.se_YearLevel.StyleController = this.lc_TextFields;
-            this.se_YearLevel.TabIndex = 8;
             // 
             // cbe_Course
             // 
@@ -354,7 +320,7 @@
             // 
             this.lci_YearLevel.AppearanceItemCaption.Font = new System.Drawing.Font("Poppins", 12F);
             this.lci_YearLevel.AppearanceItemCaption.Options.UseFont = true;
-            this.lci_YearLevel.Control = this.se_YearLevel;
+            this.lci_YearLevel.Control = this.cbe_YearLevel;
             this.lci_YearLevel.Location = new System.Drawing.Point(296, 312);
             this.lci_YearLevel.Name = "lci_YearLevel";
             this.lci_YearLevel.Size = new System.Drawing.Size(309, 78);
@@ -496,6 +462,26 @@
             this.lci_NavButtons.TextSize = new System.Drawing.Size(0, 0);
             this.lci_NavButtons.TextVisible = false;
             // 
+            // cbe_YearLevel
+            // 
+            this.cbe_YearLevel.EditValue = "";
+            this.cbe_YearLevel.Location = new System.Drawing.Point(312, 362);
+            this.cbe_YearLevel.Name = "cbe_YearLevel";
+            this.cbe_YearLevel.Properties.Appearance.Font = new System.Drawing.Font("Poppins Medium", 10F);
+            this.cbe_YearLevel.Properties.Appearance.Options.UseFont = true;
+            this.cbe_YearLevel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_YearLevel.Properties.DropDownRows = 4;
+            this.cbe_YearLevel.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.cbe_YearLevel.Properties.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.cbe_YearLevel.Size = new System.Drawing.Size(303, 38);
+            this.cbe_YearLevel.StyleController = this.lc_TextFields;
+            this.cbe_YearLevel.TabIndex = 8;
+            // 
             // AddStudent_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
@@ -516,7 +502,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lc_TextFields)).EndInit();
             this.lc_TextFields.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txt_EmailAddress.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.se_YearLevel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbe_Course.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MiddleName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_FirstName.Properties)).EndInit();
@@ -540,6 +525,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_SaveStudentData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_Actions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_NavButtons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_YearLevel.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -551,7 +537,6 @@
         private DevExpress.XtraEditors.GroupControl gc_StudentData;
         private DevExpress.XtraLayout.LayoutControl lc_TextFields;
         private DevExpress.XtraEditors.TextEdit txt_EmailAddress;
-        private DevExpress.XtraEditors.SpinEdit se_YearLevel;
         private DevExpress.XtraEditors.ComboBoxEdit cbe_Course;
         private DevExpress.XtraEditors.TextEdit txt_MiddleName;
         private DevExpress.XtraEditors.TextEdit txt_FirstName;
@@ -577,5 +562,6 @@
         private DevExpress.XtraEditors.PanelControl panel_NavButtons;
         private DevExpress.XtraLayout.LayoutControlItem lci_NavButtons;
         private DevExpress.XtraEditors.PictureEdit btn_CloseForm;
+        private DevExpress.XtraEditors.ComboBoxEdit cbe_YearLevel;
     }
 }
