@@ -35,7 +35,6 @@ namespace AttendanceManagementSystem.Forms.Students
             try
             {
                 gc_Students.DataSource = _studentsRepository.GetAllStudent();
-                gv_Students.BestFitColumns();
             }
             catch (Exception ex)
             {
@@ -64,15 +63,20 @@ namespace AttendanceManagementSystem.Forms.Students
         private void cbe_FilterCourse_SelectedValueChanged(object sender, EventArgs e)
         {
             string selectedCourse = cbe_FilterCourse.SelectedItem.ToString();
-            gv_Students.ActiveFilterString = $"[Course] = '{selectedCourse}'";
+            if (selectedCourse == "All Courses")
+            {
+                gv_Students.ActiveFilterString = string.Empty; 
+            }
+            else
+            {
+                gv_Students.ActiveFilterString = $"[Course] = '{selectedCourse}'";
+            }
         }
-
         private void cbe_FilterYearLevel_SelectedValueChanged(object sender, EventArgs e)
         {
             string selectedYearLevel = cbe_FilterYearLevel.SelectedItem.ToString();
             gv_Students.ActiveFilterString = $"[YearLevel] = '{selectedYearLevel}'";
         }
-
         private void Students_UserControl_Load(object sender, EventArgs e)
         {
             try
