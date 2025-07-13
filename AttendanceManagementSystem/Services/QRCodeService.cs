@@ -32,16 +32,11 @@ namespace AttendanceManagementSystem.Data.Repositories
         // USED TO DISPLAY QRCODE ON THE UI
         public static Image GetQRCodeImage()
         {
-            if (GeneratedQRCode == null)
-                XtraMessageBox.Show("QR code has not been generated. GenerateQRCode first.");
             return GeneratedQRCode;
         }
         // STORE QRCODE AS BYTE ARRAY
         public static byte[] GetQRCodeByteArray()
         {
-            if (GeneratedQRCode == null)
-                XtraMessageBox.Show("QR code has not been generated.GenerateQRCode first.");
-
             using (MemoryStream ms = new MemoryStream())
             {
                 GeneratedQRCode.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
