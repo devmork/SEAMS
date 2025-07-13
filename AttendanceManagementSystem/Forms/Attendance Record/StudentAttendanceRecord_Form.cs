@@ -143,7 +143,7 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
             gc_AttendanceRecord.DataSource = GetAttendanceRecords(_student.SchoolStudentId);
             gc_AttendanceRecord.RefreshDataSource();
 
-            int totalPresent = _attendanceService.GetTotalPresent(_student.SchoolStudentId);
+            int totalPresent = AttendanceService.GetTotalPresent(_student.SchoolStudentId);
             txt_TotalPresent.EditValue = totalPresent.ToString();
             if (IsAttendanceReset(_student.SchoolStudentId))
             {
@@ -151,7 +151,7 @@ namespace AttendanceManagementSystem.Forms.Attendance_Report
             }
             else
             {
-                int totalAbsent = _attendanceService.GetTotalAbsent(_student.SchoolStudentId);
+                int totalAbsent = AttendanceService.GetTotalAbsent(_student.SchoolStudentId);
                 txt_TotalAbsent.EditValue = totalAbsent.ToString();
             }
         }
