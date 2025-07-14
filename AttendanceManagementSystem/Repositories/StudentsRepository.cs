@@ -98,5 +98,19 @@ namespace AttendanceManagementSystem.Data.Repositories
                 return count > 0;
             }
         }
+
+        public List<Student> GetStudentQRCode(string schoolStudentId)
+        {
+            string sql = "SELECT QRCode FROM Student WHERE SchoolStudentId = @SchoolStudentId";
+            
+            var parameters = new DynamicParameters();
+            parameters.Add("SchoolStudentId", schoolStudentId);
+
+            using (var connection = new SQLiteConnection(_connectionString))
+            {
+                connection.Open();
+                return connection.Query<Student>(sql, parameters).ToList();
+            }
+        }
     }
 }

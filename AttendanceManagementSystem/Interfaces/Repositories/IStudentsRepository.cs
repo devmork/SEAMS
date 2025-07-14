@@ -11,10 +11,13 @@ namespace AttendanceManagementSystem.Interfaces.Repositories
     public interface IStudentsRepository
     {
         List<Student> GetAllStudent();
+        List<Student> GetStudentQRCode(string schoolStudentId);
         void AddStudent(Student student);
         void UpdateStudent(Student student);
         int GetTotalStudents();
+
         Student GetStudentById(string schoolStudentId);
         bool CheckIfStudentIdExist(string schoolStudentId);
+
     }
 }
