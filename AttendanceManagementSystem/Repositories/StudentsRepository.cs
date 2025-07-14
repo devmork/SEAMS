@@ -19,7 +19,7 @@ namespace AttendanceManagementSystem.Data.Repositories
             using (var connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
-                string sql = "SELECT * FROM Student;";
+                string sql = "SELECT FirstName, MiddleName, LastName, SchoolStudentId, Course, YearLevel, Email FROM Student;";
                 var students = connection.Query<Student>(sql).ToList();
                 return students;
             }
