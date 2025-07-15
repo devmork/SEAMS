@@ -14,7 +14,6 @@ namespace AttendanceManagementSystem.Forms.Students
     public partial class AddStudent_Form : DevExpress.XtraEditors.XtraForm
     {
         private readonly IStudentsRepository _studentsRepository;
-        private Student student;
         public AddStudent_Form()
         {
             InitializeComponent();
@@ -24,18 +23,21 @@ namespace AttendanceManagementSystem.Forms.Students
         {
             try
             {
-                QRCodeService.GenerateQRCode(student.SchoolStudentId);
-                pe_QRCode.Image = QRCodeService.GetQRCodeImage();
-                student.QRCode = QRCodeService.GetQRCodeByteArray();
+                QRCodeService.GenerateQRCode(txt_SchoolStudentId.Text);
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show($"Error generating QR code: {ex.Message}");
             }
+
+            pe_QRCode.Image = QRCodeService.GetQRCodeImage();
+
         }
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            student = new Student();
+            CheckNullOrWhiteSpace();
+
+            Student student = new Student();
 
             student.FirstName = txt_FirstName.Text;
             student.MiddleName = txt_MiddleName.Text;
@@ -44,11 +46,11 @@ namespace AttendanceManagementSystem.Forms.Students
             student.YearLevel = cbe_YearLevel.Text;
             student.Course = cbe_Course.Text;
             student.Email = txt_EmailAddress.Text;
-            
-            CheckNullOrWhiteSpace();
-            if (_studentsRepository.CheckIfStudentIdExist(student.SchoolStudentId))
+            student.QRCode = QRCodeService.GetQRCodeByteArray();
+
+            if (_studentsRepository.CheckIfStudentIdExist(txt_SchoolStudentId.Text))
             {
-                XtraMessageBox.Show($"A student with this ID: {student.SchoolStudentId} already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show($"A student with this ID: {txt_SchoolStudentId.Text} already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
@@ -90,10 +92,9 @@ namespace AttendanceManagementSystem.Forms.Students
                 string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text) ||
                 string.IsNullOrWhiteSpace(cbe_YearLevel.Text) ||
                 string.IsNullOrWhiteSpace(cbe_Course.Text) ||
-                string.IsNullOrWhiteSpace(txt_EmailAddress.Text) ||
-                pe_QRCode.Image == null)
+                string.IsNullOrWhiteSpace(txt_EmailAddress.Text))
             {
-                XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Please fill in all input fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }

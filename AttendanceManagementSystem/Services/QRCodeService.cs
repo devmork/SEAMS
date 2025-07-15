@@ -7,14 +7,14 @@ using DevExpress.XtraEditors;
 
 namespace AttendanceManagementSystem.Data.Repositories
 {
-    public class QRCodeService
+    public static class QRCodeService
     {
         public static Bitmap GeneratedQRCode { get; set; }
         public static void GenerateQRCode(string schoolStudentId)
         {
             if (string.IsNullOrEmpty(schoolStudentId))
             {
-                XtraMessageBox.Show("Please fill in all required fields before generating QR code.");
+                XtraMessageBox.Show("Please invite school student id before generating QR code.");
                 return;
             }
             BarcodeWriter writer = new BarcodeWriter
@@ -37,6 +37,11 @@ namespace AttendanceManagementSystem.Data.Repositories
         // STORE QRCODE AS BYTE ARRAY
         public static byte[] GetQRCodeByteArray()
         {
+            if (GeneratedQRCode == null)
+            {
+                XtraMessageBox.Show("QR Code has not been generated yet.");
+                return null;
+            }
             using (MemoryStream ms = new MemoryStream())
             {
                 GeneratedQRCode.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
