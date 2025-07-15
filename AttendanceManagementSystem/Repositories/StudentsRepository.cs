@@ -13,10 +13,9 @@ namespace AttendanceManagementSystem.Data.Repositories
 {
     public class StudentsRepository : IStudentsRepository
     {
-        private string _connectionString = SQLiteDataAccess.LoadConnectionString();
         public List<Student> GetAllStudent()
         {
-            using (var connection = new SQLiteConnection(_connectionString))
+            using (var connection = new SQLiteConnection(SQLiteDataAccess.LoadConnectionString()))
             {
                 connection.Open();
                 string sql = "SELECT FirstName, MiddleName, LastName, SchoolStudentId, Course, YearLevel, Email FROM Student;";
@@ -26,7 +25,7 @@ namespace AttendanceManagementSystem.Data.Repositories
         }
         public void AddStudent(Student student)
         {
-            using (var connection = new SQLiteConnection(_connectionString))
+            using (var connection = new SQLiteConnection(SQLiteDataAccess.LoadConnectionString()))
             {
                 connection.Open();
                 string sql = @"INSERT INTO Student (FirstName, MiddleName, LastName, SchoolStudentId, Course, YearLevel, Email, QRCode)
@@ -46,7 +45,7 @@ namespace AttendanceManagementSystem.Data.Repositories
         }
         public void UpdateStudent(Student student)
         {
-            using (var connection = new SQLiteConnection(_connectionString))
+            using (var connection = new SQLiteConnection(SQLiteDataAccess.LoadConnectionString()))
             {
                 connection.Open();
                 string sql = @"UPDATE Student 
@@ -70,7 +69,7 @@ namespace AttendanceManagementSystem.Data.Repositories
         } 
         public int GetTotalStudents()
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(SQLiteDataAccess.LoadConnectionString()))
             {
                 connection.Open();
                 string sql = @"SELECT COUNT(SchoolStudentId) FROM Student";
@@ -79,7 +78,7 @@ namespace AttendanceManagementSystem.Data.Repositories
         }
         public Student GetStudentById(string schoolStudentId)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(SQLiteDataAccess.LoadConnectionString()))
             {
                 connection.Open();
                 string sql = "SELECT SchoolStudentId, FirstName, MiddleName, LastName, QRCode, Course, YearLevel FROM Student WHERE SchoolStudentId = @SchoolStudentId";
@@ -90,7 +89,7 @@ namespace AttendanceManagementSystem.Data.Repositories
         }
         public bool CheckIfStudentIdExist(string schoolStudentId)
         {
-            using (var connection = new SQLiteConnection(_connectionString))
+            using (var connection = new SQLiteConnection(SQLiteDataAccess.LoadConnectionString()))
             {
                 connection.Open();
                 var query = "SELECT COUNT(1) FROM Student WHERE SchoolStudentId = @SchoolStudentId";
@@ -106,7 +105,7 @@ namespace AttendanceManagementSystem.Data.Repositories
             var parameters = new DynamicParameters();
             parameters.Add("SchoolStudentId", schoolStudentId);
 
-            using (var connection = new SQLiteConnection(_connectionString))
+            using (var connection = new SQLiteConnection(SQLiteDataAccess.LoadConnectionString()))
             {
                 connection.Open();
                 return connection.Query<Student>(sql, parameters).ToList();

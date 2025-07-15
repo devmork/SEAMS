@@ -12,10 +12,9 @@ namespace AttendanceManagementSystem.Data.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private string _connectionString = SQLiteDataAccess.LoadConnectionString();
         public void AddUser(User user)
         {
-            using (var connection = new SQLiteConnection(_connectionString))
+            using (var connection = new SQLiteConnection(SQLiteDataAccess.LoadConnectionString()))
             {
                 connection.Open();
                 string sql = @"INSERT INTO Users (UserName, Email, Password)
@@ -30,7 +29,7 @@ namespace AttendanceManagementSystem.Data.Repositories
         }
         public User GetUserByEmail(string email, string password)
         {
-            using (var connection = new SQLiteConnection(_connectionString))
+            using (var connection = new SQLiteConnection(SQLiteDataAccess.LoadConnectionString()))
             {
                 connection.Open();
                 string sql = "SELECT Email, Password FROM Users WHERE Email = @Email AND Password = @Password;";

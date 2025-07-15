@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AttendanceManagementSystem.Data
 {
-    public class SQLiteDataAccess
+    public static class SQLiteDataAccess
     {
         public static string LoadConnectionString()
         {
