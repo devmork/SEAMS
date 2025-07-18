@@ -97,7 +97,6 @@ namespace AttendanceManagementSystem.Data.Repositories
                 return count > 0;
             }
         }
-
         public List<Student> GetStudentQRCode(string schoolStudentId)
         {
             string sql = "SELECT QRCode FROM Student WHERE SchoolStudentId = @SchoolStudentId";
