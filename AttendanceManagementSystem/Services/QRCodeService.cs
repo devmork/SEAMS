@@ -12,11 +12,6 @@ namespace AttendanceManagementSystem.Data.Repositories
         public static Bitmap GeneratedQRCode { get; set; }
         public static void GenerateQRCode(string schoolStudentId)
         {
-            if (string.IsNullOrEmpty(schoolStudentId))
-            {
-                XtraMessageBox.Show("Please provide school student id before generating QR code.");
-                return;
-            }
             BarcodeWriter writer = new BarcodeWriter
             {
                 Format = BarcodeFormat.QR_CODE,
@@ -37,11 +32,6 @@ namespace AttendanceManagementSystem.Data.Repositories
         // STORE QRCODE AS BYTE ARRAY
         public static byte[] GetQRCodeByteArray()
         {
-            if (GeneratedQRCode == null)
-            {
-                XtraMessageBox.Show("QR Code has not been generated yet.");
-                return null;
-            }
             using (MemoryStream ms = new MemoryStream())
             {
                 GeneratedQRCode.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
