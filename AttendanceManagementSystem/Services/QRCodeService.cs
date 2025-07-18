@@ -14,7 +14,7 @@ namespace AttendanceManagementSystem.Data.Repositories
         {
             if (string.IsNullOrEmpty(schoolStudentId))
             {
-                XtraMessageBox.Show("Please invite school student id before generating QR code.");
+                XtraMessageBox.Show("Please provide school student id before generating QR code.");
                 return;
             }
             BarcodeWriter writer = new BarcodeWriter
