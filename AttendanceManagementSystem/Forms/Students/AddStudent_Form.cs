@@ -21,17 +21,8 @@ namespace AttendanceManagementSystem.Forms.Students
         }
         private void btn_Generate_Click(object sender, EventArgs e)
         {
-            try
-            {
-                QRCodeService.GenerateQRCode(txt_SchoolStudentId.Text);
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show($"Error generating QR code: {ex.Message}");
-            }
-
+            QRCodeService.GenerateQRCode(txt_SchoolStudentId.Text);
             pe_QRCode.Image = QRCodeService.GetQRCodeImage();
-
         }
         private void btn_Save_Click(object sender, EventArgs e)
         {
@@ -45,7 +36,11 @@ namespace AttendanceManagementSystem.Forms.Students
                 XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            if (pe_QRCode.Image == null)
+            {
+                XtraMessageBox.Show("QR Code has not been generated yet", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (_studentsRepository.CheckIfStudentIdExist(txt_SchoolStudentId.Text))
             {
                 XtraMessageBox.Show($"A student with this ID: {txt_SchoolStudentId.Text} already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -75,6 +70,17 @@ namespace AttendanceManagementSystem.Forms.Students
                 XtraMessageBox.Show($"Error saving student: {ex.Message}");
             }
         }
+        private void txt_SchoolStudentId_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text))
+            {
+                btn_Generate.Enabled = true;
+            }
+            else
+            {
+                btn_Generate.Enabled = false;
+            }
+        }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -94,5 +100,6 @@ namespace AttendanceManagementSystem.Forms.Students
             txt_EmailAddress.Text = string.Empty;
             pe_QRCode.Image = null;
         }
+        
     }
 }

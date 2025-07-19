@@ -40,6 +40,7 @@
             this.txt_FirstName = new DevExpress.XtraEditors.TextEdit();
             this.txt_LastName = new DevExpress.XtraEditors.TextEdit();
             this.txt_SchoolStudentId = new DevExpress.XtraEditors.TextEdit();
+            this.cbe_YearLevel = new DevExpress.XtraEditors.ComboBoxEdit();
             this.lc_StudentData = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lci_FirstName = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_MiddleName = new DevExpress.XtraLayout.LayoutControlItem();
@@ -59,7 +60,6 @@
             this.lci_SaveStudentData = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_Actions = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_NavButtons = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cbe_YearLevel = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_AddStudent)).BeginInit();
             this.lc_AddStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_NavButtons)).BeginInit();
@@ -75,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_FirstName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_LastName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SchoolStudentId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_YearLevel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_StudentData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_FirstName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_MiddleName)).BeginInit();
@@ -93,7 +94,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_SaveStudentData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_Actions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_NavButtons)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_YearLevel.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lc_AddStudent
@@ -235,6 +235,27 @@
             this.txt_SchoolStudentId.Size = new System.Drawing.Size(599, 38);
             this.txt_SchoolStudentId.StyleController = this.lc_TextFields;
             this.txt_SchoolStudentId.TabIndex = 5;
+            this.txt_SchoolStudentId.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.txt_SchoolStudentId_EditValueChanging);
+            // 
+            // cbe_YearLevel
+            // 
+            this.cbe_YearLevel.EditValue = "";
+            this.cbe_YearLevel.Location = new System.Drawing.Point(312, 362);
+            this.cbe_YearLevel.Name = "cbe_YearLevel";
+            this.cbe_YearLevel.Properties.Appearance.Font = new System.Drawing.Font("Poppins Medium", 10F);
+            this.cbe_YearLevel.Properties.Appearance.Options.UseFont = true;
+            this.cbe_YearLevel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbe_YearLevel.Properties.DropDownRows = 4;
+            this.cbe_YearLevel.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.cbe_YearLevel.Properties.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.cbe_YearLevel.Size = new System.Drawing.Size(303, 38);
+            this.cbe_YearLevel.StyleController = this.lc_TextFields;
+            this.cbe_YearLevel.TabIndex = 8;
             // 
             // lc_StudentData
             // 
@@ -373,6 +394,7 @@
             this.btn_Generate.Appearance.Options.UseFont = true;
             this.btn_Generate.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
             this.btn_Generate.AppearanceHovered.Options.UseBackColor = true;
+            this.btn_Generate.Enabled = false;
             this.btn_Generate.Location = new System.Drawing.Point(5, 5);
             this.btn_Generate.Name = "btn_Generate";
             this.btn_Generate.Size = new System.Drawing.Size(396, 41);
@@ -462,26 +484,6 @@
             this.lci_NavButtons.TextSize = new System.Drawing.Size(0, 0);
             this.lci_NavButtons.TextVisible = false;
             // 
-            // cbe_YearLevel
-            // 
-            this.cbe_YearLevel.EditValue = "";
-            this.cbe_YearLevel.Location = new System.Drawing.Point(312, 362);
-            this.cbe_YearLevel.Name = "cbe_YearLevel";
-            this.cbe_YearLevel.Properties.Appearance.Font = new System.Drawing.Font("Poppins Medium", 10F);
-            this.cbe_YearLevel.Properties.Appearance.Options.UseFont = true;
-            this.cbe_YearLevel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbe_YearLevel.Properties.DropDownRows = 4;
-            this.cbe_YearLevel.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
-            this.cbe_YearLevel.Properties.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.cbe_YearLevel.Size = new System.Drawing.Size(303, 38);
-            this.cbe_YearLevel.StyleController = this.lc_TextFields;
-            this.cbe_YearLevel.TabIndex = 8;
-            // 
             // AddStudent_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
@@ -507,6 +509,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_FirstName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_LastName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SchoolStudentId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_YearLevel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lc_StudentData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_FirstName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_MiddleName)).EndInit();
@@ -525,7 +528,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lci_SaveStudentData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_Actions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lci_NavButtons)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_YearLevel.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
