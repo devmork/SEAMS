@@ -54,7 +54,7 @@
             this.panel_Actions = new DevExpress.XtraEditors.PanelControl();
             this.btn_Generate = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Cancel = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_Save = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Add = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lci_StudentData = new DevExpress.XtraLayout.LayoutControlItem();
             this.lci_SaveStudentData = new DevExpress.XtraLayout.LayoutControlItem();
@@ -382,7 +382,7 @@
             // 
             this.panel_Actions.Controls.Add(this.btn_Generate);
             this.panel_Actions.Controls.Add(this.btn_Cancel);
-            this.panel_Actions.Controls.Add(this.btn_Save);
+            this.panel_Actions.Controls.Add(this.btn_Add);
             this.panel_Actions.Location = new System.Drawing.Point(657, 334);
             this.panel_Actions.Name = "panel_Actions";
             this.panel_Actions.Size = new System.Drawing.Size(407, 251);
@@ -415,20 +415,20 @@
             this.btn_Cancel.Text = "CANCEL";
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
-            // btn_Save
+            // btn_Add
             // 
-            this.btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btn_Add.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Save.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
-            this.btn_Save.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 12F);
-            this.btn_Save.Appearance.Options.UseBackColor = true;
-            this.btn_Save.Appearance.Options.UseFont = true;
-            this.btn_Save.Location = new System.Drawing.Point(5, 166);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(397, 34);
-            this.btn_Save.TabIndex = 4;
-            this.btn_Save.Text = "SAVE";
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            this.btn_Add.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
+            this.btn_Add.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 12F);
+            this.btn_Add.Appearance.Options.UseBackColor = true;
+            this.btn_Add.Appearance.Options.UseFont = true;
+            this.btn_Add.Location = new System.Drawing.Point(5, 166);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(397, 34);
+            this.btn_Add.TabIndex = 4;
+            this.btn_Add.Text = "ADD STUDENT";
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // Root
             // 
@@ -558,7 +558,7 @@
         private DevExpress.XtraLayout.LayoutControlItem lci_SaveStudentData;
         private DevExpress.XtraEditors.PanelControl panel_Actions;
         private DevExpress.XtraEditors.SimpleButton btn_Cancel;
-        private DevExpress.XtraEditors.SimpleButton btn_Save;
+        private DevExpress.XtraEditors.SimpleButton btn_Add;
         private DevExpress.XtraLayout.LayoutControlItem lci_Actions;
         private DevExpress.XtraEditors.SimpleButton btn_Generate;
         private DevExpress.XtraEditors.PanelControl panel_NavButtons;

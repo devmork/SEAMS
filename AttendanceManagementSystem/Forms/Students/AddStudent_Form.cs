@@ -24,7 +24,7 @@ namespace AttendanceManagementSystem.Forms.Students
             QRCodeService.GenerateQRCode(txt_SchoolStudentId.Text);
             pe_QRCode.Image = QRCodeService.GetQRCodeImage();
         }
-        private void btn_Save_Click(object sender, EventArgs e)
+        private void btn_Add_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txt_FirstName.Text) ||
                 string.IsNullOrWhiteSpace(txt_LastName.Text) ||
@@ -100,6 +100,5 @@ namespace AttendanceManagementSystem.Forms.Students
             txt_EmailAddress.Text = string.Empty;
             pe_QRCode.Image = null;
         }
-        
     }
 }
