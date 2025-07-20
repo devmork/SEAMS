@@ -25,6 +25,8 @@ namespace AttendanceManagementSystem.Forms.Students
             _student = student;
             LoadStudentData();
         }
+
+
         private void LoadStudentData()
         {
             txt_FirstName.Text = _student.FirstName;
@@ -34,21 +36,13 @@ namespace AttendanceManagementSystem.Forms.Students
             cbe_YearLevel.Text = _student.YearLevel;
             cbe_Course.Text = _student.Course;
             txt_EmailAddress.Text = _student.Email;
-
-            if (_student.QRCode != null)
-            {
-                using (var ms = new System.IO.MemoryStream(_student.QRCode))
-                {
-                    pe_QRCode.Image = Image.FromStream(ms);
-                }
-            }
+            pe_QRCode.Image = QRCodeService.GetQRCodeImage();
+            
         }
         private void btn_Generate_Click(object sender, EventArgs e)
         {
             QRCodeService.GenerateQRCode(txt_SchoolStudentId.Text);
             pe_QRCode.Image = QRCodeService.GetQRCodeImage();
-            _student.QRCode = QRCodeService.GetQRCodeByteArray();
-            _student.SchoolStudentId = txt_SchoolStudentId.Text;
         }
         private void btn_SaveChanges_Click(object sender, EventArgs e)
         {
@@ -78,9 +72,11 @@ namespace AttendanceManagementSystem.Forms.Students
             _student.FirstName = txt_FirstName.Text;
             _student.MiddleName = txt_MiddleName.Text;
             _student.LastName = txt_LastName.Text;
+            _student.SchoolStudentId = txt_SchoolStudentId.Text;
             _student.YearLevel = cbe_YearLevel.Text;
             _student.Course = cbe_Course.Text;
             _student.Email = txt_EmailAddress.Text;
+            _student.QRCode = QRCodeService.GetQRCodeByteArray();
 
             try
             {
