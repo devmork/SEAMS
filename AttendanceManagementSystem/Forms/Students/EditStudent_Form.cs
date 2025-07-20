@@ -64,7 +64,7 @@ namespace AttendanceManagementSystem.Forms.Students
                 XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (_studentsRepository.CheckIfStudentIdExist(_student.SchoolStudentId))
+            if (_studentsRepository.CheckIfStudentIdExist(txt_SchoolStudentId.Text))
             {
                 XtraMessageBox.Show("A student with this ID already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -81,6 +81,7 @@ namespace AttendanceManagementSystem.Forms.Students
             _student.YearLevel = cbe_YearLevel.Text;
             _student.Course = cbe_Course.Text;
             _student.Email = txt_EmailAddress.Text;
+
             try
             {
                 _studentsRepository.UpdateStudent(_student);
