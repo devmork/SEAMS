@@ -24,8 +24,10 @@ namespace AttendanceManagementSystem.Forms.Students
             _studentsRepository = new StudentsRepository();
             _student = student;
         }
-
-
+        private void EditStudent_Form_Load(object sender, EventArgs e)
+        {
+            LoadStudentData();
+        }
         private void LoadStudentData()
         {
             txt_FirstName.Text = _student.FirstName;
@@ -35,8 +37,8 @@ namespace AttendanceManagementSystem.Forms.Students
             cbe_YearLevel.Text = _student.YearLevel;
             cbe_Course.Text = _student.Course;
             txt_EmailAddress.Text = _student.Email;
-            pe_QRCode.Image = QRCodeService.GetQRCodeImage();
-            
+            pe_QRCode.Image = QRCodeService.FetchQRCodeImage(_student.SchoolStudentId, _studentsRepository);
+
         }
         private void btn_Generate_Click(object sender, EventArgs e)
         {
@@ -87,10 +89,6 @@ namespace AttendanceManagementSystem.Forms.Students
             {
                 XtraMessageBox.Show($"Error saving student: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void EditStudent_Form_Load(object sender, EventArgs e)
-        {
-            LoadStudentData();
         }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
