@@ -14,12 +14,12 @@ using AttendanceManagementSystem.Data.Repositories;
 
 namespace AttendanceManagementSystem.Forms.Students
 {
-	public partial class EditStudent_Form: DevExpress.XtraEditors.XtraForm
-	{
+    public partial class EditStudent_Form : DevExpress.XtraEditors.XtraForm
+    {
         private readonly IStudentsRepository _studentsRepository;
         private Student _student;
         public EditStudent_Form(Student student)
-		{
+        {
             InitializeComponent();
             _studentsRepository = new StudentsRepository();
             _student = student;
@@ -41,7 +41,7 @@ namespace AttendanceManagementSystem.Forms.Students
                 {
                     pe_QRCode.Image = Image.FromStream(ms);
                 }
-            } 
+            }
         }
         private void btn_Generate_Click(object sender, EventArgs e)
         {
@@ -53,36 +53,36 @@ namespace AttendanceManagementSystem.Forms.Students
         private void btn_SaveChanges_Click(object sender, EventArgs e)
         {
             string existingStudentId = _student.SchoolStudentId;
+
+            if (string.IsNullOrWhiteSpace(txt_FirstName.Text) ||
+                string.IsNullOrWhiteSpace(txt_LastName.Text) ||
+                string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text) ||
+                string.IsNullOrWhiteSpace(cbe_YearLevel.Text) ||
+                string.IsNullOrWhiteSpace(cbe_Course.Text) ||
+                string.IsNullOrWhiteSpace(txt_EmailAddress.Text))
+            {
+                XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (_studentsRepository.CheckIfStudentIdExist(_student.SchoolStudentId))
+            {
+                XtraMessageBox.Show("A student with this ID already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txt_SchoolStudentId.Text != existingStudentId)
+            {
+                XtraMessageBox.Show("You need to generate a new QR code before saving. Changes in Student ID detected.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            _student.FirstName = txt_FirstName.Text;
+            _student.MiddleName = txt_MiddleName.Text;
+            _student.LastName = txt_LastName.Text;
+            _student.YearLevel = cbe_YearLevel.Text;
+            _student.Course = cbe_Course.Text;
+            _student.Email = txt_EmailAddress.Text;
             try
             {
-                if (string.IsNullOrWhiteSpace(txt_FirstName.Text) ||
-                    string.IsNullOrWhiteSpace(txt_LastName.Text) ||
-                    string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text) ||
-                    string.IsNullOrWhiteSpace(cbe_YearLevel.Text) ||
-                    string.IsNullOrWhiteSpace(cbe_Course.Text) ||
-                    string.IsNullOrWhiteSpace(txt_EmailAddress.Text))
-                {
-                    XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (_studentsRepository.CheckIfStudentIdExist(_student.SchoolStudentId))
-                {
-                    XtraMessageBox.Show("A student with this ID already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                if (txt_SchoolStudentId.Text != existingStudentId)
-                {
-                    XtraMessageBox.Show("You need to generate a new QR code before saving. Changes in Student ID detected.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                _student.FirstName = txt_FirstName.Text;
-                _student.MiddleName = txt_MiddleName.Text;
-                _student.LastName = txt_LastName.Text;
-                _student.YearLevel = cbe_YearLevel.Text;
-                _student.Course = cbe_Course.Text;
-                _student.Email = txt_EmailAddress.Text;
-
                 _studentsRepository.UpdateStudent(_student);
                 XtraMessageBox.Show("Student updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
@@ -91,7 +91,7 @@ namespace AttendanceManagementSystem.Forms.Students
             {
                 XtraMessageBox.Show($"Error saving student: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        } 
+        }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
