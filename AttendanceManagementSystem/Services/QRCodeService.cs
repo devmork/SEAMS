@@ -4,6 +4,8 @@ using ZXing;
 using ZXing.Common;
 using System.IO;
 using DevExpress.XtraEditors;
+using AttendanceManagementSystem.Interfaces.Repositories;
+using System.Linq;
 
 namespace AttendanceManagementSystem.Data.Repositories
 {
@@ -36,6 +38,15 @@ namespace AttendanceManagementSystem.Data.Repositories
             {
                 GeneratedQRCode.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                 return ms.ToArray();
+            }
+        }
+        public static Image FetchQRCodeImage(string schoolStudentId, IStudentsRepository studentsRepository)
+        {
+            var student = studentsRepository.GetStudentQRCode(schoolStudentId).FirstOrDefault();
+
+            using (var ms = new MemoryStream(student.QRCode))
+            {
+                return Image.FromStream(ms);
             }
         }
     }
