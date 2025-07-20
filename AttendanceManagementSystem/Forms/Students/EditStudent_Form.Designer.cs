@@ -482,6 +482,7 @@
             this.Name = "EditStudent_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditStudent_Form";
+            this.Load += new System.EventHandler(this.EditStudent_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lc_EditStudent)).EndInit();
             this.lc_EditStudent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panel_NavButtons)).EndInit();

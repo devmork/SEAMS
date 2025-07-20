@@ -23,7 +23,6 @@ namespace AttendanceManagementSystem.Forms.Students
             InitializeComponent();
             _studentsRepository = new StudentsRepository();
             _student = student;
-            LoadStudentData();
         }
 
 
@@ -89,6 +88,10 @@ namespace AttendanceManagementSystem.Forms.Students
                 XtraMessageBox.Show($"Error saving student: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void EditStudent_Form_Load(object sender, EventArgs e)
+        {
+            LoadStudentData();
+        }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -97,5 +100,7 @@ namespace AttendanceManagementSystem.Forms.Students
         {
             this.Close();
         }
+
+        
     }
 }
