@@ -173,7 +173,6 @@
             this.grdclm_Edit});
             this.gv_Students.GridControl = this.gc_Students;
             this.gv_Students.Name = "gv_Students";
-            this.gv_Students.OptionsBehavior.Editable = false;
             this.gv_Students.OptionsFind.AlwaysVisible = true;
             this.gv_Students.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gv_Students.OptionsView.ShowGroupPanel = false;

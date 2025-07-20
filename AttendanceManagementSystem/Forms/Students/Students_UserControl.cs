@@ -30,10 +30,7 @@ namespace AttendanceManagementSystem.Forms.Students
             InitializeComponent();
             _studentsRepository = new StudentsRepository();
         }
-        private void Students_UserControl_Load(object sender, EventArgs e)
-        {
-            LoadStudents();
-        }
+        
         public void LoadStudents()
         {
             try
@@ -63,6 +60,10 @@ namespace AttendanceManagementSystem.Forms.Students
             {
                 LoadStudents();
             }
+        }
+        private void Students_UserControl_Load(object sender, EventArgs e)
+        {
+            LoadStudents();
         }
         private void cbe_FilterCourse_SelectedValueChanged(object sender, EventArgs e)
         {
