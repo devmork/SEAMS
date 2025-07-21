@@ -59,17 +59,17 @@ namespace AttendanceManagementSystem.Forms.Students
                 XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (_studentsRepository.CheckIfStudentIdExist(txt_SchoolStudentId.Text))
-            {
-                XtraMessageBox.Show("A student with this ID already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
             if (txt_SchoolStudentId.Text != existingStudentId)
             {
                 XtraMessageBox.Show("You need to generate a new QR code before saving. Changes in Student ID detected.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            if (_studentsRepository.CheckIfStudentIdExist(txt_SchoolStudentId.Text))
+            {
+                XtraMessageBox.Show("A student with this ID already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
             _student.FirstName = txt_FirstName.Text;
             _student.MiddleName = txt_MiddleName.Text;
             _student.LastName = txt_LastName.Text;
