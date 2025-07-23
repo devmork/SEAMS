@@ -33,7 +33,6 @@
             this.panel_NavButtons = new DevExpress.XtraEditors.PanelControl();
             this.btn_CloseForm = new DevExpress.XtraEditors.PictureEdit();
             this.panel_Actions = new DevExpress.XtraEditors.PanelControl();
-            this.btn_Generate = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Cancel = new DevExpress.XtraEditors.SimpleButton();
             this.btn_SaveChanges = new DevExpress.XtraEditors.SimpleButton();
             this.gc_StudentData = new DevExpress.XtraEditors.GroupControl();
@@ -136,28 +135,12 @@
             // 
             // panel_Actions
             // 
-            this.panel_Actions.Controls.Add(this.btn_Generate);
             this.panel_Actions.Controls.Add(this.btn_Cancel);
             this.panel_Actions.Controls.Add(this.btn_SaveChanges);
             this.panel_Actions.Location = new System.Drawing.Point(657, 328);
             this.panel_Actions.Name = "panel_Actions";
             this.panel_Actions.Size = new System.Drawing.Size(407, 257);
             this.panel_Actions.TabIndex = 2;
-            // 
-            // btn_Generate
-            // 
-            this.btn_Generate.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 12F);
-            this.btn_Generate.Appearance.Options.UseFont = true;
-            this.btn_Generate.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
-            this.btn_Generate.AppearanceHovered.Options.UseBackColor = true;
-            this.btn_Generate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Generate.Enabled = false;
-            this.btn_Generate.Location = new System.Drawing.Point(2, 2);
-            this.btn_Generate.Name = "btn_Generate";
-            this.btn_Generate.Size = new System.Drawing.Size(403, 41);
-            this.btn_Generate.TabIndex = 7;
-            this.btn_Generate.Text = "GENERATE QR CODE";
-            this.btn_Generate.Click += new System.EventHandler(this.btn_Generate_Click);
             // 
             // btn_Cancel
             // 
@@ -546,7 +529,6 @@
         private DevExpress.XtraLayout.LayoutControlItem lci_Actions;
         private DevExpress.XtraEditors.SimpleButton btn_Cancel;
         private DevExpress.XtraEditors.SimpleButton btn_SaveChanges;
-        private DevExpress.XtraEditors.SimpleButton btn_Generate;
         public DevExpress.XtraEditors.TextEdit txt_FirstName;
         public DevExpress.XtraEditors.TextEdit txt_MiddleName;
         public DevExpress.XtraEditors.TextEdit txt_LastName;
