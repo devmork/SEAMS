@@ -17,7 +17,7 @@ namespace AttendanceManagementSystem.Forms.Students
     public partial class EditStudent_Form : DevExpress.XtraEditors.XtraForm
     {
         private readonly IStudentsRepository _studentsRepository;
-        private Student _student;
+        private readonly Student _student;
         public EditStudent_Form(Student student)
         {
             InitializeComponent();
@@ -58,16 +58,11 @@ namespace AttendanceManagementSystem.Forms.Students
                 XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (txt_SchoolStudentId.Text != _student.SchoolStudentId)
-            {
-                XtraMessageBox.Show("You need to generate a new QR code before saving. New student id detected.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (txt_SchoolStudentId.Text != _student.SchoolStudentId && _studentsRepository.CheckIfStudentIdExist(txt_SchoolStudentId.Text))
-            {
-                XtraMessageBox.Show($"A student with this {txt_SchoolStudentId.Text}  already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            //if (txt_SchoolStudentId.Text != _student.SchoolStudentId && _studentsRepository.CheckIfStudentIdExist(txt_SchoolStudentId.Text))
+            //{
+            //    XtraMessageBox.Show($"A student with this {txt_SchoolStudentId.Text}  already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
 
             _student.FirstName = txt_FirstName.Text;
             _student.MiddleName = txt_MiddleName.Text;
@@ -94,6 +89,9 @@ namespace AttendanceManagementSystem.Forms.Students
         {
             if (txt_SchoolStudentId.Text != _student.SchoolStudentId)
             {
+                QRCodeService.GenerateQRCode(txt_SchoolStudentId.Text);
+                pe_QRCode.Image = QRCodeService.GetQRCodeImage();
+                _student.QRCode = QRCodeService.GetQRCodeByteArray();
                 btn_Generate.Enabled = true;
                 btn_SaveChanges.Enabled = true;
             }
@@ -105,10 +103,15 @@ namespace AttendanceManagementSystem.Forms.Students
         }
         private void txt_SchoolStudentId_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
-            if (txt_SchoolStudentId.Text != _student.SchoolStudentId)
+            if (_studentsRepository.CheckIfStudentIdExist(txt_SchoolStudentId.Text))
             {
-                XtraMessageBox.Show("You need to generate a new QR code before saving. New student id detected.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btn_SaveChanges.Enabled = false;
+                XtraMessageBox.Show($"A student with this {txt_SchoolStudentId.Text}  already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+            else
+            {
+                btn_SaveChanges.Enabled = true;
             }
         }
     }
