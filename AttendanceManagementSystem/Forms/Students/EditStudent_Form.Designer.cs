@@ -151,6 +151,7 @@
             this.btn_Generate.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
             this.btn_Generate.AppearanceHovered.Options.UseBackColor = true;
             this.btn_Generate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Generate.Enabled = false;
             this.btn_Generate.Location = new System.Drawing.Point(2, 2);
             this.btn_Generate.Name = "btn_Generate";
             this.btn_Generate.Size = new System.Drawing.Size(403, 41);
@@ -179,6 +180,7 @@
             this.btn_SaveChanges.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 12F);
             this.btn_SaveChanges.Appearance.Options.UseBackColor = true;
             this.btn_SaveChanges.Appearance.Options.UseFont = true;
+            this.btn_SaveChanges.Enabled = false;
             this.btn_SaveChanges.Location = new System.Drawing.Point(6, 174);
             this.btn_SaveChanges.Name = "btn_SaveChanges";
             this.btn_SaveChanges.Size = new System.Drawing.Size(394, 34);
@@ -273,6 +275,8 @@
             this.txt_SchoolStudentId.Size = new System.Drawing.Size(599, 34);
             this.txt_SchoolStudentId.StyleController = this.lc_TextFields;
             this.txt_SchoolStudentId.TabIndex = 5;
+            this.txt_SchoolStudentId.EditValueChanged += new System.EventHandler(this.txt_SchoolStudentId_EditValueChanged);
+            this.txt_SchoolStudentId.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.txt_SchoolStudentId_EditValueChanging);
             // 
             // cbe_YearLevel
             // 
