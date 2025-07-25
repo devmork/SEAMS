@@ -19,11 +19,6 @@ namespace AttendanceManagementSystem.Forms.Students
             InitializeComponent();
             _studentsRepository = new StudentsRepository();
         }
-        private void btn_Generate_Click(object sender, EventArgs e)
-        {
-            QRCodeService.GenerateQRCode(txt_SchoolStudentId.Text);
-            pe_QRCode.Image = QRCodeService.GetQRCodeImage();
-        }
         private void btn_Add_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txt_FirstName.Text) ||
