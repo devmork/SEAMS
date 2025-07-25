@@ -52,7 +52,6 @@
             this.panel_QRCode = new DevExpress.XtraEditors.PanelControl();
             this.pe_QRCode = new DevExpress.XtraEditors.PictureEdit();
             this.panel_Actions = new DevExpress.XtraEditors.PanelControl();
-            this.btn_Generate = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Cancel = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Add = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -235,7 +234,7 @@
             this.txt_SchoolStudentId.Size = new System.Drawing.Size(599, 38);
             this.txt_SchoolStudentId.StyleController = this.lc_TextFields;
             this.txt_SchoolStudentId.TabIndex = 5;
-            this.txt_SchoolStudentId.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.txt_SchoolStudentId_EditValueChanging);
+            this.txt_SchoolStudentId.EditValueChanged += new System.EventHandler(this.txt_SchoolStudentId_EditValueChanged);
             // 
             // cbe_YearLevel
             // 
@@ -380,27 +379,12 @@
             // 
             // panel_Actions
             // 
-            this.panel_Actions.Controls.Add(this.btn_Generate);
             this.panel_Actions.Controls.Add(this.btn_Cancel);
             this.panel_Actions.Controls.Add(this.btn_Add);
             this.panel_Actions.Location = new System.Drawing.Point(657, 334);
             this.panel_Actions.Name = "panel_Actions";
             this.panel_Actions.Size = new System.Drawing.Size(407, 251);
             this.panel_Actions.TabIndex = 2;
-            // 
-            // btn_Generate
-            // 
-            this.btn_Generate.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 12F);
-            this.btn_Generate.Appearance.Options.UseFont = true;
-            this.btn_Generate.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(182)))), ((int)(((byte)(125)))));
-            this.btn_Generate.AppearanceHovered.Options.UseBackColor = true;
-            this.btn_Generate.Enabled = false;
-            this.btn_Generate.Location = new System.Drawing.Point(5, 5);
-            this.btn_Generate.Name = "btn_Generate";
-            this.btn_Generate.Size = new System.Drawing.Size(396, 41);
-            this.btn_Generate.TabIndex = 6;
-            this.btn_Generate.Text = "GENERATE QR CODE";
-            this.btn_Generate.Click += new System.EventHandler(this.btn_Generate_Click);
             // 
             // btn_Cancel
             // 
@@ -423,6 +407,7 @@
             this.btn_Add.Appearance.Font = new System.Drawing.Font("Poppins SemiBold", 12F);
             this.btn_Add.Appearance.Options.UseBackColor = true;
             this.btn_Add.Appearance.Options.UseFont = true;
+            this.btn_Add.Enabled = false;
             this.btn_Add.Location = new System.Drawing.Point(5, 166);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(397, 34);
@@ -560,7 +545,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_Cancel;
         private DevExpress.XtraEditors.SimpleButton btn_Add;
         private DevExpress.XtraLayout.LayoutControlItem lci_Actions;
-        private DevExpress.XtraEditors.SimpleButton btn_Generate;
         private DevExpress.XtraEditors.PanelControl panel_NavButtons;
         private DevExpress.XtraLayout.LayoutControlItem lci_NavButtons;
         private DevExpress.XtraEditors.PictureEdit btn_CloseForm;
