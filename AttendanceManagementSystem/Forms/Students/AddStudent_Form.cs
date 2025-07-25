@@ -65,17 +65,6 @@ namespace AttendanceManagementSystem.Forms.Students
                 XtraMessageBox.Show($"Error saving student: {ex.Message}");
             }
         }
-        private void txt_SchoolStudentId_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text))
-            {
-                btn_Generate.Enabled = true;
-            }
-            else
-            {
-                btn_Generate.Enabled = false;
-            }
-        }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -94,6 +83,20 @@ namespace AttendanceManagementSystem.Forms.Students
             cbe_Course.SelectedIndex = -1;
             txt_EmailAddress.Text = string.Empty;
             pe_QRCode.Image = null;
+        }
+        private void txt_SchoolStudentId_EditValueChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text))
+            {
+                btn_Add.Enabled = true;
+                QRCodeService.GenerateQRCode(txt_SchoolStudentId.Text);
+                pe_QRCode.Image = QRCodeService.GetQRCodeImage();
+                student.QRCode = QRCodeService.GetQRCodeByteArray();
+            }
+            else
+            {
+                btn_Add.Enabled = false;
+            }
         }
     }
 }
