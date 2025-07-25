@@ -32,18 +32,11 @@ namespace AttendanceManagementSystem.Forms.Students
                 XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (pe_QRCode.Image == null)
-            {
-                XtraMessageBox.Show("QR Code has not been generated yet", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
             if (_studentsRepository.CheckIfStudentIdExist(txt_SchoolStudentId.Text))
             {
                 XtraMessageBox.Show($"A student with this ID: {txt_SchoolStudentId.Text} already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            //student = new Student();
 
             student.FirstName = txt_FirstName.Text;
             student.MiddleName = txt_MiddleName.Text;
