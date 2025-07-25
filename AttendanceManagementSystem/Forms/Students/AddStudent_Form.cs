@@ -14,6 +14,7 @@ namespace AttendanceManagementSystem.Forms.Students
     public partial class AddStudent_Form : DevExpress.XtraEditors.XtraForm
     {
         private readonly IStudentsRepository _studentsRepository;
+        private readonly Student student = new Student();
         public AddStudent_Form()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace AttendanceManagementSystem.Forms.Students
                 return;
             }
 
-            Student student = new Student();
+            //student = new Student();
 
             student.FirstName = txt_FirstName.Text;
             student.MiddleName = txt_MiddleName.Text;
@@ -84,6 +85,7 @@ namespace AttendanceManagementSystem.Forms.Students
             txt_EmailAddress.Text = string.Empty;
             pe_QRCode.Image = null;
         }
+
         private void txt_SchoolStudentId_EditValueChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text))
