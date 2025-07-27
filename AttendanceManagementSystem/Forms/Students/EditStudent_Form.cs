@@ -92,12 +92,10 @@ namespace AttendanceManagementSystem.Forms.Students
                 QRCodeService.GenerateQRCode(txt_SchoolStudentId.Text);
                 pe_QRCode.Image = QRCodeService.GetQRCodeImage();
                 _student.QRCode = QRCodeService.GetQRCodeByteArray();
-                btn_Generate.Enabled = true;
                 btn_SaveChanges.Enabled = true;
             }
             else
             {
-                btn_Generate.Enabled = false;
                 btn_SaveChanges.Enabled = false;
             }
         }
