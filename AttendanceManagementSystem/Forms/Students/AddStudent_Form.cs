@@ -59,26 +59,6 @@ namespace AttendanceManagementSystem.Forms.Students
                 XtraMessageBox.Show($"Error saving student: {ex.Message}");
             }
         }
-        private void btn_Cancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        private void btn_CloseForm_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        private void ClearFields()
-        {
-            txt_FirstName.Text = string.Empty;
-            txt_MiddleName.Text = string.Empty;
-            txt_LastName.Text = string.Empty;
-            txt_SchoolStudentId.Text = string.Empty;
-            cbe_YearLevel.SelectedIndex = -1;
-            cbe_Course.SelectedIndex = -1;
-            txt_EmailAddress.Text = string.Empty;
-            pe_QRCode.Image = null;
-        }
-
         private void txt_SchoolStudentId_EditValueChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txt_SchoolStudentId.Text))
@@ -92,6 +72,21 @@ namespace AttendanceManagementSystem.Forms.Students
             {
                 btn_Add.Enabled = false;
             }
+        }
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void ClearFields()
+        {
+            txt_FirstName.Text = string.Empty;
+            txt_MiddleName.Text = string.Empty;
+            txt_LastName.Text = string.Empty;
+            txt_SchoolStudentId.Text = string.Empty;
+            cbe_YearLevel.SelectedIndex = -1;
+            cbe_Course.SelectedIndex = -1;
+            txt_EmailAddress.Text = string.Empty;
+            pe_QRCode.Image = null;
         }
     }
 }
