@@ -58,11 +58,6 @@ namespace AttendanceManagementSystem.Forms.Students
                 XtraMessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            //if (txt_SchoolStudentId.Text != _student.SchoolStudentId && _studentsRepository.CheckIfStudentIdExist(txt_SchoolStudentId.Text))
-            //{
-            //    XtraMessageBox.Show($"A student with this {txt_SchoolStudentId.Text}  already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
 
             _student.FirstName = txt_FirstName.Text;
             _student.MiddleName = txt_MiddleName.Text;
@@ -78,10 +73,6 @@ namespace AttendanceManagementSystem.Forms.Students
             this.Close();
         }
         private void btn_Cancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        private void btn_CloseForm_Click(object sender, EventArgs e)
         {
             this.Close();
         }
